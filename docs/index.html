@@ -1,0 +1,4465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Off-Season Plan</title>
+<meta name="description" content="Off-season training plan, workout log and nutrition baseline. Works offline.">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#F1F4F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1613" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png" sizes="192x192" type="image/png">
+<style>*{box-sizing:border-box}body{margin:0}[hidden]{display:none!important}</style>
+<style>.hint{margin:0;font-size:.9rem;line-height:1.5;color:var(--muted);max-width:46rem}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a document rail (sticky sidebar on wide screens, scrolling tab strip on phones) beside one reading column. */
+:root {
+  --bg: #F1F4F1;
+  --surface: #FAFBFA;
+  --ink: #16201C;
+  --muted: #586660;
+  --rule: #D3DBD5;
+  --accent: #0C7557;
+  --accent-soft: #DDEBE3;
+  --on-accent: #FFFFFF;
+  --seg-mob: #9FB3A8;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1613;
+    --surface: #161F1B;
+    --ink: #E4EBE7;
+    --muted: #90A199;
+    --rule: #28352F;
+    --accent: #46C29B;
+    --accent-soft: #183027;
+    --on-accent: #08150F;
+    --seg-mob: #52665C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1613;
+  --surface: #161F1B;
+  --ink: #E4EBE7;
+  --muted: #90A199;
+  --rule: #28352F;
+  --accent: #46C29B;
+  --accent-soft: #183027;
+  --on-accent: #08150F;
+  --seg-mob: #52665C;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.6 var(--font-body);
+  padding-inline: 1rem;
+  padding-block: 1.25rem 3rem;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 72rem;
+  margin-inline: auto;
+  gap: 0 3rem;
+}
+.head { padding-bottom: 1rem; }
+.brand {
+  font: 700 2rem/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.tagline { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; max-width: 34ch; }
+
+nav {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+  margin-inline: -1rem;
+  padding: 0.5rem 1rem;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+.grp { display: contents; }
+.glabel { display: none; }
+nav a {
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.45rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+nav a:hover { background: var(--accent-soft); color: var(--ink); }
+nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+main { min-width: 0; padding-top: 1.75rem; }
+
+@media (min-width: 56rem) {
+  .shell {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "head main" "nav main";
+  }
+  .head { grid-area: head; padding-top: 0.5rem; }
+  nav {
+    grid-area: nav;
+    align-self: start;
+    flex-direction: column;
+    overflow: visible;
+    top: 1.5rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    gap: 1.25rem;
+    background: transparent;
+  }
+  .grp { display: flex; flex-direction: column; gap: 0.1rem; }
+  .glabel {
+    display: block;
+    font: 500 0.7rem/1 var(--font-mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 0.8rem 0.4rem;
+  }
+  main { grid-area: main; padding-top: 0.75rem; }
+}
+
+/* Document typography */
+.kicker {
+  margin: 0 0 0.5rem;
+  font: 500 0.72rem/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.doc h1 {
+  font: 700 clamp(2.1rem, 6vw, 3.1rem)/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+.doc h2 {
+  font: 600 1.55rem/1.1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 2.75rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  text-wrap: balance;
+}
+.doc h3 {
+  font: 600 1.25rem/1.2 var(--font-display);
+  letter-spacing: 0.01em;
+  margin: 1.75rem 0 0.6rem;
+}
+.doc p, .doc li { max-width: 70ch; }
+.doc p { margin: 0 0 0.9rem; }
+.doc ul, .doc ol { margin: 0 0 1rem; padding-left: 1.3rem; }
+.doc li { margin-bottom: 0.3rem; }
+.doc li::marker { color: var(--accent); }
+.doc hr { display: none; }
+.doc em { color: var(--muted); }
+.doc strong { font-weight: 600; }
+.doc p.meta {
+  font: 400 0.82rem/1.7 var(--font-mono);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  max-width: none;
+}
+.doc p.meta strong { color: var(--accent); font-weight: 500; }
+
+/* Tables */
+.tw { overflow-x: auto; margin: 0 0 1.25rem; }
+.tw table { width: 100%; border-collapse: collapse; font-size: 0.93rem; font-variant-numeric: tabular-nums; }
+.tw table.wide { min-width: 30rem; }
+.tw th {
+  text-align: left;
+  font: 500 0.7rem/1.2 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--ink);
+  white-space: nowrap;
+}
+.tw td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.tw td:first-child { font-weight: 600; }
+
+/* Meal cards */
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+.meal {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.25rem 1rem 1rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.meal h3 { margin-top: 0.85rem; }
+.meal .tw { margin-bottom: 0.75rem; }
+.meal .tw table { font-size: 0.88rem; }
+.meal .tw th { padding-inline: 0; }
+.meal .tw td { padding-inline: 0; }
+.meal .tw td:first-child { font-weight: 400; }
+.meal .tw td:last-child { text-align: right; white-space: nowrap; font-weight: 500; }
+.meal .tw th:last-child { text-align: right; }
+.doc p.macro {
+  margin: auto 0 0;
+  font: 500 0.78rem/1.3 var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* Week overview */
+.week {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: 0.5rem;
+}
+.week li { margin: 0; max-width: none; }
+.week-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: -0.25rem 0 1.25rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.week-status .ws-k {
+  font: 500 0.68rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.week-status .ws-v { font: 600 0.95rem/1.25 var(--font-body); }
+.week-status .ws-dots { display: flex; gap: 0.3rem; margin-left: auto; }
+.week-status .ws-dots i {
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+}
+.week-status .ws-dots i.on { background: var(--accent); border-color: var(--accent); }
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.7rem;
+}
+.dname { font: 500 0.72rem/1 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.tag {
+  align-self: flex-start;
+  font: 600 0.95rem/1 var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.5rem 0.25rem;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+}
+.day.lift { background: var(--accent-soft); border-color: transparent; }
+.day.lift .tag { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.day.ball .tag { border-color: var(--accent); color: var(--accent); }
+.what { font-size: 0.83rem; line-height: 1.35; color: var(--ink); }
+@media (max-width: 40rem) {
+  .week { grid-template-columns: minmax(0, 1fr); }
+  .day { flex-direction: row; align-items: center; gap: 0.8rem; }
+  .dname { width: 2.2rem; flex: none; }
+  .tag { flex: none; min-width: 6rem; text-align: center; }
+}
+
+/* Options inside a tab (recovery day) */
+.subtabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 0 1.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+  padding: 0.2rem;
+  gap: 0.2rem;
+}
+.subtabs button {
+  font: 600 0.95rem/1 var(--font-body);
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.subtabs button:hover { background: var(--accent-soft); color: var(--ink); }
+.subtabs button[aria-selected="true"] { background: var(--accent); color: var(--on-accent); }
+.subtabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.index { list-style: none; margin: 0 0 1rem; padding: 0; max-width: 46rem; }
+.index li { margin: 0; max-width: none; border-bottom: 1px solid var(--rule); }
+.index li:first-child { border-top: 1px solid var(--rule); }
+.index a {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.8rem 0.25rem;
+  text-decoration: none;
+}
+.index a:hover { background: var(--accent-soft); }
+.index .iname { font: 600 1.2rem/1.1 var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; }
+.index .idesc { color: var(--muted); font-size: 0.93rem; }
+@media (max-width: 34rem) {
+  .index a { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+}
+
+/* Session times chart */
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin: 0 0 1.25rem; font-size: 0.85rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.sw { width: 1.1rem; height: 0.7rem; border-radius: 2px; display: inline-block; }
+.sw.mob { background: var(--seg-mob); }
+.sw.main { background: var(--accent); }
+.sw.rng { background: repeating-linear-gradient(135deg, var(--accent) 0 2px, transparent 2px 4px); border: 1px solid var(--accent); }
+.chart { padding-inline: 1.25rem; margin: 0 0 2rem; max-width: 46rem; }
+.trow { margin-bottom: 1rem; }
+.thead { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: 0.35rem; font-size: 0.92rem; }
+.thead b { font: 700 1.15rem/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; margin-right: 0.5rem; }
+.thead .tval { font: 500 0.85rem/1 var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.track {
+  display: flex;
+  height: 1.4rem;
+  background-color: var(--surface);
+  background-image: linear-gradient(to right, var(--rule) 1px, transparent 1px);
+  background-size: 25% 100%;
+  border-right: 1px solid var(--rule);
+}
+.track i { display: block; height: 100%; }
+.track .mob { background: var(--seg-mob); }
+.track .main { background: var(--accent); }
+.track .rng { background: repeating-linear-gradient(135deg, var(--accent) 0 2px, transparent 2px 4px); border: 1px solid var(--accent); border-left: 0; }
+.axis { position: relative; height: 1.1rem; font: 400 0.72rem/1 var(--font-mono); color: var(--muted); }
+.axis span { position: absolute; top: 0; transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+.src { color: var(--muted); font-size: 0.85rem; }
+
+/* Workout log */
+:root {
+  --danger: #B3261E;
+  --danger-soft: #F7E1DF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --danger: #F2958E;
+    --danger-soft: #3A1E1C;
+  }
+}
+:root[data-theme="dark"] {
+  --danger: #F2958E;
+  --danger-soft: #3A1E1C;
+}
+
+.log-status {
+  margin: -0.5rem 0 1.25rem;
+  font: 500 0.72rem/1.5 var(--font-mono);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  max-width: none;
+}
+.log-status.warn { color: var(--danger); }
+.edit-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: -0.25rem 0 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  font: 500 0.78rem/1.35 var(--font-mono);
+  letter-spacing: 0.02em;
+}
+.edit-banner .btn { min-height: 2.4rem; }
+.pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+.pick.one { grid-template-columns: minmax(0, 28rem); }
+.pick label, .note-box label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font: 500 0.7rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 0;
+}
+.log-sel, .pick select, .pick input[type="date"], .note-box textarea, input.num {
+  font: 500 1rem/1.25 var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.75rem;
+  min-height: 3rem;
+  width: 100%;
+  min-width: 0;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.pick select, .pick input[type="date"], .note-box textarea, input.num { font-weight: 500; }
+.pick select:disabled, .pick input:disabled { opacity: 0.55; cursor: default; }
+.pick select:focus-visible, .pick input:focus-visible, .note-box textarea:focus-visible, input.num:focus-visible,
+.btn:focus-visible, .x:focus-visible, .hs summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.note-box { margin: 1rem 0 0; }
+.note-box textarea { resize: vertical; min-height: 4.5rem; font-weight: 400; }
+
+#log-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 0.9rem;
+}
+.xc {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.9rem 1rem 1rem;
+  min-width: 0;
+}
+.doc .xc h3 { margin: 0 0 0.15rem; font-size: 1.35rem; text-wrap: balance; }
+.doc .xc p { margin: 0; max-width: none; }
+.xc .hint { color: var(--muted); font-size: 0.85rem; line-height: 1.35; margin-bottom: 0.4rem; }
+.xc .mono { font: 400 0.76rem/1.55 var(--font-mono); color: var(--muted); }
+.xc .mono.last { color: var(--ink); margin-top: 0.15rem; }
+.sets { display: grid; gap: 0.5rem; margin: 0.8rem 0 0.7rem; }
+.setrow {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr) minmax(0, 1fr) 2.75rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+.setrow.hd span {
+  font: 500 0.68rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.setrow .sn { font: 500 0.85rem/1 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.setrow button.sn {
+  width: 2.75rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: 600 0.85rem/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.setrow button.sn:hover { background: var(--accent-soft); color: var(--ink); }
+.setrow button.sn.done {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-size: 1.05rem;
+}
+.setrow button.sn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+input.num { text-align: center; font-variant-numeric: tabular-nums; }
+input.num::placeholder { color: var(--muted); opacity: 0.55; }
+input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
+.x {
+  min-height: 3rem;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: 400 1.5rem/1 var(--font-body);
+  cursor: pointer;
+}
+.x:hover { background: var(--accent-soft); color: var(--ink); }
+.xc-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.xc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+.doc .xc-head h3 { flex: 1 1 auto; }
+.xc-tools { display: flex; flex: none; gap: 0.35rem; }
+.iconbtn {
+  flex: none;
+  font: 500 0.7rem/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+}
+.iconbtn:hover { background: var(--accent-soft); color: var(--ink); }
+.iconbtn.danger { color: var(--danger); border-color: var(--danger); }
+.iconbtn.danger[data-armed="1"] { background: var(--danger); color: var(--bg); }
+.btn.add { min-width: 2.75rem; padding: 0 0.8rem; font-size: 1.35rem; line-height: 1; }
+.xc.editing { grid-column: 1 / -1; }
+.xedit { display: grid; gap: 0.7rem; margin-top: 0.6rem; }
+.xedit .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 0.6rem; }
+.xedit label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font: 500 0.7rem/1.2 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 0;
+}
+.xedit input[type="text"], .xedit select {
+  font: 500 0.95rem/1.25 var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.6rem 0.7rem;
+  min-height: 2.75rem;
+  width: 100%;
+  min-width: 0;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.xedit label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  font: 400 0.9rem/1.3 var(--font-body);
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+}
+.xedit label.check input { width: 1.15rem; height: 1.15rem; accent-color: var(--accent); flex: none; }
+.xedit input:focus-visible, .xedit select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.xedit .err { color: var(--danger); font-size: 0.85rem; margin: 0; }
+.plan-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.plan-actions .btn[hidden] { display: none; }
+#log-fill-last { margin: 0 0 0.9rem; }
+#log-add-ex:disabled { opacity: 0.45; cursor: default; }
+#log-add-ex:disabled:hover { background: transparent; }
+.btn {
+  font: 600 0.95rem/1 var(--font-body);
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent-soft); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.06); }
+.btn.primary:disabled { background: var(--surface); border-color: var(--rule); color: var(--muted); cursor: default; filter: none; }
+.btn.danger { color: var(--danger); border-color: var(--danger); }
+.btn.danger[data-armed="1"] { background: var(--danger); color: var(--bg); }
+
+.savebar {
+  position: sticky;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+}
+.savebar .sum { font: 500 0.82rem/1.3 var(--font-mono); font-variant-numeric: tabular-nums; min-width: 0; }
+.savebar .btn.primary { min-width: 8.5rem; min-height: 3rem; }
+.savebar .rest {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--rule);
+}
+.savebar .rest[hidden] { display: none; }
+.savebar .rest .rest-k {
+  font: 500 0.66rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.savebar .rest .rest-t {
+  font: 700 1.1rem/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  min-width: 3.2rem;
+}
+.savebar .rest .btn { min-height: 2.75rem; padding: 0 0.75rem; font-size: 0.82rem; }
+.savebar .rest.done .rest-t { color: var(--accent); }
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: min(26rem, calc(100vw - 2rem));
+  padding: 0.55rem 0.55rem 0.55rem 0.9rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font: 500 0.85rem/1.3 var(--font-body);
+}
+.toast[hidden] { display: none; }
+.toast #log-toast-text { flex: 1 1 auto; white-space: nowrap; }
+.toast .btn { min-height: 2.75rem; padding: 0 0.8rem; border-color: currentColor; color: inherit; }
+.toast .btn:hover { background: rgba(127, 127, 127, 0.2); }
+.toast .iconbtn { min-width: 2.75rem; min-height: 2.75rem; color: inherit; border-color: transparent; }
+.toast .iconbtn:hover { background: rgba(127, 127, 127, 0.2); color: inherit; }
+.log-msg { min-height: 1.4rem; margin: 0.75rem 0 0; font-size: 0.92rem; max-width: none; }
+.log-msg.warn { color: var(--danger); }
+.empty { color: var(--muted); max-width: 40ch; }
+
+/* Progress */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin: 0 0 1.25rem; max-width: 36rem; }
+.stat { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 0.7rem 0.8rem; min-width: 0; }
+.stat .k { display: block; font: 500 0.66rem/1.2 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.stat .v { display: block; margin-top: 0.3rem; font: 700 1.7rem/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.stat .v small { font: 500 0.75rem/1 var(--font-mono); color: var(--muted); margin-left: 0.2rem; }
+.cap { font: 500 0.7rem/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.4rem; max-width: none; }
+.chartbox { max-width: 40rem; margin: 0 0 1.25rem; }
+.pchart { display: block; max-width: 100%; }
+.pchart text { fill: var(--muted); font: 400 11px var(--font-mono); }
+.pchart text.vl { fill: var(--ink); font-weight: 600; }
+.pchart .grid { stroke: var(--rule); stroke-width: 1; }
+.pchart .ln { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.pchart .pt { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+.pchart .pt.last { fill: var(--accent); }
+.prog-add { margin: 1.75rem 0 0; padding-top: 1rem; border-top: 1px solid var(--rule); max-width: 40rem; }
+.prog-add summary {
+  cursor: pointer;
+  font: 500 0.78rem/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  list-style: none;
+}
+.prog-add summary::-webkit-details-marker { display: none; }
+.prog-add .body { display: grid; gap: 0.9rem; margin-top: 1rem; }
+.prog-add .pick { margin: 0; }
+.prog-add input[type="text"] {
+  font: 500 1rem/1.25 var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.75rem;
+  min-height: 3rem;
+  width: 100%;
+}
+.prog-add .log-msg { margin: 0; }
+
+/* History */
+.hs { border-bottom: 1px solid var(--rule); max-width: 46rem; }
+.hs:first-child { border-top: 1px solid var(--rule); }
+.hs summary {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr);
+  gap: 0.15rem 0.75rem;
+  padding: 0.8rem 0.25rem;
+  cursor: pointer;
+  list-style: none;
+  min-height: 3rem;
+}
+.hs summary::-webkit-details-marker { display: none; }
+.hs summary:hover { background: var(--accent-soft); }
+.hs .hd { font: 700 1.25rem/1.1 var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; grid-row: span 2; }
+.hs .hn { font-weight: 600; }
+.hs .hc { color: var(--muted); font-size: 0.85rem; }
+.hs .body { padding: 0 0.25rem 1rem 4.95rem; }
+.hs .hl { list-style: none; margin: 0 0 0.75rem; padding: 0; }
+.hs .hl li { margin: 0 0 0.45rem; padding: 0; max-width: none; font-size: 0.93rem; }
+.hs .hl li b { display: block; font-weight: 600; }
+.hs .hl li span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.hs .nt { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.75rem; max-width: none; }
+.hist-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.hist-edit .ico { width: 1rem; height: 1rem; margin-right: 0.35rem; vertical-align: -0.15rem; }
+@media (max-width: 34rem) {
+  .hs .body { padding-left: 0.25rem; }
+  .stat .v { font-size: 1.45rem; }
+}
+</style>
+
+<div class="shell">
+  <header class="head">
+    <div class="brand">Off-Season Plan</div>
+    <p class="tagline">Three lifts and two basketball sessions a week, with a fat-loss nutrition plan.</p>
+  </header>
+  <nav aria-label="Documents">
+    <div class="grp"><span class="glabel">Overview</span>
+      <a href="#week" data-tab="week">Week</a>
+    </div>
+    <div class="grp"><span class="glabel">Track</span>
+      <a href="#log" data-tab="log">Workout log</a>
+    </div>
+    <div class="grp"><span class="glabel">Train</span>
+      <a href="#program" data-tab="program">Weekly program</a>
+      <a href="#fullbody" data-tab="fullbody">Full body</a>
+      <a href="#recovery" data-tab="recovery">Recovery day</a>
+      <a href="#times" data-tab="times">Session times</a>
+    </div>
+    <div class="grp"><span class="glabel">Eat</span>
+      <a href="#nutrition" data-tab="nutrition">Nutrition plan</a>
+      <a href="#meals" data-tab="meals">Meals</a>
+    </div>
+    <div class="grp"><span class="glabel">Shop</span>
+      <a href="#groceries" data-tab="groceries">Grocery list</a>
+    </div>
+  </nav>
+  <main>
+    <section class="doc" data-panel="week">
+      <p class="kicker">Overview</p>
+<h1>This week</h1>
+<div class="week-status">
+  <span class="ws-k">This week</span>
+  <span class="ws-v" id="week-status-text" aria-live="polite">0 of 3 lifts done</span>
+  <span class="ws-dots" id="week-status-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<p>The same schedule applies to the gym, home and minimal programs. Days can move around, but keep a rest day or an upper-body day between Lift A and Lift C so the legs recover.</p>
+<ul class="week">
+<li><div class="day lift"><span class="dname">Mon</span><span class="tag">Lift A</span><span class="what">Lower body + mobility</span></div></li>
+<li><div class="day ball"><span class="dname">Tue</span><span class="tag">Basketball</span><span class="what">Skills + conditioning</span></div></li>
+<li><div class="day lift"><span class="dname">Wed</span><span class="tag">Lift B</span><span class="what">Upper body + core</span></div></li>
+<li><div class="day ball"><span class="dname">Thu</span><span class="tag">Basketball</span><span class="what">Skills + conditioning</span></div></li>
+<li><div class="day lift"><span class="dname">Fri</span><span class="tag">Lift C</span><span class="what">Lower body + plyo</span></div></li>
+<li><div class="day rest"><span class="dname">Sat</span><span class="tag">Recovery</span><span class="what">Mobility only</span></div></li>
+<li><div class="day rest"><span class="dname">Sun</span><span class="tag">Rest</span><span class="what">Full rest</span></div></li>
+</ul>
+<h2>In this plan</h2>
+<ul class="index">
+<li><a href="#log"><span class="iname">Workout log</span><span class="idesc">Write down the weights and reps you actually lifted, then watch the trend for each exercise.</span></a></li>
+<li><a href="#program"><span class="iname">Weekly program</span><span class="idesc">Three lifts and two basketball sessions a week, in three versions: gym, home equipment, or one kettlebell and bands.</span></a></li>
+<li><a href="#fullbody"><span class="iname">Full body</span><span class="idesc">A standalone beginner session for the gym: squat, hinge, push, pull, press, step-up and core.</span></a></li>
+<li><a href="#recovery"><span class="iname">Recovery day</span><span class="idesc">Three light options for days when your muscles are still sore: an easy walk with upper body work, isometric holds, or legs and ankles holds.</span></a></li>
+<li><a href="#times"><span class="iname">Session times</span><span class="idesc">How long each gym session takes with the warm-up included.</span></a></li>
+<li><a href="#nutrition"><span class="iname">Nutrition plan</span><span class="idesc">About 2,550 kcal and 200 g protein a day to lose 5 kg of fat in 10 to 12 weeks.</span></a></li>
+<li><a href="#meals"><span class="iname">Meals</span><span class="idesc">Twelve protein-heavy meals with gram amounts for every ingredient.</span></a></li>
+<li><a href="#groceries"><span class="iname">Grocery list</span><span class="idesc">Monthly staples bought at Lidl, MyMarket and the open-air market, with a cost estimate.</span></a></li>
+</ul>
+    </section>
+    <section class="doc" data-panel="program" hidden>
+      <p class="kicker">Train</p>
+<div class="subtabs" role="tablist" aria-label="Program versions"><button type="button" role="tab" aria-selected="true" aria-controls="sub-gym" data-sub="gym">Gym program</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-home" data-sub="home">Home program</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-minimal" data-sub="minimal">Minimal kit</button></div>
+<div class="sub" id="sub-gym" role="tabpanel" data-sub="gym">
+<h1>Off-Season Basketball Program — Strength, Power &amp; Leg Athleticism</h1>
+<p class="meta"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, full gym access, off-season, 3 lifts + 2 basketball sessions/week<br />
+<strong>Focus:</strong> Balanced athletic performance, injury durability, and fixing leg mobility/explosiveness weaknesses</p>
+
+<h2>Weekly Layout</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mon</td>
+<td>Lift A — Lower Body Power + Mobility</td>
+</tr>
+<tr>
+<td>Tue</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Wed</td>
+<td>Lift B — Upper Body + Core</td>
+</tr>
+<tr>
+<td>Thu</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Fri</td>
+<td>Lift C — Lower Body Strength + Plyo</td>
+</tr>
+<tr>
+<td>Sat</td>
+<td>Active recovery / optional light mobility</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Full rest</td>
+</tr>
+</tbody>
+</table></div>
+<p>Swap days freely — the key rule is <strong>never stack Lift A/C back-to-back without a rest or upper day between</strong>, since both hit the legs hard.</p>
+
+<h2>Daily Mobility Primer (do before EVERY session — lift or ball, ~8-10 min)</h2>
+<p>Since leg mobility/athleticism is a weak point, this block is non-negotiable, not optional warm-up filler:</p>
+<ol>
+<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>
+<li>90/90 hip switches — 2x8 each side</li>
+<li>Couch stretch (hip flexor) — 45 sec each side</li>
+<li>World's greatest stretch — 5 each side</li>
+<li>Lateral lunge to hamstring sweep — 8 each side</li>
+<li>Band monster walks (lateral + forward) — 2x10 steps</li>
+</ol>
+<p>This alone will move the needle on "bottom tier" leg movement quality within a few weeks — it's addressing hip/ankle range of motion, which is usually the real bottleneck, not just strength.</p>
+
+<h2>LIFT A — Lower Body Power (Mon)</h2>
+<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Suggested start</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trap Bar or Barbell Deadlift</td>
+<td>4x4</td>
+<td>50-60 kg total</td>
+<td>2-3 min</td>
+<td>Heavy-ish, controlled, explosive off the floor</td>
+</tr>
+<tr>
+<td>Box Jump (moderate height)</td>
+<td>4x4</td>
+<td>Bodyweight, 30-45 cm box</td>
+<td>90 sec</td>
+<td>Full reset between reps, land soft</td>
+</tr>
+<tr>
+<td>Bulgarian Split Squat</td>
+<td>3x8/leg</td>
+<td>Bodyweight, or 8-10 kg each hand</td>
+<td>90 sec</td>
+<td>Focus on control on the way down</td>
+</tr>
+<tr>
+<td>Lateral Bound (skater jump)</td>
+<td>3x6/side</td>
+<td>Bodyweight</td>
+<td>60-90 sec</td>
+<td>Stick the landing, stability focus</td>
+</tr>
+<tr>
+<td>Single-leg RDL</td>
+<td>3x8/leg</td>
+<td>Bodyweight, or 8-12 kg in one hand</td>
+<td>60-90 sec</td>
+<td>Balance + posterior chain + ankle stability</td>
+</tr>
+<tr>
+<td>Copenhagen Plank</td>
+<td>3x20-30 sec/side</td>
+<td>Bodyweight, knee on the bench</td>
+<td>60 sec</td>
+<td>Adductor strength — huge for lateral basketball movement</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>LIFT B — Upper Body + Core (Wed)</h2>
+<p><strong>Time:</strong> about 39-44 min including the mobility primer</p>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Suggested start</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barbell Bench Press</td>
+<td>4x6</td>
+<td>30-40 kg total</td>
+<td>2 min</td>
+<td>Stop each set with 2 reps left</td>
+</tr>
+<tr>
+<td>Weighted Pull-up or Lat Pulldown</td>
+<td>4x6-8</td>
+<td>40-50 kg on the stack, or 30-40 kg of assistance</td>
+<td>90 sec</td>
+<td>No added weight on pull-ups yet</td>
+</tr>
+<tr>
+<td>Standing Overhead Press</td>
+<td>3x8</td>
+<td>20-30 kg total</td>
+<td>90 sec</td>
+<td>Shoulder stability for contact/box-outs</td>
+</tr>
+<tr>
+<td>Single-arm DB Row</td>
+<td>3x10/side</td>
+<td>14-18 kg</td>
+<td>60-90 sec</td>
+<td></td>
+</tr>
+<tr>
+<td>Med Ball Rotational Throw</td>
+<td>3x8/side</td>
+<td>4-6 kg ball</td>
+<td>60 sec</td>
+<td>Transfers rotational power for shots/passes</td>
+</tr>
+<tr>
+<td>Hanging Leg Raise or Ab Wheel</td>
+<td>3x12</td>
+<td>Bodyweight</td>
+<td>60 sec</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>LIFT C — Lower Body Strength + Plyo (Fri)</h2>
+<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Suggested start</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Back Squat</td>
+<td>4x5</td>
+<td>40-50 kg total</td>
+<td>2-2.5 min</td>
+<td>Primary strength driver</td>
+</tr>
+<tr>
+<td>Depth Jump (low box, 12-16")</td>
+<td>4x4</td>
+<td>Bodyweight, 30-40 cm box</td>
+<td>2 min</td>
+<td>Only after Box Jumps feel solid — teaches reactive strength/elastic legs</td>
+</tr>
+<tr>
+<td>Walking Lunge (DB or BB)</td>
+<td>3x10/leg</td>
+<td>Bodyweight, or 8-12 kg each hand</td>
+<td>90 sec</td>
+<td></td>
+</tr>
+<tr>
+<td>Nordic Curl (or eccentric hamstring curl)</td>
+<td>3x6</td>
+<td>Bodyweight, hold a band or a partner for help</td>
+<td>90 sec</td>
+<td>Hamstring injury-proofing — critical for basketball</td>
+</tr>
+<tr>
+<td>Pogo Hops (ankle stiffness)</td>
+<td>3x15</td>
+<td>Bodyweight</td>
+<td>60-90 sec</td>
+<td>Fast, minimal knee bend, builds reactive ankles</td>
+</tr>
+<tr>
+<td>Standing Calf Raise</td>
+<td>3x12</td>
+<td>Bodyweight, or 20-30 kg on the machine</td>
+<td>60 sec</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Starting Weights</h2>
+<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point.</p>
+<ul>
+<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range, so the soreness stays manageable and the technique comes back first</li>
+<li><strong>Week 2:</strong> go back to the full sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range</li>
+<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression notes below</li>
+<li>If a set is a grind with form breaking down, drop the weight 10%</li>
+<li>Rest times on the jumps are about recovery, not conditioning. Wait until you feel fresh before the next set</li>
+</ul>
+
+<h2>Basketball Skills Days (Tue/Thu)</h2>
+<p>Structure however fits your skill work, but bookend with:</p>
+<ul>
+<li><strong>Before:</strong> the mobility primer above + 5 min of low-intensity lateral shuffles/carioca to prime hips</li>
+<li><strong>After:</strong> 10 min light plyo circuit if legs aren't fried from the session (optional, rotate weekly):<ul>
+<li>Single-leg hops in place — 2x10/leg</li>
+<li>Broad jump — 3x3</li>
+<li>Lateral skater bounds — 3x6/side</li>
+</ul>
+</li>
+</ul>
+<p>If it's a heavy scrimmage/conditioning day, skip the after-block and just stretch.</p>
+
+<h2>Progression Notes</h2>
+<ul>
+<li><strong>Weeks 1-3:</strong> Establish technique on all lifts, moderate loads, submaximal jumps</li>
+<li><strong>Weeks 4-6:</strong> Increase load on main lifts (+2.5-5kg where form allows), increase box jump height slightly</li>
+<li><strong>Weeks 7-9:</strong> Introduce depth jumps if not already comfortable; this is where reactive/elastic leg power really develops</li>
+<li>Deload every 4th week (cut volume ~40%) to keep joints fresh</li>
+</ul>
+<h2>Simple leg mobility check-ins</h2>
+<p>Every 3-4 weeks, test:</p>
+<ul>
+<li>Ankle dorsiflexion (knee-to-wall distance)</li>
+<li>Overhead squat depth/quality</li>
+<li>Single-leg balance time (eyes closed)</li>
+</ul>
+<p>Tracking these will show you the mobility work is actually working, since it's often not visible on a scale or in the mirror.</p>
+</div>
+<div class="sub" id="sub-home" role="tabpanel" data-sub="home" hidden>
+<h1>Off-Season Basketball Program — Home Setup (Beginner)</h1>
+<p class="meta"><strong>Profile:</strong> Beginner lifter, 191cm / 95kg, home equipment only, off-season, 3 lifts + 2 basketball sessions/week<br />
+<strong>Equipment:</strong> 2x14kg KB, 1x10kg KB, 2x8kg DB, ab roller, heavy black band, 35kg-rated long band (no pull-up bar), bodyweight<br />
+<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>
+
+<h2>A Note on Your Frame</h2>
+<p>At 191cm/95kg you're carrying real leverage and mass — that's an advantage for basketball but it also means bodyweight-only lower body work (lunges, split squats) will already feel loaded without any added weight. Don't rush to add the kettlebells to leg work until bodyweight versions feel genuinely easy with good depth and control. As a beginner, technique and range of motion come first — the strength will follow fast once the pattern is right.</p>
+
+<h2>Weekly Layout</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mon</td>
+<td>Lift A — Lower Body + Mobility</td>
+</tr>
+<tr>
+<td>Tue</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Wed</td>
+<td>Lift B — Upper Body + Core</td>
+</tr>
+<tr>
+<td>Thu</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Fri</td>
+<td>Lift C — Lower Body + Plyo</td>
+</tr>
+<tr>
+<td>Sat</td>
+<td>Active recovery / mobility only</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Full rest</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Daily Mobility Primer (before EVERY session, ~8-10 min)</h2>
+<p>Same priority as before — this is what actually fixes stiff/heavy-feeling legs, not the lifting itself.</p>
+<ol>
+<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>
+<li>90/90 hip switches — 2x8 each side</li>
+<li>Couch stretch (hip flexor) — 45 sec each side</li>
+<li>World's greatest stretch — 5 each side</li>
+<li>Lateral lunge to hamstring sweep — 8 each side</li>
+<li>Band lateral walks (use the black band around ankles/knees) — 2x10 steps each direction</li>
+</ol>
+
+<h2>LIFT A — Lower Body + Mobility (Mon)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goblet Squat (14kg KB)</td>
+<td>4x8</td>
+<td>Focus on full depth, knees tracking over toes</td>
+</tr>
+<tr>
+<td>Kettlebell Deadlift (2x14kg, one in each hand)</td>
+<td>4x6</td>
+<td>Hip hinge pattern, flat back</td>
+</tr>
+<tr>
+<td>Bodyweight Bulgarian Split Squat (rear foot on chair/couch)</td>
+<td>3x8/leg</td>
+<td>Add 8kg DBs once solid with bodyweight</td>
+</tr>
+<tr>
+<td>Band Lateral Walk (heavy black band)</td>
+<td>3x12 steps/side</td>
+<td>Glute med — key for lateral cuts</td>
+</tr>
+<tr>
+<td>Single-leg Glute Bridge</td>
+<td>3x10/leg</td>
+<td></td>
+</tr>
+<tr>
+<td>Standing Calf Raise (holding 14kg KB)</td>
+<td>3x15</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>LIFT B — Upper Body + Core (Wed)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kettlebell Floor Press (14kg, one arm at a time)</td>
+<td>4x8/arm</td>
+<td>Substitute for bench — lie on floor, press up</td>
+</tr>
+<tr>
+<td>Long Band Row (anchor band to a door/sturdy point)</td>
+<td>4x10</td>
+<td>Substitute for pull-ups/rows — squeeze shoulder blades</td>
+</tr>
+<tr>
+<td>Kettlebell Standing Press (10kg or 8kg DB)</td>
+<td>3x8/arm</td>
+<td></td>
+</tr>
+<tr>
+<td>Renegade Row (2x8kg DB, plank position)</td>
+<td>3x8/side</td>
+<td>Core + upper back together</td>
+</tr>
+<tr>
+<td>Ab Roller</td>
+<td>3x8-10</td>
+<td>Full control, don't let hips sag</td>
+</tr>
+<tr>
+<td>Band Face Pull (black band)</td>
+<td>3x12</td>
+<td>Shoulder health, important with no pull-up option</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Pull-up substitute note:</strong> Since you have no bar, the long band row (anchored to a door top or banister) is your main pulling movement. If you can find any sturdy overhead beam or railing, banded pull-up assistance would be a great add later — but it's not required to progress.</p>
+
+<h2>LIFT C — Lower Body + Plyo (Fri)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kettlebell Front Squat (2x14kg)</td>
+<td>4x6</td>
+<td></td>
+</tr>
+<tr>
+<td>Bodyweight Step-up (onto sturdy chair/stair, ~knee height)</td>
+<td>3x8/leg</td>
+<td>Drive through the heel, don't push off trail leg</td>
+</tr>
+<tr>
+<td>Broad Jump</td>
+<td>4x4</td>
+<td>Full reset, stick the landing soft</td>
+</tr>
+<tr>
+<td>Pogo Hops</td>
+<td>3x15</td>
+<td>Fast, minimal knee bend, ankle stiffness/reactivity</td>
+</tr>
+<tr>
+<td>Nordic Curl Regression: Slow Eccentric Hamstring Lower (partner or couch-anchored feet)</td>
+<td>3x6</td>
+<td>Or substitute: KB Romanian Deadlift 3x10 if no anchor available</td>
+</tr>
+<tr>
+<td>Copenhagen Plank (foot on chair for support)</td>
+<td>3x15-20 sec/side</td>
+<td>Adductor strength</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>No box jumps at home?</strong> Broad jumps and pogo hops are actually a smarter starting point for a beginner anyway — they build the same reactive leg quality without the landing-height risk factor.</p>
+
+<h2>Basketball Skills Days (Tue/Thu)</h2>
+<ul>
+<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>
+<li><strong>After (optional, only if legs aren't fried):</strong><ul>
+<li>Single-leg hop in place — 2x8/leg</li>
+<li>Broad jump — 3x3</li>
+<li>Lateral bound — 3x6/side</li>
+</ul>
+</li>
+</ul>
+
+<h2>Progression Notes (Beginner Pace)</h2>
+<ul>
+<li><strong>Weeks 1-4:</strong> Master bodyweight and light-KB technique on every movement before adding load. Depth and control over speed.</li>
+<li><strong>Weeks 5-8:</strong> Start adding the 8kg DBs to split squats/step-ups, tighten up plyo landings, increase band tension where possible</li>
+<li><strong>Weeks 9-12:</strong> Reassess — if kettlebells feel light across the board, this is the point to look at getting heavier KBs (you'll likely outgrow the 14kg for squats/deadlifts by then)</li>
+<li>Deload every 4th week (lighter loads, fewer sets) — especially important early on while joints and tendons adapt</li>
+</ul>
+<h2>Leg Mobility Check-ins (every 3-4 weeks)</h2>
+<ul>
+<li>Ankle dorsiflexion (knee-to-wall distance)</li>
+<li>Bodyweight squat depth/quality (can you get thighs parallel with heels flat?)</li>
+<li>Single-leg balance time, eyes closed</li>
+</ul>
+<p>These will show real progress even before the weights feel meaningfully heavier — which for a beginner is often the more important signal.</p>
+</div>
+<div class="sub" id="sub-minimal" role="tabpanel" data-sub="minimal" hidden>
+<h1>Off-Season Basketball Program — Minimal Equipment (Beginner)</h1>
+<p class="meta"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, off-season, 3 lifts + 2 basketball sessions/week<br />
+<strong>Equipment:</strong> 1 kettlebell (14kg), heavy black resistance band, long 35kg-rated resistance band, bodyweight only<br />
+<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>
+
+<h2>A Note on This Setup</h2>
+<p>With one kettlebell and two bands, most of your loading now comes from bodyweight + band tension rather than external weight. That's actually fine at beginner level — bodyweight and band-resisted work builds real strength and control, and your frame means bodyweight movements alone carry plenty of load to start. The kettlebell becomes your one "heavy" tool, so it gets used where it matters most: squats, hinges, and presses.</p>
+
+<h2>Weekly Layout</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Session</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mon</td>
+<td>Lift A — Lower Body + Mobility</td>
+</tr>
+<tr>
+<td>Tue</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Wed</td>
+<td>Lift B — Upper Body + Core</td>
+</tr>
+<tr>
+<td>Thu</td>
+<td>Basketball Skills/Conditioning</td>
+</tr>
+<tr>
+<td>Fri</td>
+<td>Lift C — Lower Body + Plyo</td>
+</tr>
+<tr>
+<td>Sat</td>
+<td>Active recovery / mobility only</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Full rest</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Daily Mobility Primer (before EVERY session, ~8-10 min)</h2>
+<ol>
+<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>
+<li>90/90 hip switches — 2x8 each side</li>
+<li>Couch stretch (hip flexor) — 45 sec each side</li>
+<li>World's greatest stretch — 5 each side</li>
+<li>Lateral lunge to hamstring sweep — 8 each side</li>
+<li>Band lateral walks (black band around ankles/knees) — 2x10 steps each direction</li>
+</ol>
+
+<h2>LIFT A — Lower Body + Mobility (Mon)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KB Goblet Squat</td>
+<td>4x10</td>
+<td>Full depth, elbows inside knees at bottom</td>
+</tr>
+<tr>
+<td>Single-KB Romanian Deadlift (both hands on KB)</td>
+<td>4x8</td>
+<td>Hip hinge, slow lower, feel the hamstring stretch</td>
+</tr>
+<tr>
+<td>Bulgarian Split Squat (rear foot elevated, bodyweight)</td>
+<td>3x10/leg</td>
+<td>Once easy, hold KB goblet-style to add load</td>
+</tr>
+<tr>
+<td>Band Lateral Walk (black band)</td>
+<td>3x12 steps/side</td>
+<td></td>
+</tr>
+<tr>
+<td>Single-leg Glute Bridge</td>
+<td>3x10/leg</td>
+<td></td>
+</tr>
+<tr>
+<td>Single-KB Standing Calf Raise</td>
+<td>3x15</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>LIFT B — Upper Body + Core (Wed)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single-Arm KB Floor Press</td>
+<td>4x8/arm</td>
+<td>Lie on floor, press straight up, control the descent</td>
+</tr>
+<tr>
+<td>Long Band Row (anchor to door top/sturdy point)</td>
+<td>4x10</td>
+<td>Main pulling movement — squeeze shoulder blades hard</td>
+</tr>
+<tr>
+<td>Single-Arm KB Standing Press</td>
+<td>3x8/arm</td>
+<td>Brace core, avoid leaning back</td>
+</tr>
+<tr>
+<td>Band Pallof Press (anchor band to your side at chest height)</td>
+<td>3x10/side</td>
+<td>Anti-rotation core, presses out and holds</td>
+</tr>
+<tr>
+<td>Push-up</td>
+<td>3x max-2 (leave 2 reps in reserve)</td>
+<td>Bodyweight — go to failure-minus-2 for quality</td>
+</tr>
+<tr>
+<td>Band Face Pull (black band)</td>
+<td>3x12</td>
+<td>Shoulder health, especially without pull-up access</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>LIFT C — Lower Body + Plyo (Fri)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single-KB Front Rack Squat</td>
+<td>4x8</td>
+<td>Hold KB in front rack position at chest</td>
+</tr>
+<tr>
+<td>Bodyweight Step-up (chair/stair, ~knee height)</td>
+<td>3x8/leg</td>
+<td>Drive through the heel</td>
+</tr>
+<tr>
+<td>Broad Jump</td>
+<td>4x4</td>
+<td>Full reset between reps, land soft</td>
+</tr>
+<tr>
+<td>Pogo Hops</td>
+<td>3x15</td>
+<td>Fast, minimal knee bend, ankle reactivity</td>
+</tr>
+<tr>
+<td>Band-Resisted Hamstring Curl (anchor long band, lying face down)</td>
+<td>3x12</td>
+<td>Or slow eccentric bodyweight version if band angle is awkward</td>
+</tr>
+<tr>
+<td>Copenhagen Plank (foot on chair)</td>
+<td>3x15-20 sec/side</td>
+<td>Adductor strength</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Basketball Skills Days (Tue/Thu)</h2>
+<ul>
+<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>
+<li><strong>After (optional, only if legs aren't fried):</strong><ul>
+<li>Single-leg hop in place — 2x8/leg</li>
+<li>Broad jump — 3x3</li>
+<li>Lateral bound — 3x6/side</li>
+</ul>
+</li>
+</ul>
+
+<h2>Progression Notes (Beginner Pace)</h2>
+<ul>
+<li><strong>Weeks 1-4:</strong> Nail bodyweight technique everywhere — depth on squats, control on split squats/step-ups, full range on band rows. The kettlebell work should feel challenging by the last 2-3 reps but not grindy.</li>
+<li><strong>Weeks 5-8:</strong> Increase reps (e.g. goblet squat to 4x15) before anything else — with one kettlebell, rep progression is your main lever once bodyweight/band work plateaus.</li>
+<li><strong>Weeks 9-12:</strong> Consider tempo work (3-4 sec lowering phase) on squats and RDLs to keep adding difficulty without more load. This is also the point to reassess whether a second/heavier kettlebell would unlock more progress.</li>
+<li>Deload every 4th week (lighter effort, fewer sets)</li>
+</ul>
+<h2>Leg Mobility Check-ins (every 3-4 weeks)</h2>
+<ul>
+<li>Ankle dorsiflexion (knee-to-wall distance)</li>
+<li>Bodyweight squat depth/quality (thighs parallel, heels flat)</li>
+<li>Single-leg balance time, eyes closed</li>
+</ul>
+<h2>What's Different From the Full Home Setup</h2>
+<ul>
+<li>Dumbbell work (renegade rows, split squat loading) is now bodyweight or single-KB based</li>
+<li>Ab roller swapped for push-ups and band Pallof press — still trains anti-extension/anti-rotation core, just without the tool</li>
+<li>Reps are pushed higher across most lifts (8-15 vs 6-8) to compensate for only having one load option — this keeps the stimulus meaningful without needing heavier weight</li>
+</ul>
+</div>
+    </section>
+    <section class="doc" data-panel="fullbody" hidden>
+      <p class="kicker">Train</p>
+<h1>Full Body Workout</h1>
+<p class="meta"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />
+<strong>Time:</strong> about 60 minutes including the warm-up</p>
+<p>A standalone full-body session for the gym. Use it on its own or as a fill-in when you miss a lift day. Don't stack it directly on a Lift A or Lift C day, since it loads the legs too.</p>
+
+<h2>Warm-up (10 min)</h2>
+<p>Use the same mobility primer as the main program:</p>
+<ol>
+<li>Ankle dorsiflexion rocks — 2x10 each side</li>
+<li>90/90 hip switches — 2x8 each side</li>
+<li>Couch stretch — 45 sec each side</li>
+<li>World's greatest stretch — 5 each side</li>
+<li>Lateral lunge to hamstring sweep — 8 each side</li>
+<li>Band lateral walks — 2x10 steps each direction</li>
+</ol>
+<p>Then ramp up on the squat before the working sets: empty bar x10, about 50% of working weight x5, about 70% x3. One warm-up set is enough for each later exercise.</p>
+
+<h2>Main Session (about 50 min)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Suggested start</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barbell Back Squat</td>
+<td>3x6</td>
+<td>40-50 kg total</td>
+<td>2-2.5 min</td>
+<td>Full depth, heels flat, use the safety bars</td>
+</tr>
+<tr>
+<td>Barbell Romanian Deadlift</td>
+<td>3x8</td>
+<td>40-50 kg total</td>
+<td>2 min</td>
+<td>Hinge at the hips, flat back, slow lowering</td>
+</tr>
+<tr>
+<td>Barbell Bench Press</td>
+<td>3x8</td>
+<td>30-40 kg total</td>
+<td>2 min</td>
+<td>Stop each set with 2 reps left</td>
+</tr>
+<tr>
+<td>Lat Pulldown or Assisted Pull-up</td>
+<td>3x8-10</td>
+<td>40-50 kg on the stack, or 30-40 kg of assistance</td>
+<td>90 sec</td>
+<td>Pull the elbows down, shoulders away from the ears</td>
+</tr>
+<tr>
+<td>Seated Dumbbell Shoulder Press</td>
+<td>3x8</td>
+<td>10-14 kg each hand</td>
+<td>90 sec</td>
+<td>Brace the core, don't arch the lower back</td>
+</tr>
+<tr>
+<td>Dumbbell Box Step-up</td>
+<td>3x8/leg</td>
+<td>Bodyweight, or 8-12 kg each hand</td>
+<td>90 sec</td>
+<td>Knee-height box (about 45-50 cm), push through the heel of the working leg, lower for 2 seconds</td>
+</tr>
+<tr>
+<td>Cable Pallof Press</td>
+<td>3x10/side</td>
+<td>5-10 kg</td>
+<td>60 sec</td>
+<td>Anti-rotation core work, stand sideways to the cable</td>
+</tr>
+<tr>
+<td>Copenhagen Plank (top leg on a box)</td>
+<td>2x15-20 sec/side</td>
+<td>Bodyweight, knee on the box</td>
+<td>60 sec</td>
+<td>Box at knee height, bottom leg hangs, hips in line with the shoulders. Move to the foot on the box once 20 sec is easy</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point and adjust with the steps below.</p>
+<h2>Finding Your Real Starting Weight</h2>
+<ul>
+<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range. After 2 months off, this keeps the soreness manageable and lets the technique come back first.</li>
+<li><strong>Week 2:</strong> go back to 3 sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range.</li>
+<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression rules below.</li>
+<li>If a set is a grind with form breaking down, drop the weight 10% rather than pushing through.</li>
+</ul>
+
+<h2>Progression</h2>
+<ul>
+<li>When you hit the top of the rep range on every set, add weight next session: 2.5 kg total on the upper-body lifts, 5 kg total on squat and Romanian deadlift</li>
+<li>Every 4th week, drop to 2 sets per exercise as a lighter week</li>
+<li>If the rack is busy, swap squat and Romanian deadlift for goblet squat and dumbbell Romanian deadlift rather than skipping them</li>
+</ul>
+    </section>
+    <section class="doc" data-panel="recovery" hidden>
+      <p class="kicker">Train</p>
+<div class="subtabs" role="tablist" aria-label="Recovery options"><button type="button" role="tab" aria-selected="true" aria-controls="sub-light" data-sub="light">Light session</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-iso" data-sub="iso">Isometrics</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-legs" data-sub="legs">Legs and ankles</button></div>
+<div class="sub" id="sub-light" role="tabpanel" data-sub="light">
+<h1>Recovery Day Workout</h1>
+<p class="meta"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />
+<strong>Time:</strong> about 35-40 minutes</p>
+<p>A light session for the days when your muscles are still sore from a hard workout, usually the second day after. It keeps you moving without adding more load to tired legs.</p>
+
+<h2>When to Use It</h2>
+<ul>
+<li>You're 1-3 days after a hard session and your muscles feel tight and achy</li>
+<li>The soreness is a dull ache that eases once you start moving</li>
+<li>Not for sharp pain, joint pain, swelling or anything that gets worse as you move. Rest and see a doctor for those</li>
+</ul>
+<p>If the soreness is only mild, do your normal session at the lighter week-1 settings instead (2 sets per exercise at the low end of each weight range).</p>
+
+<h2>Rules for This Session</h2>
+<ul>
+<li>Effort stays at about 4 out of 10. You should finish feeling better than you started</li>
+<li>No jumps, no heavy legs, no training to failure</li>
+<li>Stop an exercise if the movement hurts rather than aches</li>
+<li>Skip the strength block entirely if your whole body is too sore, and just do the walk and the mobility</li>
+</ul>
+
+<h2>Part 1: Easy Walk (15-20 min)</h2>
+<p>Walk at a pace where you could hold a conversation. A treadmill or the street both work. Keep the incline flat or very low.</p>
+
+<h2>Part 2: Gentle Mobility (10 min)</h2>
+<p>The same primer as the main program, at half the usual range. Move slowly and stop before any deep stretch feels sharp.</p>
+<ol>
+<li>Ankle dorsiflexion rocks — 1x10 each side</li>
+<li>90/90 hip switches — 1x8 each side, small range</li>
+<li>Couch stretch — 30 sec each side</li>
+<li>World's greatest stretch — 3 each side</li>
+<li>Lateral lunge to hamstring sweep — 5 each side, shallow</li>
+<li>Band lateral walks — 1x10 steps each direction, light band</li>
+</ol>
+
+<h2>Part 3: Light Upper Body and Core (10 min, optional)</h2>
+<p>Your arms and back are probably less sore than your legs, so this is a good place to keep some work going.</p>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Reps</th>
+<th>Suggested weight</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seated Cable Row</td>
+<td>2x15</td>
+<td>20-30 kg on the stack</td>
+<td>45 sec</td>
+<td>Light, squeeze the shoulder blades together</td>
+</tr>
+<tr>
+<td>Machine Chest Press</td>
+<td>2x15</td>
+<td>20-30 kg on the stack</td>
+<td>45 sec</td>
+<td>Smooth and slow, no grinding</td>
+</tr>
+<tr>
+<td>Band Face Pull</td>
+<td>2x15</td>
+<td>Light band</td>
+<td>45 sec</td>
+<td>Keeps the shoulders healthy</td>
+</tr>
+<tr>
+<td>Seated Dumbbell Shoulder Press</td>
+<td>2x12</td>
+<td>6-8 kg each hand</td>
+<td>45 sec</td>
+<td>Stop well short of failure</td>
+</tr>
+<tr>
+<td>Dead Bug</td>
+<td>2x8/side</td>
+<td>Bodyweight</td>
+<td>45 sec</td>
+<td>Lower back stays flat on the floor</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>After the Session</h2>
+<ul>
+<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>
+<li>Drink water and eat a normal protein-rich meal</li>
+<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings</li>
+</ul>
+</div>
+<div class="sub" id="sub-iso" role="tabpanel" data-sub="iso" hidden>
+<h1>Isometrics Recovery Session</h1>
+<p class="meta"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />
+<strong>Time:</strong> about 30-35 minutes</p>
+<p>An alternative to the Recovery day session for the days when your muscles are still sore. Isometrics hold a position without lowering or lifting a weight. Most muscle soreness comes from the lowering part of exercises, so holds usually feel fine on sore muscles.</p>
+
+<h2>Rules for This Session</h2>
+<ul>
+<li>Effort stays at about 50-60% of your max. Don't squeeze as hard as you can</li>
+<li>Hold in the middle of the range. Avoid positions that deeply stretch the sore muscle</li>
+<li>Breathe normally the whole time and never hold your breath</li>
+<li>If it hurts rather than aches, stop that exercise</li>
+<li>Skip any exercise that makes the soreness worse for the rest of the day</li>
+</ul>
+
+<h2>Part 1: Easy Cardio (10 min)</h2>
+<p>Pick one machine and keep the effort easy enough to talk the whole time.</p>
+<ul>
+<li><strong>Simple bike:</strong> the best option for sore legs, low impact and almost no lowering phase</li>
+<li><strong>Treadmill:</strong> flat walk, no incline or downhill</li>
+<li>Skip the echo bike and the rowing machine today, since both get hard quickly</li>
+</ul>
+
+<h2>Part 2: Gentle Mobility (5 min)</h2>
+<ol>
+<li>Ankle dorsiflexion rocks — 1x10 each side</li>
+<li>90/90 hip switches — 1x8 each side, small range</li>
+<li>World's greatest stretch — 3 each side</li>
+</ol>
+
+<h2>Part 3: Isometric Holds (15-20 min)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Hold</th>
+<th>Effort</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glute Bridge Hold</td>
+<td>3x20-30 sec</td>
+<td>50%</td>
+<td>30-45 sec</td>
+<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>
+</tr>
+<tr>
+<td>Shallow Wall Sit</td>
+<td>2x20 sec</td>
+<td>50%</td>
+<td>45 sec</td>
+<td>Only about a quarter of the way down, your quads are likely the sorest. Stand up if it burns sharply</td>
+</tr>
+<tr>
+<td>Side Plank (from the knees)</td>
+<td>2x20 sec/side</td>
+<td>50-60%</td>
+<td>30-45 sec</td>
+<td>Body in a straight line from head to knee</td>
+</tr>
+<tr>
+<td>Dead Bug Hold</td>
+<td>2x15-20 sec/side</td>
+<td>50%</td>
+<td>30 sec</td>
+<td>Opposite arm and leg just above the floor, lower back flat</td>
+</tr>
+<tr>
+<td>Wall Push Hold</td>
+<td>2x20-30 sec</td>
+<td>50%</td>
+<td>30 sec</td>
+<td>Hands on the wall, elbows bent, push into the wall without moving</td>
+</tr>
+<tr>
+<td>Band Row Hold</td>
+<td>2x20-30 sec</td>
+<td>50%</td>
+<td>30 sec</td>
+<td>Elbows bent at 90 degrees, band pulled to the chest, shoulders away from the ears</td>
+</tr>
+<tr>
+<td>Single-leg Balance Hold</td>
+<td>2x30 sec/leg</td>
+<td>Easy</td>
+<td>30 sec</td>
+<td>Ankle and hip stability, keep the standing knee soft</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>After the Session</h2>
+<ul>
+<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>
+<li>Drink water and eat a normal protein-rich meal</li>
+<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>
+</ul>
+</div>
+<div class="sub" id="sub-legs" role="tabpanel" data-sub="legs" hidden>
+<h1>Legs and Ankles Isometrics</h1>
+<p class="meta"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />
+<strong>Time:</strong> about 25-30 minutes</p>
+<p>An isometrics session built for sore legs and for ankle stability, which is one of your weak points. Isometrics hold a position without lowering or lifting a weight, so they are usually comfortable on sore muscles. Use it on the days after a hard leg session, or as a short ankle routine on any recovery day.</p>
+
+<h2>Rules for This Session</h2>
+<ul>
+<li>Effort stays at about 30-50% of your max for the ankle work and 50-60% for the legs. Never squeeze as hard as you can</li>
+<li>Hold in the middle of the range, away from positions that stretch the sore muscle deeply</li>
+<li>Breathe normally the whole time and never hold your breath</li>
+<li>If it hurts rather than aches, stop that exercise</li>
+<li>If an ankle is swollen, hurts to put weight on, or you recently twisted it, skip this session and have it checked</li>
+</ul>
+
+<h2>Part 1: Easy Cardio (5-10 min)</h2>
+<p>Use the simple bike or walk on a flat treadmill at a pace where you could talk the whole time. Skip the echo bike and the rowing machine today.</p>
+
+<h2>Part 2: Ankle Holds (10 min)</h2>
+<p>Do these seated or standing next to a wall. Push the foot against a wall, a bench leg, or a band anchored to a rack. Press gently and let nothing move.</p>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Hold</th>
+<th>Effort</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ankle Press, Toes Up</td>
+<td>1x5 holds of 5-10 sec/leg</td>
+<td>30-40%</td>
+<td>15 sec</td>
+<td>Hook the top of the foot under a bench or band and try to lift the toes</td>
+</tr>
+<tr>
+<td>Ankle Press, Toes Down</td>
+<td>1x5 holds of 5-10 sec/leg</td>
+<td>30-40%</td>
+<td>15 sec</td>
+<td>Press the ball of the foot into the floor or a bench, heel stays lifted</td>
+</tr>
+<tr>
+<td>Ankle Press, Inward</td>
+<td>1x5 holds of 5-10 sec/leg</td>
+<td>30-40%</td>
+<td>15 sec</td>
+<td>Push the inner edge of the foot into a wall or bench leg</td>
+</tr>
+<tr>
+<td>Ankle Press, Outward</td>
+<td>1x5 holds of 5-10 sec/leg</td>
+<td>30-40%</td>
+<td>15 sec</td>
+<td>Push the outer edge of the foot into a wall or bench leg</td>
+</tr>
+<tr>
+<td>Single-leg Balance Hold</td>
+<td>2x30 sec/leg</td>
+<td>Easy</td>
+<td>30 sec</td>
+<td>Standing knee soft, foot flat on the floor. Add a folded towel under the foot once it's easy</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Part 3: Leg Holds (10-15 min)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Exercise</th>
+<th>Sets x Hold</th>
+<th>Effort</th>
+<th>Rest</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glute Bridge Hold</td>
+<td>2x20-30 sec</td>
+<td>50%</td>
+<td>30-45 sec</td>
+<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>
+</tr>
+<tr>
+<td>Shallow Wall Sit</td>
+<td>2x20 sec</td>
+<td>50%</td>
+<td>45 sec</td>
+<td>Only about a quarter of the way down. Your quads are likely the sorest part</td>
+</tr>
+<tr>
+<td>Heel Dig Hold</td>
+<td>2x15-20 sec/leg</td>
+<td>50%</td>
+<td>30 sec</td>
+<td>Lie on your back with one knee slightly bent and press the heel into the floor, feeling the back of the thigh</td>
+</tr>
+<tr>
+<td>Inner Thigh Squeeze</td>
+<td>2x15-20 sec</td>
+<td>40-50%</td>
+<td>30 sec</td>
+<td>Lie on your back with knees bent and a pillow or ball between the knees. Squeeze gently</td>
+</tr>
+<tr>
+<td>Side-lying Hip Hold</td>
+<td>2x15-20 sec/side</td>
+<td>40-50%</td>
+<td>30 sec</td>
+<td>Lie on your side with the top leg raised a few centimeters and held still</td>
+</tr>
+<tr>
+<td>Half-height Calf Raise Hold</td>
+<td>2x20 sec</td>
+<td>50%</td>
+<td>30 sec</td>
+<td>Stand next to a wall for balance, rise halfway onto the balls of the feet and hold</td>
+</tr>
+<tr>
+<td>Toe Lift Wall Lean</td>
+<td>2x15-20 sec</td>
+<td>40%</td>
+<td>30 sec</td>
+<td>Stand with your back on a wall, feet about 30 cm out front, and lift the toes. Works the shin muscles</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>After the Session</h2>
+<ul>
+<li>Your legs and ankles should feel looser than before. If you feel worse, take a full rest day tomorrow</li>
+<li>Drink water and eat a normal protein-rich meal</li>
+<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>
+</ul>
+</div>
+    </section>
+    <section class="doc" data-panel="times" hidden>
+      <p class="kicker">Train</p>
+<h1>Session times</h1>
+<p class="meta"><strong>Program:</strong> Gym<br><strong>Unit:</strong> minutes, mobility primer included</p>
+<p>Every session opens with the mobility primer. The hatched band on each bar is the gap between the low and high estimate for the main lifts.</p>
+<div class="legend"><span><i class="sw mob"></i>Mobility primer</span><span><i class="sw main"></i>Main lifts, low estimate</span><span><i class="sw rng"></i>Range up to the high estimate</span></div>
+<div class="chart">
+<div class="trow"><div class="thead"><span><b>Lift A</b>Deadlift + lower power</span><span class="tval">47–51 min</span></div><div class="track"><i class="mob" style="width:15.000%"></i><i class="main" style="width:63.333%"></i><i class="rng" style="width:6.667%"></i></div></div>
+<div class="trow"><div class="thead"><span><b>Lift B</b>Bench/Pull/Press + core</span><span class="tval">39–44 min</span></div><div class="track"><i class="mob" style="width:15.000%"></i><i class="main" style="width:50.000%"></i><i class="rng" style="width:8.333%"></i></div></div>
+<div class="trow"><div class="thead"><span><b>Lift C</b>Squat + plyo</span><span class="tval">47–51 min</span></div><div class="track"><i class="mob" style="width:15.000%"></i><i class="main" style="width:63.333%"></i><i class="rng" style="width:6.667%"></i></div></div>
+<div class="axis" aria-hidden="true"><span style="left:0%">0</span><span style="left:25%">15</span><span style="left:50%">30</span><span style="left:75%">45</span><span style="left:100%">60</span></div>
+</div>
+<div class="tw"><table class="wide"><thead><tr><th>Session</th><th>Mobility primer</th><th>Main lifts</th><th>Total</th></tr></thead><tbody>
+<tr><td>Lift A (Deadlift + lower power)</td><td>9</td><td>38–42</td><td>47–51</td></tr>
+<tr><td>Lift B (Bench/Pull/Press + core)</td><td>9</td><td>30–35</td><td>39–44</td></tr>
+<tr><td>Lift C (Squat + plyo)</td><td>9</td><td>38–42</td><td>47–51</td></tr>
+<tr><td>Weekly total (3 sessions)</td><td>27</td><td>106–119</td><td>133–146</td></tr>
+</tbody></table></div>
+<h2>Notes</h2>
+<ul>
+<li>Mobility Primer: ankle dorsiflexion, 90/90 hip switches, couch stretch, world&#x27;s greatest stretch, lateral lunge sweep, band lateral walks.</li>
+<li>Deadlift and Back Squat need full rest (~2-2.5 min between sets) — don&#x27;t shorten to save time.</li>
+<li>Box jumps and depth jumps need near-full recovery for jump quality — treat like main lifts, not accessories.</li>
+<li>Plan for 45-55 min on Lift A/C days and 40-50 min on Lift B as a practical round number.</li>
+<li>Real-world variable not included: equipment/rack availability at the gym.</li>
+</ul>
+<p class="src">These figures match gym_workout_time.xlsx.</p>
+    </section>
+    <section class="doc" data-panel="nutrition" hidden>
+      <p class="kicker">Eat</p>
+<h1>Nutrition Plan — Fat Loss (Training-Supportive)</h1>
+<p class="meta"><strong>Profile:</strong> 190cm, 100kg, 25-34, desk job, 3 lifts + 2 basketball sessions/week<br />
+<strong>Goal:</strong> Lose at least 5kg of fat while maintaining strength and performance</p>
+
+<h2>Your Numbers (Estimated)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BMR (resting energy needs)</td>
+<td>~2,040 kcal/day</td>
+</tr>
+<tr>
+<td>TDEE (maintenance, including training)</td>
+<td>~2,950-3,050 kcal/day</td>
+</tr>
+<tr>
+<td>Target intake (moderate deficit)</td>
+<td>~2,550 kcal/day</td>
+</tr>
+<tr>
+<td>Expected rate of loss</td>
+<td>~0.4-0.5 kg/week</td>
+</tr>
+<tr>
+<td>Time to lose 5kg</td>
+<td>~10-12 weeks</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are starting estimates based on standard formulas (Mifflin-St Jeor), not a lab measurement — treat the number as a starting point to adjust from, not a fixed truth. Your actual TDEE could run 200-300 kcal higher or lower depending on things the formula can't see (NEAT, sleep, exact training intensity).</p>
+<p><strong>Why this deficit size:</strong> ~500 kcal/day below maintenance is aggressive enough to see real progress but conservative enough that you can still train hard, recover, and build/maintain muscle — which matters a lot given you're also trying to improve leg athleticism and strength. A bigger deficit would speed things up short-term but tends to tank training quality and makes muscle loss more likely.</p>
+
+<h2>Daily Targets</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Amount</th>
+<th>Calories</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protein</td>
+<td>~200g</td>
+<td>~800 kcal</td>
+<td>Preserves muscle in a deficit, keeps you full. ~2g/kg bodyweight</td>
+</tr>
+<tr>
+<td>Fat</td>
+<td>~75g</td>
+<td>~675 kcal</td>
+<td>Minimum for hormone health, don't go much lower</td>
+</tr>
+<tr>
+<td>Carbs</td>
+<td>~270g</td>
+<td>~1,075 kcal</td>
+<td>Fuels lifting + basketball performance — don't slash these to hit calories, cut fat/processed food instead</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>~2,550 kcal</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>How to Actually Hit This</h2>
+<p><strong>Protein (~200g/day) — the non-negotiable one:</strong></p>
+<ul>
+<li>Spread across 3-4 meals (~50g each) rather than back-loaded at dinner</li>
+<li>Easy sources: chicken/turkey breast, Greek yogurt, eggs, whey protein, fish, lean beef, cottage cheese</li>
+<li>If you're consistently under 150g, that's the first thing to fix before anything else</li>
+</ul>
+<p><strong>Carbs — time them around training:</strong></p>
+<ul>
+<li>Bigger carb portions on lift days and basketball days (pre and post-training)</li>
+<li>Smaller portions on Sat/Sun rest days</li>
+<li>Prioritize rice, oats, potatoes, fruit over refined sugar — same calories, but better for fullness and energy during training</li>
+</ul>
+<p><strong>Fat — fill the rest:</strong></p>
+<ul>
+<li>Olive oil, nuts, avocado, fatty fish, whole eggs</li>
+<li>Don't need to track this obsessively once protein and carbs are dialed in — it naturally lands where it lands</li>
+</ul>
+
+<h2>Weekly Adjustment Protocol</h2>
+<p>Body weight fluctuates day to day (water, sodium, digestion) — don't react to single-day numbers.</p>
+<ol>
+<li>Weigh yourself each morning, same conditions (post-bathroom, pre-food)</li>
+<li>Track the <strong>weekly average</strong>, not daily numbers</li>
+<li>Compare week to week:<ul>
+<li><strong>Losing 0.3-0.6kg/week</strong> → on track, keep going</li>
+<li><strong>Losing faster than that</strong> → consider adding ~150-200 kcal back, especially if training quality is suffering</li>
+<li><strong>Not losing after 2-3 full weeks</strong> → cut ~150-200 kcal, usually from carbs/fat, not protein</li>
+</ul>
+</li>
+</ol>
+
+<h2>Around Training Specifically</h2>
+<ul>
+<li><strong>Lift/basketball days:</strong> eat a carb + protein meal 1-2 hours before if possible (e.g. rice + chicken, oats + protein shake)</li>
+<li><strong>Post-training:</strong> protein within a few hours matters more than immediately — don't stress the "anabolic window" myth, just get a solid protein meal in within a reasonable time</li>
+<li><strong>Don't train fasted on basketball days</strong> — explosive/skill work suffers more from low fuel than steady lifting does</li>
+</ul>
+
+<h2>Practical Notes</h2>
+<ul>
+<li><strong>Alcohol:</strong> counts against your deficit and hurts recovery/sleep — not banned, but budget it in rather than ignoring it</li>
+<li><strong>Fiber/vegetables:</strong> not in the macro table above but eat plenty — helps fullness on fewer calories, doesn't cost you much room</li>
+<li><strong>Hydration:</strong> thirst gets mistaken for hunger often — aim for pale yellow urine as a rough gauge</li>
+<li><strong>Sleep:</strong> poor sleep makes fat loss noticeably harder (worse hunger signals, worse training recovery) — worth protecting as much as the diet itself</li>
+</ul>
+
+<h2>Reassessment Point</h2>
+<p>Re-run this whole calculation once you've lost ~5kg, since your maintenance calories will have dropped along with your weight. What works now won't be quite right at 95kg.</p>
+    </section>
+    <section class="doc" data-panel="meals" hidden>
+      <p class="kicker">Eat</p>
+<h1>Protein-Heavy Meal Suggestions</h1>
+<p>Built to fit the ~2,550 kcal / ~200g protein daily targets from your nutrition plan. Mix and match — pick one from each category to build a full day, or swap freely. Gram amounts are for raw/dry weight unless noted.</p>
+
+<h2>Breakfast Options</h2>
+<div class="meal-grid"><article class="meal"><h3>1. Greek Yogurt Power Bowl</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Greek yogurt (0-2% fat)</td>
+<td>300g</td>
+</tr>
+<tr>
+<td>Whey protein powder</td>
+<td>30g</td>
+</tr>
+<tr>
+<td>Oats</td>
+<td>50g</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>100g</td>
+</tr>
+<tr>
+<td>Almond butter</td>
+<td>15g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~630 kcal / ~52g protein</p></article>
+<article class="meal"><h3>2. Egg &amp; Oat Scramble</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whole eggs</td>
+<td>3 (150g)</td>
+</tr>
+<tr>
+<td>Egg whites</td>
+<td>100g</td>
+</tr>
+<tr>
+<td>Oats (cooked separately)</td>
+<td>60g</td>
+</tr>
+<tr>
+<td>Spinach</td>
+<td>50g</td>
+</tr>
+<tr>
+<td>Feta cheese</td>
+<td>20g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~590 kcal / ~45g protein</p></article>
+<article class="meal"><h3>3. Cottage Cheese Toast</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cottage cheese</td>
+<td>250g</td>
+</tr>
+<tr>
+<td>Whole grain bread</td>
+<td>80g (2 slices)</td>
+</tr>
+<tr>
+<td>Whole egg</td>
+<td>1 (50g)</td>
+</tr>
+<tr>
+<td>Cherry tomatoes</td>
+<td>80g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~520 kcal / ~48g protein</p></article>
+
+</div><h2>Lunch Options</h2>
+<div class="meal-grid"><article class="meal"><h3>4. Chicken Rice Bowl</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chicken breast, raw</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>White rice, dry</td>
+<td>90g</td>
+</tr>
+<tr>
+<td>Broccoli</td>
+<td>150g</td>
+</tr>
+<tr>
+<td>Olive oil</td>
+<td>10g</td>
+</tr>
+<tr>
+<td>Soy sauce</td>
+<td>15ml</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~680 kcal / ~55g protein</p></article>
+<article class="meal"><h3>5. Turkey &amp; Sweet Potato</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ground turkey (93% lean), raw</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>Sweet potato</td>
+<td>250g</td>
+</tr>
+<tr>
+<td>Mixed peppers</td>
+<td>100g</td>
+</tr>
+<tr>
+<td>Olive oil</td>
+<td>10g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~610 kcal / ~48g protein</p></article>
+<article class="meal"><h3>6. Tuna Pasta Salad</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Canned tuna in water, drained</td>
+<td>160g</td>
+</tr>
+<tr>
+<td>Whole wheat pasta, dry</td>
+<td>80g</td>
+</tr>
+<tr>
+<td>Cherry tomatoes</td>
+<td>80g</td>
+</tr>
+<tr>
+<td>Olive oil</td>
+<td>10g</td>
+</tr>
+<tr>
+<td>Parmesan</td>
+<td>15g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~600 kcal / ~50g protein</p></article>
+
+</div><h2>Dinner Options</h2>
+<div class="meal-grid"><article class="meal"><h3>7. Steak &amp; Potatoes</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lean beef (sirloin), raw</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>White potato</td>
+<td>300g</td>
+</tr>
+<tr>
+<td>Green beans</td>
+<td>150g</td>
+</tr>
+<tr>
+<td>Butter</td>
+<td>10g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~670 kcal / ~50g protein</p></article>
+<article class="meal"><h3>8. Salmon &amp; Rice</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salmon fillet, raw</td>
+<td>180g</td>
+</tr>
+<tr>
+<td>White rice, dry</td>
+<td>80g</td>
+</tr>
+<tr>
+<td>Asparagus</td>
+<td>150g</td>
+</tr>
+<tr>
+<td>Olive oil</td>
+<td>5g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~640 kcal / ~44g protein</p></article>
+<article class="meal"><h3>9. Chicken Thigh Stir-Fry</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chicken thigh, skinless, raw</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>Mixed stir-fry vegetables</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>White rice, dry</td>
+<td>80g</td>
+</tr>
+<tr>
+<td>Soy sauce</td>
+<td>15ml</td>
+</tr>
+<tr>
+<td>Sesame oil</td>
+<td>8g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~660 kcal / ~48g protein</p></article>
+
+</div><h2>Snacks / Fillers</h2>
+<div class="meal-grid"><article class="meal"><h3>10. Protein Shake</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whey protein powder</td>
+<td>30g</td>
+</tr>
+<tr>
+<td>Milk (or water)</td>
+<td>250ml</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>100g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~280 kcal / ~28g protein</p></article>
+<article class="meal"><h3>11. Cottage Cheese &amp; Fruit</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cottage cheese</td>
+<td>200g</td>
+</tr>
+<tr>
+<td>Pineapple or berries</td>
+<td>100g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~200 kcal / ~24g protein</p></article>
+<article class="meal"><h3>12. Boiled Eggs &amp; Almonds</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whole eggs, boiled</td>
+<td>2 (100g)</td>
+</tr>
+<tr>
+<td>Almonds</td>
+<td>20g</td>
+</tr>
+</tbody>
+</table></div>
+<p class="macro">~270 kcal / ~14g protein</p></article>
+
+</div><h2>Sample Full Day (~2,540 kcal / ~200g protein)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Meal</th>
+<th>Pick</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breakfast</td>
+<td>#1 Greek Yogurt Power Bowl — 630 kcal / 52g protein</td>
+</tr>
+<tr>
+<td>Lunch</td>
+<td>#4 Chicken Rice Bowl — 680 kcal / 55g protein</td>
+</tr>
+<tr>
+<td>Snack</td>
+<td>#10 Protein Shake — 280 kcal / 28g protein</td>
+</tr>
+<tr>
+<td>Dinner</td>
+<td>#7 Steak &amp; Potatoes — 670 kcal / 50g protein</td>
+</tr>
+<tr>
+<td>Snack</td>
+<td>#11 Cottage Cheese &amp; Fruit — 200 kcal / 24g protein</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~2,460 kcal / ~209g protein</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Add a small extra carb source (fruit, rice) if you're short on your calorie target for the day — easier to nudge up than to build a whole extra meal.</p>
+
+<h2>Notes</h2>
+<ul>
+<li>Gram amounts for meat/fish are <strong>raw weight</strong> — cooked weight will look smaller, that's normal (water loss)</li>
+<li>These are starting points, not rules — swap proteins/carbs/veg freely as long as the protein and calorie ballpark holds</li>
+<li>On basketball/lift days, lean toward the higher-carb options (rice, potato, pasta bowls); on rest days, lean toward the lighter snack-style meals</li>
+</ul>
+    </section>
+    <section class="doc" data-panel="groceries" hidden>
+      <p class="kicker">Shop</p>
+<h1>Monthly Grocery Baseline — Budget-Friendly High-Protein Core</h1>
+<p>The recurring baseline of primary, budget-friendly protein staples — not a variety list. Everything here is chosen for being cheap per gram of protein and easy to buy in bulk.</p>
+<p><strong>Where to buy:</strong></p>
+<ul>
+<li><strong>Lidl / MyMarket</strong> — proteins, dairy, pantry, frozen items</li>
+<li><strong>Open-air market</strong> — vegetables and bananas (usually cheaper there)</li>
+</ul>
+<p><strong>A note on the prices below:</strong> these are ballpark estimates based on typical Greek discount-supermarket pricing, not scraped current prices — I couldn't pull reliable live prices for specific Lidl/MyMarket items. Treat this as a planning estimate to sanity-check against your first actual receipt, not an exact number.</p>
+
+<h2>Proteins (Animal)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Item</th>
+<th>Monthly Amount</th>
+<th>Est. Unit Price</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whole chicken</td>
+<td>5-5.5 kg (raw, whole; ~3 average birds)</td>
+<td>~€4.00/kg</td>
+<td>~€21</td>
+</tr>
+<tr>
+<td>Canned tuna (in water)</td>
+<td>6-8 cans</td>
+<td>~€1.75/can</td>
+<td>~€12</td>
+</tr>
+<tr>
+<td>Eggs (medium)</td>
+<td>10 dozen (12 packs of 10)</td>
+<td>~€2.50/pack of 10</td>
+<td>~€30</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Whole chicken note: cheaper than buying cuts separately, but a whole bird only yields ~45-50% of its raw weight as boneless, skinless meat (bone/skin/fat make up the rest) — corrected up from an earlier, too-optimistic yield estimate so the actual usable meat still covers ~600g/week of recipe use.</em></p>
+<p><strong>Subtotal: ~€63</strong></p>
+<h2>Proteins (Dairy)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Item</th>
+<th>Monthly Amount</th>
+<th>Est. Unit Price</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Greek yogurt (0-2%)</td>
+<td>4-5 kg total</td>
+<td>~€4.00/kg</td>
+<td>~€18</td>
+</tr>
+<tr>
+<td>Cottage cheese</td>
+<td>2-2.5 kg total</td>
+<td>~€4.50/kg</td>
+<td>~€10</td>
+</tr>
+<tr>
+<td>Whey protein powder</td>
+<td>1 kg tub</td>
+<td>~€18/tub (budget brand)</td>
+<td>~€18</td>
+</tr>
+<tr>
+<td>Milk (optional, for shakes)</td>
+<td>4-6L</td>
+<td>~€1.15/L</td>
+<td>~€6</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Subtotal: ~€52 (or ~€46 if skipping milk)</strong></p>
+<h2>Carb Staples</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Item</th>
+<th>Monthly Amount</th>
+<th>Est. Unit Price</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oats</td>
+<td>1.5-2 kg</td>
+<td>~€1.75/kg</td>
+<td>~€3</td>
+</tr>
+<tr>
+<td>White rice</td>
+<td>2-2.5 kg</td>
+<td>~€1.75/kg</td>
+<td>~€4</td>
+</tr>
+<tr>
+<td>Potatoes (white)</td>
+<td>2-2.5 kg</td>
+<td>~€1.20/kg</td>
+<td>~€3</td>
+</tr>
+<tr>
+<td>Whole grain bread</td>
+<td>2 loaves</td>
+<td>~€2.00/loaf</td>
+<td>~€4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Subtotal: ~€14</strong></p>
+<h2>Fats</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Item</th>
+<th>Monthly Amount</th>
+<th>Est. Unit Price</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Olive oil</td>
+<td>500ml-750ml</td>
+<td>~€7.00/L</td>
+<td>~€4-5</td>
+</tr>
+<tr>
+<td>Peanut butter (or almond butter)</td>
+<td>1 jar</td>
+<td>~€3-4 (peanut) / ~€6-7 (almond)</td>
+<td>~€3-7</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Subtotal: ~€7-12</strong></p>
+<h2>Vegetables &amp; Bananas (open-air market, weekly)</h2>
+<p>Hardest to pin down since it's whatever's cheap that week, but as a rough weekly budget:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Est. Weekly Cost</th>
+<th>Est. Monthly Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vegetables + bananas</td>
+<td>~€10-15/week</td>
+<td>~€40-60</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Frozen (Lidl/MyMarket)</h2>
+<div class="tw"><table class="wide">
+<thead>
+<tr>
+<th>Item</th>
+<th>Monthly Amount</th>
+<th>Est. Unit Price</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frozen fruit</td>
+<td>~1 kg</td>
+<td>~€3.50/kg</td>
+<td>~€3.5</td>
+</tr>
+<tr>
+<td>Frozen vegetables (optional)</td>
+<td>~1 kg if used</td>
+<td>~€2/kg</td>
+<td>~€2 (if used)</td>
+</tr>
+</tbody>
+</table></div>
+
+<h2>Estimated Total Monthly Cost</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Est. Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proteins (animal)</td>
+<td>~€63</td>
+</tr>
+<tr>
+<td>Proteins (dairy)</td>
+<td>~€46-52</td>
+</tr>
+<tr>
+<td>Carbs</td>
+<td>~€14</td>
+</tr>
+<tr>
+<td>Fats</td>
+<td>~€7-12</td>
+</tr>
+<tr>
+<td>Vegetables/bananas</td>
+<td>~€40-60</td>
+</tr>
+<tr>
+<td>Frozen fruit (+ optional veg)</td>
+<td>~€3.5-5.5</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~€175-205/month</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>This is squarely a budget-focused number for a high-protein diet — the biggest swing factors are the whey protein (skip it and save ~€18 if you'd rather hit protein from food alone) and how much you end up spending at the open-air market week to week.</p>
+
+<h2>How to Use This</h2>
+<ul>
+<li>Buy <strong>proteins, dairy, and pantry items</strong> once a month or split into two trips — chicken keeps well frozen if bought in bulk</li>
+<li>Buy <strong>vegetables and bananas weekly</strong> at the open-air market</li>
+<li>Keep a bag of <strong>frozen fruit</strong> on hand as a fallback rather than relying only on fresh</li>
+<li>This list is intentionally narrow — it's your core, not everything you'll ever eat. Add in whatever's cheap and available that week without needing to update this baseline</li>
+<li><strong>After your first real shopping trip, swap these estimated prices for your actual receipt totals</strong> — that'll make this budget section genuinely accurate instead of a rough guess</li>
+</ul>
+    </section>
+    <section class="doc" data-panel="log" hidden>
+      <p class="kicker">Track</p>
+<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="true" aria-controls="sub-entry" data-sub="entry">Log workout</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-history" data-sub="history">History</button></div>
+<div class="sub" id="sub-entry" role="tabpanel" data-sub="entry">
+<h1>Workout log</h1>
+<p class="log-status" id="log-status" aria-live="polite">Connecting to your saved log…</p>
+<div class="edit-banner" id="log-edit-banner" hidden>
+  <span id="log-edit-text">Editing saved session.</span>
+  <button type="button" class="btn" id="log-edit-cancel">Cancel edit</button>
+</div>
+<div class="pick">
+  <label for="log-program">Program<select id="log-program"></select></label>
+  <label for="log-session">Session<select id="log-session"></select></label>
+  <label for="log-date">Date<input type="date" id="log-date"></label>
+</div>
+<button type="button" class="btn" id="log-fill-last" hidden title="Fill empty fields with your latest numbers">Fill from last time</button>
+<div id="log-cards"></div>
+<div class="plan-actions">
+  <button type="button" class="btn" id="log-add-ex">+ Add exercise</button>
+  <button type="button" class="btn" id="log-reset-ex" hidden>Reset to suggested exercises</button>
+</div>
+<div class="note-box">
+  <label for="log-note">Session notes</label>
+  <textarea id="log-note" rows="2" placeholder="How it felt, any pain, what to change next time"></textarea>
+</div>
+<div class="savebar">
+  <span class="sum" id="log-summary">Nothing entered yet</span>
+  <button type="button" class="btn primary" id="log-save" disabled>Save session</button>
+  <div class="rest" id="log-rest" hidden>
+    <span class="rest-k">Rest</span>
+    <span class="rest-t" id="log-rest-time">2:00</span>
+    <button type="button" class="btn" data-rest="add">+30s</button>
+    <button type="button" class="btn" data-rest="skip">Skip</button>
+  </div>
+</div>
+<p class="log-msg" id="log-msg" role="status" aria-live="polite"></p>
+</div>
+<div class="sub" id="sub-progress" role="tabpanel" data-sub="progress" hidden>
+<h1>Progress</h1>
+<div class="pick one">
+  <label for="log-prog-ex">Exercise<select id="log-prog-ex"></select></label>
+</div>
+<div id="log-progress"></div>
+<details class="prog-add" id="prog-add">
+  <summary>+ Log an exercise</summary>
+  <div class="body">
+    <div class="pick">
+      <label for="pe-ex">Exercise<select id="pe-ex"></select></label>
+      <label for="pe-date">Date<input type="date" id="pe-date"></label>
+    </div>
+    <div class="pick" id="pe-new" hidden>
+      <label for="pe-name">New exercise<input type="text" id="pe-name" autocomplete="off" placeholder="Exercise name"></label>
+      <label for="pe-unit">Log as<select id="pe-unit"><option value="reps">Reps</option><option value="sec">Seconds</option></select></label>
+    </div>
+    <div class="pick">
+      <label for="pe-kg">Weight (kg)<input class="num" id="pe-kg" inputmode="decimal" autocomplete="off" placeholder="optional"></label>
+      <label for="pe-reps"><span id="pe-reps-cap">Reps</span><input class="num" id="pe-reps" inputmode="numeric" autocomplete="off"></label>
+    </div>
+    <div><button type="button" class="btn primary" id="pe-save">Save entry</button></div>
+    <p class="log-msg" id="pe-msg" role="status" aria-live="polite"></p>
+  </div>
+</details>
+</div>
+<div class="sub" id="sub-history" role="tabpanel" data-sub="history" hidden>
+<h1>History</h1>
+<div id="log-history"></div>
+<details class="prog-add" id="backup">
+  <summary>Backup &amp; restore</summary>
+  <div class="body">
+    <p class="hint">Your log lives on this phone only. Download a copy before you clear browser data, switch phones or reinstall the app — restoring writes over whatever is currently here.</p>
+    <div class="plan-actions">
+      <button type="button" class="btn" id="backup-save">Download backup</button>
+      <button type="button" class="btn" id="backup-load">Restore from file</button>
+    </div>
+    <input type="file" id="backup-file" accept="application/json,.json" hidden>
+    <p class="log-msg" id="backup-msg" role="status" aria-live="polite"></p>
+  </div>
+</details>
+</div>
+<div class="toast" id="log-toast" role="status" hidden>
+  <span id="log-toast-text"></span>
+  <button type="button" class="btn" id="log-toast-action" hidden>Undo</button>
+  <button type="button" class="iconbtn" id="log-toast-close" aria-label="Dismiss">×</button>
+</div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  var panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  var nav = document.querySelector('nav');
+  var ids = panels.map(function (p) { return p.getAttribute('data-panel'); });
+
+  function show(id, moved) {
+    if (ids.indexOf(id) < 0) { id = ids[0]; }
+    try { localStorage.setItem('op-tab', id); } catch (e) {}
+    panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== id; });
+    links.forEach(function (a) {
+      if (a.getAttribute('data-tab') === id) {
+        a.setAttribute('aria-current', 'page');
+        if (nav.scrollWidth > nav.clientWidth) {
+          nav.scrollLeft = a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2;
+        }
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+    if (moved) { window.scrollTo(0, 0); }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.subtabs'), function (bar) {
+    var scope = bar.parentNode;
+    var btns = Array.prototype.slice.call(bar.querySelectorAll('button'));
+    function pick(key) {
+      btns.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-sub') === key ? 'true' : 'false'); });
+      Array.prototype.forEach.call(scope.querySelectorAll('.sub'), function (s) { s.hidden = s.getAttribute('data-sub') !== key; });
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-sub')); }); });
+  });
+
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1), true); });
+  var firstTab = location.hash.slice(1);
+  if (!firstTab) { try { firstTab = localStorage.getItem('op-tab') || ''; } catch (e) {} }
+  show(firstTab, false);
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+  var CATALOG = [{"id":"gym","label":"Gym program","sessions":[{"id":"lift-a","label":"Lift A","note":"Lower Body Power","exercises":[{"id":"trap-bar-or-barbell-deadlift","title":"Trap Bar or Barbell Deadlift","hint":"","sets":4,"target":"4x4","unit":"reps","suggested":"50-60 kg total","bw":false},{"id":"box-jump","title":"Box Jump","hint":"moderate height","sets":4,"target":"4x4","unit":"reps","suggested":"Bodyweight, 30-45 cm box","bw":true},{"id":"bulgarian-split-squat","title":"Bulgarian Split Squat","hint":"","sets":3,"target":"3x8/leg","unit":"reps","suggested":"Bodyweight, or 8-10 kg each hand","bw":true},{"id":"lateral-bound","title":"Lateral Bound","hint":"skater jump","sets":3,"target":"3x6/side","unit":"reps","suggested":"Bodyweight","bw":true},{"id":"single-leg-rdl","title":"Single-leg RDL","hint":"","sets":3,"target":"3x8/leg","unit":"reps","suggested":"Bodyweight, or 8-12 kg in one hand","bw":true},{"id":"copenhagen-plank","title":"Copenhagen Plank","hint":"","sets":3,"target":"3x20-30 sec/side","unit":"sec","suggested":"Bodyweight, knee on the bench","bw":true}]},{"id":"lift-b","label":"Lift B","note":"Upper Body + Core","exercises":[{"id":"barbell-bench-press","title":"Barbell Bench Press","hint":"","sets":4,"target":"4x6","unit":"reps","suggested":"30-40 kg total","bw":false},{"id":"weighted-pull-up-or-lat-pulldown","title":"Weighted Pull-up or Lat Pulldown","hint":"","sets":4,"target":"4x6-8","unit":"reps","suggested":"40-50 kg on the stack, or 30-40 kg of assistance","bw":false},{"id":"standing-overhead-press","title":"Standing Overhead Press","hint":"","sets":3,"target":"3x8","unit":"reps","suggested":"20-30 kg total","bw":false},{"id":"single-arm-db-row","title":"Single-arm DB Row","hint":"","sets":3,"target":"3x10/side","unit":"reps","suggested":"14-18 kg","bw":false},{"id":"med-ball-rotational-throw","title":"Med Ball Rotational Throw","hint":"","sets":3,"target":"3x8/side","unit":"reps","suggested":"4-6 kg ball","bw":false},{"id":"hanging-leg-raise-or-ab-wheel","title":"Hanging Leg Raise or Ab Wheel","hint":"","sets":3,"target":"3x12","unit":"reps","suggested":"Bodyweight","bw":true}]},{"id":"lift-c","label":"Lift C","note":"Lower Body Strength + Plyo","exercises":[{"id":"back-squat","title":"Back Squat","hint":"","sets":4,"target":"4x5","unit":"reps","suggested":"40-50 kg total","bw":false},{"id":"depth-jump","title":"Depth Jump","hint":"low box, 12-16\"","sets":4,"target":"4x4","unit":"reps","suggested":"Bodyweight, 30-40 cm box","bw":true},{"id":"walking-lunge","title":"Walking Lunge","hint":"DB or BB","sets":3,"target":"3x10/leg","unit":"reps","suggested":"Bodyweight, or 8-12 kg each hand","bw":true},{"id":"nordic-curl","title":"Nordic Curl","hint":"or eccentric hamstring curl","sets":3,"target":"3x6","unit":"reps","suggested":"Bodyweight, hold a band or a partner for help","bw":true},{"id":"pogo-hops","title":"Pogo Hops","hint":"ankle stiffness","sets":3,"target":"3x15","unit":"reps","suggested":"Bodyweight","bw":true},{"id":"standing-calf-raise","title":"Standing Calf Raise","hint":"","sets":3,"target":"3x12","unit":"reps","suggested":"Bodyweight, or 20-30 kg on the machine","bw":true}]}]},{"id":"fullbody","label":"Full body","sessions":[{"id":"full","label":"Full body","note":"Main session","exercises":[{"id":"barbell-back-squat","title":"Barbell Back Squat","hint":"","sets":3,"target":"3x6","unit":"reps","suggested":"40-50 kg total","bw":false},{"id":"barbell-romanian-deadlift","title":"Barbell Romanian Deadlift","hint":"","sets":3,"target":"3x8","unit":"reps","suggested":"40-50 kg total","bw":false},{"id":"barbell-bench-press","title":"Barbell Bench Press","hint":"","sets":3,"target":"3x8","unit":"reps","suggested":"30-40 kg total","bw":false},{"id":"lat-pulldown-or-assisted-pull-up","title":"Lat Pulldown or Assisted Pull-up","hint":"","sets":3,"target":"3x8-10","unit":"reps","suggested":"40-50 kg on the stack, or 30-40 kg of assistance","bw":false},{"id":"seated-dumbbell-shoulder-press","title":"Seated Dumbbell Shoulder Press","hint":"","sets":3,"target":"3x8","unit":"reps","suggested":"10-14 kg each hand","bw":false},{"id":"dumbbell-box-step-up","title":"Dumbbell Box Step-up","hint":"","sets":3,"target":"3x8/leg","unit":"reps","suggested":"Bodyweight, or 8-12 kg each hand","bw":true},{"id":"cable-pallof-press","title":"Cable Pallof Press","hint":"","sets":3,"target":"3x10/side","unit":"reps","suggested":"5-10 kg","bw":false},{"id":"copenhagen-plank","title":"Copenhagen Plank","hint":"top leg on a box","sets":2,"target":"2x15-20 sec/side","unit":"sec","suggested":"Bodyweight, knee on the box","bw":true}]}]},{"id":"home","label":"Home program","sessions":[{"id":"lift-a","label":"Lift A","note":"Lower Body + Mobility","exercises":[{"id":"goblet-squat","title":"Goblet Squat","hint":"14kg KB","sets":4,"target":"4x8","unit":"reps","suggested":"","bw":false},{"id":"kettlebell-deadlift","title":"Kettlebell Deadlift","hint":"2x14kg, one in each hand","sets":4,"target":"4x6","unit":"reps","suggested":"","bw":false},{"id":"bodyweight-bulgarian-split-squat","title":"Bodyweight Bulgarian Split Squat","hint":"rear foot on chair/couch","sets":3,"target":"3x8/leg","unit":"reps","suggested":"","bw":false},{"id":"band-lateral-walk","title":"Band Lateral Walk","hint":"heavy black band","sets":3,"target":"3x12 steps/side","unit":"reps","suggested":"","bw":false},{"id":"single-leg-glute-bridge","title":"Single-leg Glute Bridge","hint":"","sets":3,"target":"3x10/leg","unit":"reps","suggested":"","bw":false},{"id":"standing-calf-raise","title":"Standing Calf Raise","hint":"holding 14kg KB","sets":3,"target":"3x15","unit":"reps","suggested":"","bw":false}]},{"id":"lift-b","label":"Lift B","note":"Upper Body + Core","exercises":[{"id":"kettlebell-floor-press","title":"Kettlebell Floor Press","hint":"14kg, one arm at a time","sets":4,"target":"4x8/arm","unit":"reps","suggested":"","bw":false},{"id":"long-band-row","title":"Long Band Row","hint":"anchor band to a door/sturdy point","sets":4,"target":"4x10","unit":"reps","suggested":"","bw":false},{"id":"kettlebell-standing-press","title":"Kettlebell Standing Press","hint":"10kg or 8kg DB","sets":3,"target":"3x8/arm","unit":"reps","suggested":"","bw":false},{"id":"renegade-row","title":"Renegade Row","hint":"2x8kg DB, plank position","sets":3,"target":"3x8/side","unit":"reps","suggested":"","bw":false},{"id":"ab-roller","title":"Ab Roller","hint":"","sets":3,"target":"3x8-10","unit":"reps","suggested":"","bw":false},{"id":"band-face-pull","title":"Band Face Pull","hint":"black band","sets":3,"target":"3x12","unit":"reps","suggested":"","bw":false}]},{"id":"lift-c","label":"Lift C","note":"Lower Body + Plyo","exercises":[{"id":"kettlebell-front-squat","title":"Kettlebell Front Squat","hint":"2x14kg","sets":4,"target":"4x6","unit":"reps","suggested":"","bw":false},{"id":"bodyweight-step-up","title":"Bodyweight Step-up","hint":"onto sturdy chair/stair, ~knee height","sets":3,"target":"3x8/leg","unit":"reps","suggested":"","bw":false},{"id":"broad-jump","title":"Broad Jump","hint":"","sets":4,"target":"4x4","unit":"reps","suggested":"","bw":false},{"id":"pogo-hops","title":"Pogo Hops","hint":"","sets":3,"target":"3x15","unit":"reps","suggested":"","bw":false},{"id":"nordic-curl-regression-slow-eccentric-hamstring-lower","title":"Nordic Curl Regression: Slow Eccentric Hamstring Lower","hint":"partner or couch-anchored feet","sets":3,"target":"3x6","unit":"reps","suggested":"","bw":false},{"id":"copenhagen-plank","title":"Copenhagen Plank","hint":"foot on chair for support","sets":3,"target":"3x15-20 sec/side","unit":"sec","suggested":"","bw":false}]}]},{"id":"minimal","label":"Minimal kit","sessions":[{"id":"lift-a","label":"Lift A","note":"Lower Body + Mobility","exercises":[{"id":"kb-goblet-squat","title":"KB Goblet Squat","hint":"","sets":4,"target":"4x10","unit":"reps","suggested":"","bw":false},{"id":"single-kb-romanian-deadlift","title":"Single-KB Romanian Deadlift","hint":"both hands on KB","sets":4,"target":"4x8","unit":"reps","suggested":"","bw":false},{"id":"bulgarian-split-squat","title":"Bulgarian Split Squat","hint":"rear foot elevated, bodyweight","sets":3,"target":"3x10/leg","unit":"reps","suggested":"","bw":false},{"id":"band-lateral-walk","title":"Band Lateral Walk","hint":"black band","sets":3,"target":"3x12 steps/side","unit":"reps","suggested":"","bw":false},{"id":"single-leg-glute-bridge","title":"Single-leg Glute Bridge","hint":"","sets":3,"target":"3x10/leg","unit":"reps","suggested":"","bw":false},{"id":"single-kb-standing-calf-raise","title":"Single-KB Standing Calf Raise","hint":"","sets":3,"target":"3x15","unit":"reps","suggested":"","bw":false}]},{"id":"lift-b","label":"Lift B","note":"Upper Body + Core","exercises":[{"id":"single-arm-kb-floor-press","title":"Single-Arm KB Floor Press","hint":"","sets":4,"target":"4x8/arm","unit":"reps","suggested":"","bw":false},{"id":"long-band-row","title":"Long Band Row","hint":"anchor to door top/sturdy point","sets":4,"target":"4x10","unit":"reps","suggested":"","bw":false},{"id":"single-arm-kb-standing-press","title":"Single-Arm KB Standing Press","hint":"","sets":3,"target":"3x8/arm","unit":"reps","suggested":"","bw":false},{"id":"band-pallof-press","title":"Band Pallof Press","hint":"anchor band to your side at chest height","sets":3,"target":"3x10/side","unit":"reps","suggested":"","bw":false},{"id":"push-up","title":"Push-up","hint":"","sets":3,"target":"3x max-2 (leave 2 reps in reserve)","unit":"reps","suggested":"","bw":false},{"id":"band-face-pull","title":"Band Face Pull","hint":"black band","sets":3,"target":"3x12","unit":"reps","suggested":"","bw":false}]},{"id":"lift-c","label":"Lift C","note":"Lower Body + Plyo","exercises":[{"id":"single-kb-front-rack-squat","title":"Single-KB Front Rack Squat","hint":"","sets":4,"target":"4x8","unit":"reps","suggested":"","bw":false},{"id":"bodyweight-step-up","title":"Bodyweight Step-up","hint":"chair/stair, ~knee height","sets":3,"target":"3x8/leg","unit":"reps","suggested":"","bw":false},{"id":"broad-jump","title":"Broad Jump","hint":"","sets":4,"target":"4x4","unit":"reps","suggested":"","bw":false},{"id":"pogo-hops","title":"Pogo Hops","hint":"","sets":3,"target":"3x15","unit":"reps","suggested":"","bw":false},{"id":"band-resisted-hamstring-curl","title":"Band-Resisted Hamstring Curl","hint":"anchor long band, lying face down","sets":3,"target":"3x12","unit":"reps","suggested":"","bw":false},{"id":"copenhagen-plank","title":"Copenhagen Plank","hint":"foot on chair","sets":3,"target":"3x15-20 sec/side","unit":"sec","suggested":"","bw":false}]}]}];
+  var panel = document.querySelector('[data-panel="log"]');
+  if (!panel) { return; }
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  var LS = {
+    get: function (k) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
+  };
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function todayStr() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function fmtDate(s) {
+    var p = String(s).split('-');
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (isNaN(d.getTime())) { return String(s); }
+    return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+  }
+  function fmtNum(n) { return String(Number(Number(n).toFixed(2))); }
+  function has(v) { return v !== '' && v != null; }
+  function toNum(v) {
+    if (!has(v)) { return null; }
+    var n = parseFloat(String(v).replace(',', '.'));
+    return isFinite(n) && n >= 0 ? n : NaN;
+  }
+  function byDateDesc(a, b) {
+    var da = String(a.date || '');
+    var db = String(b.date || '');
+    if (da !== db) { return da < db ? 1 : -1; }
+    return (b.ts || 0) - (a.ts || 0);
+  }
+
+  var EX = {};
+  CATALOG.forEach(function (p) {
+    p.sessions.forEach(function (s) {
+      s.exercises.forEach(function (e) { if (!EX[e.id]) { EX[e.id] = e; } });
+    });
+  });
+
+  // Rest defaults (seconds) from the program tables. Ranges use the lower bound;
+  // the timer offers +30 sec. Custom exercises fall back to 90 sec.
+  var REST = {
+    'trap-bar-or-barbell-deadlift': 120,
+    'box-jump': 90,
+    'bulgarian-split-squat': 90,
+    'lateral-bound': 90,
+    'single-leg-rdl': 90,
+    'copenhagen-plank': 60,
+    'barbell-bench-press': 120,
+    'weighted-pull-up-or-lat-pulldown': 90,
+    'standing-overhead-press': 90,
+    'single-arm-db-row': 90,
+    'med-ball-rotational-throw': 60,
+    'hanging-leg-raise-or-ab-wheel': 60,
+    'back-squat': 120,
+    'depth-jump': 120,
+    'walking-lunge': 90,
+    'nordic-curl': 90,
+    'pogo-hops': 90,
+    'standing-calf-raise': 60,
+    'barbell-back-squat': 120,
+    'barbell-romanian-deadlift': 120,
+    'lat-pulldown-or-assisted-pull-up': 90,
+    'seated-dumbbell-shoulder-press': 90,
+    'dumbbell-box-step-up': 90,
+    'cable-pallof-press': 60,
+    'goblet-squat': 120,
+    'kettlebell-deadlift': 120,
+    'bodyweight-bulgarian-split-squat': 90,
+    'band-lateral-walk': 60,
+    'single-leg-glute-bridge': 60,
+    'kettlebell-floor-press': 90,
+    'long-band-row': 90,
+    'kettlebell-standing-press': 90,
+    'renegade-row': 90,
+    'ab-roller': 60,
+    'band-face-pull': 60,
+    'kettlebell-front-squat': 120,
+    'bodyweight-step-up': 90,
+    'broad-jump': 90,
+    'nordic-curl-regression-slow-eccentric-hamstring-lower': 90,
+    'kb-goblet-squat': 120,
+    'single-kb-romanian-deadlift': 120,
+    'single-kb-standing-calf-raise': 60,
+    'single-arm-kb-floor-press': 90,
+    'single-arm-kb-standing-press': 90,
+    'band-pallof-press': 60,
+    'push-up': 60,
+    'single-kb-front-rack-squat': 120,
+    'band-resisted-hamstring-curl': 90
+  };
+  function restSecs(ex) { var n = REST[ex && ex.id]; return n ? n : 90; }
+
+  var prefs = LS.get('ol-prefs') || {};
+  var drafts = LS.get('ol-drafts') || {};
+  var plan = LS.get('ol-plan') || {};
+  var editingId = null;
+  var newEx = null;
+  var editingSessionId = null;
+  var editingSession = null;
+  var histEdit = null;
+  var sessions = [];
+  var mode = 'pending';
+  var col = null;
+  var saving = false;
+  var restInt = null;
+  var restEnd = 0;
+  var restDone = false;
+  var audioCtx = null;
+  var wakeLock = null;
+  var wakePending = false;
+  var toastTimer = null;
+  var toastAction = null;
+  var deletingSessionId = null;
+  var dateVal = todayStr();
+  var pendingRefresh = false;
+  var dbCount = 0;
+
+  function program() {
+    for (var i = 0; i < CATALOG.length; i++) { if (CATALOG[i].id === prefs.program) { return CATALOG[i]; } }
+    return CATALOG[0];
+  }
+  function session() {
+    var p = program();
+    for (var i = 0; i < p.sessions.length; i++) { if (p.sessions[i].id === prefs.session) { return p.sessions[i]; } }
+    return p.sessions[0];
+  }
+  function normalizePrefs() {
+    if (!prefs.program) {
+      prefs.program = 'gym';
+      prefs.session = { 1: 'lift-a', 3: 'lift-b', 5: 'lift-c' }[new Date().getDay()] || 'lift-a';
+    }
+    prefs.program = program().id;
+    prefs.session = session().id;
+  }
+  function savePrefs() { if (!editingSessionId) { LS.set('ol-prefs', prefs); } }
+
+  function key() { return program().id + '/' + session().id; }
+  function clone(v) { return v == null ? v : JSON.parse(JSON.stringify(v)); }
+  // The catalog is a suggestion. Any edit is stored per program/session in ol-plan.
+  function exercises() {
+    var list = plan[key()];
+    return list === undefined ? session().exercises : list;
+  }
+  function editableExercises() {
+    var k = key();
+    if (!plan[k]) { plan[k] = clone(session().exercises); }
+    return plan[k];
+  }
+  function savePlan() { if (!editingSessionId) { LS.set('ol-plan', plan); } }
+  function draft() {
+    var k = key();
+    if (!drafts[k]) { drafts[k] = { sets: {}, note: '', date: dateVal }; }
+    return drafts[k];
+  }
+  function rowsFor(ex) {
+    var d = draft();
+    var a = d.sets[ex.id];
+    if (!a) {
+      a = d.sets[ex.id] = [];
+      var n = Math.max(1, ex.sets || 1);
+      while (a.length < n) { a.push({ kg: '', reps: '', done: false }); }
+    }
+    return a;
+  }
+  // Keep the draft rows in step with the exercise's set count when it is edited.
+  // Filled rows are never dropped.
+  function resizeRows(id, want) {
+    if (!want) { return; }
+    var arr = draft().sets[id];
+    if (!arr) { return; }
+    while (arr.length < want) { arr.push({ kg: '', reps: '', done: false }); }
+    while (arr.length > want && !filled(arr[arr.length - 1])) { arr.pop(); }
+  }
+  var saveTimer = null;
+  function saveDrafts() { if (!editingSessionId) { LS.set('ol-drafts', drafts); } }
+  function saveDraftsSoon() { clearTimeout(saveTimer); saveTimer = setTimeout(saveDrafts, 300); }
+  function findEx(id) {
+    var list = exercises();
+    for (var i = 0; i < list.length; i++) { if (list[i].id === id) { return list[i]; } }
+    return null;
+  }
+  function normTitle(s) { return String(s == null ? '' : s).trim().toLowerCase().replace(/\s+/g, ' '); }
+  // Typing the exact name of another suggested exercise swaps to it (and its
+  // history); any other name is treated as a rename of the current exercise.
+  function catalogByTitle(title) {
+    var t = normTitle(title);
+    if (!t) { return null; }
+    var first = null, sameProgram = null, sameSession = null;
+    var pid = program().id, sid = session().id;
+    CATALOG.forEach(function (p) {
+      p.sessions.forEach(function (s) {
+        s.exercises.forEach(function (e) {
+          if (normTitle(e.title) !== t) { return; }
+          if (!first) { first = e; }
+          if (p.id === pid) {
+            if (!sameProgram) { sameProgram = e; }
+            if (s.id === sid && !sameSession) { sameSession = e; }
+          }
+        });
+      });
+    });
+    return sameSession || sameProgram || first;
+  }
+  function lastFor(id) {
+    var ordered = sessions.slice().sort(byDateDesc);
+    for (var i = 0; i < ordered.length; i++) {
+      var list = ordered[i].exercises || [];
+      for (var j = 0; j < list.length; j++) {
+        if (list[j].id === id && list[j].sets && list[j].sets.length) {
+          return { date: ordered[i].date, sets: list[j].sets };
+        }
+      }
+    }
+    return null;
+  }
+  function fmtSet(s, unit) {
+    var kg = has(s.kg) ? fmtNum(s.kg) : null;
+    var r = has(s.reps) ? fmtNum(s.reps) : null;
+    var u = unit === 'sec' ? ' sec' : '';
+    if (kg !== null && r !== null) { return kg + ' kg × ' + r + (unit === 'sec' ? ' s' : ''); }
+    if (kg !== null) { return kg + ' kg'; }
+    if (r !== null) { return r + (unit === 'sec' ? u : ' reps'); }
+    return '';
+  }
+
+  /* ---------- Log form ---------- */
+  function renderPickers() {
+    var p = program();
+    $('log-program').innerHTML = CATALOG.map(function (c) {
+      return '<option value="' + esc(c.id) + '"' + (c.id === p.id ? ' selected' : '') + '>' + esc(c.label) + '</option>';
+    }).join('');
+    $('log-session').innerHTML = p.sessions.map(function (s) {
+      var label = p.sessions.length > 1 ? s.label + ' — ' + s.note : s.label;
+      return '<option value="' + esc(s.id) + '"' + (s.id === prefs.session ? ' selected' : '') + '>' + esc(label) + '</option>';
+    }).join('');
+    $('log-date').value = dateVal;
+  }
+
+  function cardHtml(ex) {
+    var rows = rowsFor(ex);
+    var last = lastFor(ex.id);
+    var wl = ex.bw ? '+ kg' : 'kg';
+    var rl = ex.unit === 'sec' ? 'sec' : 'reps';
+    var h = '<article class="xc" data-ex="' + esc(ex.id) + '"><div class="xc-head"><h3>' + esc(ex.title) + '</h3>'
+      + '<div class="xc-tools">'
+      + '<button type="button" class="iconbtn" data-act="edit" data-ex="' + esc(ex.id) + '" aria-label="Edit ' + esc(ex.title) + '">Edit</button>'
+      + '<button type="button" class="iconbtn danger" data-act="del-card" data-ex="' + esc(ex.id) + '" aria-label="Delete ' + esc(ex.title) + '" title="Delete exercise">Delete</button>'
+      + '</div></div>';
+    if (ex.hint) { h += '<p class="hint">' + esc(ex.hint) + '</p>'; }
+    h += '<p class="mono">Target ' + esc(ex.target || '—') + (ex.suggested ? ' · Start ' + esc(ex.suggested) : '') + '</p>';
+    if (last) {
+      var txt = last.sets.map(function (s) { return fmtSet(s, ex.unit); }).filter(Boolean).join(' · ');
+      h += '<p class="mono last">Last time (' + esc(fmtDate(last.date)) + '): ' + esc(txt) + '</p>';
+    } else {
+      h += '<p class="mono last">No earlier log for this exercise</p>';
+    }
+    h += '<div class="sets"><div class="setrow hd"><span></span><span>' + wl + '</span><span>' + rl + '</span><span></span></div>';
+    rows.forEach(function (r, i) {
+      var ph = last ? (last.sets[i] || last.sets[last.sets.length - 1]) : null;
+      var pk = ph && has(ph.kg) ? fmtNum(ph.kg) : '';
+      var pr = ph && has(ph.reps) ? fmtNum(ph.reps) : '';
+      var base = ' type="text" autocomplete="off" data-ex="' + esc(ex.id) + '" data-i="' + i + '"';
+      var sn = editingSessionId
+        ? '<span class="sn">' + (i + 1) + '</span>'
+        : '<button type="button" class="sn' + (r.done ? ' done' : '') + '" data-act="done" data-ex="' + esc(ex.id) + '" data-i="' + i + '" aria-label="' + (r.done ? 'Mark set ' + (i + 1) + ' not done' : 'Mark set ' + (i + 1) + ' done') + '" aria-pressed="' + (r.done ? 'true' : 'false') + '" title="' + (r.done ? 'Mark not done' : 'Mark done') + '">' + (r.done ? '✓' : (i + 1)) + '</button>';
+      h += '<div class="setrow">' + sn
+        + '<input class="num" inputmode="decimal" enterkeyhint="next"' + base + ' data-f="kg" value="' + esc(r.kg) + '" placeholder="' + esc(pk) + '" aria-label="' + esc(ex.title) + ', set ' + (i + 1) + ', ' + wl + '">'
+        + '<input class="num" inputmode="numeric" enterkeyhint="next"' + base + ' data-f="reps" value="' + esc(r.reps) + '" placeholder="' + esc(pr) + '" aria-label="' + esc(ex.title) + ', set ' + (i + 1) + ', ' + rl + '">'
+        + '<button type="button" class="x" data-act="rm" data-ex="' + esc(ex.id) + '" data-i="' + i + '" aria-label="Delete set ' + (i + 1) + '" title="Delete set">×</button></div>';
+    });
+    h += '</div><div class="xc-actions"><button type="button" class="btn add" data-act="add" data-ex="' + esc(ex.id) + '" aria-label="Add set" title="Add set">+</button>'
+      + (last ? '<button type="button" class="btn" data-act="copy" data-ex="' + esc(ex.id) + '">Copy last time</button>' : '')
+      + '</div></article>';
+    return h;
+  }
+
+  function editCardHtml(ex, isNew) {
+    function field(fld, label, value, placeholder) {
+      return '<label>' + esc(label) + '<input type="text" autocomplete="off" data-fld="' + fld + '" value="' + esc(value || '') + '" placeholder="' + esc(placeholder || '') + '"></label>';
+    }
+    return '<article class="xc editing">'
+      + '<div class="xc-head"><h3>' + (isNew ? 'New exercise' : 'Edit exercise') + '</h3></div>'
+      + '<div class="xedit">'
+      + field('title', 'Exercise', ex.title, 'Exercise name')
+      + '<div class="two">'
+      + field('target', 'Target', ex.target, '4x4')
+      + field('suggested', 'Start (optional)', ex.suggested, '50-60 kg total')
+      + '</div>'
+      + field('hint', 'Note (optional)', ex.hint, 'moderate height')
+      + '<div class="two">'
+      + '<label>Log as<select data-fld="unit">'
+      + '<option value="reps"' + (ex.unit === 'sec' ? '' : ' selected') + '>Reps</option>'
+      + '<option value="sec"' + (ex.unit === 'sec' ? ' selected' : '') + '>Seconds</option>'
+      + '</select></label>'
+      + '<label class="check"><input type="checkbox" data-fld="bw"' + (ex.bw ? ' checked' : '') + '> Bodyweight (log added kg only)</label>'
+      + '</div>'
+      + '<p class="err" data-edit-err hidden></p>'
+      + '<div class="xc-actions">'
+      + '<button type="button" class="btn primary" data-act="save-edit">' + (isNew ? 'Add exercise' : 'Save changes') + '</button>'
+      + '<button type="button" class="btn" data-act="cancel-edit">Cancel</button>'
+      + (isNew ? '' : '<button type="button" class="btn danger" data-act="del-ex" data-ex="' + esc(ex.id) + '">Delete exercise</button>')
+      + '</div></div></article>';
+  }
+
+  function renderCards() {
+    pendingRefresh = false;
+    var cards = $('log-cards');
+    var list = exercises();
+    if (editingId && editingId !== 'new' && !findEx(editingId)) { editingId = null; }
+    var html = '';
+    if (editingId === 'new' && newEx) { html += editCardHtml(newEx, true); }
+    html += list.map(function (ex) {
+      return editingId === ex.id ? editCardHtml(ex, false) : cardHtml(ex);
+    }).join('');
+    if (!list.length && editingId !== 'new') {
+      html += '<p class="empty">No exercises in this session. Add one, or reset to the suggested program.</p>';
+    }
+    cards.innerHTML = html;
+    var d = draft();
+    var noteEl = $('log-note');
+    if (noteEl.value !== (d.note || '')) { noteEl.value = d.note || ''; }
+    var dateEl = $('log-date');
+    if (d.date && d.date !== dateEl.value && document.activeElement !== dateEl) {
+      dateVal = d.date;
+      dateEl.value = d.date;
+    }
+    var reset = $('log-reset-ex');
+    if (reset) { reset.hidden = !!editingSessionId || plan[key()] === undefined; }
+    var add = $('log-add-ex');
+    if (add) { add.disabled = !!editingId; }
+    var fill = $('log-fill-last');
+    if (fill) {
+      fill.hidden = !!editingSessionId || !!editingId || !list.some(function (e) { return !!lastFor(e.id); });
+    }
+    var programEl = $('log-program');
+    if (programEl) { programEl.disabled = !!editingSessionId; }
+    var sessionEl = $('log-session');
+    if (sessionEl) { sessionEl.disabled = !!editingSessionId; }
+    var banner = $('log-edit-banner');
+    if (banner) {
+      banner.hidden = !editingSessionId;
+      if (editingSessionId && histEdit) {
+        var when = histEdit.source && histEdit.source.date ? ' from ' + fmtDate(histEdit.source.date) : '';
+        $('log-edit-text').textContent = 'Editing saved session' + when + '.';
+      }
+    }
+    updateSummary();
+  }
+  function refreshCards() {
+    if ($('log-cards').contains(document.activeElement)) { pendingRefresh = true; } else { renderCards(); }
+  }
+
+  function filled(r) { return has(r.kg) || has(r.reps); }
+  function counts() {
+    var ex = 0, sets = 0;
+    exercises().forEach(function (e) {
+      var n = rowsFor(e).filter(filled).length;
+      if (n) { ex += 1; sets += n; }
+    });
+    return { ex: ex, sets: sets };
+  }
+  function updateSummary() {
+    var c = counts();
+    $('log-summary').textContent = c.sets
+      ? c.ex + (c.ex === 1 ? ' exercise' : ' exercises') + ' · ' + c.sets + (c.sets === 1 ? ' set' : ' sets')
+      : 'Nothing entered yet';
+    var btn = $('log-save');
+    btn.textContent = editingSessionId ? 'Update session' : 'Save session';
+    btn.disabled = saving || !c.sets;
+  }
+  function setMsg(text, warn) {
+    var m = $('log-msg');
+    m.textContent = text || '';
+    m.className = 'log-msg' + (warn ? ' warn' : '');
+  }
+  function setStatus(text, warn) {
+    var s = $('log-status');
+    s.textContent = text;
+    s.className = 'log-status' + (warn ? ' warn' : '');
+  }
+  function statusReady() {
+    if (mode === 'db') {
+      setStatus('Synced to your account · ' + dbCount + (dbCount === 1 ? ' session saved' : ' sessions saved'));
+    } else if (mode === 'local') {
+      setStatus('Saved on this device only. Syncing to your account is not available here.');
+    }
+  }
+
+  function fmtRest(sec) {
+    if (sec < 0) { sec = 0; }
+    return Math.floor(sec / 60) + ':' + pad(sec % 60);
+  }
+  function ensureAudio() {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) { return; }
+      audioCtx = audioCtx || new AC();
+      if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+    } catch (e) { audioCtx = null; }
+  }
+  function beep() {
+    if (!audioCtx) { return; }
+    try {
+      var t = audioCtx.currentTime;
+      var o = audioCtx.createOscillator();
+      var g = audioCtx.createGain();
+      o.type = 'sine';
+      o.frequency.value = 880;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.2, t + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(t); o.stop(t + 0.32);
+    } catch (e) {}
+    if (navigator.vibrate) { try { navigator.vibrate([180, 90, 180]); } catch (e) {} }
+  }
+  function startRest(ex) {
+    if (editingSessionId) { return; }
+    var sec = restSecs(ex);
+    restEnd = Date.now() + sec * 1000;
+    restDone = false;
+    var box = $('log-rest');
+    if (!box) { return; }
+    box.hidden = false;
+    box.classList.remove('done');
+    $('log-rest-time').textContent = fmtRest(sec);
+    clearInterval(restInt);
+    restInt = setInterval(tickRest, 250);
+    ensureAudio();
+    tickRest();
+    requestWake();
+  }
+  function tickRest() {
+    var box = $('log-rest');
+    if (!box || box.hidden) { return; }
+    var ms = restEnd - Date.now();
+    if (ms <= 0) {
+      clearInterval(restInt); restInt = null;
+      box.classList.add('done');
+      $('log-rest-time').textContent = 'Rest done';
+      if (!restDone) { restDone = true; beep(); }
+      return;
+    }
+    $('log-rest-time').textContent = fmtRest(Math.ceil(ms / 1000));
+  }
+  function stopRest() {
+    clearInterval(restInt); restInt = null;
+    restEnd = 0; restDone = false;
+    var box = $('log-rest');
+    if (box) { box.hidden = true; box.classList.remove('done'); }
+  }
+  function workoutAwake() {
+    var logPanel = document.querySelector('[data-panel="log"]');
+    var entry = $('sub-entry');
+    return !!logPanel && !logPanel.hidden && !!entry && !entry.hidden && document.visibilityState === 'visible';
+  }
+  async function requestWake() {
+    if (!('wakeLock' in navigator) || wakeLock || wakePending || document.visibilityState !== 'visible') { return; }
+    wakePending = true;
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', function () { wakeLock = null; });
+      if (!workoutAwake()) { releaseWake(); }
+    } catch (e) {
+      wakeLock = null;
+    }
+    wakePending = false;
+  }
+  function releaseWake() {
+    if (wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
+  }
+  function syncWake() {
+    if (workoutAwake()) { requestWake(); } else { releaseWake(); }
+  }
+  function showToast(text, actionLabel, action, ms) {
+    var t = $('log-toast');
+    if (!t) { return; }
+    $('log-toast-text').textContent = text;
+    var a = $('log-toast-action');
+    if (action && actionLabel) {
+      a.hidden = false; a.textContent = actionLabel; toastAction = action;
+    } else {
+      a.hidden = true; a.textContent = 'Undo'; toastAction = null;
+    }
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, ms || 8000);
+  }
+  function hideToast() {
+    clearTimeout(toastTimer); toastTimer = null; toastAction = null;
+    var t = $('log-toast');
+    if (t) { t.hidden = true; }
+  }
+
+  function editField(art, fld) {
+    var el = art.querySelector('[data-fld="' + fld + '"]');
+    return el ? String(el.value || '').trim() : '';
+  }
+  function startEdit(id) {
+    if (editingId && editingId !== id) {
+      setMsg('Finish editing the current exercise first.', true);
+      return;
+    }
+    editingId = id;
+    newEx = null;
+    renderCards();
+    var f = cards.querySelector('.xc.editing input[data-fld="title"]');
+    if (f) { f.focus(); f.select(); }
+  }
+  function startNew() {
+    if (editingId) {
+      setMsg('Finish editing the current exercise first.', true);
+      return;
+    }
+    editingId = 'new';
+    newEx = { id: '', title: '', hint: '', sets: 3, target: '', unit: 'reps', suggested: '', bw: false };
+    renderCards();
+    var f = cards.querySelector('.xc.editing input[data-fld="title"]');
+    if (f) { f.focus(); }
+  }
+  function saveEdit() {
+    var art = cards.querySelector('.xc.editing');
+    if (!art) { return; }
+    var isNew = editingId === 'new';
+    var title = editField(art, 'title');
+    var err = art.querySelector('[data-edit-err]');
+    if (!title) {
+      if (err) { err.textContent = 'Give the exercise a name.'; err.hidden = false; }
+      var input = art.querySelector('[data-fld="title"]');
+      if (input) { input.focus(); }
+      return;
+    }
+    var target = editField(art, 'target') || '—';
+    var match = target.match(/^\s*(\d+)\s*[x×]/i);
+    var unitEl = art.querySelector('[data-fld="unit"]');
+    var bwEl = art.querySelector('[data-fld="bw"]');
+    var data = {
+      title: title,
+      hint: editField(art, 'hint'),
+      target: target,
+      suggested: editField(art, 'suggested'),
+      unit: unitEl && unitEl.value === 'sec' ? 'sec' : 'reps',
+      bw: !!(bwEl && bwEl.checked)
+    };
+    if (match) { data.sets = Math.max(1, Math.min(12, +match[1])); }
+
+    var list = editableExercises();
+    var picked = catalogByTitle(title);
+    var idx = -1;
+    for (var i = 0; i < list.length; i++) { if (list[i].id === editingId) { idx = i; break; } }
+    var newId;
+    if (isNew) {
+      var known = picked || peFindByTitle(title);
+      if (!picked && known) { data.unit = known.unit === 'sec' ? 'sec' : 'reps'; }
+      newId = known ? known.id : 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+    } else {
+      newId = picked && picked.id !== editingId ? picked.id : editingId;
+    }
+    for (var j = 0; j < list.length; j++) {
+      if (j !== idx && list[j].id === newId) {
+        if (err) { err.textContent = 'That exercise is already in this session.'; err.hidden = false; }
+        var ti = art.querySelector('[data-fld="title"]');
+        if (ti) { ti.focus(); }
+        return;
+      }
+    }
+    data.id = newId;
+
+    if (isNew) {
+      data.custom = !picked;
+      if (!data.sets) { data.sets = 3; }
+      list.push(data);
+    } else if (idx >= 0) {
+      var oldSets = list[idx].sets || 1;
+      var newSets = data.sets || oldSets;
+      Object.assign(list[idx], data);
+      resizeRows(newId, newSets);
+    }
+    savePlan();
+    saveDrafts();
+    editingId = null;
+    newEx = null;
+    renderCards();
+    setMsg(isNew ? 'Exercise added to this session.' : 'Exercise updated.');
+  }
+  function removeExercise(id) {
+    var list = editableExercises();
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === id) { list.splice(i, 1); break; }
+    }
+    delete draft().sets[id];
+    savePlan();
+    saveDrafts();
+    editingId = null;
+    newEx = null;
+    renderCards();
+    setMsg('Exercise removed from this session.');
+  }
+
+  var cards = $('log-cards');
+  cards.addEventListener('input', function (e) {
+    var t = e.target;
+    if (t.getAttribute && t.getAttribute('data-fld') === 'title') {
+      var art = t.closest ? t.closest('.xc.editing') : null;
+      var errEl = art ? art.querySelector('[data-edit-err]') : null;
+      if (errEl) { errEl.hidden = true; }
+      var picked = catalogByTitle(t.value);
+      var already = picked ? exercises().some(function (e) { return e.id === picked.id; }) : false;
+      if (art && picked && picked.id !== editingId && !already && art.getAttribute('data-picked') !== picked.id) {
+        art.setAttribute('data-picked', picked.id);
+        var setF = function (fld, val) {
+          var el = art.querySelector('[data-fld="' + fld + '"]');
+          if (!el) { return; }
+          if (el.type === 'checkbox') { el.checked = !!val; }
+          else { el.value = val == null ? '' : val; }
+        };
+        setF('target', picked.target || '');
+        setF('suggested', picked.suggested || '');
+        setF('hint', picked.hint || '');
+        setF('unit', picked.unit === 'sec' ? 'sec' : 'reps');
+        setF('bw', !!picked.bw);
+      }
+      return;
+    }
+    if (!t.classList || !t.classList.contains('num')) { return; }
+    var ex = findEx(t.getAttribute('data-ex'));
+    if (!ex) { return; }
+    var rows = rowsFor(ex);
+    rows[+t.getAttribute('data-i')][t.getAttribute('data-f')] = t.value.trim();
+    t.classList.remove('bad');
+    saveDraftsSoon();
+    updateSummary();
+  });
+  cards.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-act]');
+    if (!b) { return; }
+    var act = b.getAttribute('data-act');
+
+    if (act === 'cancel-edit') {
+      editingId = null;
+      newEx = null;
+      renderCards();
+      return;
+    }
+    if (act === 'save-edit') { saveEdit(); return; }
+    if (act === 'del-ex') {
+      if (b.getAttribute('data-armed') !== '1') {
+        b.setAttribute('data-armed', '1');
+        b.textContent = 'Tap again to delete';
+        setTimeout(function () {
+          if (b.isConnected) { b.removeAttribute('data-armed'); b.textContent = 'Delete exercise'; }
+        }, 4000);
+        return;
+      }
+      removeExercise(b.getAttribute('data-ex'));
+      return;
+    }
+    if (act === 'edit') { startEdit(b.getAttribute('data-ex')); return; }
+    if (act === 'del-card') {
+      if (editingId && editingId !== b.getAttribute('data-ex')) {
+        setMsg('Finish editing the current exercise first.', true);
+        return;
+      }
+      if (b.getAttribute('data-armed') !== '1') {
+        b.setAttribute('data-armed', '1');
+        b.textContent = 'Delete?';
+        setTimeout(function () {
+          if (b.isConnected) { b.removeAttribute('data-armed'); b.textContent = 'Delete'; }
+        }, 4000);
+        return;
+      }
+      removeExercise(b.getAttribute('data-ex'));
+      return;
+    }
+    if (editingId) {
+      setMsg('Finish editing the current exercise first.', true);
+      return;
+    }
+
+    var ex = findEx(b.getAttribute('data-ex'));
+    if (!ex) { return; }
+    var rows = rowsFor(ex);
+    if (act === 'done') {
+      var di = +b.getAttribute('data-i');
+      var dr = rows[di];
+      if (!dr) { return; }
+      dr.done = !dr.done;
+      saveDrafts();
+      b.classList.toggle('done', dr.done);
+      b.setAttribute('aria-pressed', dr.done ? 'true' : 'false');
+      b.setAttribute('aria-label', dr.done ? 'Mark set ' + (di + 1) + ' not done' : 'Mark set ' + (di + 1) + ' done');
+      b.setAttribute('title', dr.done ? 'Mark not done' : 'Mark done');
+      b.textContent = dr.done ? '✓' : (di + 1);
+      if (dr.done) { startRest(ex); }
+      return;
+    }
+    if (act === 'add') {
+      if (rows.length < 12) { rows.push({ kg: '', reps: '', done: false }); }
+    } else if (act === 'rm') {
+      rows.splice(+b.getAttribute('data-i'), 1);
+    } else if (act === 'copy') {
+      var last = lastFor(ex.id);
+      if (last) {
+        var copied = last.sets.map(function (s) {
+          return { kg: has(s.kg) ? fmtNum(s.kg) : '', reps: has(s.reps) ? fmtNum(s.reps) : '', done: false };
+        });
+        var want = Math.max(1, ex.sets || 1, last.sets.length, rows.length);
+        while (copied.length < want) { copied.push({ kg: '', reps: '', done: false }); }
+        draft().sets[ex.id] = copied;
+      }
+    }
+    saveDrafts();
+    renderCards();
+  });
+  cards.addEventListener('focusout', function () {
+    setTimeout(function () {
+      if (pendingRefresh && !cards.contains(document.activeElement)) { renderCards(); }
+    }, 0);
+  });
+  $('log-note').addEventListener('input', function () { draft().note = this.value; saveDraftsSoon(); });
+  $('log-add-ex').addEventListener('click', startNew);
+  $('log-fill-last').addEventListener('click', function () {
+    var n = 0;
+    exercises().forEach(function (ex) {
+      var last = lastFor(ex.id);
+      if (!last) { return; }
+      rowsFor(ex).forEach(function (r, i) {
+        var src = last.sets[i];
+        if (!src) { return; }
+        if (!has(r.kg) && has(src.kg)) { r.kg = fmtNum(src.kg); n += 1; }
+        if (!has(r.reps) && has(src.reps)) { r.reps = fmtNum(src.reps); n += 1; }
+      });
+    });
+    saveDrafts();
+    renderCards();
+    setMsg(n
+      ? 'Filled ' + n + ' empty field' + (n === 1 ? '' : 's') + ' from last time.'
+      : 'Nothing to fill — your numbers are already entered.');
+  });
+  $('log-reset-ex').addEventListener('click', function (e) {
+    var b = e.currentTarget;
+    if (b.getAttribute('data-armed') !== '1') {
+      b.setAttribute('data-armed', '1');
+      b.textContent = 'Tap again to reset';
+      setTimeout(function () {
+        if (b.isConnected) { b.removeAttribute('data-armed'); b.textContent = 'Reset to suggested exercises'; }
+      }, 4000);
+      return;
+    }
+    delete plan[key()];
+    savePlan();
+    editingId = null;
+    newEx = null;
+    renderCards();
+    setMsg('Exercises reset to the suggested program.');
+  });
+  $('log-program').addEventListener('change', function () {
+    prefs.program = this.value; prefs.session = ''; normalizePrefs(); savePrefs(); setMsg('');
+    stopRest();
+    editingId = null; newEx = null;
+    renderPickers(); renderCards();
+  });
+  $('log-session').addEventListener('change', function () {
+    prefs.session = this.value; savePrefs(); setMsg('');
+    stopRest();
+    editingId = null; newEx = null;
+    renderCards();
+  });
+  $('log-date').addEventListener('change', function () {
+    if (!this.value) { return; }
+    dateVal = this.value;
+    draft().date = dateVal;
+    saveDrafts();
+  });
+  $('log-edit-cancel').addEventListener('click', function () {
+    if (saving) { return; }
+    exitHistoryEdit();
+    setMsg('Edit cancelled.');
+  });
+  $('log-rest').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-rest]');
+    if (!b) { return; }
+    var act = b.getAttribute('data-rest');
+    if (act === 'skip') { stopRest(); return; }
+    if (act === 'add') {
+      if (!restEnd) { return; }
+      restEnd = Math.max(Date.now(), restEnd) + 30000;
+      restDone = false;
+      var box = $('log-rest');
+      if (box) { box.classList.remove('done'); }
+      if (!restInt) { restInt = setInterval(tickRest, 250); }
+      tickRest();
+    }
+  });
+  $('log-toast-action').addEventListener('click', function () {
+    var fn = toastAction;
+    if (fn) { fn(); }
+  });
+  $('log-toast-close').addEventListener('click', hideToast);
+
+  async function save() {
+    if (saving) { return; }
+    if (editingId) { setMsg('Finish editing the exercise first.', true); return; }
+    var list = exercises();
+    var out = [];
+    var bad = [];
+    list.forEach(function (e) {
+      var sets = [];
+      rowsFor(e).forEach(function (r, i) {
+        if (!filled(r)) { return; }
+        var kg = toNum(r.kg);
+        var reps = toNum(r.reps);
+        if (kg !== kg) { bad.push({ id: e.id, i: i, f: 'kg' }); }
+        if (reps !== reps) { bad.push({ id: e.id, i: i, f: 'reps' }); }
+        sets.push({ kg: kg, reps: reps });
+      });
+      if (sets.length) { out.push({ id: e.id, name: e.title, unit: e.unit || 'reps', sets: sets }); }
+    });
+    if (bad.length) {
+      bad.forEach(function (b) {
+        var el = cards.querySelector('input[data-ex="' + b.id + '"][data-i="' + b.i + '"][data-f="' + b.f + '"]');
+        if (el) { el.classList.add('bad'); }
+      });
+      setMsg('Some numbers are not valid. Use digits like 42.5 or 8.', true);
+      return;
+    }
+    if (!out.length) { setMsg('Enter at least one set first.', true); return; }
+    var saveDate = $('log-date').value || dateVal || todayStr();
+    dateVal = saveDate;
+    draft().date = saveDate;
+    saveDrafts();
+    var ts = Date.now();
+    var src = editingSession;
+    var doc = {
+      ts: src ? (src.ts || ts) : ts,
+      date: saveDate,
+      program: src ? src.program : program().id,
+      programLabel: src ? src.programLabel : program().label,
+      session: src ? src.session : session().id,
+      sessionLabel: src ? src.sessionLabel : session().label,
+      exercises: out, note: (draft().note || '').trim()
+    };
+    if (src && src.source) { doc.source = src.source; }
+    saving = true;
+    updateSummary();
+    setMsg('Saving…');
+    try {
+      if (src) {
+        if (mode === 'db') {
+          await col.doc(src.id).set(doc);
+          sessions = sessions.map(function (s) { return s.id === src.id ? Object.assign({ id: src.id }, doc) : s; });
+        } else {
+          var updated = Object.assign({ id: src.id }, doc);
+          sessions = sessions.map(function (s) { return s.id === src.id ? updated : s; });
+          LS.set('ol-sessions', sessions);
+        }
+        saving = false;
+        stopRest();
+        exitHistoryEdit();
+        refreshViews();
+        setMsg('Session updated.');
+        return;
+      }
+      if (mode === 'db') {
+        await col.doc('s' + ts).set(doc);
+      } else {
+        sessions.unshift(Object.assign({ id: 's' + ts }, doc));
+        LS.set('ol-sessions', sessions);
+      }
+      delete drafts[key()];
+      saveDrafts();
+      var n = out.reduce(function (a, e) { return a + e.sets.length; }, 0);
+      saving = false;
+      stopRest();
+      renderCards();
+      refreshViews();
+      setMsg('Saved: ' + out.length + (out.length === 1 ? ' exercise' : ' exercises') + ', ' + n + (n === 1 ? ' set.' : ' sets.'));
+    } catch (err) {
+      saving = false;
+      updateSummary();
+      setMsg('Could not save (' + ((err && err.code) || 'error') + '). Your numbers are still here, try again.', true);
+    }
+  }
+  $('log-save').addEventListener('click', save);
+
+  /* ---------- History ---------- */
+  function startHistoryEdit(id) {
+    var src = null;
+    for (var i = 0; i < sessions.length; i++) { if (sessions[i].id === id) { src = sessions[i]; break; } }
+    if (!src) { return; }
+    if (saving || editingId || editingSessionId) {
+      var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
+      if (entryBtn) { entryBtn.click(); }
+      setMsg(saving
+        ? 'A session is saving. Try again in a moment.'
+        : editingSessionId
+          ? 'Finish updating the current saved session first.'
+          : 'Finish editing the exercise first.', true);
+      window.scrollTo(0, 0);
+      return;
+    }
+    var prevProgram = prefs.program, prevSession = prefs.session, prevDate = dateVal;
+    stopRest();
+    var prog = null, sess = null;
+    for (var p = 0; p < CATALOG.length; p++) {
+      if (CATALOG[p].id === src.program) {
+        prog = CATALOG[p];
+        for (var s = 0; s < prog.sessions.length; s++) {
+          if (prog.sessions[s].id === src.session) { sess = prog.sessions[s]; break; }
+        }
+        break;
+      }
+    }
+    if (prog && sess) {
+      prefs.program = prog.id;
+      prefs.session = sess.id;
+    }
+    var k = key();
+    var hadPlan = Object.prototype.hasOwnProperty.call(plan, k);
+    var hadDraft = Object.prototype.hasOwnProperty.call(drafts, k);
+    histEdit = {
+      id: src.id,
+      key: k,
+      source: src,
+      prevProgram: prevProgram,
+      prevSession: prevSession,
+      prevDate: prevDate,
+      hadPlan: hadPlan,
+      plan: hadPlan ? clone(plan[k]) : undefined,
+      hadDraft: hadDraft,
+      draft: hadDraft ? clone(drafts[k]) : undefined
+    };
+    editingSessionId = src.id;
+    editingSession = src;
+    var list = (src.exercises || []).map(function (e) {
+      var meta = EX[e.id] || {};
+      var n = Math.max(1, (e.sets || []).length);
+      return {
+        id: e.id,
+        title: e.name || meta.title || e.id,
+        hint: meta.hint || '',
+        target: meta.target || (n + (n === 1 ? ' set' : ' sets')),
+        sets: n,
+        unit: e.unit || meta.unit || 'reps',
+        suggested: meta.suggested || '',
+        bw: !!meta.bw
+      };
+    });
+    plan[k] = list;
+    var d = { sets: {}, note: src.note || '', date: src.date || todayStr() };
+    list.forEach(function (ex, ix) {
+      var saved = (src.exercises && src.exercises[ix]) || {};
+      d.sets[ex.id] = (saved.sets || []).map(function (x) {
+        return { kg: has(x.kg) ? fmtNum(x.kg) : '', reps: has(x.reps) ? fmtNum(x.reps) : '' };
+      });
+    });
+    drafts[k] = d;
+    dateVal = d.date;
+    editingId = null;
+    newEx = null;
+    var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
+    if (entryBtn) { entryBtn.click(); }
+    renderPickers();
+    renderCards();
+    window.scrollTo(0, 0);
+    setMsg('Editing saved session from ' + fmtDate(d.date) + '. Update it when you are done.');
+  }
+  function exitHistoryEdit() {
+    if (!histEdit) {
+      editingSessionId = null;
+      editingSession = null;
+      return;
+    }
+    var h = histEdit;
+    if (h.hadPlan) { plan[h.key] = h.plan; } else { delete plan[h.key]; }
+    if (h.hadDraft) { drafts[h.key] = h.draft; } else { delete drafts[h.key]; }
+    prefs.program = h.prevProgram;
+    prefs.session = h.prevSession;
+    dateVal = h.prevDate;
+    editingSessionId = null;
+    editingSession = null;
+    histEdit = null;
+    editingId = null;
+    newEx = null;
+    savePrefs();
+    savePlan();
+    saveDrafts();
+    renderPickers();
+    renderCards();
+  }
+
+  function renderHistory() {
+    var el = $('log-history');
+    if (!sessions.length) {
+      el.innerHTML = '<p class="empty">No sessions saved yet. Fill in a workout on the Log workout tab and tap Save session. It will show up here.</p>';
+      return;
+    }
+    el.innerHTML = sessions.slice().sort(byDateDesc).map(function (s) {
+      var exs = s.exercises || [];
+      var nSets = exs.reduce(function (a, e) { return a + ((e.sets || []).length); }, 0);
+      var items = exs.map(function (e) {
+        var unit = e.unit || (EX[e.id] && EX[e.id].unit) || 'reps';
+        var txt = (e.sets || []).map(function (x) { return fmtSet(x, unit); }).filter(Boolean).join(' · ');
+        return '<li><b>' + esc(e.name || (EX[e.id] && EX[e.id].title) || e.id) + '</b><span>' + esc(txt) + '</span></li>';
+      }).join('');
+      return '<details class="hs"><summary><span class="hd">' + esc(fmtDate(s.date)) + '</span>'
+        + '<span class="hn">' + esc((s.sessionLabel || '') + (s.programLabel ? ' · ' + s.programLabel : '')) + '</span>'
+        + '<span class="hc">' + exs.length + (exs.length === 1 ? ' exercise' : ' exercises') + ' · ' + nSets + (nSets === 1 ? ' set' : ' sets') + '</span></summary>'
+        + '<div class="body"><ul class="hl">' + items + '</ul>'
+        + (s.note ? '<p class="nt">' + esc(s.note) + '</p>' : '')
+        + '<div class="hist-actions">'
+        + '<button type="button" class="btn hist-edit" data-edit-session="' + esc(s.id) + '">'
+        + '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>'
+        + 'Edit session</button>'
+        + '<button type="button" class="btn danger" data-del="' + esc(s.id) + '">Delete session</button>'
+        + '</div></div></details>';
+    }).join('');
+  }
+  $('log-history').addEventListener('click', function (e) {
+    var editBtn = e.target.closest('button[data-edit-session]');
+    if (editBtn) { startHistoryEdit(editBtn.getAttribute('data-edit-session')); return; }
+    var b = e.target.closest('button[data-del]');
+    if (!b) { return; }
+    removeSession(b.getAttribute('data-del'));
+  });
+  async function removeSession(id) {
+    if (deletingSessionId === id) { return; }
+    deletingSessionId = id;
+    if (editingSessionId === id) { exitHistoryEdit(); }
+    var src = null, idx = -1;
+    for (var i = 0; i < sessions.length; i++) {
+      if (sessions[i].id === id) { src = sessions[i]; idx = i; break; }
+    }
+    if (!src) { deletingSessionId = null; return; }
+    try {
+      if (mode === 'db') {
+        await col.doc(id).delete();
+        sessions = sessions.filter(function (s) { return s.id !== id; });
+        refreshViews();
+      } else {
+        sessions = sessions.filter(function (s) { return s.id !== id; });
+        LS.set('ol-sessions', sessions);
+        refreshViews();
+      }
+      showToast('Session deleted', 'Undo', function () { undoRemoveSession(src, idx); });
+    } catch (err) {
+      showToast('Could not delete the session.', null, null, 6000);
+    }
+    deletingSessionId = null;
+  }
+  async function undoRemoveSession(src, idx) {
+    hideToast();
+    var restored = clone(src);
+    sessions = sessions.filter(function (s) { return s.id !== src.id; });
+    if (idx < 0 || idx > sessions.length) { idx = sessions.length; }
+    sessions.splice(idx, 0, restored);
+    if (mode !== 'db') { LS.set('ol-sessions', sessions); }
+    refreshViews();
+    try {
+      if (mode === 'db') {
+        var data = clone(src);
+        delete data.id;
+        await col.doc(src.id).set(data);
+      }
+      showToast('Session restored', null, null, 3000);
+    } catch (err) {
+      sessions = sessions.filter(function (s) { return s.id !== src.id; });
+      refreshViews();
+      showToast('Could not restore the session.', null, null, 6000);
+    }
+  }
+
+  /* ---------- Progress ---------- */
+  function buildIndex() {
+    var idx = {};
+    var asc = sessions.slice().sort(function (a, b) { return byDateDesc(b, a); });
+    asc.forEach(function (s) {
+      (s.exercises || []).forEach(function (e) {
+        if (!e.sets || !e.sets.length) { return; }
+        var o = idx[e.id];
+        if (!o) {
+          o = idx[e.id] = { id: e.id, name: e.name || (EX[e.id] && EX[e.id].title) || e.id, unit: e.unit || (EX[e.id] && EX[e.id].unit) || 'reps', rows: [] };
+        }
+        o.rows.push({ date: s.date, sets: e.sets });
+      });
+    });
+    Object.keys(idx).forEach(function (id) {
+      var o = idx[id];
+      o.useKg = o.rows.every(function (r) { return r.sets.some(function (x) { return x.kg > 0; }); });
+      o.pts = o.rows.map(function (r) {
+        var vals = o.useKg
+          ? r.sets.filter(function (x) { return x.kg > 0; }).map(function (x) { return x.kg; })
+          : r.sets.map(function (x) { return x.reps || 0; });
+        return { date: r.date, v: Math.max.apply(null, vals), sets: r.sets };
+      });
+      o.metric = o.useKg ? 'Top weight' : (o.unit === 'sec' ? 'Best hold' : 'Best reps');
+      o.mu = o.useKg ? 'kg' : (o.unit === 'sec' ? 'sec' : 'reps');
+    });
+    return idx;
+  }
+  function niceStep(raw) {
+    var p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10));
+    var f = raw / p;
+    var n = f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10;
+    return n * p;
+  }
+  function niceTicks(lo, hi, count) {
+    var step = niceStep(((hi - lo) / count) || 1);
+    var a = Math.floor(lo / step) * step;
+    var b = Math.ceil(hi / step) * step;
+    var t = [];
+    for (var v = a; v <= b + step / 2; v += step) { t.push(Number(v.toFixed(6))); }
+    return t;
+  }
+  function chartSvg(w, o) {
+    var pts = o.pts;
+    var H = 230, L = 44, R = 18, T = 26, B = 30;
+    var vals = pts.map(function (p) { return p.v; });
+    var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+    var span = (mx - mn) || mx * 0.2 || 1;
+    var lo = Math.max(0, mn - span * 0.35), hi = mx + span * 0.35;
+    var ticks = niceTicks(lo, hi, 4);
+    var y0 = ticks[0], y1 = ticks[ticks.length - 1];
+    var n = pts.length;
+    function X(i) { return n === 1 ? L + (w - L - R) / 2 : L + (w - L - R) * i / (n - 1); }
+    function Y(v) { return T + (H - T - B) * (1 - (v - y0) / ((y1 - y0) || 1)); }
+    var last = pts[n - 1];
+    var s = '<svg class="pchart" viewBox="0 0 ' + w + ' ' + H + '" width="' + w + '" height="' + H + '" role="img" aria-label="'
+      + esc(o.name + ': ' + o.metric.toLowerCase() + ' per session, latest ' + fmtNum(last.v) + ' ' + o.mu + ' over ' + n + (n === 1 ? ' session' : ' sessions')) + '">';
+    ticks.forEach(function (t) {
+      s += '<line class="grid" x1="' + L + '" x2="' + (w - R) + '" y1="' + Y(t).toFixed(1) + '" y2="' + Y(t).toFixed(1) + '"/>'
+        + '<text x="' + (L - 8) + '" y="' + (Y(t) + 4).toFixed(1) + '" text-anchor="end">' + fmtNum(t) + '</text>';
+    });
+    if (n > 1) {
+      s += '<polyline class="ln" points="' + pts.map(function (p, i) { return X(i).toFixed(1) + ',' + Y(p.v).toFixed(1); }).join(' ') + '"/>';
+    }
+    pts.forEach(function (p, i) {
+      var isLast = i === n - 1;
+      s += '<circle class="pt' + (isLast ? ' last' : '') + '" cx="' + X(i).toFixed(1) + '" cy="' + Y(p.v).toFixed(1) + '" r="' + (isLast ? 6 : 4.5) + '"/>';
+    });
+    var maxLabels = Math.max(2, Math.floor((w - L - R) / 64));
+    var step = Math.ceil(n / maxLabels);
+    pts.forEach(function (p, i) {
+      var isLast = i === n - 1;
+      if (!isLast && (i % step !== 0 || (n - 1 - i) < step)) { return; }
+      var anchor = n === 1 ? 'middle' : (i === 0 ? 'start' : (isLast ? 'end' : 'middle'));
+      s += '<text x="' + X(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="' + anchor + '">' + esc(fmtDate(p.date)) + '</text>';
+    });
+    var lx = X(n - 1);
+    s += '<text class="vl" x="' + lx.toFixed(1) + '" y="' + (Y(last.v) - 12).toFixed(1) + '" text-anchor="' + (lx > w - 34 ? 'end' : 'middle') + '">' + fmtNum(last.v) + '</text>';
+    return s + '</svg>';
+  }
+  function renderProgress() {
+    var idx = buildIndex();
+    var ids = Object.keys(idx).sort(function (a, b) {
+      return (idx[b].rows.length - idx[a].rows.length) || idx[a].name.localeCompare(idx[b].name);
+    });
+    var sel = $('log-prog-ex');
+    var host = $('log-progress');
+    if (!ids.length) {
+      sel.innerHTML = '<option>No exercises logged yet</option>';
+      sel.disabled = true;
+      host.innerHTML = '<p class="empty">Progress charts appear here once you have saved a session. Each exercise shows its trend, best result and change since the first time.</p>';
+      return;
+    }
+    sel.disabled = false;
+    if (!idx[prefs.progressEx]) { prefs.progressEx = ids[0]; }
+    sel.innerHTML = ids.map(function (id) {
+      return '<option value="' + esc(id) + '"' + (id === prefs.progressEx ? ' selected' : '') + '>' + esc(idx[id].name) + ' (' + idx[id].rows.length + ')</option>';
+    }).join('');
+    var o = idx[prefs.progressEx];
+    var pts = o.pts;
+    var first = pts[0].v, lastV = pts[pts.length - 1].v;
+    var best = Math.max.apply(null, pts.map(function (p) { return p.v; }));
+    var diff = lastV - first;
+    var diffTxt = pts.length > 1 ? (diff > 0 ? '+' : diff < 0 ? '−' : '') + fmtNum(Math.abs(diff)) : '—';
+    var rows = pts.slice().reverse().map(function (p) {
+      var unit = o.unit;
+      var txt = p.sets.map(function (x) { return fmtSet(x, unit); }).filter(Boolean).join(' · ');
+      return '<tr><td>' + esc(fmtDate(p.date)) + '</td><td>' + esc(txt) + '</td><td>' + fmtNum(p.v) + ' ' + o.mu + '</td></tr>';
+    }).join('');
+    host.innerHTML =
+      '<div class="stats">'
+      + '<div class="stat"><span class="k">Latest</span><span class="v">' + fmtNum(lastV) + '<small>' + o.mu + '</small></span></div>'
+      + '<div class="stat"><span class="k">Best</span><span class="v">' + fmtNum(best) + '<small>' + o.mu + '</small></span></div>'
+      + '<div class="stat"><span class="k">Since first</span><span class="v">' + diffTxt + '<small>' + (pts.length > 1 ? o.mu : '') + '</small></span></div>'
+      + '</div>'
+      + '<p class="cap">' + esc(o.metric) + ' per session (' + o.mu + ')</p>'
+      + '<div class="chartbox" id="log-chart"></div>'
+      + (pts.length === 1 ? '<p class="empty">Log this exercise again to start a trend line.</p>' : '')
+      + '<div class="tw"><table><thead><tr><th>Date</th><th>Sets</th><th>' + esc(o.metric) + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    drawChart();
+  }
+  function drawChart() {
+    var box = $('log-chart');
+    if (!box) { return; }
+    var w = Math.floor(box.clientWidth);
+    if (w < 80) { return; }
+    var idx = buildIndex();
+    var o = idx[prefs.progressEx];
+    if (o) { box.innerHTML = chartSvg(w, o); }
+  }
+  function peKnown() {
+    var byId = {};
+    function add(e, title, unit) {
+      if (!e || !e.id || byId[e.id]) { return; }
+      byId[e.id] = { id: e.id, title: title || e.title || e.name || e.id, unit: unit || e.unit || 'reps' };
+    }
+    CATALOG.forEach(function (p) {
+      p.sessions.forEach(function (s) {
+        s.exercises.forEach(function (e) { add(e, e.title, e.unit); });
+      });
+    });
+    Object.keys(plan).forEach(function (k) {
+      (plan[k] || []).forEach(function (e) { add(e, e.title, e.unit); });
+    });
+    sessions.forEach(function (s) {
+      (s.exercises || []).forEach(function (e) { add(e, e.name, e.unit); });
+    });
+    return Object.keys(byId).map(function (id) { return byId[id]; }).sort(function (a, b) {
+      return a.title.localeCompare(b.title);
+    });
+  }
+  function peFind(id) {
+    var list = peKnown();
+    for (var i = 0; i < list.length; i++) { if (list[i].id === id) { return list[i]; } }
+    return null;
+  }
+  function peFindByTitle(title) {
+    var t = normTitle(title);
+    if (!t) { return null; }
+    var list = peKnown();
+    for (var i = 0; i < list.length; i++) { if (normTitle(list[i].title) === t) { return list[i]; } }
+    return null;
+  }
+  function peMsg(text, warn) {
+    var m = $('pe-msg');
+    m.textContent = text || '';
+    m.className = 'log-msg' + (warn ? ' warn' : '');
+  }
+  function populatePeExercises() {
+    var sel = $('pe-ex');
+    if (!sel) { return; }
+    var cur = sel.value;
+    var list = peKnown();
+    sel.innerHTML = '<option value="__new">New exercise…</option>' + list.map(function (e) {
+      return '<option value="' + esc(e.id) + '">' + esc(e.title) + '</option>';
+    }).join('');
+    var keep = cur && (cur === '__new' || list.some(function (e) { return e.id === cur; }));
+    var charted = prefs.progressEx && list.some(function (e) { return e.id === prefs.progressEx; }) ? prefs.progressEx : '';
+    sel.value = keep ? cur : (charted || (list.length ? list[0].id : '__new'));
+    peSync();
+  }
+  function peSync() {
+    var sel = $('pe-ex');
+    if (!sel) { return; }
+    var isNew = sel.value === '__new';
+    var ex = isNew ? null : peFind(sel.value);
+    var unit = isNew ? ($('pe-unit').value === 'sec' ? 'sec' : 'reps') : (ex ? ex.unit : 'reps');
+    $('pe-new').hidden = !isNew;
+    $('pe-reps-cap').textContent = unit === 'sec' ? 'Seconds' : 'Reps';
+    var last = ex ? lastFor(ex.id) : null;
+    var lk = '', lr = '';
+    if (last && last.sets.length) {
+      var s = last.sets[last.sets.length - 1];
+      lk = has(s.kg) ? fmtNum(s.kg) : '';
+      lr = has(s.reps) ? fmtNum(s.reps) : '';
+    }
+    $('pe-kg').placeholder = lk || 'optional';
+    $('pe-reps').placeholder = lr || '';
+  }
+  async function saveProgressEntry() {
+    if (saving) { peMsg('A session is saving. Try again in a moment.', true); return; }
+    if (editingId) { peMsg('Finish editing the exercise in the log first.', true); return; }
+    var sel = $('pe-ex');
+    var isNew = sel.value === '__new';
+    var title, id, unit;
+    if (isNew) {
+      title = String($('pe-name').value || '').trim();
+      if (!title) { peMsg('Give the exercise a name.', true); $('pe-name').focus(); return; }
+      unit = $('pe-unit').value === 'sec' ? 'sec' : 'reps';
+      var known = peFindByTitle(title);
+      if (known) { id = known.id; title = known.title; unit = known.unit; }
+      else { id = 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
+    } else {
+      var ex = peFind(sel.value);
+      if (!ex) { peMsg('Pick an exercise.', true); return; }
+      id = ex.id; title = ex.title; unit = ex.unit;
+    }
+    var kg = toNum($('pe-kg').value);
+    var reps = toNum($('pe-reps').value);
+    if (kg !== kg) { peMsg('Weight must be a number like 42.5.', true); $('pe-kg').focus(); return; }
+    if (reps !== reps) { peMsg('Reps must be a number like 8.', true); $('pe-reps').focus(); return; }
+    if (kg === null && reps === null) { peMsg('Enter a weight or reps.', true); $('pe-reps').focus(); return; }
+    var date = $('pe-date').value || todayStr();
+    var ts = Date.now();
+    var doc = {
+      ts: ts, date: date,
+      program: program().id, programLabel: '',
+      session: session().id, sessionLabel: 'Progress entry',
+      source: 'progress',
+      exercises: [{ id: id, name: title, unit: unit, sets: [{ kg: kg, reps: reps }] }],
+      note: ''
+    };
+    var btn = $('pe-save');
+    btn.disabled = true;
+    peMsg('Saving…');
+    try {
+      var newId = 's' + ts;
+      if (mode === 'db') {
+        await col.doc(newId).set(doc);
+      }
+      sessions = sessions.filter(function (s) { return s.id !== newId; });
+      sessions.unshift(Object.assign({ id: newId }, doc));
+      if (mode !== 'db') { LS.set('ol-sessions', sessions); }
+      prefs.progressEx = id;
+      savePrefs();
+      refreshViews();
+      populatePeExercises();
+      $('pe-ex').value = id;
+      peSync();
+      $('pe-kg').value = '';
+      $('pe-reps').value = '';
+      $('pe-name').value = '';
+      btn.disabled = false;
+      peMsg('Entry saved: ' + title + ' on ' + fmtDate(date) + '.');
+    } catch (err) {
+      btn.disabled = false;
+      peMsg('Could not save (' + ((err && err.code) || 'error') + '). Try again.', true);
+    }
+  }
+  $('log-prog-ex').addEventListener('change', function () { prefs.progressEx = this.value; savePrefs(); renderProgress(); });
+  $('pe-ex').addEventListener('change', function () {
+    $('pe-kg').value = '';
+    $('pe-reps').value = '';
+    $('pe-name').value = '';
+    peMsg('');
+    peSync();
+  });
+  $('pe-unit').addEventListener('change', peSync);
+  $('pe-save').addEventListener('click', saveProgressEntry);
+  Array.prototype.forEach.call(panel.querySelectorAll('.subtabs button'), function (b) {
+    b.addEventListener('click', function () {
+      syncWake();
+      setTimeout(function () {
+        drawChart();
+        if (b.getAttribute('data-sub') === 'progress') { populatePeExercises(); }
+      }, 0);
+    });
+  });
+  var logLink = document.querySelector('nav a[data-tab="log"]');
+  if (logLink) { logLink.addEventListener('click', function () { setTimeout(syncWake, 0); }); }
+  window.addEventListener('hashchange', function () { setTimeout(syncWake, 0); });
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') {
+      tickRest();
+      updateWeekStatus();
+      if (workoutAwake()) { requestWake(); }
+    } else {
+      releaseWake();
+    }
+  });
+  var rz = null;
+  window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(drawChart, 150); });
+
+  function weekBounds() {
+    var d = new Date();
+    d.setHours(0, 0, 0, 0);
+    var day = (d.getDay() + 6) % 7;
+    d.setDate(d.getDate() - day);
+    var start = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    d.setDate(d.getDate() + 6);
+    var end = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    return { start: start, end: end };
+  }
+  function updateWeekStatus() {
+    var text = $('week-status-text');
+    if (!text) { return; }
+    var b = weekBounds();
+    var done = {};
+    sessions.forEach(function (s) {
+      if (s.source === 'progress' || s.sessionLabel === 'Progress entry') { return; }
+      if (!s.date || s.date < b.start || s.date > b.end) { return; }
+      if (s.session === 'lift-a' || s.session === 'lift-b' || s.session === 'lift-c') { done[s.session] = true; }
+    });
+    var n = Object.keys(done).length;
+    text.textContent = n + ' of 3 lifts done';
+    var dots = $('week-status-dots');
+    if (dots) {
+      Array.prototype.forEach.call(dots.querySelectorAll('i'), function (el, i) {
+        el.className = i < n ? 'on' : '';
+      });
+    }
+  }
+
+  function refreshViews() {
+    refreshCards();
+    renderHistory();
+    renderProgress();
+    statusReady();
+    updateWeekStatus();
+  }
+
+  /* ---------- Storage ---------- */
+  async function initStore() {
+    var db = null;
+    try { db = (window.claude && window.claude.use) ? await window.claude.use('db') : null; } catch (e) { db = null; }
+    if (!db) {
+      mode = 'local';
+      sessions = LS.get('ol-sessions') || [];
+      refreshViews();
+      return;
+    }
+    mode = 'db';
+    col = db.collection('workout_log');
+    var timer = setTimeout(function () {
+      setStatus('Your saved log is taking a while to load. You can keep logging, and saving works once it connects.', true);
+    }, 10000);
+    col.orderBy('ts', 'desc').limit(500).onSnapshot(function (snap) {
+      sessions = snap.docs.map(function (d) { return Object.assign({ id: d.id }, d.data()); });
+      dbCount = sessions.length;
+      if (!snap.metadata.fromCache) { clearTimeout(timer); }
+      refreshViews();
+    }, function (err) {
+      clearTimeout(timer);
+      setStatus('Could not load your saved log (' + ((err && err.code) || 'error') + '). New sessions may not save.', true);
+    });
+  }
+
+  normalizePrefs();
+  savePrefs();
+  renderPickers();
+  renderCards();
+  renderHistory();
+  renderProgress();
+  $('pe-date').value = todayStr();
+  populatePeExercises();
+  updateWeekStatus();
+  syncWake();
+  initStore();
+})();
+</script>
+<script>
+/* Backup, restore and app installation. Kept out of the log script above so it
+   only ever touches localStorage and never the in-memory session list. */
+(function () {
+  'use strict';
+
+  var KEYS = ['ol-prefs', 'ol-plan', 'ol-drafts', 'ol-sessions'];
+  var FORMAT = 'off-season-plan/backup';
+  var SCHEMA = 1;
+
+  function $(id) { return document.getElementById(id); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function read(key) {
+    try { var v = localStorage.getItem(key); return v ? JSON.parse(v) : null; }
+    catch (e) { return null; }
+  }
+  function msg(text, warn) {
+    var el = $('backup-msg');
+    if (!el) { return; }
+    el.textContent = text || '';
+    el.className = 'log-msg' + (warn ? ' warn' : '');
+  }
+  function count(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
+
+  function collect() {
+    var keys = {};
+    KEYS.forEach(function (k) {
+      var v = localStorage.getItem(k);
+      if (v != null) { keys[k] = v; }   // raw JSON strings, restored verbatim
+    });
+    return {
+      format: FORMAT,
+      schema: SCHEMA,
+      exportedAt: new Date().toISOString(),
+      sessions: (read('ol-sessions') || []).length,
+      keys: keys
+    };
+  }
+
+  function download() {
+    var payload = collect();
+    var name = 'workout-log-' + todayStr() + '.json';
+    try {
+      var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+      msg('Saved ' + name + ' (' + count(payload.sessions, 'session') + '). Look in Downloads.');
+    } catch (e) {
+      msg('Could not build the file — try again.', true);
+    }
+  }
+
+  function valid(payload) {
+    if (!payload || typeof payload !== 'object' || !payload.keys || typeof payload.keys !== 'object') { return false; }
+    return KEYS.some(function (k) { return typeof payload.keys[k] === 'string'; });
+  }
+
+  function restore(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var payload;
+      try { payload = JSON.parse(String(reader.result)); }
+      catch (e) { msg('That file is not valid JSON.', true); return; }
+      if (!valid(payload)) { msg('That file is not a backup from this app.', true); return; }
+
+      var incoming = 0;
+      try { incoming = (JSON.parse(payload.keys['ol-sessions'] || '[]') || []).length; } catch (e) { incoming = 0; }
+      var current = (read('ol-sessions') || []).length;
+
+      var ask = 'Replace the log on this device (' + count(current, 'saved session') +
+        ') with this backup (' + count(incoming, 'saved session') + ')?\n\nThis cannot be undone.';
+      if (!window.confirm(ask)) { msg('Restore cancelled.'); return; }
+
+      KEYS.forEach(function (k) {
+        try {
+          if (typeof payload.keys[k] === 'string') { localStorage.setItem(k, payload.keys[k]); }
+          else { localStorage.removeItem(k); }
+        } catch (e) {}
+      });
+      msg('Restored. Reloading…');
+      setTimeout(function () { location.reload(); }, 300);
+    };
+    reader.onerror = function () { msg('Could not read that file.', true); };
+    reader.readAsText(file);
+  }
+
+  function wire() {
+    var save = $('backup-save');
+    var load = $('backup-load');
+    var input = $('backup-file');
+
+    if (save) { save.addEventListener('click', download); }
+    if (load && input) {
+      load.addEventListener('click', function () { input.value = ''; input.click(); });
+      input.addEventListener('change', function () {
+        if (input.files && input.files[0]) { restore(input.files[0]); }
+      });
+    }
+
+    // Ask the browser to keep this origin out of the eviction pool.
+    if (navigator.storage && navigator.storage.persist) {
+      navigator.storage.persisted().then(function (kept) {
+        if (!kept) { navigator.storage.persist().catch(function () {}); }
+      }).catch(function () {});
+    }
+  }
+
+  function register() {
+    if (!('serviceWorker' in navigator) || location.protocol === 'file:') { return; }
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js').then(function (reg) {
+        // Check for a new build when the app is reopened; never reload mid-workout.
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') { reg.update().catch(function () {}); }
+        });
+      }).catch(function () {});
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wire);
+  } else {
+    wire();
+  }
+  register();
+})();
+</script>
+</body></html>
