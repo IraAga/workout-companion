@@ -532,6 +532,54 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 .xc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
 .doc .xc-head h3 { flex: 1 1 auto; }
 .xc-tools { display: flex; flex: none; gap: 0.35rem; }
+
+/* Collapsible exercise cards */
+.xc-sum { display: none; margin: 0.15rem 0 0; font: 500 0.74rem/1.4 var(--font-mono); color: var(--muted); }
+.xc.collapsed .hint, .xc.collapsed .mono, .xc.collapsed .sets, .xc.collapsed .xc-actions { display: none; }
+.xc.collapsed .xc-sum { display: block; }
+.xct {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.xc-chev {
+  flex: none;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg) translate(-1px, -1px);
+  transition: transform 0.12s ease;
+}
+.xc.collapsed .xc-chev { transform: rotate(-45deg); }
+.xct:hover .xc-chev { border-color: var(--accent); }
+.xct:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.xctl { display: flex; justify-content: flex-end; gap: 1rem; margin: -0.35rem 0 0.55rem; }
+.linkbtn {
+  min-height: 2rem;
+  padding: 0.35rem 0;
+  border: 0;
+  background: none;
+  font: 500 0.65rem/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.linkbtn:hover { color: var(--accent); text-decoration-color: currentColor; }
+.linkbtn:disabled { color: var(--rule); text-decoration: none; cursor: default; }
+.linkbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .iconbtn {
   flex: none;
   font: 500 0.7rem/1 var(--font-mono);
@@ -2874,6 +2922,10 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   <label for="log-date">Date<input type="date" id="log-date"></label>
 </div>
 <button type="button" class="btn" id="log-fill-last" hidden title="Fill empty fields with your latest numbers">Fill from last time</button>
+<div class="xctl" id="log-xctl">
+  <button type="button" class="linkbtn" id="log-collapse-all">Collapse all</button>
+  <button type="button" class="linkbtn" id="log-expand-all">Expand all</button>
+</div>
 <div id="log-cards"></div>
 <div class="plan-actions">
   <button type="button" class="btn" id="log-add-ex">+ Add exercise</button>
@@ -3089,6 +3141,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   var prefs = LS.get('ol-prefs') || {};
   var drafts = LS.get('ol-drafts') || {};
   var plan = LS.get('ol-plan') || {};
+  var collapsed = LS.get('ol-collapse') || {};
   var editingId = null;
   var newEx = null;
   var editingSessionId = null;
@@ -3232,16 +3285,34 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     $('log-date').value = dateVal;
   }
 
+  function cardSum(ex) {
+    var rows = rowsFor(ex);
+    var total = rows.length;
+    var filledN = 0, doneN = 0, lastTxt = '';
+    rows.forEach(function (r) {
+      if (filled(r)) { filledN += 1; lastTxt = fmtSet(r, ex.unit) || lastTxt; }
+      if (r.done) { doneN += 1; }
+    });
+    var parts = [filledN + '/' + total + (total === 1 ? ' set' : ' sets')];
+    if (lastTxt) { parts.push(lastTxt); }
+    if (total && doneN === total) { parts.push('done'); }
+    return parts.join(' · ');
+  }
+
   function cardHtml(ex) {
     var rows = rowsFor(ex);
     var last = lastFor(ex.id);
     var wl = ex.bw ? '+ kg' : 'kg';
     var rl = ex.unit === 'sec' ? 'sec' : 'reps';
-    var h = '<article class="xc" data-ex="' + esc(ex.id) + '"><div class="xc-head"><h3>' + esc(ex.title) + '</h3>'
+    var isCol = !!collapsed[ex.id];
+    var h = '<article class="xc' + (isCol ? ' collapsed' : '') + '" data-ex="' + esc(ex.id) + '"><div class="xc-head">'
+      + '<h3><button type="button" class="xct" data-act="toggle" data-ex="' + esc(ex.id) + '" aria-expanded="' + (isCol ? 'false' : 'true') + '">'
+      + '<span class="xc-chev" aria-hidden="true"></span>' + esc(ex.title) + '</button></h3>'
       + '<div class="xc-tools">'
       + '<button type="button" class="iconbtn" data-act="edit" data-ex="' + esc(ex.id) + '" aria-label="Edit ' + esc(ex.title) + '">Edit</button>'
       + '<button type="button" class="iconbtn danger" data-act="del-card" data-ex="' + esc(ex.id) + '" aria-label="Delete ' + esc(ex.title) + '" title="Delete exercise">Delete</button>'
-      + '</div></div>';
+      + '</div></div>'
+      + '<p class="xc-sum">' + esc(cardSum(ex)) + '</p>';
     if (ex.hint) { h += '<p class="hint">' + esc(ex.hint) + '</p>'; }
     h += '<p class="mono">Target ' + esc(ex.target || '—') + (ex.suggested ? ' · Start ' + esc(ex.suggested) : '') + '</p>';
     if (last) {
@@ -3326,6 +3397,14 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     if (fill) {
       fill.hidden = !!editingSessionId || !!editingId || !list.some(function (e) { return !!lastFor(e.id); });
     }
+    var xctl = $('log-xctl');
+    if (xctl) { xctl.hidden = !list.length; }
+    var colAll = $('log-collapse-all');
+    var expAll = $('log-expand-all');
+    if (colAll && expAll) {
+      colAll.disabled = !list.some(function (e) { return !collapsed[e.id]; });
+      expAll.disabled = !list.some(function (e) { return !!collapsed[e.id]; });
+    }
     var programEl = $('log-program');
     if (programEl) { programEl.disabled = !!editingSessionId; }
     var sessionEl = $('log-session');
@@ -3342,6 +3421,14 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   }
   function refreshCards() {
     if ($('log-cards').contains(document.activeElement)) { pendingRefresh = true; } else { renderCards(); }
+  }
+
+  function setAllCollapsed(flag) {
+    exercises().forEach(function (e) {
+      if (flag) { collapsed[e.id] = true; } else { delete collapsed[e.id]; }
+    });
+    LS.set('ol-collapse', collapsed);
+    renderCards();
   }
 
   function filled(r) { return has(r.kg) || has(r.reps); }
@@ -3630,6 +3717,13 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     if (!b) { return; }
     var act = b.getAttribute('data-act');
 
+    if (act === 'toggle') {
+      var tid = b.getAttribute('data-ex');
+      if (collapsed[tid]) { delete collapsed[tid]; } else { collapsed[tid] = true; }
+      LS.set('ol-collapse', collapsed);
+      renderCards();
+      return;
+    }
     if (act === 'cancel-edit') {
       editingId = null;
       newEx = null;
@@ -3713,6 +3807,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   });
   $('log-note').addEventListener('input', function () { draft().note = this.value; saveDraftsSoon(); });
   $('log-add-ex').addEventListener('click', startNew);
+  $('log-collapse-all').addEventListener('click', function () { setAllCollapsed(true); });
+  $('log-expand-all').addEventListener('click', function () { setAllCollapsed(false); });
   $('log-fill-last').addEventListener('click', function () {
     var n = 0;
     exercises().forEach(function (ex) {
