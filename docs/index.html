@@ -466,9 +466,18 @@ main { min-width: 0; padding-top: 1.75rem; }
 
 #log-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  /* One exercise per row. Two-up cards stretched a collapsed card to the
+     full height of an expanded neighbour, leaving a large empty box. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.9rem;
+  max-width: 46rem;
 }
+/* Keep the rest of the log form on the same column as the cards. */
+[data-panel="log"] .pick,
+[data-panel="log"] .note-box,
+[data-panel="log"] .savebar,
+[data-panel="log"] .edit-banner,
+[data-panel="log"] .xctl { max-width: 46rem; }
 .xc {
   background: var(--surface);
   border: 1px solid var(--rule);
