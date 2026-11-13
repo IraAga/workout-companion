@@ -744,6 +744,117 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   .hs .body { padding-left: 0.25rem; }
   .stat .v { font-size: 1.45rem; }
 }
+
+/* ------------------------------------------------------------------
+   Compact phone layout.
+   Tighter vertical rhythm on small screens: smaller headings, less
+   white space between blocks, denser cards. Buttons and inputs keep a
+   2.75rem (44px) minimum so they stay usable mid-set in the gym.
+   ------------------------------------------------------------------ */
+@media (max-width: 40rem) {
+  body {
+    padding-inline: 0.75rem;
+    padding-block: 0.7rem 1.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .head { padding-bottom: 0.6rem; }
+  .brand { font-size: 1.5rem; }
+  .tagline { display: none; }
+  nav { margin-inline: -0.75rem; padding: 0.3rem 0.75rem; gap: 0.15rem; }
+  nav a { padding: 0.4rem 0.6rem; font-size: 0.875rem; }
+  main { padding-top: 0.9rem; }
+
+  .kicker { margin-bottom: 0.3rem; font-size: 0.66rem; }
+  .doc h1 { font-size: 1.6rem; margin-bottom: 0.7rem; }
+  .doc h2 { font-size: 1.2rem; margin: 1.5rem 0 0.55rem; padding-top: 0.55rem; }
+  .doc h3 { font-size: 1.02rem; margin: 1.1rem 0 0.35rem; }
+  .doc p { margin-bottom: 0.6rem; }
+  .doc ul, .doc ol { margin-bottom: 0.65rem; padding-left: 1.1rem; }
+  .doc li { margin-bottom: 0.2rem; }
+  .doc p.meta { padding: 0.55rem 0.65rem; font-size: 0.75rem; line-height: 1.5; margin-bottom: 0.85rem; }
+
+  .tw { margin-bottom: 0.85rem; }
+  .tw table { font-size: 0.85rem; }
+  .tw th { padding: 0.3rem 0.4rem; font-size: 0.64rem; }
+  .tw td { padding: 0.35rem 0.4rem; }
+  .tw th:first-child, .tw td:first-child { padding-left: 0; }
+  .tw th:last-child, .tw td:last-child { padding-right: 0; }
+
+  .week { gap: 0.3rem; margin-bottom: 1.2rem; }
+  .day { padding: 0.4rem 0.55rem; gap: 0.3rem; }
+  .dname { width: 2rem; font-size: 0.64rem; }
+  .tag { min-width: 5.4rem; font-size: 0.82rem; padding: 0.22rem 0.4rem 0.2rem; }
+  .what { font-size: 0.79rem; }
+  .week-status { margin: -0.15rem 0 0.85rem; padding: 0.4rem 0.55rem; gap: 0.45rem; }
+  .week-status .ws-v { font-size: 0.88rem; }
+
+  .subtabs { margin-bottom: 0.95rem; padding: 0.15rem; gap: 0.15rem; }
+  .subtabs button { padding: 0.5rem 0.7rem; font-size: 0.85rem; }
+
+  .stats { gap: 0.35rem; margin-bottom: 0.85rem; }
+  .stat { padding: 0.45rem 0.5rem; }
+  .stat .k { font-size: 0.6rem; }
+  .stat .v { font-size: 1.3rem; margin-top: 0.15rem; }
+  .cap { margin-bottom: 0.2rem; }
+  .chartbox { margin-bottom: 0.85rem; }
+
+  .log-status { margin: -0.3rem 0 0.7rem; font-size: 0.65rem; }
+  .edit-banner { margin-bottom: 0.7rem; padding: 0.45rem 0.55rem; }
+  .pick { gap: 0.5rem; margin-bottom: 0.8rem; }
+  .pick label, .note-box label { gap: 0.22rem; font-size: 0.64rem; }
+  .pick select, .pick input[type="date"], .prog-add input[type="text"] { padding: 0.5rem 0.55rem; }
+  .pick select, .pick input[type="date"], input.num, .prog-add input[type="text"] { min-height: 2.75rem; }
+  #log-fill-last { margin-bottom: 0.65rem; }
+
+  #log-cards { gap: 0.6rem; }
+  .xc { padding: 0.65rem 0.7rem 0.7rem; }
+  .doc .xc h3 { font-size: 1.1rem; }
+  .xc .hint { font-size: 0.78rem; margin-bottom: 0.25rem; }
+  .xc .mono { font-size: 0.71rem; line-height: 1.4; }
+  .xc .xc-tools { gap: 0.25rem; }
+  .sets { gap: 0.3rem; margin: 0.5rem 0 0.45rem; }
+  .setrow { grid-template-columns: 2.75rem minmax(0, 1fr) minmax(0, 1fr) 2.4rem; gap: 0.3rem; }
+  .setrow.hd span { font-size: 0.62rem; }
+  .setrow button.sn { height: 2.75rem; }
+  .x { font-size: 1.2rem; min-height: 2.75rem; }
+  .iconbtn { padding: 0.4rem 0.45rem; font-size: 0.62rem; }
+  .btn.add { min-width: 2.4rem; font-size: 1.2rem; }
+  .plan-actions { margin-top: 0.6rem; gap: 0.4rem; }
+  .note-box { margin-top: 0.7rem; }
+  .note-box textarea { min-height: 3.25rem; }
+
+  .savebar { margin-top: 0.7rem; padding: 0.4rem 0.4rem 0.4rem 0.7rem; gap: 0.45rem; }
+  .savebar .sum { font-size: 0.74rem; }
+  .savebar .btn.primary { min-width: 7.25rem; }
+  .savebar .rest { padding-top: 0.35rem; gap: 0.4rem; }
+  .savebar .rest .btn { padding: 0 0.6rem; font-size: 0.78rem; }
+  .log-msg { margin-top: 0.5rem; font-size: 0.84rem; min-height: 1.2rem; }
+  .toast { font-size: 0.8rem; }
+
+  .hs summary { grid-template-columns: 3.4rem minmax(0, 1fr); padding: 0.55rem 0.15rem; gap: 0.05rem 0.6rem; }
+  .hs .hd { font-size: 1.08rem; }
+  .hs .hn { font-size: 0.95rem; }
+  .hs .hc { font-size: 0.8rem; }
+  .hs .body { padding-bottom: 0.7rem; padding-left: 0.15rem; }
+  .hs .hl li { font-size: 0.88rem; margin-bottom: 0.35rem; }
+
+  .prog-add { margin-top: 1.15rem; padding-top: 0.65rem; }
+  .prog-add .body { gap: 0.65rem; margin-top: 0.65rem; }
+
+  .meal-grid { gap: 0.6rem; margin-bottom: 0.75rem; }
+  .meal { padding: 0 0.7rem 0.7rem; }
+  .meal h3 { margin-top: 0.55rem; }
+  .meal .tw { margin-bottom: 0.55rem; }
+
+  .index { margin-bottom: 0.85rem; }
+  .index a { padding: 0.55rem 0.1rem; }
+  .index .iname { font-size: 1.05rem; }
+  .index .idesc { font-size: 0.85rem; }
+
+  /* keep the last set row clear of the sticky save bar */
+  #sub-entry { padding-bottom: 4rem; }
+}
 </style>
 
 <div class="shell">
@@ -3136,8 +3247,6 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     if (last) {
       var txt = last.sets.map(function (s) { return fmtSet(s, ex.unit); }).filter(Boolean).join(' · ');
       h += '<p class="mono last">Last time (' + esc(fmtDate(last.date)) + '): ' + esc(txt) + '</p>';
-    } else {
-      h += '<p class="mono last">No earlier log for this exercise</p>';
     }
     h += '<div class="sets"><div class="setrow hd"><span></span><span>' + wl + '</span><span>' + rl + '</span><span></span></div>';
     rows.forEach(function (r, i) {
@@ -3267,7 +3376,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     if (mode === 'db') {
       setStatus('Synced to your account · ' + dbCount + (dbCount === 1 ? ' session saved' : ' sessions saved'));
     } else if (mode === 'local') {
-      setStatus('Saved on this device only. Syncing to your account is not available here.');
+      setStatus('Saved on this device only · no account sync');
     }
   }
 
