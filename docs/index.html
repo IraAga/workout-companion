@@ -4217,16 +4217,27 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   }
 
   /* ---------- Progress ---------- */
+  // Progress series are keyed by exercise name, not id: renaming a card keeps
+  // its id, so Bench Press and Chest Press Machine could otherwise share one
+  // chart with a single, misleading label.
+  function seriesKey(name) { return 'n|' + normTitle(name); }
+
   function buildIndex() {
     var idx = {};
     var asc = sessions.slice().sort(function (a, b) { return byDateDesc(b, a); });
     asc.forEach(function (s) {
       (s.exercises || []).forEach(function (e) {
         if (!e.sets || !e.sets.length) { return; }
-        var o = idx[e.id];
+        var name = e.name || (EX[e.id] && EX[e.id].title) || e.id;
+        var k = seriesKey(name);
+        var o = idx[k];
         if (!o) {
-          o = idx[e.id] = { id: e.id, name: e.name || (EX[e.id] && EX[e.id].title) || e.id, unit: e.unit || (EX[e.id] && EX[e.id].unit) || 'reps', rows: [] };
+          o = idx[k] = { id: e.id, name: name, unit: e.unit || (EX[e.id] && EX[e.id].unit) || 'reps', rows: [] };
         }
+        // Iteration is oldest first, so the latest id and spelling win.
+        o.id = e.id;
+        o.name = name;
+        o.unit = e.unit || o.unit;
         o.rows.push({ date: s.date, sets: e.sets });
       });
     });
@@ -4296,6 +4307,23 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     s += '<text class="vl" x="' + lx.toFixed(1) + '" y="' + (Y(last.v) - 12).toFixed(1) + '" text-anchor="' + (lx > w - 34 ? 'end' : 'middle') + '">' + fmtNum(last.v) + '</text>';
     return s + '</svg>';
   }
+  function progressSelection(idx, keys) {
+    if (prefs.progressEx && idx[prefs.progressEx]) { return prefs.progressEx; }
+    // Older builds stored the raw exercise id here.
+    var i;
+    if (prefs.progressEx) {
+      for (i = 0; i < keys.length; i++) {
+        if (idx[keys[i]].id === prefs.progressEx) { return keys[i]; }
+      }
+    }
+    if (prefs.progressId) {
+      for (i = 0; i < keys.length; i++) {
+        if (idx[keys[i]].id === prefs.progressId) { return keys[i]; }
+      }
+    }
+    return keys[0];
+  }
+
   function renderProgress() {
     var idx = buildIndex();
     var ids = Object.keys(idx).sort(function (a, b) {
@@ -4310,11 +4338,16 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       return;
     }
     sel.disabled = false;
-    if (!idx[prefs.progressEx]) { prefs.progressEx = ids[0]; }
+    var chosen = progressSelection(idx, ids);
+    var o = idx[chosen];
+    if (prefs.progressEx !== chosen || prefs.progressId !== o.id) {
+      prefs.progressEx = chosen;
+      prefs.progressId = o.id;
+      savePrefs();
+    }
     sel.innerHTML = ids.map(function (id) {
-      return '<option value="' + esc(id) + '"' + (id === prefs.progressEx ? ' selected' : '') + '>' + esc(idx[id].name) + ' (' + idx[id].rows.length + ')</option>';
+      return '<option value="' + esc(id) + '"' + (id === chosen ? ' selected' : '') + '>' + esc(idx[id].name) + ' (' + idx[id].rows.length + ')</option>';
     }).join('');
-    var o = idx[prefs.progressEx];
     var pts = o.pts;
     var first = pts[0].v, lastV = pts[pts.length - 1].v;
     var best = Math.max.apply(null, pts.map(function (p) { return p.v; }));
@@ -4343,7 +4376,9 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     var w = Math.floor(box.clientWidth);
     if (w < 80) { return; }
     var idx = buildIndex();
-    var o = idx[prefs.progressEx];
+    var keys = Object.keys(idx);
+    if (!keys.length) { return; }
+    var o = idx[progressSelection(idx, keys)];
     if (o) { box.innerHTML = chartSvg(w, o); }
   }
   function peKnown() {
@@ -4393,7 +4428,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       return '<option value="' + esc(e.id) + '">' + esc(e.title) + '</option>';
     }).join('');
     var keep = cur && (cur === '__new' || list.some(function (e) { return e.id === cur; }));
-    var charted = prefs.progressEx && list.some(function (e) { return e.id === prefs.progressEx; }) ? prefs.progressEx : '';
+    var charted = prefs.progressId && list.some(function (e) { return e.id === prefs.progressId; }) ? prefs.progressId : '';
     sel.value = keep ? cur : (charted || (list.length ? list[0].id : '__new'));
     peSync();
   }
@@ -4459,7 +4494,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       sessions = sessions.filter(function (s) { return s.id !== newId; });
       sessions.unshift(Object.assign({ id: newId }, doc));
       if (mode !== 'db') { LS.set('ol-sessions', sessions); markDirty(); }
-      prefs.progressEx = id;
+      prefs.progressEx = seriesKey(title);
+      prefs.progressId = id;
       savePrefs();
       refreshViews();
       populatePeExercises();
