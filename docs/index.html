@@ -2931,21 +2931,14 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     </section>
     <section class="doc" data-panel="log" hidden>
       <p class="kicker">Track</p>
-<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button><button type="button" role="tab" aria-selected="true" aria-controls="sub-history" data-sub="history">History</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-entry" data-sub="entry">New workout</button></div>
+<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="true" aria-controls="sub-history" data-sub="history">History</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-entry" data-sub="entry" id="log-tab" hidden>Log workout</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button></div>
 <div class="sub" id="sub-entry" role="tabpanel" data-sub="entry" hidden>
-<h1>New workout</h1>
+<h1>Log workout</h1>
+<p class="log-status" id="log-template-line"></p>
 <p class="log-status" id="log-status" aria-live="polite">Connecting to your saved log…</p>
 <div class="edit-banner" id="log-edit-banner" hidden>
   <span id="log-edit-text">Editing saved session.</span>
   <button type="button" class="btn" id="log-edit-cancel">Cancel edit</button>
-</div>
-<div class="pick">
-  <label for="log-program">Program<select id="log-program"></select></label>
-  <label for="log-session">Session<select id="log-session"></select></label>
-  <label for="log-date">Date<input type="date" id="log-date"></label>
-</div>
-<div class="plan-actions start-row" id="log-start-wrap">
-  <button type="button" class="btn primary" id="log-start">Start workout</button>
 </div>
 <div id="log-form" hidden>
 <button type="button" class="btn" id="log-fill-last" hidden title="Fill empty fields with your latest numbers">Fill from last time</button>
@@ -3003,8 +2996,13 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 </div>
 <div class="sub" id="sub-history" role="tabpanel" data-sub="history">
 <h1>History</h1>
-<div class="plan-actions start-row" id="history-new-wrap">
-  <button type="button" class="btn primary" id="log-new">Log new workout</button>
+<div class="pick" id="log-template">
+  <label for="log-program">Program<select id="log-program"></select></label>
+  <label for="log-session">Session<select id="log-session"></select></label>
+  <label for="log-date">Date<input type="date" id="log-date"></label>
+</div>
+<div class="plan-actions start-row" id="log-start-wrap">
+  <button type="button" class="btn primary" id="log-start">Start workout</button>
 </div>
 <div id="log-history"></div>
 <details class="prog-add" id="backup">
@@ -3419,18 +3417,39 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       + '</div></div></article>';
   }
 
+  // History is the home of the log tab. The template pickers and the Start
+  // button live there; the workout view (and its tab) only appears once a
+  // workout is started, and disappears again when it is saved or cancelled.
   function showForm(flag) {
     var box = $('log-form');
-    var wrap = $('log-start-wrap');
     if (box) { box.hidden = !flag; }
-    if (wrap) { wrap.hidden = !!flag; }
   }
 
-  // The log tab is History-first: the form is something you open on purpose.
-  function goHistory() {
-    var b = panel.querySelector('.subtabs button[data-sub="history"]');
-    if (b) { b.click(); }
+  function renderTemplateLine() {
+    var el = $('log-template-line');
+    if (!el) { return; }
+    el.textContent = program().label + ' · ' + session().label + ' · ' + fmtDate(dateVal);
+  }
+
+  function openWorkout(scrollToFields) {
+    var tab = $('log-tab');
+    if (tab) { tab.hidden = false; }
+    var btn = panel.querySelector('.subtabs button[data-sub="entry"]');
+    if (btn) { btn.click(); }
+    showForm(true);
+    renderTemplateLine();
+    if (scrollToFields !== false) {
+      var first = document.querySelector('#log-cards input[data-f="kg"]');
+      if (first) { window.scrollTo(0, Math.max(0, first.getBoundingClientRect().top + window.scrollY - 130)); }
+    }
+  }
+
+  function closeWorkout() {
     showForm(false);
+    var tab = $('log-tab');
+    if (tab) { tab.hidden = true; }
+    var hist = panel.querySelector('.subtabs button[data-sub="history"]');
+    if (hist) { hist.click(); }
   }
 
   function renderCards() {
@@ -3483,6 +3502,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
         $('log-edit-text').textContent = 'Editing saved session' + when + '.';
       }
     }
+    renderTemplateLine();
     updateSummary();
   }
   function refreshCards() {
@@ -3927,11 +3947,12 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     dateVal = this.value;
     draft().date = dateVal;
     saveDrafts();
+    renderTemplateLine();
   });
   $('log-edit-cancel').addEventListener('click', function () {
     if (saving) { return; }
     exitHistoryEdit();
-    goHistory();
+    closeWorkout();
     showToast('Edit cancelled', null, null, 2500);
   });
   $('log-rest').addEventListener('click', function (e) {
@@ -4017,7 +4038,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
         stopRest();
         exitHistoryEdit();
         refreshViews();
-        goHistory();
+        closeWorkout();
         showToast('Session updated', null, null, 2500);
         return;
       }
@@ -4035,7 +4056,9 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       stopRest();
       renderCards();
       refreshViews();
-      setMsg('Saved: ' + out.length + (out.length === 1 ? ' exercise' : ' exercises') + ', ' + n + (n === 1 ? ' set.' : ' sets.'));
+      closeWorkout();
+      showToast('Saved: ' + out.length + (out.length === 1 ? ' exercise' : ' exercises') +
+        ', ' + n + (n === 1 ? ' set' : ' sets'), null, null, 3000);
     } catch (err) {
       saving = false;
       updateSummary();
@@ -4043,19 +4066,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     }
   }
   $('log-save').addEventListener('click', save);
-  $('log-start').addEventListener('click', function () {
-    showForm(true);
-    var first = document.querySelector('#log-cards input[data-f="kg"]');
-    if (first) {
-      window.scrollTo(0, Math.max(0, first.getBoundingClientRect().top + window.scrollY - 130));
-    }
-  });
-  $('log-new').addEventListener('click', function () {
-    var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
-    if (entryBtn) { entryBtn.click(); }
-    showForm(false);
-    window.scrollTo(0, 0);
-  });
+  $('log-start').addEventListener('click', function () { openWorkout(true); });
   $('sync-connect').addEventListener('click', connectSync);
   $('sync-now').addEventListener('click', syncNow);
   $('sync-disconnect').addEventListener('click', disconnectSync);
@@ -4071,8 +4082,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     for (var i = 0; i < sessions.length; i++) { if (sessions[i].id === id) { src = sessions[i]; break; } }
     if (!src) { return; }
     if (saving || editingId || editingSessionId) {
-      var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
-      if (entryBtn) { entryBtn.click(); }
+      openWorkout(false);
       setMsg(saving
         ? 'A session is saving. Try again in a moment.'
         : editingSessionId
@@ -4140,11 +4150,9 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     dateVal = d.date;
     editingId = null;
     newEx = null;
-    var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
-    if (entryBtn) { entryBtn.click(); }
-    showForm(true);
     renderPickers();
     renderCards();
+    openWorkout(false);
     window.scrollTo(0, 0);
     setMsg('Editing saved session from ' + fmtDate(d.date) + '. Update it when you are done.');
   }
