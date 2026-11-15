@@ -4489,8 +4489,14 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     b.addEventListener('click', function () {
       syncWake();
       setTimeout(function () {
+        // Re-render on open: the panel may have been updated while hidden
+        // (an edit from History, a sync landing), and a hidden panel cannot
+        // measure itself, so the chart would otherwise stay blank or stale.
+        if (b.getAttribute('data-sub') === 'progress') {
+          renderProgress();
+          populatePeExercises();
+        }
         drawChart();
-        if (b.getAttribute('data-sub') === 'progress') { populatePeExercises(); }
       }, 0);
     });
   });

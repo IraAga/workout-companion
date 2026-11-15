@@ -9,7 +9,7 @@
  * Bump CACHE when the app changes so old shells are dropped on activate.
  */
 
-var VERSION = 'v5';
+var VERSION = 'v6';
 var SHELL = 'shell-' + VERSION;
 var RUNTIME = 'runtime-' + VERSION;
 var BASE = new URL('./', self.location).href;
