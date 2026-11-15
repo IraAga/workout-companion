@@ -88,6 +88,38 @@ git add -A && git commit -m "..." && git push
 GitHub Pages redeploys in under a minute. Open the app once, close it, open it
 again — the update lands on relaunch, and your data is untouched.
 
+## 5. Optional: sync the log to a private GitHub repo
+
+The app works offline-first: localStorage is authoritative on the device, and the
+repo copy is reconciled whenever there's a connection. Nothing waits on the network.
+
+**One-time setup**
+
+1. Create a **private** repo named `workout-companion-data` (empty, no README).
+2. GitHub → Settings → Developer settings → **Fine-grained tokens** → Generate new token:
+   - Resource owner: your account
+   - Repository access: **Only select repositories** → `workout-companion-data`
+   - Permissions → Repository permissions → **Contents: Read and write**
+   - Expiration: 1 year
+3. In the app: **Workout log → History → Sync** → paste the token → **Connect**.
+
+**How it behaves**
+
+- `log.json` is written at the repo root; **every sync is a commit**, so the whole
+  history of your log is recoverable from GitHub.
+- Merging is by session id on a `rev` field (bumped on every save and edit), plus
+  tombstones so a deleted session can't come back from another device. Two devices
+  can be offline for weeks and converge without losing a workout.
+- Sync runs on app launch, when the connection returns, ~2.5s after each save, and
+  via **Sync now**.
+- The token lives in `localStorage` on the device. Use a separate token per device so
+  either can be revoked independently.
+- Disconnecting leaves the log on the device and in GitHub; reconnecting merges again.
+
+If sync shows *"token rejected"*, the token is missing **Contents** permission or
+was created for a different repo. *"repo not found"* means the name is wrong or the
+token can't see it.
+
 ## Known limits
 
 - **iPhone:** needs a couple of extra Apple meta tags and a 180px icon. Ask and

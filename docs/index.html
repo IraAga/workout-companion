@@ -771,6 +771,19 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   width: 100%;
 }
 .prog-add .log-msg { margin: 0; }
+.prog-add input[type="password"] {
+  font: 500 1rem/1.25 var(--font-mono);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.75rem;
+  min-height: 3rem;
+  width: 100%;
+}
+.sync-status { margin: 0; font: 500 0.74rem/1.5 var(--font-mono); color: var(--muted); }
+.sync-status.ok { color: var(--accent); }
+.sync-status.warn { color: var(--danger); }
 
 /* History */
 .hs { border-bottom: 1px solid var(--rule); max-width: 46rem; }
@@ -860,8 +873,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   .edit-banner { margin-bottom: 0.7rem; padding: 0.45rem 0.55rem; }
   .pick { gap: 0.5rem; margin-bottom: 0.8rem; }
   .pick label, .note-box label { gap: 0.22rem; font-size: 0.64rem; }
-  .pick select, .pick input[type="date"], .prog-add input[type="text"] { padding: 0.5rem 0.55rem; }
-  .pick select, .pick input[type="date"], input.num, .prog-add input[type="text"] { min-height: 2.75rem; }
+  .pick select, .pick input[type="date"], .prog-add input[type="text"], .prog-add input[type="password"] { padding: 0.5rem 0.55rem; }
+  .pick select, .pick input[type="date"], input.num, .prog-add input[type="text"], .prog-add input[type="password"] { min-height: 2.75rem; }
   #log-fill-last { margin-bottom: 0.65rem; }
 
   #log-cards { gap: 0.6rem; }
@@ -2997,6 +3010,27 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     <p class="log-msg" id="backup-msg" role="status" aria-live="polite"></p>
   </div>
 </details>
+<details class="prog-add" id="sync">
+  <summary>Sync</summary>
+  <div class="body">
+    <p class="hint">Keeps a copy of this log in the private GitHub repo <strong>IraAga/workout-companion-data</strong>, and pulls back anything logged on another device. Saving always works offline; uploads catch up when you reconnect.</p>
+    <div id="sync-off">
+      <label for="sync-token">Access token
+        <input type="password" id="sync-token" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+      </label>
+      <div class="plan-actions">
+        <button type="button" class="btn primary" id="sync-connect">Connect</button>
+      </div>
+    </div>
+    <div id="sync-on" hidden>
+      <p class="sync-status" id="sync-status" role="status" aria-live="polite">Not synced yet</p>
+      <div class="plan-actions">
+        <button type="button" class="btn" id="sync-now">Sync now</button>
+        <button type="button" class="btn danger" id="sync-disconnect">Disconnect</button>
+      </div>
+    </div>
+  </div>
+</details>
 </div>
 <div class="toast" id="log-toast" role="status" hidden>
   <span id="log-toast-text"></span>
@@ -3931,6 +3965,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     var ts = Date.now();
     var src = editingSession;
     var doc = {
+      rev: ts,
       ts: src ? (src.ts || ts) : ts,
       date: saveDate,
       program: src ? src.program : program().id,
@@ -3952,6 +3987,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
           var updated = Object.assign({ id: src.id }, doc);
           sessions = sessions.map(function (s) { return s.id === src.id ? updated : s; });
           LS.set('ol-sessions', sessions);
+          markDirty();
         }
         saving = false;
         stopRest();
@@ -3965,6 +4001,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       } else {
         sessions.unshift(Object.assign({ id: 's' + ts }, doc));
         LS.set('ol-sessions', sessions);
+        markDirty();
       }
       delete drafts[key()];
       saveDrafts();
@@ -3981,6 +4018,14 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     }
   }
   $('log-save').addEventListener('click', save);
+  $('sync-connect').addEventListener('click', connectSync);
+  $('sync-now').addEventListener('click', syncNow);
+  $('sync-disconnect').addEventListener('click', disconnectSync);
+  $('sync-token').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); connectSync(); }
+  });
+  window.addEventListener('online', function () { renderSync(); scheduleSync(800); });
+  window.addEventListener('offline', renderSync);
 
   /* ---------- History ---------- */
   function startHistoryEdit(id) {
@@ -4139,6 +4184,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       } else {
         sessions = sessions.filter(function (s) { return s.id !== id; });
         LS.set('ol-sessions', sessions);
+        addTombstone(id);
+        markDirty();
         refreshViews();
       }
       showToast('Session deleted', 'Undo', function () { undoRemoveSession(src, idx); });
@@ -4153,7 +4200,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     sessions = sessions.filter(function (s) { return s.id !== src.id; });
     if (idx < 0 || idx > sessions.length) { idx = sessions.length; }
     sessions.splice(idx, 0, restored);
-    if (mode !== 'db') { LS.set('ol-sessions', sessions); }
+    if (mode !== 'db') { LS.set('ol-sessions', sessions); clearTombstone(src.id); markDirty(); }
     refreshViews();
     try {
       if (mode === 'db') {
@@ -4394,7 +4441,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     var date = $('pe-date').value || todayStr();
     var ts = Date.now();
     var doc = {
-      ts: ts, date: date,
+      rev: ts, ts: ts, date: date,
       program: program().id, programLabel: '',
       session: session().id, sessionLabel: 'Progress entry',
       source: 'progress',
@@ -4411,7 +4458,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       }
       sessions = sessions.filter(function (s) { return s.id !== newId; });
       sessions.unshift(Object.assign({ id: newId }, doc));
-      if (mode !== 'db') { LS.set('ol-sessions', sessions); }
+      if (mode !== 'db') { LS.set('ol-sessions', sessions); markDirty(); }
       prefs.progressEx = id;
       savePrefs();
       refreshViews();
@@ -4500,6 +4547,256 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     updateWeekStatus();
   }
 
+  /* ---------- GitHub sync ---------- */
+  // Offline-first: localStorage is authoritative on the device, and the repo
+  // copy is reconciled whenever the app has a connection. Sessions merge by id
+  // on `rev`, deletions travel as tombstones, so two devices can drift for
+  // weeks and still converge without losing a workout.
+  var SYNC_REPO = { owner: 'IraAga', repo: 'workout-companion-data', path: 'log.json' };
+  var GH = 'https://api.github.com';
+  var syncCfg = LS.get('ol-sync') || {};
+  var tombstones = LS.get('ol-tombstones') || {};
+  var syncBusy = false, syncAgain = false, syncTimer = null;
+
+  function saveSyncCfg() { LS.set('ol-sync', syncCfg); }
+  function saveTombstones() { LS.set('ol-tombstones', tombstones); }
+  function addTombstone(id) { tombstones[id] = Date.now(); saveTombstones(); }
+  function clearTombstone(id) { if (tombstones[id]) { delete tombstones[id]; saveTombstones(); } }
+
+  function revOf(s) { return Number(s && (s.rev || s.ts)) || 0; }
+  function syncFail(msg, status) { var e = new Error(msg); e.status = status; return e; }
+
+  function apiHeaders() {
+    return {
+      Authorization: 'Bearer ' + syncCfg.token,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28'
+    };
+  }
+  function b64encode(text) {
+    var bytes = new TextEncoder().encode(text);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    }
+    return btoa(bin);
+  }
+  function b64decode(text) {
+    var bin = atob(String(text || '').replace(/\s+/g, ''));
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) { bytes[i] = bin.charCodeAt(i); }
+    return new TextDecoder().decode(bytes);
+  }
+
+  function mergeDocs(local, remote) {
+    var byId = {};
+    function take(list) {
+      (list || []).forEach(function (s) {
+        if (!s || !s.id) { return; }
+        if (!byId[s.id] || revOf(s) > revOf(byId[s.id])) { byId[s.id] = s; }
+      });
+    }
+    take(remote && remote.sessions);
+    take(local && local.sessions);
+
+    var del = {};
+    [local && local.deleted, remote && remote.deleted].forEach(function (m) {
+      if (!m) { return; }
+      Object.keys(m).forEach(function (k) {
+        del[k] = Math.max(Number(del[k]) || 0, Number(m[k]) || 0);
+      });
+    });
+    Object.keys(del).forEach(function (id) {
+      var s = byId[id];
+      if (s && revOf(s) > del[id]) { return; }  // logged again after the delete
+      delete byId[id];
+    });
+
+    return {
+      sessions: Object.keys(byId).map(function (k) { return byId[k]; })
+        .sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); }),
+      deleted: del
+    };
+  }
+
+  function sameData(remote, merged) {
+    var rs = (remote && remote.sessions) || [];
+    if (rs.length !== merged.sessions.length) { return false; }
+    var revs = {};
+    rs.forEach(function (s) { revs[s.id] = revOf(s); });
+    for (var i = 0; i < merged.sessions.length; i++) {
+      if (revs[merged.sessions[i].id] !== revOf(merged.sessions[i])) { return false; }
+    }
+    var rd = (remote && remote.deleted) || {};
+    var rk = Object.keys(rd);
+    if (rk.length !== Object.keys(merged.deleted).length) { return false; }
+    for (var k = 0; k < rk.length; k++) {
+      if (Number(rd[rk[k]]) !== Number(merged.deleted[rk[k]])) { return false; }
+    }
+    return true;
+  }
+
+  function ghError(status, what) {
+    if (status === 401) { return syncFail('token rejected', 401); }
+    if (status === 403) { return syncFail('GitHub refused the request (rate limit or missing Contents permission)', 403); }
+    if (status === 404) { return syncFail(what || 'repo not found, or the token cannot see it', 404); }
+    if (status >= 500) { return syncFail('GitHub is having trouble', status); }
+    return syncFail('request failed (' + status + ')', status);
+  }
+
+  async function readRemote() {
+    var base = GH + '/repos/' + SYNC_REPO.owner + '/' + SYNC_REPO.repo;
+    var r = await fetch(base + '/contents/' + SYNC_REPO.path, { headers: apiHeaders(), cache: 'no-store' });
+    if (r.status === 404) {
+      var rr = await fetch(base, { headers: apiHeaders(), cache: 'no-store' });
+      if (rr.status === 404) { throw ghError(404, 'repo not found, or the token cannot see it'); }
+      if (!rr.ok) { throw ghError(rr.status); }
+      return { doc: null, sha: null };   // repo exists, no log file yet
+    }
+    if (!r.ok) { throw ghError(r.status); }
+    var j = await r.json();
+    var doc = null;
+    try { doc = JSON.parse(b64decode(j.content)); } catch (e) { doc = null; }
+    return { doc: doc, sha: j.sha || null };
+  }
+
+  async function writeRemote(merged, sha) {
+    var doc = {
+      schema: 1,
+      app: 'off-season-plan',
+      updatedAt: new Date().toISOString(),
+      sessions: merged.sessions,
+      deleted: merged.deleted
+    };
+    var body = { message: 'Sync ' + new Date().toISOString(), content: b64encode(JSON.stringify(doc)) };
+    if (sha) { body.sha = sha; }
+    var headers = apiHeaders();
+    headers['Content-Type'] = 'application/json';
+    var r = await fetch(GH + '/repos/' + SYNC_REPO.owner + '/' + SYNC_REPO.repo + '/contents/' + SYNC_REPO.path, {
+      method: 'PUT', headers: headers, body: JSON.stringify(body)
+    });
+    if (r.status === 409 || r.status === 422) { return { conflict: true }; }
+    if (!r.ok) { throw ghError(r.status); }
+    return { ok: true };
+  }
+
+  function relativeTime(ts) {
+    var d = Date.now() - ts;
+    if (d < 45000) { return 'just now'; }
+    var m = Math.round(d / 60000);
+    if (m < 60) { return m + ' min ago'; }
+    var h = Math.round(m / 60);
+    if (h < 24) { return h + ' h ago'; }
+    return Math.round(h / 24) + ' d ago';
+  }
+
+  function renderSync() {
+    var on = $('sync-on'), off = $('sync-off');
+    if (!on || !off) { return; }
+    var has = !!syncCfg.token;
+    off.hidden = has;
+    on.hidden = !has;
+    if (!has) { return; }
+    var n = sessions.length;
+    var tail = ' · ' + n + (n === 1 ? ' session' : ' sessions');
+    var el = $('sync-status');
+    var text = '', cls = 'sync-status';
+    if (syncBusy) {
+      text = 'Syncing…';
+    } else if (syncCfg.error) {
+      text = 'Sync failed: ' + syncCfg.error;
+      cls += ' warn';
+    } else if (!navigator.onLine) {
+      text = 'Offline — saved here, will upload later' + tail;
+    } else if (syncCfg.lastSync) {
+      text = 'Synced ' + relativeTime(syncCfg.lastSync) + tail + (syncCfg.dirty ? ' · changes queued' : '');
+      cls += ' ok';
+    } else {
+      text = 'Not synced yet' + tail;
+    }
+    el.textContent = text;
+    el.className = cls;
+  }
+
+  function scheduleSync(ms) {
+    if (!syncCfg.token || mode !== 'local') { return; }
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () { syncNow(); }, ms || 2000);
+  }
+
+  function markDirty() {
+    if (mode !== 'local' || !syncCfg.token) { return; }
+    syncCfg.dirty = true;
+    saveSyncCfg();
+    renderSync();
+    scheduleSync(2500);
+  }
+
+  async function syncNow() {
+    if (!syncCfg.token || mode !== 'local') { return; }
+    if (syncBusy) { syncAgain = true; return; }
+    syncBusy = true;
+    syncCfg.error = '';
+    renderSync();
+    try {
+      if (!navigator.onLine) { throw syncFail('offline', 0); }
+      var merged = null;
+      for (var attempt = 0; attempt < 2; attempt++) {
+        var remote = await readRemote();
+        merged = mergeDocs({ sessions: sessions, deleted: tombstones },
+          remote.doc || { sessions: [], deleted: {} });
+        var cutoff = Date.now() - 365 * 24 * 3600 * 1000;
+        Object.keys(merged.deleted).forEach(function (id) {
+          if (merged.deleted[id] < cutoff) { delete merged.deleted[id]; }
+        });
+        if (sameData(remote.doc, merged)) { break; }
+        var res = await writeRemote(merged, remote.sha);
+        if (!res.conflict) { break; }
+        merged = null;   // someone else committed first: re-read and retry
+      }
+      if (!merged) { throw syncFail('conflict', 409); }
+
+      sessions = merged.sessions;
+      tombstones = merged.deleted;
+      LS.set('ol-sessions', sessions);
+      LS.set('ol-tombstones', tombstones);
+      syncCfg.lastSync = Date.now();
+      syncCfg.dirty = false;
+      saveSyncCfg();
+      refreshViews();
+    } catch (err) {
+      if (err && err.status === 0) { syncCfg.error = ''; }
+      else { syncCfg.error = (err && err.message) || 'failed'; saveSyncCfg(); }
+    }
+    syncBusy = false;
+    renderSync();
+    if (syncAgain) { syncAgain = false; scheduleSync(600); }
+  }
+
+  function connectSync() {
+    var input = $('sync-token');
+    var tok = ((input && input.value) || '').trim();
+    if (!tok) { return; }
+    syncCfg.token = tok;
+    syncCfg.error = '';
+    saveSyncCfg();
+    if (input) { input.value = ''; }
+    renderSync();
+    syncNow();
+  }
+
+  function disconnectSync() {
+    if (!window.confirm('Stop syncing this device?\n\nThe log stays on this device and in GitHub.')) { return; }
+    syncCfg = {};
+    saveSyncCfg();
+    renderSync();
+  }
+
+  function initSync() {
+    renderSync();
+    if (syncCfg.token && mode === 'local') { scheduleSync(1200); }
+  }
+
   /* ---------- Storage ---------- */
   async function initStore() {
     var db = null;
@@ -4536,7 +4833,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   populatePeExercises();
   updateWeekStatus();
   syncWake();
-  initStore();
+  initStore().then(initSync);
 })();
 </script>
 <script>
