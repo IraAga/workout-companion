@@ -647,6 +647,16 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 .plan-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
 .plan-actions .btn[hidden] { display: none; }
 .start-row { margin: 0 0 1rem; }
+.loghead { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+.loghead h1 { flex: 1 1 auto; margin-bottom: 0.75rem; }
+.loghead .iconbtn {
+  flex: none;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 0;
+}
 #log-fill-last { margin: 0 0 0.9rem; }
 #log-add-ex:disabled { opacity: 0.45; cursor: default; }
 #log-add-ex:disabled:hover { background: transparent; }
@@ -2931,9 +2941,12 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     </section>
     <section class="doc" data-panel="log" hidden>
       <p class="kicker">Track</p>
-<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="true" aria-controls="sub-history" data-sub="history">History</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-entry" data-sub="entry" id="log-tab" hidden>Log workout</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button></div>
+<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="true" aria-controls="sub-history" data-sub="history">History</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button></div>
 <div class="sub" id="sub-entry" role="tabpanel" data-sub="entry" hidden>
-<h1>Log workout</h1>
+<div class="loghead">
+  <h1>Log workout</h1>
+  <button type="button" class="iconbtn" id="log-close" aria-label="Discard this workout" title="Discard this workout">×</button>
+</div>
 <p class="log-status" id="log-template-line"></p>
 <p class="log-status" id="log-status" aria-live="polite">Connecting to your saved log…</p>
 <div class="edit-banner" id="log-edit-banner" hidden>
@@ -3418,8 +3431,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   }
 
   // History is the home of the log tab. The template pickers and the Start
-  // button live there; the workout view (and its tab) only appears once a
-  // workout is started, and disappears again when it is saved or cancelled.
+  // button live there; the workout opens *below* the sub-tab strip (it is not a
+  // tab itself) and can be discarded with the × or saved with the save bar.
   function showForm(flag) {
     var box = $('log-form');
     if (box) { box.hidden = !flag; }
@@ -3432,11 +3445,13 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   }
 
   function openWorkout(scrollToFields) {
-    var tab = $('log-tab');
-    if (tab) { tab.hidden = false; }
-    var btn = panel.querySelector('.subtabs button[data-sub="entry"]');
-    if (btn) { btn.click(); }
     showForm(true);
+    Array.prototype.forEach.call(panel.querySelectorAll('.sub'), function (s) {
+      s.hidden = s.getAttribute('data-sub') !== 'entry';
+    });
+    Array.prototype.forEach.call(panel.querySelectorAll('.subtabs button'), function (b) {
+      b.setAttribute('aria-selected', 'false');
+    });
     renderTemplateLine();
     if (scrollToFields !== false) {
       var first = document.querySelector('#log-cards input[data-f="kg"]');
@@ -3446,10 +3461,27 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 
   function closeWorkout() {
     showForm(false);
-    var tab = $('log-tab');
-    if (tab) { tab.hidden = true; }
     var hist = panel.querySelector('.subtabs button[data-sub="history"]');
     if (hist) { hist.click(); }
+  }
+
+  function discardWorkout() {
+    if (saving) { return; }
+    if (editingSessionId) {
+      exitHistoryEdit();
+      closeWorkout();
+      showToast('Edit cancelled', null, null, 2500);
+      return;
+    }
+    var c = counts();
+    var typed = c.sets > 0 || (draft().note || '').trim();
+    if (typed && !window.confirm('Discard this workout?\n\nEverything typed here will be cleared.')) { return; }
+    stopRest();
+    delete drafts[key()];
+    saveDrafts();
+    renderCards();
+    closeWorkout();
+    showToast(typed ? 'Workout discarded' : 'Closed', null, null, 2500);
   }
 
   function renderCards() {
@@ -4067,6 +4099,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   }
   $('log-save').addEventListener('click', save);
   $('log-start').addEventListener('click', function () { openWorkout(true); });
+  $('log-close').addEventListener('click', discardWorkout);
   $('sync-connect').addEventListener('click', connectSync);
   $('sync-now').addEventListener('click', syncNow);
   $('sync-disconnect').addEventListener('click', disconnectSync);
