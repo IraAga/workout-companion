@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sync.schema.json",
+  "title": "Sync state",
+  "description": "Contents of ol-sync. Device-local: never uploaded, never backed up. Contains a GitHub token in plain localStorage, so treat it as a secret.",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "description": "Fine-grained GitHub PAT with Contents read/write on the data repo. Presence of a token is what enables sync."
+    },
+    "lastSync": { "type": "integer", "minimum": 0, "description": "Epoch ms of the last successful reconciliation." },
+    "dirty": { "type": "boolean", "description": "Local changes are queued for the next sync." },
+    "error": { "type": "string", "description": "Last user-facing error message. '' when healthy." }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,206 @@
+{
+  "id": "fullbody",
+  "order": 2,
+  "navLabel": "Full body",
+  "group": "Train",
+  "kicker": "Train",
+  "title": "Full Body Workout",
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Train"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Full Body Workout"
+    },
+    {
+      "type": "meta",
+      "text": "Profile: Beginner, 190cm / 100kg, full gym access Time: about 60 minutes including the warm-up",
+      "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br>\n<strong>Time:</strong> about 60 minutes including the warm-up</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "A standalone full-body session for the gym. Use it on its own or as a fill-in when you miss a lift day. Don't stack it directly on a Lift A or Lift C day, since it loads the legs too.",
+      "html": "<p>A standalone full-body session for the gym. Use it on its own or as a fill-in when you miss a lift day. Don't stack it directly on a Lift A or Lift C day, since it loads the legs too.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Warm-up (10 min)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use the same mobility primer as the main program:",
+      "html": "<p>Use the same mobility primer as the main program:</p>"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "text": "Ankle dorsiflexion rocks — 2x10 each side",
+          "html": "<li>Ankle dorsiflexion rocks — 2x10 each side</li>"
+        },
+        {
+          "text": "90/90 hip switches — 2x8 each side",
+          "html": "<li>90/90 hip switches — 2x8 each side</li>"
+        },
+        {
+          "text": "Couch stretch — 45 sec each side",
+          "html": "<li>Couch stretch — 45 sec each side</li>"
+        },
+        {
+          "text": "World's greatest stretch — 5 each side",
+          "html": "<li>World's greatest stretch — 5 each side</li>"
+        },
+        {
+          "text": "Lateral lunge to hamstring sweep — 8 each side",
+          "html": "<li>Lateral lunge to hamstring sweep — 8 each side</li>"
+        },
+        {
+          "text": "Band lateral walks — 2x10 steps each direction",
+          "html": "<li>Band lateral walks — 2x10 steps each direction</li>"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Then ramp up on the squat before the working sets: empty bar x10, about 50% of working weight x5, about 70% x3. One warm-up set is enough for each later exercise.",
+      "html": "<p>Then ramp up on the squat before the working sets: empty bar x10, about 50% of working weight x5, about 70% x3. One warm-up set is enough for each later exercise.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Main Session (about 50 min)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Exercise",
+        "Sets x Reps",
+        "Suggested start",
+        "Rest",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Barbell Back Squat",
+          "3x6",
+          "40-50 kg total",
+          "2-2.5 min",
+          "Full depth, heels flat, use the safety bars"
+        ],
+        [
+          "Barbell Romanian Deadlift",
+          "3x8",
+          "40-50 kg total",
+          "2 min",
+          "Hinge at the hips, flat back, slow lowering"
+        ],
+        [
+          "Barbell Bench Press",
+          "3x8",
+          "30-40 kg total",
+          "2 min",
+          "Stop each set with 2 reps left"
+        ],
+        [
+          "Lat Pulldown or Assisted Pull-up",
+          "3x8-10",
+          "40-50 kg on the stack, or 30-40 kg of assistance",
+          "90 sec",
+          "Pull the elbows down, shoulders away from the ears"
+        ],
+        [
+          "Seated Dumbbell Shoulder Press",
+          "3x8",
+          "10-14 kg each hand",
+          "90 sec",
+          "Brace the core, don't arch the lower back"
+        ],
+        [
+          "Dumbbell Box Step-up",
+          "3x8/leg",
+          "Bodyweight, or 8-12 kg each hand",
+          "90 sec",
+          "Knee-height box (about 45-50 cm), push through the heel of the working leg, lower for 2 seconds"
+        ],
+        [
+          "Cable Pallof Press",
+          "3x10/side",
+          "5-10 kg",
+          "60 sec",
+          "Anti-rotation core work, stand sideways to the cable"
+        ],
+        [
+          "Copenhagen Plank (top leg on a box)",
+          "2x15-20 sec/side",
+          "Bodyweight, knee on the box",
+          "60 sec",
+          "Box at knee height, bottom leg hangs, hips in line with the shoulders. Move to the foot on the box once 20 sec is easy"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Barbell Back Squat</td>\n<td>3x6</td>\n<td>40-50 kg total</td>\n<td>2-2.5 min</td>\n<td>Full depth, heels flat, use the safety bars</td>\n</tr>\n<tr>\n<td>Barbell Romanian Deadlift</td>\n<td>3x8</td>\n<td>40-50 kg total</td>\n<td>2 min</td>\n<td>Hinge at the hips, flat back, slow lowering</td>\n</tr>\n<tr>\n<td>Barbell Bench Press</td>\n<td>3x8</td>\n<td>30-40 kg total</td>\n<td>2 min</td>\n<td>Stop each set with 2 reps left</td>\n</tr>\n<tr>\n<td>Lat Pulldown or Assisted Pull-up</td>\n<td>3x8-10</td>\n<td>40-50 kg on the stack, or 30-40 kg of assistance</td>\n<td>90 sec</td>\n<td>Pull the elbows down, shoulders away from the ears</td>\n</tr>\n<tr>\n<td>Seated Dumbbell Shoulder Press</td>\n<td>3x8</td>\n<td>10-14 kg each hand</td>\n<td>90 sec</td>\n<td>Brace the core, don't arch the lower back</td>\n</tr>\n<tr>\n<td>Dumbbell Box Step-up</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-12 kg each hand</td>\n<td>90 sec</td>\n<td>Knee-height box (about 45-50 cm), push through the heel of the working leg, lower for 2 seconds</td>\n</tr>\n<tr>\n<td>Cable Pallof Press</td>\n<td>3x10/side</td>\n<td>5-10 kg</td>\n<td>60 sec</td>\n<td>Anti-rotation core work, stand sideways to the cable</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (top leg on a box)</td>\n<td>2x15-20 sec/side</td>\n<td>Bodyweight, knee on the box</td>\n<td>60 sec</td>\n<td>Box at knee height, bottom leg hangs, hips in line with the shoulders. Move to the foot on the box once 20 sec is easy</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Barbell weights are the total including the 20 kg bar. These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point and adjust with the steps below.",
+      "html": "<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point and adjust with the steps below.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Finding Your Real Starting Weight"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Week 1: do 2 sets per exercise at the low end of each range. After 2 months off, this keeps the soreness manageable and lets the technique come back first.",
+          "lead": "Week 1:",
+          "html": "<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range. After 2 months off, this keeps the soreness manageable and lets the technique come back first.</li>"
+        },
+        {
+          "text": "Week 2: go back to 3 sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range.",
+          "lead": "Week 2:",
+          "html": "<li><strong>Week 2:</strong> go back to 3 sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range.</li>"
+        },
+        {
+          "text": "Week 3 onward: pick the weight that leaves 2 reps in reserve on the last set, then follow the progression rules below.",
+          "lead": "Week 3 onward:",
+          "html": "<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression rules below.</li>"
+        },
+        {
+          "text": "If a set is a grind with form breaking down, drop the weight 10% rather than pushing through.",
+          "html": "<li>If a set is a grind with form breaking down, drop the weight 10% rather than pushing through.</li>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Progression"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "When you hit the top of the rep range on every set, add weight next session: 2.5 kg total on the upper-body lifts, 5 kg total on squat and Romanian deadlift",
+          "html": "<li>When you hit the top of the rep range on every set, add weight next session: 2.5 kg total on the upper-body lifts, 5 kg total on squat and Romanian deadlift</li>"
+        },
+        {
+          "text": "Every 4th week, drop to 2 sets per exercise as a lighter week",
+          "html": "<li>Every 4th week, drop to 2 sets per exercise as a lighter week</li>"
+        },
+        {
+          "text": "If the rack is busy, swap squat and Romanian deadlift for goblet squat and dumbbell Romanian deadlift rather than skipping them",
+          "html": "<li>If the rack is busy, swap squat and Romanian deadlift for goblet squat and dumbbell Romanian deadlift rather than skipping them</li>"
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Train</p>\n<h1>Full Body Workout</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />\n<strong>Time:</strong> about 60 minutes including the warm-up</p>\n<p>A standalone full-body session for the gym. Use it on its own or as a fill-in when you miss a lift day. Don't stack it directly on a Lift A or Lift C day, since it loads the legs too.</p>\n\n<h2>Warm-up (10 min)</h2>\n<p>Use the same mobility primer as the main program:</p>\n<ol>\n<li>Ankle dorsiflexion rocks — 2x10 each side</li>\n<li>90/90 hip switches — 2x8 each side</li>\n<li>Couch stretch — 45 sec each side</li>\n<li>World's greatest stretch — 5 each side</li>\n<li>Lateral lunge to hamstring sweep — 8 each side</li>\n<li>Band lateral walks — 2x10 steps each direction</li>\n</ol>\n<p>Then ramp up on the squat before the working sets: empty bar x10, about 50% of working weight x5, about 70% x3. One warm-up set is enough for each later exercise.</p>\n\n<h2>Main Session (about 50 min)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Barbell Back Squat</td>\n<td>3x6</td>\n<td>40-50 kg total</td>\n<td>2-2.5 min</td>\n<td>Full depth, heels flat, use the safety bars</td>\n</tr>\n<tr>\n<td>Barbell Romanian Deadlift</td>\n<td>3x8</td>\n<td>40-50 kg total</td>\n<td>2 min</td>\n<td>Hinge at the hips, flat back, slow lowering</td>\n</tr>\n<tr>\n<td>Barbell Bench Press</td>\n<td>3x8</td>\n<td>30-40 kg total</td>\n<td>2 min</td>\n<td>Stop each set with 2 reps left</td>\n</tr>\n<tr>\n<td>Lat Pulldown or Assisted Pull-up</td>\n<td>3x8-10</td>\n<td>40-50 kg on the stack, or 30-40 kg of assistance</td>\n<td>90 sec</td>\n<td>Pull the elbows down, shoulders away from the ears</td>\n</tr>\n<tr>\n<td>Seated Dumbbell Shoulder Press</td>\n<td>3x8</td>\n<td>10-14 kg each hand</td>\n<td>90 sec</td>\n<td>Brace the core, don't arch the lower back</td>\n</tr>\n<tr>\n<td>Dumbbell Box Step-up</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-12 kg each hand</td>\n<td>90 sec</td>\n<td>Knee-height box (about 45-50 cm), push through the heel of the working leg, lower for 2 seconds</td>\n</tr>\n<tr>\n<td>Cable Pallof Press</td>\n<td>3x10/side</td>\n<td>5-10 kg</td>\n<td>60 sec</td>\n<td>Anti-rotation core work, stand sideways to the cable</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (top leg on a box)</td>\n<td>2x15-20 sec/side</td>\n<td>Bodyweight, knee on the box</td>\n<td>60 sec</td>\n<td>Box at knee height, bottom leg hangs, hips in line with the shoulders. Move to the foot on the box once 20 sec is easy</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point and adjust with the steps below.</p>\n<h2>Finding Your Real Starting Weight</h2>\n<ul>\n<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range. After 2 months off, this keeps the soreness manageable and lets the technique come back first.</li>\n<li><strong>Week 2:</strong> go back to 3 sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range.</li>\n<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression rules below.</li>\n<li>If a set is a grind with form breaking down, drop the weight 10% rather than pushing through.</li>\n</ul>\n\n<h2>Progression</h2>\n<ul>\n<li>When you hit the top of the rep range on every set, add weight next session: 2.5 kg total on the upper-body lifts, 5 kg total on squat and Romanian deadlift</li>\n<li>Every 4th week, drop to 2 sets per exercise as a lighter week</li>\n<li>If the rack is busy, swap squat and Romanian deadlift for goblet squat and dumbbell Romanian deadlift rather than skipping them</li>\n</ul>"
+}

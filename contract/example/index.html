@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contract example — Off-Season Plan</title>
+<style>
+  :root { color-scheme: light dark; --bg:#F1F4F1; --ink:#16201C; --muted:#586660; --rule:#D3DBD5; --accent:#0C7557; --card:#FAFBFA; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0F1613; --ink:#E4EBE7; --muted:#90A199; --rule:#28352F; --accent:#46C29B; --card:#161F1B; } }
+  body { margin:0; padding:1.25rem; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width:60rem; margin:0 auto; display:grid; gap:1.5rem; }
+  h1 { font-size:1.6rem; margin:0 0 .25rem; }
+  h2 { font-size:1.05rem; margin:1.75rem 0 .6rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  p.lede { color:var(--muted); margin:0; }
+  .row { display:flex; flex-wrap:wrap; gap:.4rem; }
+  .chip { font:inherit; padding:.35rem .7rem; border:1px solid var(--rule); border-radius:999px; background:var(--card); color:var(--ink); cursor:pointer; }
+  .chip[aria-pressed="true"] { border-color:var(--accent); color:var(--accent); font-weight:600; }
+  ul.week { list-style:none; margin:0; padding:0; display:grid; gap:.35rem; }
+  ul.week li { display:grid; grid-template-columns:3.2rem 8rem 1fr; gap:.6rem; padding:.45rem .6rem; background:var(--card); border:1px solid var(--rule); border-radius:6px; font-size:.95rem; }
+  ul.week b { color:var(--accent); }
+  .card { background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:.7rem .8rem; margin-bottom:.5rem; }
+  .card h3 { margin:0 0 .15rem; font-size:1rem; }
+  .card .meta { color:var(--muted); font-size:.85rem; }
+  table { border-collapse:collapse; width:100%; font-size:.9rem; margin:.4rem 0 .8rem; }
+  th, td { text-align:left; padding:.35rem .5rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { color:var(--muted); font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; }
+  .meal { border-left:3px solid var(--accent); padding-left:.7rem; margin:.9rem 0; }
+  .meal h4 { margin:0 0 .2rem; }
+  .err { color:#b3261e; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Contract example</h1>
+    <p class="lede">This page only reads <code>contract/data/*.json</code>. No code from the app is reused.</p>
+  </header>
+
+  <section>
+    <h2>Weekly schedule</h2>
+    <div id="week" class="row"></div>
+  </section>
+
+  <section>
+    <h2>Programs</h2>
+    <div id="programs" class="row" role="group" aria-label="Programs"></div>
+    <div id="sessions" class="row" style="margin-top:.5rem"></div>
+    <div id="exercises"></div>
+  </section>
+
+  <section>
+    <h2>Static document</h2>
+    <select id="doc" aria-label="Document"></select>
+    <div id="rendered"></div>
+  </section>
+</main>
+
+<script>
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const $ = (id) => document.getElementById(id);
+const load = (path) => fetch(path).then((r) => { if (!r.ok) throw new Error(path + ': HTTP ' + r.status); return r.json(); });
+
+let catalog, index, programId, sessionId;
+
+function renderWeek(panel) {
+  const list = panel.blocks.find((b) => b.type === 'week');
+  $('week').innerHTML = '<ul class="week">' + list.items.map((d) =>
+    '<li><b>' + esc(d.weekday) + '</b><span>' + esc(d.label) + '</span><span>' + esc(d.detail) + '</span></li>'
+  ).join('') + '</ul>';
+}
+
+function renderPrograms() {
+  $('programs').innerHTML = catalog.programs.map((p) =>
+    '<button class="chip" data-program="' + esc(p.id) + '" aria-pressed="' + (p.id === programId) + '">' + esc(p.label) + '</button>'
+  ).join('');
+  const program = catalog.programs.find((p) => p.id === programId);
+  $('sessions').innerHTML = program.sessions.map((s) =>
+    '<button class="chip" data-session="' + esc(s.id) + '" aria-pressed="' + (s.id === sessionId) + '">' + esc(s.label) + '</button>'
+  ).join('');
+  const session = program.sessions.find((s) => s.id === sessionId) || program.sessions[0];
+  $('exercises').innerHTML = session.exercises.map((ex) => {
+    const rest = catalog.exerciseIndex[ex.id].restSeconds;
+    return '<article class="card"><h3>' + esc(ex.title) + '</h3>'
+      + '<p class="meta">' + esc(ex.target || ex.sets + ' sets') + ' · ' + esc(ex.unit)
+      + ' · rest ' + rest + 's' + (ex.bw ? ' · bodyweight' : '') + '</p>'
+      + (ex.hint ? '<p class="meta">' + esc(ex.hint) + '</p>' : '')
+      + (ex.suggested ? '<p class="meta">Start: ' + esc(ex.suggested) + '</p>' : '')
+      + '</article>';
+  }).join('');
+}
+
+/* A deliberately small block renderer: enough to show the format is portable. */
+function renderBlocks(blocks) {
+  return blocks.map((b) => {
+    switch (b.type) {
+      case 'kicker': return '<p class="meta">' + esc(b.text) + '</p>';
+      case 'heading': return '<h' + (b.level + 1) + '>' + esc(b.text) + '</h' + (b.level + 1) + '>';
+      case 'paragraph': case 'hint': case 'macro': case 'meta': return '<p>' + esc(b.text) + '</p>';
+      case 'list': return (b.ordered ? '<ol>' : '<ul>') + b.items.map((i) => '<li>' + (i.name ? '<b>' + esc(i.name) + '</b> — ' + esc(i.description) : esc(i.text)) + '</li>').join('') + (b.ordered ? '</ol>' : '</ul>');
+      case 'week': return '<ul>' + b.items.map((i) => '<li><b>' + esc(i.weekday) + '</b> ' + esc(i.label) + ' — ' + esc(i.detail) + '</li>').join('') + '</ul>';
+      case 'index': return '<ul>' + b.items.map((i) => '<li><b>' + esc(i.name) + '</b> — ' + esc(i.description) + '</li>').join('') + '</ul>';
+      case 'table': return '<table><thead><tr>' + b.headers.map((h) => '<th>' + esc(h) + '</th>').join('') + '</tr></thead><tbody>'
+        + b.rows.map((r) => '<tr>' + r.map((c) => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('') + '</tbody></table>';
+      case 'meal-grid': return b.meals.map((m) => '<div class="meal"><h4>' + esc(m.title) + '</h4>'
+        + (m.ingredients ? renderBlocks([m.ingredients]) : '') + '<p class="meta">' + esc(m.macro || '') + '</p></div>').join('');
+      case 'section': return '<h3>' + esc(b.key || b.id || '') + '</h3>' + renderBlocks(b.blocks);
+      case 'group': return renderBlocks(b.blocks || []);
+      case 'subtabs': return '<p class="meta">Tabs: ' + b.tabs.map((t) => esc(t.label)).join(' · ') + '</p>';
+      case 'widget': return '<p class="meta">[live widget] ' + esc(b.description) + '</p>';
+      case 'divider': return '<hr>';
+      case 'html': case 'details': return b.text ? '<p>' + esc(b.text) + '</p>' : '';
+      default: return '';
+    }
+  }).join('');
+}
+
+async function renderDoc(id) {
+  const panel = await load('../data/content/' + id + '.json');
+  $('rendered').innerHTML = renderBlocks(panel.blocks);
+}
+
+document.addEventListener('click', (e) => {
+  const p = e.target.closest('[data-program]');
+  const s = e.target.closest('[data-session]');
+  if (p) {
+    programId = p.dataset.program;
+    sessionId = catalog.programs.find((x) => x.id === programId).sessions[0].id;
+    renderPrograms();
+  }
+  if (s) { sessionId = s.dataset.session; renderPrograms(); }
+});
+
+$('doc').addEventListener('change', (e) => renderDoc(e.target.value));
+
+(async () => {
+  try {
+    const [cat, idx, week] = await Promise.all([
+      load('../data/catalog.json'),
+      load('../data/content/index.json'),
+      load('../data/content/week.json'),
+    ]);
+    catalog = cat;
+    index = idx;
+    programId = catalog.programs[0].id;
+    sessionId = catalog.programs[0].sessions[0].id;
+    renderWeek(week);
+    renderPrograms();
+    $('doc').innerHTML = index.panels.map((p) => '<option value="' + esc(p.id) + '">' + esc(p.title || p.navLabel) + '</option>').join('');
+    await renderDoc(index.panels[0].id);
+  } catch (err) {
+    document.querySelector('main').insertAdjacentHTML('afterbegin', '<p class="err">' + esc(err.message) + ' — serve the repo over HTTP, e.g. <code>python3 -m http.server 8080</code>.</p>');
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "log-doc.schema.json",
+  "title": "Synced log document",
+  "description": "The exact JSON committed to GitHub at workout-companion-data/log.json. Both devices merge against this shape.",
+  "type": "object",
+  "required": ["schema", "app", "sessions", "deleted"],
+  "properties": {
+    "schema": { "const": 1 },
+    "app": { "const": "off-season-plan" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "sessions": { "type": "array", "items": { "$ref": "log-session.schema.json" } },
+    "deleted": {
+      "type": "object",
+      "description": "Tombstones: session id -> deletion time in epoch ms. Unioned on merge, pruned after 365 days.",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  },
+  "additionalProperties": true
+}

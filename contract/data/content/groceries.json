@@ -1,0 +1,363 @@
+{
+  "id": "groceries",
+  "order": 7,
+  "navLabel": "Grocery list",
+  "group": "Shop",
+  "kicker": "Shop",
+  "title": "Monthly Grocery Baseline — Budget-Friendly High-Protein Core",
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Shop"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Monthly Grocery Baseline — Budget-Friendly High-Protein Core"
+    },
+    {
+      "type": "paragraph",
+      "text": "The recurring baseline of primary, budget-friendly protein staples — not a variety list. Everything here is chosen for being cheap per gram of protein and easy to buy in bulk.",
+      "html": "<p>The recurring baseline of primary, budget-friendly protein staples — not a variety list. Everything here is chosen for being cheap per gram of protein and easy to buy in bulk.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Where to buy:",
+      "html": "<p><strong>Where to buy:</strong></p>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Lidl / MyMarket — proteins, dairy, pantry, frozen items",
+          "lead": "Lidl / MyMarket",
+          "html": "<li><strong>Lidl / MyMarket</strong> — proteins, dairy, pantry, frozen items</li>"
+        },
+        {
+          "text": "Open-air market — vegetables and bananas (usually cheaper there)",
+          "lead": "Open-air market",
+          "html": "<li><strong>Open-air market</strong> — vegetables and bananas (usually cheaper there)</li>"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A note on the prices below: these are ballpark estimates based on typical Greek discount-supermarket pricing, not scraped current prices — I couldn't pull reliable live prices for specific Lidl/MyMarket items. Treat this as a planning estimate to sanity-check against your first actual receipt, not an exact number.",
+      "html": "<p><strong>A note on the prices below:</strong> these are ballpark estimates based on typical Greek discount-supermarket pricing, not scraped current prices — I couldn't pull reliable live prices for specific Lidl/MyMarket items. Treat this as a planning estimate to sanity-check against your first actual receipt, not an exact number.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Proteins (Animal)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Monthly Amount",
+        "Est. Unit Price",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Whole chicken",
+          "5-5.5 kg (raw, whole; ~3 average birds)",
+          "~€4.00/kg",
+          "~€21"
+        ],
+        [
+          "Canned tuna (in water)",
+          "6-8 cans",
+          "~€1.75/can",
+          "~€12"
+        ],
+        [
+          "Eggs (medium)",
+          "10 dozen (12 packs of 10)",
+          "~€2.50/pack of 10",
+          "~€30"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole chicken</td>\n<td>5-5.5 kg (raw, whole; ~3 average birds)</td>\n<td>~€4.00/kg</td>\n<td>~€21</td>\n</tr>\n<tr>\n<td>Canned tuna (in water)</td>\n<td>6-8 cans</td>\n<td>~€1.75/can</td>\n<td>~€12</td>\n</tr>\n<tr>\n<td>Eggs (medium)</td>\n<td>10 dozen (12 packs of 10)</td>\n<td>~€2.50/pack of 10</td>\n<td>~€30</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Whole chicken note: cheaper than buying cuts separately, but a whole bird only yields ~45-50% of its raw weight as boneless, skinless meat (bone/skin/fat make up the rest) — corrected up from an earlier, too-optimistic yield estimate so the actual usable meat still covers ~600g/week of recipe use.",
+      "html": "<p><em>Whole chicken note: cheaper than buying cuts separately, but a whole bird only yields ~45-50% of its raw weight as boneless, skinless meat (bone/skin/fat make up the rest) — corrected up from an earlier, too-optimistic yield estimate so the actual usable meat still covers ~600g/week of recipe use.</em></p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Subtotal: ~€63",
+      "html": "<p><strong>Subtotal: ~€63</strong></p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Proteins (Dairy)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Monthly Amount",
+        "Est. Unit Price",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Greek yogurt (0-2%)",
+          "4-5 kg total",
+          "~€4.00/kg",
+          "~€18"
+        ],
+        [
+          "Cottage cheese",
+          "2-2.5 kg total",
+          "~€4.50/kg",
+          "~€10"
+        ],
+        [
+          "Whey protein powder",
+          "1 kg tub",
+          "~€18/tub (budget brand)",
+          "~€18"
+        ],
+        [
+          "Milk (optional, for shakes)",
+          "4-6L",
+          "~€1.15/L",
+          "~€6"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2%)</td>\n<td>4-5 kg total</td>\n<td>~€4.00/kg</td>\n<td>~€18</td>\n</tr>\n<tr>\n<td>Cottage cheese</td>\n<td>2-2.5 kg total</td>\n<td>~€4.50/kg</td>\n<td>~€10</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>1 kg tub</td>\n<td>~€18/tub (budget brand)</td>\n<td>~€18</td>\n</tr>\n<tr>\n<td>Milk (optional, for shakes)</td>\n<td>4-6L</td>\n<td>~€1.15/L</td>\n<td>~€6</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Subtotal: ~€52 (or ~€46 if skipping milk)",
+      "html": "<p><strong>Subtotal: ~€52 (or ~€46 if skipping milk)</strong></p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Carb Staples"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Monthly Amount",
+        "Est. Unit Price",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Oats",
+          "1.5-2 kg",
+          "~€1.75/kg",
+          "~€3"
+        ],
+        [
+          "White rice",
+          "2-2.5 kg",
+          "~€1.75/kg",
+          "~€4"
+        ],
+        [
+          "Potatoes (white)",
+          "2-2.5 kg",
+          "~€1.20/kg",
+          "~€3"
+        ],
+        [
+          "Whole grain bread",
+          "2 loaves",
+          "~€2.00/loaf",
+          "~€4"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Oats</td>\n<td>1.5-2 kg</td>\n<td>~€1.75/kg</td>\n<td>~€3</td>\n</tr>\n<tr>\n<td>White rice</td>\n<td>2-2.5 kg</td>\n<td>~€1.75/kg</td>\n<td>~€4</td>\n</tr>\n<tr>\n<td>Potatoes (white)</td>\n<td>2-2.5 kg</td>\n<td>~€1.20/kg</td>\n<td>~€3</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>2 loaves</td>\n<td>~€2.00/loaf</td>\n<td>~€4</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Subtotal: ~€14",
+      "html": "<p><strong>Subtotal: ~€14</strong></p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fats"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Monthly Amount",
+        "Est. Unit Price",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Olive oil",
+          "500ml-750ml",
+          "~€7.00/L",
+          "~€4-5"
+        ],
+        [
+          "Peanut butter (or almond butter)",
+          "1 jar",
+          "~€3-4 (peanut) / ~€6-7 (almond)",
+          "~€3-7"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Olive oil</td>\n<td>500ml-750ml</td>\n<td>~€7.00/L</td>\n<td>~€4-5</td>\n</tr>\n<tr>\n<td>Peanut butter (or almond butter)</td>\n<td>1 jar</td>\n<td>~€3-4 (peanut) / ~€6-7 (almond)</td>\n<td>~€3-7</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Subtotal: ~€7-12",
+      "html": "<p><strong>Subtotal: ~€7-12</strong></p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Vegetables & Bananas (open-air market, weekly)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hardest to pin down since it's whatever's cheap that week, but as a rough weekly budget:",
+      "html": "<p>Hardest to pin down since it's whatever's cheap that week, but as a rough weekly budget:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Est. Weekly Cost",
+        "Est. Monthly Cost"
+      ],
+      "rows": [
+        [
+          "Vegetables + bananas",
+          "~€10-15/week",
+          "~€40-60"
+        ]
+      ],
+      "html": "<table>\n<thead>\n<tr>\n<th>Item</th>\n<th>Est. Weekly Cost</th>\n<th>Est. Monthly Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Vegetables + bananas</td>\n<td>~€10-15/week</td>\n<td>~€40-60</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Frozen (Lidl/MyMarket)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Item",
+        "Monthly Amount",
+        "Est. Unit Price",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Frozen fruit",
+          "~1 kg",
+          "~€3.50/kg",
+          "~€3.5"
+        ],
+        [
+          "Frozen vegetables (optional)",
+          "~1 kg if used",
+          "~€2/kg",
+          "~€2 (if used)"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Frozen fruit</td>\n<td>~1 kg</td>\n<td>~€3.50/kg</td>\n<td>~€3.5</td>\n</tr>\n<tr>\n<td>Frozen vegetables (optional)</td>\n<td>~1 kg if used</td>\n<td>~€2/kg</td>\n<td>~€2 (if used)</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Estimated Total Monthly Cost"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Category",
+        "Est. Cost"
+      ],
+      "rows": [
+        [
+          "Proteins (animal)",
+          "~€63"
+        ],
+        [
+          "Proteins (dairy)",
+          "~€46-52"
+        ],
+        [
+          "Carbs",
+          "~€14"
+        ],
+        [
+          "Fats",
+          "~€7-12"
+        ],
+        [
+          "Vegetables/bananas",
+          "~€40-60"
+        ],
+        [
+          "Frozen fruit (+ optional veg)",
+          "~€3.5-5.5"
+        ],
+        [
+          "Total",
+          "~€175-205/month"
+        ]
+      ],
+      "html": "<table>\n<thead>\n<tr>\n<th>Category</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Proteins (animal)</td>\n<td>~€63</td>\n</tr>\n<tr>\n<td>Proteins (dairy)</td>\n<td>~€46-52</td>\n</tr>\n<tr>\n<td>Carbs</td>\n<td>~€14</td>\n</tr>\n<tr>\n<td>Fats</td>\n<td>~€7-12</td>\n</tr>\n<tr>\n<td>Vegetables/bananas</td>\n<td>~€40-60</td>\n</tr>\n<tr>\n<td>Frozen fruit (+ optional veg)</td>\n<td>~€3.5-5.5</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td><strong>~€175-205/month</strong></td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is squarely a budget-focused number for a high-protein diet — the biggest swing factors are the whey protein (skip it and save ~€18 if you'd rather hit protein from food alone) and how much you end up spending at the open-air market week to week.",
+      "html": "<p>This is squarely a budget-focused number for a high-protein diet — the biggest swing factors are the whey protein (skip it and save ~€18 if you'd rather hit protein from food alone) and how much you end up spending at the open-air market week to week.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to Use This"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Buy proteins, dairy, and pantry items once a month or split into two trips — chicken keeps well frozen if bought in bulk",
+          "lead": "proteins, dairy, and pantry items",
+          "html": "<li>Buy <strong>proteins, dairy, and pantry items</strong> once a month or split into two trips — chicken keeps well frozen if bought in bulk</li>"
+        },
+        {
+          "text": "Buy vegetables and bananas weekly at the open-air market",
+          "lead": "vegetables and bananas weekly",
+          "html": "<li>Buy <strong>vegetables and bananas weekly</strong> at the open-air market</li>"
+        },
+        {
+          "text": "Keep a bag of frozen fruit on hand as a fallback rather than relying only on fresh",
+          "lead": "frozen fruit",
+          "html": "<li>Keep a bag of <strong>frozen fruit</strong> on hand as a fallback rather than relying only on fresh</li>"
+        },
+        {
+          "text": "This list is intentionally narrow — it's your core, not everything you'll ever eat. Add in whatever's cheap and available that week without needing to update this baseline",
+          "html": "<li>This list is intentionally narrow — it's your core, not everything you'll ever eat. Add in whatever's cheap and available that week without needing to update this baseline</li>"
+        },
+        {
+          "text": "After your first real shopping trip, swap these estimated prices for your actual receipt totals — that'll make this budget section genuinely accurate instead of a rough guess",
+          "lead": "After your first real shopping trip, swap these estimated prices for your actual receipt totals",
+          "html": "<li><strong>After your first real shopping trip, swap these estimated prices for your actual receipt totals</strong> — that'll make this budget section genuinely accurate instead of a rough guess</li>"
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Shop</p>\n<h1>Monthly Grocery Baseline — Budget-Friendly High-Protein Core</h1>\n<p>The recurring baseline of primary, budget-friendly protein staples — not a variety list. Everything here is chosen for being cheap per gram of protein and easy to buy in bulk.</p>\n<p><strong>Where to buy:</strong></p>\n<ul>\n<li><strong>Lidl / MyMarket</strong> — proteins, dairy, pantry, frozen items</li>\n<li><strong>Open-air market</strong> — vegetables and bananas (usually cheaper there)</li>\n</ul>\n<p><strong>A note on the prices below:</strong> these are ballpark estimates based on typical Greek discount-supermarket pricing, not scraped current prices — I couldn't pull reliable live prices for specific Lidl/MyMarket items. Treat this as a planning estimate to sanity-check against your first actual receipt, not an exact number.</p>\n\n<h2>Proteins (Animal)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole chicken</td>\n<td>5-5.5 kg (raw, whole; ~3 average birds)</td>\n<td>~€4.00/kg</td>\n<td>~€21</td>\n</tr>\n<tr>\n<td>Canned tuna (in water)</td>\n<td>6-8 cans</td>\n<td>~€1.75/can</td>\n<td>~€12</td>\n</tr>\n<tr>\n<td>Eggs (medium)</td>\n<td>10 dozen (12 packs of 10)</td>\n<td>~€2.50/pack of 10</td>\n<td>~€30</td>\n</tr>\n</tbody>\n</table></div>\n<p><em>Whole chicken note: cheaper than buying cuts separately, but a whole bird only yields ~45-50% of its raw weight as boneless, skinless meat (bone/skin/fat make up the rest) — corrected up from an earlier, too-optimistic yield estimate so the actual usable meat still covers ~600g/week of recipe use.</em></p>\n<p><strong>Subtotal: ~€63</strong></p>\n<h2>Proteins (Dairy)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2%)</td>\n<td>4-5 kg total</td>\n<td>~€4.00/kg</td>\n<td>~€18</td>\n</tr>\n<tr>\n<td>Cottage cheese</td>\n<td>2-2.5 kg total</td>\n<td>~€4.50/kg</td>\n<td>~€10</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>1 kg tub</td>\n<td>~€18/tub (budget brand)</td>\n<td>~€18</td>\n</tr>\n<tr>\n<td>Milk (optional, for shakes)</td>\n<td>4-6L</td>\n<td>~€1.15/L</td>\n<td>~€6</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Subtotal: ~€52 (or ~€46 if skipping milk)</strong></p>\n<h2>Carb Staples</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Oats</td>\n<td>1.5-2 kg</td>\n<td>~€1.75/kg</td>\n<td>~€3</td>\n</tr>\n<tr>\n<td>White rice</td>\n<td>2-2.5 kg</td>\n<td>~€1.75/kg</td>\n<td>~€4</td>\n</tr>\n<tr>\n<td>Potatoes (white)</td>\n<td>2-2.5 kg</td>\n<td>~€1.20/kg</td>\n<td>~€3</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>2 loaves</td>\n<td>~€2.00/loaf</td>\n<td>~€4</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Subtotal: ~€14</strong></p>\n<h2>Fats</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Olive oil</td>\n<td>500ml-750ml</td>\n<td>~€7.00/L</td>\n<td>~€4-5</td>\n</tr>\n<tr>\n<td>Peanut butter (or almond butter)</td>\n<td>1 jar</td>\n<td>~€3-4 (peanut) / ~€6-7 (almond)</td>\n<td>~€3-7</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Subtotal: ~€7-12</strong></p>\n<h2>Vegetables &amp; Bananas (open-air market, weekly)</h2>\n<p>Hardest to pin down since it's whatever's cheap that week, but as a rough weekly budget:</p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Item</th>\n<th>Est. Weekly Cost</th>\n<th>Est. Monthly Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Vegetables + bananas</td>\n<td>~€10-15/week</td>\n<td>~€40-60</td>\n</tr>\n</tbody>\n</table></div>\n<h2>Frozen (Lidl/MyMarket)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Item</th>\n<th>Monthly Amount</th>\n<th>Est. Unit Price</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Frozen fruit</td>\n<td>~1 kg</td>\n<td>~€3.50/kg</td>\n<td>~€3.5</td>\n</tr>\n<tr>\n<td>Frozen vegetables (optional)</td>\n<td>~1 kg if used</td>\n<td>~€2/kg</td>\n<td>~€2 (if used)</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Estimated Total Monthly Cost</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Category</th>\n<th>Est. Cost</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Proteins (animal)</td>\n<td>~€63</td>\n</tr>\n<tr>\n<td>Proteins (dairy)</td>\n<td>~€46-52</td>\n</tr>\n<tr>\n<td>Carbs</td>\n<td>~€14</td>\n</tr>\n<tr>\n<td>Fats</td>\n<td>~€7-12</td>\n</tr>\n<tr>\n<td>Vegetables/bananas</td>\n<td>~€40-60</td>\n</tr>\n<tr>\n<td>Frozen fruit (+ optional veg)</td>\n<td>~€3.5-5.5</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td><strong>~€175-205/month</strong></td>\n</tr>\n</tbody>\n</table></div>\n<p>This is squarely a budget-focused number for a high-protein diet — the biggest swing factors are the whey protein (skip it and save ~€18 if you'd rather hit protein from food alone) and how much you end up spending at the open-air market week to week.</p>\n\n<h2>How to Use This</h2>\n<ul>\n<li>Buy <strong>proteins, dairy, and pantry items</strong> once a month or split into two trips — chicken keeps well frozen if bought in bulk</li>\n<li>Buy <strong>vegetables and bananas weekly</strong> at the open-air market</li>\n<li>Keep a bag of <strong>frozen fruit</strong> on hand as a fallback rather than relying only on fresh</li>\n<li>This list is intentionally narrow — it's your core, not everything you'll ever eat. Add in whatever's cheap and available that week without needing to update this baseline</li>\n<li><strong>After your first real shopping trip, swap these estimated prices for your actual receipt totals</strong> — that'll make this budget section genuinely accurate instead of a rough guess</li>\n</ul>"
+}

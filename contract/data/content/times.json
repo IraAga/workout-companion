@@ -1,0 +1,267 @@
+{
+  "id": "times",
+  "order": 4,
+  "navLabel": "Session times",
+  "group": "Train",
+  "kicker": "Train",
+  "title": "Session times",
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Train"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Session times"
+    },
+    {
+      "type": "meta",
+      "text": "Program: Gym Unit: minutes, mobility primer included",
+      "html": "<p class=\"meta\"><strong>Program:</strong> Gym<br><strong>Unit:</strong> minutes, mobility primer included</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every session opens with the mobility primer. The hatched band on each bar is the gap between the low and high estimate for the main lifts.",
+      "html": "<p>Every session opens with the mobility primer. The hatched band on each bar is the gap between the low and high estimate for the main lifts.</p>"
+    },
+    {
+      "type": "group",
+      "class": "legend",
+      "blocks": [
+        {
+          "type": "html",
+          "tag": "span",
+          "text": "Mobility primer",
+          "html": "<span><i class=\"sw mob\"></i>Mobility primer</span>"
+        },
+        {
+          "type": "html",
+          "tag": "span",
+          "text": "Main lifts, low estimate",
+          "html": "<span><i class=\"sw main\"></i>Main lifts, low estimate</span>"
+        },
+        {
+          "type": "html",
+          "tag": "span",
+          "text": "Range up to the high estimate",
+          "html": "<span><i class=\"sw rng\"></i>Range up to the high estimate</span>"
+        }
+      ],
+      "html": "<div class=\"legend\"><span><i class=\"sw mob\"></i>Mobility primer</span><span><i class=\"sw main\"></i>Main lifts, low estimate</span><span><i class=\"sw rng\"></i>Range up to the high estimate</span></div>"
+    },
+    {
+      "type": "group",
+      "class": "chart",
+      "blocks": [
+        {
+          "type": "group",
+          "class": "trow",
+          "blocks": [
+            {
+              "type": "group",
+              "class": "thead",
+              "blocks": [
+                {
+                  "type": "group",
+                  "blocks": [
+                    {
+                      "type": "html",
+                      "tag": "b",
+                      "text": "Lift A",
+                      "html": "<b>Lift A</b>"
+                    }
+                  ],
+                  "html": "<span><b>Lift A</b>Deadlift + lower power</span>"
+                },
+                {
+                  "type": "html",
+                  "tag": "span",
+                  "text": "47–51 min",
+                  "html": "<span class=\"tval\">47–51 min</span>"
+                }
+              ],
+              "html": "<div class=\"thead\"><span><b>Lift A</b>Deadlift + lower power</span><span class=\"tval\">47–51 min</span></div>"
+            }
+          ],
+          "html": "<div class=\"trow\"><div class=\"thead\"><span><b>Lift A</b>Deadlift + lower power</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>"
+        },
+        {
+          "type": "group",
+          "class": "trow",
+          "blocks": [
+            {
+              "type": "group",
+              "class": "thead",
+              "blocks": [
+                {
+                  "type": "group",
+                  "blocks": [
+                    {
+                      "type": "html",
+                      "tag": "b",
+                      "text": "Lift B",
+                      "html": "<b>Lift B</b>"
+                    }
+                  ],
+                  "html": "<span><b>Lift B</b>Bench/Pull/Press + core</span>"
+                },
+                {
+                  "type": "html",
+                  "tag": "span",
+                  "text": "39–44 min",
+                  "html": "<span class=\"tval\">39–44 min</span>"
+                }
+              ],
+              "html": "<div class=\"thead\"><span><b>Lift B</b>Bench/Pull/Press + core</span><span class=\"tval\">39–44 min</span></div>"
+            }
+          ],
+          "html": "<div class=\"trow\"><div class=\"thead\"><span><b>Lift B</b>Bench/Pull/Press + core</span><span class=\"tval\">39–44 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:50.000%\"></i><i class=\"rng\" style=\"width:8.333%\"></i></div></div>"
+        },
+        {
+          "type": "group",
+          "class": "trow",
+          "blocks": [
+            {
+              "type": "group",
+              "class": "thead",
+              "blocks": [
+                {
+                  "type": "group",
+                  "blocks": [
+                    {
+                      "type": "html",
+                      "tag": "b",
+                      "text": "Lift C",
+                      "html": "<b>Lift C</b>"
+                    }
+                  ],
+                  "html": "<span><b>Lift C</b>Squat + plyo</span>"
+                },
+                {
+                  "type": "html",
+                  "tag": "span",
+                  "text": "47–51 min",
+                  "html": "<span class=\"tval\">47–51 min</span>"
+                }
+              ],
+              "html": "<div class=\"thead\"><span><b>Lift C</b>Squat + plyo</span><span class=\"tval\">47–51 min</span></div>"
+            }
+          ],
+          "html": "<div class=\"trow\"><div class=\"thead\"><span><b>Lift C</b>Squat + plyo</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>"
+        },
+        {
+          "type": "group",
+          "class": "axis",
+          "blocks": [
+            {
+              "type": "html",
+              "tag": "span",
+              "text": "0",
+              "html": "<span style=\"left:0%\">0</span>"
+            },
+            {
+              "type": "html",
+              "tag": "span",
+              "text": "15",
+              "html": "<span style=\"left:25%\">15</span>"
+            },
+            {
+              "type": "html",
+              "tag": "span",
+              "text": "30",
+              "html": "<span style=\"left:50%\">30</span>"
+            },
+            {
+              "type": "html",
+              "tag": "span",
+              "text": "45",
+              "html": "<span style=\"left:75%\">45</span>"
+            },
+            {
+              "type": "html",
+              "tag": "span",
+              "text": "60",
+              "html": "<span style=\"left:100%\">60</span>"
+            }
+          ],
+          "html": "<div class=\"axis\" aria-hidden=\"true\"><span style=\"left:0%\">0</span><span style=\"left:25%\">15</span><span style=\"left:50%\">30</span><span style=\"left:75%\">45</span><span style=\"left:100%\">60</span></div>"
+        }
+      ],
+      "html": "<div class=\"chart\">\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift A</b>Deadlift + lower power</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift B</b>Bench/Pull/Press + core</span><span class=\"tval\">39–44 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:50.000%\"></i><i class=\"rng\" style=\"width:8.333%\"></i></div></div>\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift C</b>Squat + plyo</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>\n<div class=\"axis\" aria-hidden=\"true\"><span style=\"left:0%\">0</span><span style=\"left:25%\">15</span><span style=\"left:50%\">30</span><span style=\"left:75%\">45</span><span style=\"left:100%\">60</span></div>\n</div>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Session",
+        "Mobility primer",
+        "Main lifts",
+        "Total"
+      ],
+      "rows": [
+        [
+          "Lift A (Deadlift + lower power)",
+          "9",
+          "38–42",
+          "47–51"
+        ],
+        [
+          "Lift B (Bench/Pull/Press + core)",
+          "9",
+          "30–35",
+          "39–44"
+        ],
+        [
+          "Lift C (Squat + plyo)",
+          "9",
+          "38–42",
+          "47–51"
+        ],
+        [
+          "Weekly total (3 sessions)",
+          "27",
+          "106–119",
+          "133–146"
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\"><thead><tr><th>Session</th><th>Mobility primer</th><th>Main lifts</th><th>Total</th></tr></thead><tbody>\n<tr><td>Lift A (Deadlift + lower power)</td><td>9</td><td>38–42</td><td>47–51</td></tr>\n<tr><td>Lift B (Bench/Pull/Press + core)</td><td>9</td><td>30–35</td><td>39–44</td></tr>\n<tr><td>Lift C (Squat + plyo)</td><td>9</td><td>38–42</td><td>47–51</td></tr>\n<tr><td>Weekly total (3 sessions)</td><td>27</td><td>106–119</td><td>133–146</td></tr>\n</tbody></table>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Notes"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Mobility Primer: ankle dorsiflexion, 90/90 hip switches, couch stretch, world's greatest stretch, lateral lunge sweep, band lateral walks.",
+          "html": "<li>Mobility Primer: ankle dorsiflexion, 90/90 hip switches, couch stretch, world&amp;#x27;s greatest stretch, lateral lunge sweep, band lateral walks.</li>"
+        },
+        {
+          "text": "Deadlift and Back Squat need full rest (~2-2.5 min between sets) — don't shorten to save time.",
+          "html": "<li>Deadlift and Back Squat need full rest (~2-2.5 min between sets) — don&amp;#x27;t shorten to save time.</li>"
+        },
+        {
+          "text": "Box jumps and depth jumps need near-full recovery for jump quality — treat like main lifts, not accessories.",
+          "html": "<li>Box jumps and depth jumps need near-full recovery for jump quality — treat like main lifts, not accessories.</li>"
+        },
+        {
+          "text": "Plan for 45-55 min on Lift A/C days and 40-50 min on Lift B as a practical round number.",
+          "html": "<li>Plan for 45-55 min on Lift A/C days and 40-50 min on Lift B as a practical round number.</li>"
+        },
+        {
+          "text": "Real-world variable not included: equipment/rack availability at the gym.",
+          "html": "<li>Real-world variable not included: equipment/rack availability at the gym.</li>"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "These figures match gym_workout_time.xlsx.",
+      "html": "<p class=\"src\">These figures match gym_workout_time.xlsx.</p>"
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Train</p>\n<h1>Session times</h1>\n<p class=\"meta\"><strong>Program:</strong> Gym<br><strong>Unit:</strong> minutes, mobility primer included</p>\n<p>Every session opens with the mobility primer. The hatched band on each bar is the gap between the low and high estimate for the main lifts.</p>\n<div class=\"legend\"><span><i class=\"sw mob\"></i>Mobility primer</span><span><i class=\"sw main\"></i>Main lifts, low estimate</span><span><i class=\"sw rng\"></i>Range up to the high estimate</span></div>\n<div class=\"chart\">\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift A</b>Deadlift + lower power</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift B</b>Bench/Pull/Press + core</span><span class=\"tval\">39–44 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:50.000%\"></i><i class=\"rng\" style=\"width:8.333%\"></i></div></div>\n<div class=\"trow\"><div class=\"thead\"><span><b>Lift C</b>Squat + plyo</span><span class=\"tval\">47–51 min</span></div><div class=\"track\"><i class=\"mob\" style=\"width:15.000%\"></i><i class=\"main\" style=\"width:63.333%\"></i><i class=\"rng\" style=\"width:6.667%\"></i></div></div>\n<div class=\"axis\" aria-hidden=\"true\"><span style=\"left:0%\">0</span><span style=\"left:25%\">15</span><span style=\"left:50%\">30</span><span style=\"left:75%\">45</span><span style=\"left:100%\">60</span></div>\n</div>\n<div class=\"tw\"><table class=\"wide\"><thead><tr><th>Session</th><th>Mobility primer</th><th>Main lifts</th><th>Total</th></tr></thead><tbody>\n<tr><td>Lift A (Deadlift + lower power)</td><td>9</td><td>38–42</td><td>47–51</td></tr>\n<tr><td>Lift B (Bench/Pull/Press + core)</td><td>9</td><td>30–35</td><td>39–44</td></tr>\n<tr><td>Lift C (Squat + plyo)</td><td>9</td><td>38–42</td><td>47–51</td></tr>\n<tr><td>Weekly total (3 sessions)</td><td>27</td><td>106–119</td><td>133–146</td></tr>\n</tbody></table></div>\n<h2>Notes</h2>\n<ul>\n<li>Mobility Primer: ankle dorsiflexion, 90/90 hip switches, couch stretch, world&#x27;s greatest stretch, lateral lunge sweep, band lateral walks.</li>\n<li>Deadlift and Back Squat need full rest (~2-2.5 min between sets) — don&#x27;t shorten to save time.</li>\n<li>Box jumps and depth jumps need near-full recovery for jump quality — treat like main lifts, not accessories.</li>\n<li>Plan for 45-55 min on Lift A/C days and 40-50 min on Lift B as a practical round number.</li>\n<li>Real-world variable not included: equipment/rack availability at the gym.</li>\n</ul>\n<p class=\"src\">These figures match gym_workout_time.xlsx.</p>"
+}

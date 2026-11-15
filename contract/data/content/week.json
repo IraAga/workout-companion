@@ -1,0 +1,129 @@
+{
+  "id": "week",
+  "order": 0,
+  "navLabel": "Week",
+  "group": "Overview",
+  "kicker": "Overview",
+  "title": "This week",
+  "dynamic": true,
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Overview"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "This week"
+    },
+    {
+      "type": "widget",
+      "name": "week-status",
+      "initialText": "0 of 3 lifts done",
+      "description": "Live count of lift sessions logged in the current Monday-Sunday week."
+    },
+    {
+      "type": "paragraph",
+      "text": "The same schedule applies to the gym, home and minimal programs. Days can move around, but keep a rest day or an upper-body day between Lift A and Lift C so the legs recover.",
+      "html": "<p>The same schedule applies to the gym, home and minimal programs. Days can move around, but keep a rest day or an upper-body day between Lift A and Lift C so the legs recover.</p>"
+    },
+    {
+      "type": "week",
+      "items": [
+        {
+          "weekday": "Mon",
+          "label": "Lift A",
+          "detail": "Lower body + mobility",
+          "kind": "lift"
+        },
+        {
+          "weekday": "Tue",
+          "label": "Basketball",
+          "detail": "Skills + conditioning",
+          "kind": "ball"
+        },
+        {
+          "weekday": "Wed",
+          "label": "Lift B",
+          "detail": "Upper body + core",
+          "kind": "lift"
+        },
+        {
+          "weekday": "Thu",
+          "label": "Basketball",
+          "detail": "Skills + conditioning",
+          "kind": "ball"
+        },
+        {
+          "weekday": "Fri",
+          "label": "Lift C",
+          "detail": "Lower body + plyo",
+          "kind": "lift"
+        },
+        {
+          "weekday": "Sat",
+          "label": "Recovery",
+          "detail": "Mobility only",
+          "kind": "rest"
+        },
+        {
+          "weekday": "Sun",
+          "label": "Rest",
+          "detail": "Full rest",
+          "kind": "rest"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "In this plan"
+    },
+    {
+      "type": "index",
+      "items": [
+        {
+          "name": "Workout log",
+          "description": "Write down the weights and reps you actually lifted, then watch the trend for each exercise.",
+          "href": "#log"
+        },
+        {
+          "name": "Weekly program",
+          "description": "Three lifts and two basketball sessions a week, in three versions: gym, home equipment, or one kettlebell and bands.",
+          "href": "#program"
+        },
+        {
+          "name": "Full body",
+          "description": "A standalone beginner session for the gym: squat, hinge, push, pull, press, step-up and core.",
+          "href": "#fullbody"
+        },
+        {
+          "name": "Recovery day",
+          "description": "Three light options for days when your muscles are still sore: an easy walk with upper body work, isometric holds, or legs and ankles holds.",
+          "href": "#recovery"
+        },
+        {
+          "name": "Session times",
+          "description": "How long each gym session takes with the warm-up included.",
+          "href": "#times"
+        },
+        {
+          "name": "Nutrition plan",
+          "description": "About 2,550 kcal and 200 g protein a day to lose 5 kg of fat in 10 to 12 weeks.",
+          "href": "#nutrition"
+        },
+        {
+          "name": "Meals",
+          "description": "Twelve protein-heavy meals with gram amounts for every ingredient.",
+          "href": "#meals"
+        },
+        {
+          "name": "Grocery list",
+          "description": "Monthly staples bought at Lidl, MyMarket and the open-air market, with a cost estimate.",
+          "href": "#groceries"
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Overview</p>\n<h1>This week</h1>\n<div class=\"week-status\">\n  <span class=\"ws-k\">This week</span>\n  <span class=\"ws-v\" id=\"week-status-text\" aria-live=\"polite\">0 of 3 lifts done</span>\n  <span class=\"ws-dots\" id=\"week-status-dots\" aria-hidden=\"true\"><i></i><i></i><i></i></span>\n</div>\n<p>The same schedule applies to the gym, home and minimal programs. Days can move around, but keep a rest day or an upper-body day between Lift A and Lift C so the legs recover.</p>\n<ul class=\"week\">\n<li><div class=\"day lift\"><span class=\"dname\">Mon</span><span class=\"tag\">Lift A</span><span class=\"what\">Lower body + mobility</span></div></li>\n<li><div class=\"day ball\"><span class=\"dname\">Tue</span><span class=\"tag\">Basketball</span><span class=\"what\">Skills + conditioning</span></div></li>\n<li><div class=\"day lift\"><span class=\"dname\">Wed</span><span class=\"tag\">Lift B</span><span class=\"what\">Upper body + core</span></div></li>\n<li><div class=\"day ball\"><span class=\"dname\">Thu</span><span class=\"tag\">Basketball</span><span class=\"what\">Skills + conditioning</span></div></li>\n<li><div class=\"day lift\"><span class=\"dname\">Fri</span><span class=\"tag\">Lift C</span><span class=\"what\">Lower body + plyo</span></div></li>\n<li><div class=\"day rest\"><span class=\"dname\">Sat</span><span class=\"tag\">Recovery</span><span class=\"what\">Mobility only</span></div></li>\n<li><div class=\"day rest\"><span class=\"dname\">Sun</span><span class=\"tag\">Rest</span><span class=\"what\">Full rest</span></div></li>\n</ul>\n<h2>In this plan</h2>\n<ul class=\"index\">\n<li><a href=\"#log\"><span class=\"iname\">Workout log</span><span class=\"idesc\">Write down the weights and reps you actually lifted, then watch the trend for each exercise.</span></a></li>\n<li><a href=\"#program\"><span class=\"iname\">Weekly program</span><span class=\"idesc\">Three lifts and two basketball sessions a week, in three versions: gym, home equipment, or one kettlebell and bands.</span></a></li>\n<li><a href=\"#fullbody\"><span class=\"iname\">Full body</span><span class=\"idesc\">A standalone beginner session for the gym: squat, hinge, push, pull, press, step-up and core.</span></a></li>\n<li><a href=\"#recovery\"><span class=\"iname\">Recovery day</span><span class=\"idesc\">Three light options for days when your muscles are still sore: an easy walk with upper body work, isometric holds, or legs and ankles holds.</span></a></li>\n<li><a href=\"#times\"><span class=\"iname\">Session times</span><span class=\"idesc\">How long each gym session takes with the warm-up included.</span></a></li>\n<li><a href=\"#nutrition\"><span class=\"iname\">Nutrition plan</span><span class=\"idesc\">About 2,550 kcal and 200 g protein a day to lose 5 kg of fat in 10 to 12 weeks.</span></a></li>\n<li><a href=\"#meals\"><span class=\"iname\">Meals</span><span class=\"idesc\">Twelve protein-heavy meals with gram amounts for every ingredient.</span></a></li>\n<li><a href=\"#groceries\"><span class=\"iname\">Grocery list</span><span class=\"idesc\">Monthly staples bought at Lidl, MyMarket and the open-air market, with a cost estimate.</span></a></li>\n</ul>"
+}

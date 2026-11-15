@@ -1,0 +1,657 @@
+{
+  "id": "recovery",
+  "order": 3,
+  "navLabel": "Recovery day",
+  "group": "Train",
+  "kicker": "Train",
+  "title": "",
+  "subtabs": [
+    {
+      "id": "light",
+      "label": "Light session"
+    },
+    {
+      "id": "iso",
+      "label": "Isometrics"
+    },
+    {
+      "id": "legs",
+      "label": "Legs and ankles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Train"
+    },
+    {
+      "type": "subtabs",
+      "tabs": [
+        {
+          "id": "light",
+          "label": "Light session"
+        },
+        {
+          "id": "iso",
+          "label": "Isometrics"
+        },
+        {
+          "id": "legs",
+          "label": "Legs and ankles"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-light",
+      "key": "light",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Recovery Day Workout"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner, 190cm / 100kg, full gym access Time: about 35-40 minutes",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br>\n<strong>Time:</strong> about 35-40 minutes</p>"
+        },
+        {
+          "type": "paragraph",
+          "text": "A light session for the days when your muscles are still sore from a hard workout, usually the second day after. It keeps you moving without adding more load to tired legs.",
+          "html": "<p>A light session for the days when your muscles are still sore from a hard workout, usually the second day after. It keeps you moving without adding more load to tired legs.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "When to Use It"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "You're 1-3 days after a hard session and your muscles feel tight and achy",
+              "html": "<li>You're 1-3 days after a hard session and your muscles feel tight and achy</li>"
+            },
+            {
+              "text": "The soreness is a dull ache that eases once you start moving",
+              "html": "<li>The soreness is a dull ache that eases once you start moving</li>"
+            },
+            {
+              "text": "Not for sharp pain, joint pain, swelling or anything that gets worse as you move. Rest and see a doctor for those",
+              "html": "<li>Not for sharp pain, joint pain, swelling or anything that gets worse as you move. Rest and see a doctor for those</li>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "If the soreness is only mild, do your normal session at the lighter week-1 settings instead (2 sets per exercise at the low end of each weight range).",
+          "html": "<p>If the soreness is only mild, do your normal session at the lighter week-1 settings instead (2 sets per exercise at the low end of each weight range).</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Rules for This Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Effort stays at about 4 out of 10. You should finish feeling better than you started",
+              "html": "<li>Effort stays at about 4 out of 10. You should finish feeling better than you started</li>"
+            },
+            {
+              "text": "No jumps, no heavy legs, no training to failure",
+              "html": "<li>No jumps, no heavy legs, no training to failure</li>"
+            },
+            {
+              "text": "Stop an exercise if the movement hurts rather than aches",
+              "html": "<li>Stop an exercise if the movement hurts rather than aches</li>"
+            },
+            {
+              "text": "Skip the strength block entirely if your whole body is too sore, and just do the walk and the mobility",
+              "html": "<li>Skip the strength block entirely if your whole body is too sore, and just do the walk and the mobility</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 1: Easy Walk (15-20 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Walk at a pace where you could hold a conversation. A treadmill or the street both work. Keep the incline flat or very low.",
+          "html": "<p>Walk at a pace where you could hold a conversation. A treadmill or the street both work. Keep the incline flat or very low.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 2: Gentle Mobility (10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The same primer as the main program, at half the usual range. Move slowly and stop before any deep stretch feels sharp.",
+          "html": "<p>The same primer as the main program, at half the usual range. Move slowly and stop before any deep stretch feels sharp.</p>"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "text": "Ankle dorsiflexion rocks — 1x10 each side",
+              "html": "<li>Ankle dorsiflexion rocks — 1x10 each side</li>"
+            },
+            {
+              "text": "90/90 hip switches — 1x8 each side, small range",
+              "html": "<li>90/90 hip switches — 1x8 each side, small range</li>"
+            },
+            {
+              "text": "Couch stretch — 30 sec each side",
+              "html": "<li>Couch stretch — 30 sec each side</li>"
+            },
+            {
+              "text": "World's greatest stretch — 3 each side",
+              "html": "<li>World's greatest stretch — 3 each side</li>"
+            },
+            {
+              "text": "Lateral lunge to hamstring sweep — 5 each side, shallow",
+              "html": "<li>Lateral lunge to hamstring sweep — 5 each side, shallow</li>"
+            },
+            {
+              "text": "Band lateral walks — 1x10 steps each direction, light band",
+              "html": "<li>Band lateral walks — 1x10 steps each direction, light band</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 3: Light Upper Body and Core (10 min, optional)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Your arms and back are probably less sore than your legs, so this is a good place to keep some work going.",
+          "html": "<p>Your arms and back are probably less sore than your legs, so this is a good place to keep some work going.</p>"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Suggested weight",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Seated Cable Row",
+              "2x15",
+              "20-30 kg on the stack",
+              "45 sec",
+              "Light, squeeze the shoulder blades together"
+            ],
+            [
+              "Machine Chest Press",
+              "2x15",
+              "20-30 kg on the stack",
+              "45 sec",
+              "Smooth and slow, no grinding"
+            ],
+            [
+              "Band Face Pull",
+              "2x15",
+              "Light band",
+              "45 sec",
+              "Keeps the shoulders healthy"
+            ],
+            [
+              "Seated Dumbbell Shoulder Press",
+              "2x12",
+              "6-8 kg each hand",
+              "45 sec",
+              "Stop well short of failure"
+            ],
+            [
+              "Dead Bug",
+              "2x8/side",
+              "Bodyweight",
+              "45 sec",
+              "Lower back stays flat on the floor"
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested weight</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Seated Cable Row</td>\n<td>2x15</td>\n<td>20-30 kg on the stack</td>\n<td>45 sec</td>\n<td>Light, squeeze the shoulder blades together</td>\n</tr>\n<tr>\n<td>Machine Chest Press</td>\n<td>2x15</td>\n<td>20-30 kg on the stack</td>\n<td>45 sec</td>\n<td>Smooth and slow, no grinding</td>\n</tr>\n<tr>\n<td>Band Face Pull</td>\n<td>2x15</td>\n<td>Light band</td>\n<td>45 sec</td>\n<td>Keeps the shoulders healthy</td>\n</tr>\n<tr>\n<td>Seated Dumbbell Shoulder Press</td>\n<td>2x12</td>\n<td>6-8 kg each hand</td>\n<td>45 sec</td>\n<td>Stop well short of failure</td>\n</tr>\n<tr>\n<td>Dead Bug</td>\n<td>2x8/side</td>\n<td>Bodyweight</td>\n<td>45 sec</td>\n<td>Lower back stays flat on the floor</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "After the Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "You should feel looser than before. If you feel worse, take a full rest day tomorrow",
+              "html": "<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>"
+            },
+            {
+              "text": "Drink water and eat a normal protein-rich meal",
+              "html": "<li>Drink water and eat a normal protein-rich meal</li>"
+            },
+            {
+              "text": "Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings",
+              "html": "<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings</li>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-iso",
+      "key": "iso",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Isometrics Recovery Session"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner, 190cm / 100kg, full gym access Time: about 30-35 minutes",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br>\n<strong>Time:</strong> about 30-35 minutes</p>"
+        },
+        {
+          "type": "paragraph",
+          "text": "An alternative to the Recovery day session for the days when your muscles are still sore. Isometrics hold a position without lowering or lifting a weight. Most muscle soreness comes from the lowering part of exercises, so holds usually feel fine on sore muscles.",
+          "html": "<p>An alternative to the Recovery day session for the days when your muscles are still sore. Isometrics hold a position without lowering or lifting a weight. Most muscle soreness comes from the lowering part of exercises, so holds usually feel fine on sore muscles.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Rules for This Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Effort stays at about 50-60% of your max. Don't squeeze as hard as you can",
+              "html": "<li>Effort stays at about 50-60% of your max. Don't squeeze as hard as you can</li>"
+            },
+            {
+              "text": "Hold in the middle of the range. Avoid positions that deeply stretch the sore muscle",
+              "html": "<li>Hold in the middle of the range. Avoid positions that deeply stretch the sore muscle</li>"
+            },
+            {
+              "text": "Breathe normally the whole time and never hold your breath",
+              "html": "<li>Breathe normally the whole time and never hold your breath</li>"
+            },
+            {
+              "text": "If it hurts rather than aches, stop that exercise",
+              "html": "<li>If it hurts rather than aches, stop that exercise</li>"
+            },
+            {
+              "text": "Skip any exercise that makes the soreness worse for the rest of the day",
+              "html": "<li>Skip any exercise that makes the soreness worse for the rest of the day</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 1: Easy Cardio (10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pick one machine and keep the effort easy enough to talk the whole time.",
+          "html": "<p>Pick one machine and keep the effort easy enough to talk the whole time.</p>"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Simple bike: the best option for sore legs, low impact and almost no lowering phase",
+              "lead": "Simple bike:",
+              "html": "<li><strong>Simple bike:</strong> the best option for sore legs, low impact and almost no lowering phase</li>"
+            },
+            {
+              "text": "Treadmill: flat walk, no incline or downhill",
+              "lead": "Treadmill:",
+              "html": "<li><strong>Treadmill:</strong> flat walk, no incline or downhill</li>"
+            },
+            {
+              "text": "Skip the echo bike and the rowing machine today, since both get hard quickly",
+              "html": "<li>Skip the echo bike and the rowing machine today, since both get hard quickly</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 2: Gentle Mobility (5 min)"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "text": "Ankle dorsiflexion rocks — 1x10 each side",
+              "html": "<li>Ankle dorsiflexion rocks — 1x10 each side</li>"
+            },
+            {
+              "text": "90/90 hip switches — 1x8 each side, small range",
+              "html": "<li>90/90 hip switches — 1x8 each side, small range</li>"
+            },
+            {
+              "text": "World's greatest stretch — 3 each side",
+              "html": "<li>World's greatest stretch — 3 each side</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 3: Isometric Holds (15-20 min)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Hold",
+            "Effort",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Glute Bridge Hold",
+              "3x20-30 sec",
+              "50%",
+              "30-45 sec",
+              "Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back"
+            ],
+            [
+              "Shallow Wall Sit",
+              "2x20 sec",
+              "50%",
+              "45 sec",
+              "Only about a quarter of the way down, your quads are likely the sorest. Stand up if it burns sharply"
+            ],
+            [
+              "Side Plank (from the knees)",
+              "2x20 sec/side",
+              "50-60%",
+              "30-45 sec",
+              "Body in a straight line from head to knee"
+            ],
+            [
+              "Dead Bug Hold",
+              "2x15-20 sec/side",
+              "50%",
+              "30 sec",
+              "Opposite arm and leg just above the floor, lower back flat"
+            ],
+            [
+              "Wall Push Hold",
+              "2x20-30 sec",
+              "50%",
+              "30 sec",
+              "Hands on the wall, elbows bent, push into the wall without moving"
+            ],
+            [
+              "Band Row Hold",
+              "2x20-30 sec",
+              "50%",
+              "30 sec",
+              "Elbows bent at 90 degrees, band pulled to the chest, shoulders away from the ears"
+            ],
+            [
+              "Single-leg Balance Hold",
+              "2x30 sec/leg",
+              "Easy",
+              "30 sec",
+              "Ankle and hip stability, keep the standing knee soft"
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Glute Bridge Hold</td>\n<td>3x20-30 sec</td>\n<td>50%</td>\n<td>30-45 sec</td>\n<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>\n</tr>\n<tr>\n<td>Shallow Wall Sit</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>45 sec</td>\n<td>Only about a quarter of the way down, your quads are likely the sorest. Stand up if it burns sharply</td>\n</tr>\n<tr>\n<td>Side Plank (from the knees)</td>\n<td>2x20 sec/side</td>\n<td>50-60%</td>\n<td>30-45 sec</td>\n<td>Body in a straight line from head to knee</td>\n</tr>\n<tr>\n<td>Dead Bug Hold</td>\n<td>2x15-20 sec/side</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Opposite arm and leg just above the floor, lower back flat</td>\n</tr>\n<tr>\n<td>Wall Push Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Hands on the wall, elbows bent, push into the wall without moving</td>\n</tr>\n<tr>\n<td>Band Row Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Elbows bent at 90 degrees, band pulled to the chest, shoulders away from the ears</td>\n</tr>\n<tr>\n<td>Single-leg Balance Hold</td>\n<td>2x30 sec/leg</td>\n<td>Easy</td>\n<td>30 sec</td>\n<td>Ankle and hip stability, keep the standing knee soft</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "After the Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "You should feel looser than before. If you feel worse, take a full rest day tomorrow",
+              "html": "<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>"
+            },
+            {
+              "text": "Drink water and eat a normal protein-rich meal",
+              "html": "<li>Drink water and eat a normal protein-rich meal</li>"
+            },
+            {
+              "text": "Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)",
+              "html": "<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-legs",
+      "key": "legs",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Legs and Ankles Isometrics"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner, 190cm / 100kg, full gym access Time: about 25-30 minutes",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br>\n<strong>Time:</strong> about 25-30 minutes</p>"
+        },
+        {
+          "type": "paragraph",
+          "text": "An isometrics session built for sore legs and for ankle stability, which is one of your weak points. Isometrics hold a position without lowering or lifting a weight, so they are usually comfortable on sore muscles. Use it on the days after a hard leg session, or as a short ankle routine on any recovery day.",
+          "html": "<p>An isometrics session built for sore legs and for ankle stability, which is one of your weak points. Isometrics hold a position without lowering or lifting a weight, so they are usually comfortable on sore muscles. Use it on the days after a hard leg session, or as a short ankle routine on any recovery day.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Rules for This Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Effort stays at about 30-50% of your max for the ankle work and 50-60% for the legs. Never squeeze as hard as you can",
+              "html": "<li>Effort stays at about 30-50% of your max for the ankle work and 50-60% for the legs. Never squeeze as hard as you can</li>"
+            },
+            {
+              "text": "Hold in the middle of the range, away from positions that stretch the sore muscle deeply",
+              "html": "<li>Hold in the middle of the range, away from positions that stretch the sore muscle deeply</li>"
+            },
+            {
+              "text": "Breathe normally the whole time and never hold your breath",
+              "html": "<li>Breathe normally the whole time and never hold your breath</li>"
+            },
+            {
+              "text": "If it hurts rather than aches, stop that exercise",
+              "html": "<li>If it hurts rather than aches, stop that exercise</li>"
+            },
+            {
+              "text": "If an ankle is swollen, hurts to put weight on, or you recently twisted it, skip this session and have it checked",
+              "html": "<li>If an ankle is swollen, hurts to put weight on, or you recently twisted it, skip this session and have it checked</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 1: Easy Cardio (5-10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the simple bike or walk on a flat treadmill at a pace where you could talk the whole time. Skip the echo bike and the rowing machine today.",
+          "html": "<p>Use the simple bike or walk on a flat treadmill at a pace where you could talk the whole time. Skip the echo bike and the rowing machine today.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 2: Ankle Holds (10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Do these seated or standing next to a wall. Push the foot against a wall, a bench leg, or a band anchored to a rack. Press gently and let nothing move.",
+          "html": "<p>Do these seated or standing next to a wall. Push the foot against a wall, a bench leg, or a band anchored to a rack. Press gently and let nothing move.</p>"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Hold",
+            "Effort",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Ankle Press, Toes Up",
+              "1x5 holds of 5-10 sec/leg",
+              "30-40%",
+              "15 sec",
+              "Hook the top of the foot under a bench or band and try to lift the toes"
+            ],
+            [
+              "Ankle Press, Toes Down",
+              "1x5 holds of 5-10 sec/leg",
+              "30-40%",
+              "15 sec",
+              "Press the ball of the foot into the floor or a bench, heel stays lifted"
+            ],
+            [
+              "Ankle Press, Inward",
+              "1x5 holds of 5-10 sec/leg",
+              "30-40%",
+              "15 sec",
+              "Push the inner edge of the foot into a wall or bench leg"
+            ],
+            [
+              "Ankle Press, Outward",
+              "1x5 holds of 5-10 sec/leg",
+              "30-40%",
+              "15 sec",
+              "Push the outer edge of the foot into a wall or bench leg"
+            ],
+            [
+              "Single-leg Balance Hold",
+              "2x30 sec/leg",
+              "Easy",
+              "30 sec",
+              "Standing knee soft, foot flat on the floor. Add a folded towel under the foot once it's easy"
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ankle Press, Toes Up</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Hook the top of the foot under a bench or band and try to lift the toes</td>\n</tr>\n<tr>\n<td>Ankle Press, Toes Down</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Press the ball of the foot into the floor or a bench, heel stays lifted</td>\n</tr>\n<tr>\n<td>Ankle Press, Inward</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Push the inner edge of the foot into a wall or bench leg</td>\n</tr>\n<tr>\n<td>Ankle Press, Outward</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Push the outer edge of the foot into a wall or bench leg</td>\n</tr>\n<tr>\n<td>Single-leg Balance Hold</td>\n<td>2x30 sec/leg</td>\n<td>Easy</td>\n<td>30 sec</td>\n<td>Standing knee soft, foot flat on the floor. Add a folded towel under the foot once it's easy</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Part 3: Leg Holds (10-15 min)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Hold",
+            "Effort",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Glute Bridge Hold",
+              "2x20-30 sec",
+              "50%",
+              "30-45 sec",
+              "Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back"
+            ],
+            [
+              "Shallow Wall Sit",
+              "2x20 sec",
+              "50%",
+              "45 sec",
+              "Only about a quarter of the way down. Your quads are likely the sorest part"
+            ],
+            [
+              "Heel Dig Hold",
+              "2x15-20 sec/leg",
+              "50%",
+              "30 sec",
+              "Lie on your back with one knee slightly bent and press the heel into the floor, feeling the back of the thigh"
+            ],
+            [
+              "Inner Thigh Squeeze",
+              "2x15-20 sec",
+              "40-50%",
+              "30 sec",
+              "Lie on your back with knees bent and a pillow or ball between the knees. Squeeze gently"
+            ],
+            [
+              "Side-lying Hip Hold",
+              "2x15-20 sec/side",
+              "40-50%",
+              "30 sec",
+              "Lie on your side with the top leg raised a few centimeters and held still"
+            ],
+            [
+              "Half-height Calf Raise Hold",
+              "2x20 sec",
+              "50%",
+              "30 sec",
+              "Stand next to a wall for balance, rise halfway onto the balls of the feet and hold"
+            ],
+            [
+              "Toe Lift Wall Lean",
+              "2x15-20 sec",
+              "40%",
+              "30 sec",
+              "Stand with your back on a wall, feet about 30 cm out front, and lift the toes. Works the shin muscles"
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Glute Bridge Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30-45 sec</td>\n<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>\n</tr>\n<tr>\n<td>Shallow Wall Sit</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>45 sec</td>\n<td>Only about a quarter of the way down. Your quads are likely the sorest part</td>\n</tr>\n<tr>\n<td>Heel Dig Hold</td>\n<td>2x15-20 sec/leg</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Lie on your back with one knee slightly bent and press the heel into the floor, feeling the back of the thigh</td>\n</tr>\n<tr>\n<td>Inner Thigh Squeeze</td>\n<td>2x15-20 sec</td>\n<td>40-50%</td>\n<td>30 sec</td>\n<td>Lie on your back with knees bent and a pillow or ball between the knees. Squeeze gently</td>\n</tr>\n<tr>\n<td>Side-lying Hip Hold</td>\n<td>2x15-20 sec/side</td>\n<td>40-50%</td>\n<td>30 sec</td>\n<td>Lie on your side with the top leg raised a few centimeters and held still</td>\n</tr>\n<tr>\n<td>Half-height Calf Raise Hold</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Stand next to a wall for balance, rise halfway onto the balls of the feet and hold</td>\n</tr>\n<tr>\n<td>Toe Lift Wall Lean</td>\n<td>2x15-20 sec</td>\n<td>40%</td>\n<td>30 sec</td>\n<td>Stand with your back on a wall, feet about 30 cm out front, and lift the toes. Works the shin muscles</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "After the Session"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Your legs and ankles should feel looser than before. If you feel worse, take a full rest day tomorrow",
+              "html": "<li>Your legs and ankles should feel looser than before. If you feel worse, take a full rest day tomorrow</li>"
+            },
+            {
+              "text": "Drink water and eat a normal protein-rich meal",
+              "html": "<li>Drink water and eat a normal protein-rich meal</li>"
+            },
+            {
+              "text": "Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)",
+              "html": "<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Train</p>\n<div class=\"subtabs\" role=\"tablist\" aria-label=\"Recovery options\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"sub-light\" data-sub=\"light\">Light session</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-iso\" data-sub=\"iso\">Isometrics</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-legs\" data-sub=\"legs\">Legs and ankles</button></div>\n<div class=\"sub\" id=\"sub-light\" role=\"tabpanel\" data-sub=\"light\">\n<h1>Recovery Day Workout</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />\n<strong>Time:</strong> about 35-40 minutes</p>\n<p>A light session for the days when your muscles are still sore from a hard workout, usually the second day after. It keeps you moving without adding more load to tired legs.</p>\n\n<h2>When to Use It</h2>\n<ul>\n<li>You're 1-3 days after a hard session and your muscles feel tight and achy</li>\n<li>The soreness is a dull ache that eases once you start moving</li>\n<li>Not for sharp pain, joint pain, swelling or anything that gets worse as you move. Rest and see a doctor for those</li>\n</ul>\n<p>If the soreness is only mild, do your normal session at the lighter week-1 settings instead (2 sets per exercise at the low end of each weight range).</p>\n\n<h2>Rules for This Session</h2>\n<ul>\n<li>Effort stays at about 4 out of 10. You should finish feeling better than you started</li>\n<li>No jumps, no heavy legs, no training to failure</li>\n<li>Stop an exercise if the movement hurts rather than aches</li>\n<li>Skip the strength block entirely if your whole body is too sore, and just do the walk and the mobility</li>\n</ul>\n\n<h2>Part 1: Easy Walk (15-20 min)</h2>\n<p>Walk at a pace where you could hold a conversation. A treadmill or the street both work. Keep the incline flat or very low.</p>\n\n<h2>Part 2: Gentle Mobility (10 min)</h2>\n<p>The same primer as the main program, at half the usual range. Move slowly and stop before any deep stretch feels sharp.</p>\n<ol>\n<li>Ankle dorsiflexion rocks — 1x10 each side</li>\n<li>90/90 hip switches — 1x8 each side, small range</li>\n<li>Couch stretch — 30 sec each side</li>\n<li>World's greatest stretch — 3 each side</li>\n<li>Lateral lunge to hamstring sweep — 5 each side, shallow</li>\n<li>Band lateral walks — 1x10 steps each direction, light band</li>\n</ol>\n\n<h2>Part 3: Light Upper Body and Core (10 min, optional)</h2>\n<p>Your arms and back are probably less sore than your legs, so this is a good place to keep some work going.</p>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested weight</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Seated Cable Row</td>\n<td>2x15</td>\n<td>20-30 kg on the stack</td>\n<td>45 sec</td>\n<td>Light, squeeze the shoulder blades together</td>\n</tr>\n<tr>\n<td>Machine Chest Press</td>\n<td>2x15</td>\n<td>20-30 kg on the stack</td>\n<td>45 sec</td>\n<td>Smooth and slow, no grinding</td>\n</tr>\n<tr>\n<td>Band Face Pull</td>\n<td>2x15</td>\n<td>Light band</td>\n<td>45 sec</td>\n<td>Keeps the shoulders healthy</td>\n</tr>\n<tr>\n<td>Seated Dumbbell Shoulder Press</td>\n<td>2x12</td>\n<td>6-8 kg each hand</td>\n<td>45 sec</td>\n<td>Stop well short of failure</td>\n</tr>\n<tr>\n<td>Dead Bug</td>\n<td>2x8/side</td>\n<td>Bodyweight</td>\n<td>45 sec</td>\n<td>Lower back stays flat on the floor</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>After the Session</h2>\n<ul>\n<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>\n<li>Drink water and eat a normal protein-rich meal</li>\n<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings</li>\n</ul>\n</div>\n<div class=\"sub\" id=\"sub-iso\" role=\"tabpanel\" data-sub=\"iso\" hidden>\n<h1>Isometrics Recovery Session</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />\n<strong>Time:</strong> about 30-35 minutes</p>\n<p>An alternative to the Recovery day session for the days when your muscles are still sore. Isometrics hold a position without lowering or lifting a weight. Most muscle soreness comes from the lowering part of exercises, so holds usually feel fine on sore muscles.</p>\n\n<h2>Rules for This Session</h2>\n<ul>\n<li>Effort stays at about 50-60% of your max. Don't squeeze as hard as you can</li>\n<li>Hold in the middle of the range. Avoid positions that deeply stretch the sore muscle</li>\n<li>Breathe normally the whole time and never hold your breath</li>\n<li>If it hurts rather than aches, stop that exercise</li>\n<li>Skip any exercise that makes the soreness worse for the rest of the day</li>\n</ul>\n\n<h2>Part 1: Easy Cardio (10 min)</h2>\n<p>Pick one machine and keep the effort easy enough to talk the whole time.</p>\n<ul>\n<li><strong>Simple bike:</strong> the best option for sore legs, low impact and almost no lowering phase</li>\n<li><strong>Treadmill:</strong> flat walk, no incline or downhill</li>\n<li>Skip the echo bike and the rowing machine today, since both get hard quickly</li>\n</ul>\n\n<h2>Part 2: Gentle Mobility (5 min)</h2>\n<ol>\n<li>Ankle dorsiflexion rocks — 1x10 each side</li>\n<li>90/90 hip switches — 1x8 each side, small range</li>\n<li>World's greatest stretch — 3 each side</li>\n</ol>\n\n<h2>Part 3: Isometric Holds (15-20 min)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Glute Bridge Hold</td>\n<td>3x20-30 sec</td>\n<td>50%</td>\n<td>30-45 sec</td>\n<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>\n</tr>\n<tr>\n<td>Shallow Wall Sit</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>45 sec</td>\n<td>Only about a quarter of the way down, your quads are likely the sorest. Stand up if it burns sharply</td>\n</tr>\n<tr>\n<td>Side Plank (from the knees)</td>\n<td>2x20 sec/side</td>\n<td>50-60%</td>\n<td>30-45 sec</td>\n<td>Body in a straight line from head to knee</td>\n</tr>\n<tr>\n<td>Dead Bug Hold</td>\n<td>2x15-20 sec/side</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Opposite arm and leg just above the floor, lower back flat</td>\n</tr>\n<tr>\n<td>Wall Push Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Hands on the wall, elbows bent, push into the wall without moving</td>\n</tr>\n<tr>\n<td>Band Row Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Elbows bent at 90 degrees, band pulled to the chest, shoulders away from the ears</td>\n</tr>\n<tr>\n<td>Single-leg Balance Hold</td>\n<td>2x30 sec/leg</td>\n<td>Easy</td>\n<td>30 sec</td>\n<td>Ankle and hip stability, keep the standing knee soft</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>After the Session</h2>\n<ul>\n<li>You should feel looser than before. If you feel worse, take a full rest day tomorrow</li>\n<li>Drink water and eat a normal protein-rich meal</li>\n<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>\n</ul>\n</div>\n<div class=\"sub\" id=\"sub-legs\" role=\"tabpanel\" data-sub=\"legs\" hidden>\n<h1>Legs and Ankles Isometrics</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner, 190cm / 100kg, full gym access<br />\n<strong>Time:</strong> about 25-30 minutes</p>\n<p>An isometrics session built for sore legs and for ankle stability, which is one of your weak points. Isometrics hold a position without lowering or lifting a weight, so they are usually comfortable on sore muscles. Use it on the days after a hard leg session, or as a short ankle routine on any recovery day.</p>\n\n<h2>Rules for This Session</h2>\n<ul>\n<li>Effort stays at about 30-50% of your max for the ankle work and 50-60% for the legs. Never squeeze as hard as you can</li>\n<li>Hold in the middle of the range, away from positions that stretch the sore muscle deeply</li>\n<li>Breathe normally the whole time and never hold your breath</li>\n<li>If it hurts rather than aches, stop that exercise</li>\n<li>If an ankle is swollen, hurts to put weight on, or you recently twisted it, skip this session and have it checked</li>\n</ul>\n\n<h2>Part 1: Easy Cardio (5-10 min)</h2>\n<p>Use the simple bike or walk on a flat treadmill at a pace where you could talk the whole time. Skip the echo bike and the rowing machine today.</p>\n\n<h2>Part 2: Ankle Holds (10 min)</h2>\n<p>Do these seated or standing next to a wall. Push the foot against a wall, a bench leg, or a band anchored to a rack. Press gently and let nothing move.</p>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ankle Press, Toes Up</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Hook the top of the foot under a bench or band and try to lift the toes</td>\n</tr>\n<tr>\n<td>Ankle Press, Toes Down</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Press the ball of the foot into the floor or a bench, heel stays lifted</td>\n</tr>\n<tr>\n<td>Ankle Press, Inward</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Push the inner edge of the foot into a wall or bench leg</td>\n</tr>\n<tr>\n<td>Ankle Press, Outward</td>\n<td>1x5 holds of 5-10 sec/leg</td>\n<td>30-40%</td>\n<td>15 sec</td>\n<td>Push the outer edge of the foot into a wall or bench leg</td>\n</tr>\n<tr>\n<td>Single-leg Balance Hold</td>\n<td>2x30 sec/leg</td>\n<td>Easy</td>\n<td>30 sec</td>\n<td>Standing knee soft, foot flat on the floor. Add a folded towel under the foot once it's easy</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Part 3: Leg Holds (10-15 min)</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Hold</th>\n<th>Effort</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Glute Bridge Hold</td>\n<td>2x20-30 sec</td>\n<td>50%</td>\n<td>30-45 sec</td>\n<td>Hips up, knees bent, ribs down. Squeeze the glutes without arching the lower back</td>\n</tr>\n<tr>\n<td>Shallow Wall Sit</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>45 sec</td>\n<td>Only about a quarter of the way down. Your quads are likely the sorest part</td>\n</tr>\n<tr>\n<td>Heel Dig Hold</td>\n<td>2x15-20 sec/leg</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Lie on your back with one knee slightly bent and press the heel into the floor, feeling the back of the thigh</td>\n</tr>\n<tr>\n<td>Inner Thigh Squeeze</td>\n<td>2x15-20 sec</td>\n<td>40-50%</td>\n<td>30 sec</td>\n<td>Lie on your back with knees bent and a pillow or ball between the knees. Squeeze gently</td>\n</tr>\n<tr>\n<td>Side-lying Hip Hold</td>\n<td>2x15-20 sec/side</td>\n<td>40-50%</td>\n<td>30 sec</td>\n<td>Lie on your side with the top leg raised a few centimeters and held still</td>\n</tr>\n<tr>\n<td>Half-height Calf Raise Hold</td>\n<td>2x20 sec</td>\n<td>50%</td>\n<td>30 sec</td>\n<td>Stand next to a wall for balance, rise halfway onto the balls of the feet and hold</td>\n</tr>\n<tr>\n<td>Toe Lift Wall Lean</td>\n<td>2x15-20 sec</td>\n<td>40%</td>\n<td>30 sec</td>\n<td>Stand with your back on a wall, feet about 30 cm out front, and lift the toes. Works the shin muscles</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>After the Session</h2>\n<ul>\n<li>Your legs and ankles should feel looser than before. If you feel worse, take a full rest day tomorrow</li>\n<li>Drink water and eat a normal protein-rich meal</li>\n<li>Go back to the regular program once the soreness is mild, starting with the lighter week-1 settings (2 sets per exercise at the low end of each weight range)</li>\n</ul>\n</div>"
+}

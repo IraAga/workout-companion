@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prefs.schema.json",
+  "title": "Prefs",
+  "description": "Contents of ol-prefs. Device-local UI state. An empty object is valid; the app fills in missing fields on load.",
+  "type": "object",
+  "properties": {
+    "program": { "type": "string", "description": "Selected catalog program id. Unknown ids fall back to the first program (gym)." },
+    "session": { "type": "string", "description": "Selected session id. Unknown ids fall back to the program's first session." },
+    "progressEx": {
+      "type": "string",
+      "description": "Progress chart selection, keyed by series: 'n|' + lowercased, whitespace-collapsed exercise name."
+    },
+    "progressId": {
+      "type": "string",
+      "description": "Legacy progress selection by exercise id. Read only as a fallback when progressEx does not match."
+    }
+  },
+  "additionalProperties": true
+}

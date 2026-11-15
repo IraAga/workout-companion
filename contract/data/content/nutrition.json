@@ -1,0 +1,274 @@
+{
+  "id": "nutrition",
+  "order": 5,
+  "navLabel": "Nutrition plan",
+  "group": "Eat",
+  "kicker": "Eat",
+  "title": "Nutrition Plan — Fat Loss (Training-Supportive)",
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Eat"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Nutrition Plan — Fat Loss (Training-Supportive)"
+    },
+    {
+      "type": "meta",
+      "text": "Profile: 190cm, 100kg, 25-34, desk job, 3 lifts + 2 basketball sessions/week Goal: Lose at least 5kg of fat while maintaining strength and performance",
+      "html": "<p class=\"meta\"><strong>Profile:</strong> 190cm, 100kg, 25-34, desk job, 3 lifts + 2 basketball sessions/week<br>\n<strong>Goal:</strong> Lose at least 5kg of fat while maintaining strength and performance</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your Numbers (Estimated)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Metric",
+        "Estimate"
+      ],
+      "rows": [
+        [
+          "BMR (resting energy needs)",
+          "~2,040 kcal/day"
+        ],
+        [
+          "TDEE (maintenance, including training)",
+          "~2,950-3,050 kcal/day"
+        ],
+        [
+          "Target intake (moderate deficit)",
+          "~2,550 kcal/day"
+        ],
+        [
+          "Expected rate of loss",
+          "~0.4-0.5 kg/week"
+        ],
+        [
+          "Time to lose 5kg",
+          "~10-12 weeks"
+        ]
+      ],
+      "html": "<table>\n<thead>\n<tr>\n<th>Metric</th>\n<th>Estimate</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>BMR (resting energy needs)</td>\n<td>~2,040 kcal/day</td>\n</tr>\n<tr>\n<td>TDEE (maintenance, including training)</td>\n<td>~2,950-3,050 kcal/day</td>\n</tr>\n<tr>\n<td>Target intake (moderate deficit)</td>\n<td>~2,550 kcal/day</td>\n</tr>\n<tr>\n<td>Expected rate of loss</td>\n<td>~0.4-0.5 kg/week</td>\n</tr>\n<tr>\n<td>Time to lose 5kg</td>\n<td>~10-12 weeks</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "These are starting estimates based on standard formulas (Mifflin-St Jeor), not a lab measurement — treat the number as a starting point to adjust from, not a fixed truth. Your actual TDEE could run 200-300 kcal higher or lower depending on things the formula can't see (NEAT, sleep, exact training intensity).",
+      "html": "<p>These are starting estimates based on standard formulas (Mifflin-St Jeor), not a lab measurement — treat the number as a starting point to adjust from, not a fixed truth. Your actual TDEE could run 200-300 kcal higher or lower depending on things the formula can't see (NEAT, sleep, exact training intensity).</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Why this deficit size: ~500 kcal/day below maintenance is aggressive enough to see real progress but conservative enough that you can still train hard, recover, and build/maintain muscle — which matters a lot given you're also trying to improve leg athleticism and strength. A bigger deficit would speed things up short-term but tends to tank training quality and makes muscle loss more likely.",
+      "html": "<p><strong>Why this deficit size:</strong> ~500 kcal/day below maintenance is aggressive enough to see real progress but conservative enough that you can still train hard, recover, and build/maintain muscle — which matters a lot given you're also trying to improve leg athleticism and strength. A bigger deficit would speed things up short-term but tends to tank training quality and makes muscle loss more likely.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Daily Targets"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Macro",
+        "Amount",
+        "Calories",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Protein",
+          "~200g",
+          "~800 kcal",
+          "Preserves muscle in a deficit, keeps you full. ~2g/kg bodyweight"
+        ],
+        [
+          "Fat",
+          "~75g",
+          "~675 kcal",
+          "Minimum for hormone health, don't go much lower"
+        ],
+        [
+          "Carbs",
+          "~270g",
+          "~1,075 kcal",
+          "Fuels lifting + basketball performance — don't slash these to hit calories, cut fat/processed food instead"
+        ],
+        [
+          "Total",
+          "",
+          "~2,550 kcal",
+          ""
+        ]
+      ],
+      "class": "wide",
+      "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Macro</th>\n<th>Amount</th>\n<th>Calories</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Protein</td>\n<td>~200g</td>\n<td>~800 kcal</td>\n<td>Preserves muscle in a deficit, keeps you full. ~2g/kg bodyweight</td>\n</tr>\n<tr>\n<td>Fat</td>\n<td>~75g</td>\n<td>~675 kcal</td>\n<td>Minimum for hormone health, don't go much lower</td>\n</tr>\n<tr>\n<td>Carbs</td>\n<td>~270g</td>\n<td>~1,075 kcal</td>\n<td>Fuels lifting + basketball performance — don't slash these to hit calories, cut fat/processed food instead</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td></td>\n<td><strong>~2,550 kcal</strong></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to Actually Hit This"
+    },
+    {
+      "type": "paragraph",
+      "text": "Protein (~200g/day) — the non-negotiable one:",
+      "html": "<p><strong>Protein (~200g/day) — the non-negotiable one:</strong></p>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Spread across 3-4 meals (~50g each) rather than back-loaded at dinner",
+          "html": "<li>Spread across 3-4 meals (~50g each) rather than back-loaded at dinner</li>"
+        },
+        {
+          "text": "Easy sources: chicken/turkey breast, Greek yogurt, eggs, whey protein, fish, lean beef, cottage cheese",
+          "html": "<li>Easy sources: chicken/turkey breast, Greek yogurt, eggs, whey protein, fish, lean beef, cottage cheese</li>"
+        },
+        {
+          "text": "If you're consistently under 150g, that's the first thing to fix before anything else",
+          "html": "<li>If you're consistently under 150g, that's the first thing to fix before anything else</li>"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Carbs — time them around training:",
+      "html": "<p><strong>Carbs — time them around training:</strong></p>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Bigger carb portions on lift days and basketball days (pre and post-training)",
+          "html": "<li>Bigger carb portions on lift days and basketball days (pre and post-training)</li>"
+        },
+        {
+          "text": "Smaller portions on Sat/Sun rest days",
+          "html": "<li>Smaller portions on Sat/Sun rest days</li>"
+        },
+        {
+          "text": "Prioritize rice, oats, potatoes, fruit over refined sugar — same calories, but better for fullness and energy during training",
+          "html": "<li>Prioritize rice, oats, potatoes, fruit over refined sugar — same calories, but better for fullness and energy during training</li>"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Fat — fill the rest:",
+      "html": "<p><strong>Fat — fill the rest:</strong></p>"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Olive oil, nuts, avocado, fatty fish, whole eggs",
+          "html": "<li>Olive oil, nuts, avocado, fatty fish, whole eggs</li>"
+        },
+        {
+          "text": "Don't need to track this obsessively once protein and carbs are dialed in — it naturally lands where it lands",
+          "html": "<li>Don't need to track this obsessively once protein and carbs are dialed in — it naturally lands where it lands</li>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Weekly Adjustment Protocol"
+    },
+    {
+      "type": "paragraph",
+      "text": "Body weight fluctuates day to day (water, sodium, digestion) — don't react to single-day numbers.",
+      "html": "<p>Body weight fluctuates day to day (water, sodium, digestion) — don't react to single-day numbers.</p>"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "text": "Weigh yourself each morning, same conditions (post-bathroom, pre-food)",
+          "html": "<li>Weigh yourself each morning, same conditions (post-bathroom, pre-food)</li>"
+        },
+        {
+          "text": "Track the weekly average, not daily numbers",
+          "lead": "weekly average",
+          "html": "<li>Track the <strong>weekly average</strong>, not daily numbers</li>"
+        },
+        {
+          "text": "Compare week to week: Losing 0.3-0.6kg/week → on track, keep going Losing faster than that → consider adding ~150-200 kcal back, especially if training quality is suffering Not losing after 2-3 full weeks → cut ~150-200 kcal, usually from carbs/fat, not protein",
+          "lead": "Losing 0.3-0.6kg/week",
+          "html": "<li>Compare week to week:<ul>\n<li><strong>Losing 0.3-0.6kg/week</strong> → on track, keep going</li>\n<li><strong>Losing faster than that</strong> → consider adding ~150-200 kcal back, especially if training quality is suffering</li>\n<li><strong>Not losing after 2-3 full weeks</strong> → cut ~150-200 kcal, usually from carbs/fat, not protein</li>\n</ul>\n</li>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Around Training Specifically"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Lift/basketball days: eat a carb + protein meal 1-2 hours before if possible (e.g. rice + chicken, oats + protein shake)",
+          "lead": "Lift/basketball days:",
+          "html": "<li><strong>Lift/basketball days:</strong> eat a carb + protein meal 1-2 hours before if possible (e.g. rice + chicken, oats + protein shake)</li>"
+        },
+        {
+          "text": "Post-training: protein within a few hours matters more than immediately — don't stress the \"anabolic window\" myth, just get a solid protein meal in within a reasonable time",
+          "lead": "Post-training:",
+          "html": "<li><strong>Post-training:</strong> protein within a few hours matters more than immediately — don't stress the \"anabolic window\" myth, just get a solid protein meal in within a reasonable time</li>"
+        },
+        {
+          "text": "Don't train fasted on basketball days — explosive/skill work suffers more from low fuel than steady lifting does",
+          "lead": "Don't train fasted on basketball days",
+          "html": "<li><strong>Don't train fasted on basketball days</strong> — explosive/skill work suffers more from low fuel than steady lifting does</li>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Practical Notes"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Alcohol: counts against your deficit and hurts recovery/sleep — not banned, but budget it in rather than ignoring it",
+          "lead": "Alcohol:",
+          "html": "<li><strong>Alcohol:</strong> counts against your deficit and hurts recovery/sleep — not banned, but budget it in rather than ignoring it</li>"
+        },
+        {
+          "text": "Fiber/vegetables: not in the macro table above but eat plenty — helps fullness on fewer calories, doesn't cost you much room",
+          "lead": "Fiber/vegetables:",
+          "html": "<li><strong>Fiber/vegetables:</strong> not in the macro table above but eat plenty — helps fullness on fewer calories, doesn't cost you much room</li>"
+        },
+        {
+          "text": "Hydration: thirst gets mistaken for hunger often — aim for pale yellow urine as a rough gauge",
+          "lead": "Hydration:",
+          "html": "<li><strong>Hydration:</strong> thirst gets mistaken for hunger often — aim for pale yellow urine as a rough gauge</li>"
+        },
+        {
+          "text": "Sleep: poor sleep makes fat loss noticeably harder (worse hunger signals, worse training recovery) — worth protecting as much as the diet itself",
+          "lead": "Sleep:",
+          "html": "<li><strong>Sleep:</strong> poor sleep makes fat loss noticeably harder (worse hunger signals, worse training recovery) — worth protecting as much as the diet itself</li>"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Reassessment Point"
+    },
+    {
+      "type": "paragraph",
+      "text": "Re-run this whole calculation once you've lost ~5kg, since your maintenance calories will have dropped along with your weight. What works now won't be quite right at 95kg.",
+      "html": "<p>Re-run this whole calculation once you've lost ~5kg, since your maintenance calories will have dropped along with your weight. What works now won't be quite right at 95kg.</p>"
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Eat</p>\n<h1>Nutrition Plan — Fat Loss (Training-Supportive)</h1>\n<p class=\"meta\"><strong>Profile:</strong> 190cm, 100kg, 25-34, desk job, 3 lifts + 2 basketball sessions/week<br />\n<strong>Goal:</strong> Lose at least 5kg of fat while maintaining strength and performance</p>\n\n<h2>Your Numbers (Estimated)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Metric</th>\n<th>Estimate</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>BMR (resting energy needs)</td>\n<td>~2,040 kcal/day</td>\n</tr>\n<tr>\n<td>TDEE (maintenance, including training)</td>\n<td>~2,950-3,050 kcal/day</td>\n</tr>\n<tr>\n<td>Target intake (moderate deficit)</td>\n<td>~2,550 kcal/day</td>\n</tr>\n<tr>\n<td>Expected rate of loss</td>\n<td>~0.4-0.5 kg/week</td>\n</tr>\n<tr>\n<td>Time to lose 5kg</td>\n<td>~10-12 weeks</td>\n</tr>\n</tbody>\n</table></div>\n<p>These are starting estimates based on standard formulas (Mifflin-St Jeor), not a lab measurement — treat the number as a starting point to adjust from, not a fixed truth. Your actual TDEE could run 200-300 kcal higher or lower depending on things the formula can't see (NEAT, sleep, exact training intensity).</p>\n<p><strong>Why this deficit size:</strong> ~500 kcal/day below maintenance is aggressive enough to see real progress but conservative enough that you can still train hard, recover, and build/maintain muscle — which matters a lot given you're also trying to improve leg athleticism and strength. A bigger deficit would speed things up short-term but tends to tank training quality and makes muscle loss more likely.</p>\n\n<h2>Daily Targets</h2>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Macro</th>\n<th>Amount</th>\n<th>Calories</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Protein</td>\n<td>~200g</td>\n<td>~800 kcal</td>\n<td>Preserves muscle in a deficit, keeps you full. ~2g/kg bodyweight</td>\n</tr>\n<tr>\n<td>Fat</td>\n<td>~75g</td>\n<td>~675 kcal</td>\n<td>Minimum for hormone health, don't go much lower</td>\n</tr>\n<tr>\n<td>Carbs</td>\n<td>~270g</td>\n<td>~1,075 kcal</td>\n<td>Fuels lifting + basketball performance — don't slash these to hit calories, cut fat/processed food instead</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td></td>\n<td><strong>~2,550 kcal</strong></td>\n<td></td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>How to Actually Hit This</h2>\n<p><strong>Protein (~200g/day) — the non-negotiable one:</strong></p>\n<ul>\n<li>Spread across 3-4 meals (~50g each) rather than back-loaded at dinner</li>\n<li>Easy sources: chicken/turkey breast, Greek yogurt, eggs, whey protein, fish, lean beef, cottage cheese</li>\n<li>If you're consistently under 150g, that's the first thing to fix before anything else</li>\n</ul>\n<p><strong>Carbs — time them around training:</strong></p>\n<ul>\n<li>Bigger carb portions on lift days and basketball days (pre and post-training)</li>\n<li>Smaller portions on Sat/Sun rest days</li>\n<li>Prioritize rice, oats, potatoes, fruit over refined sugar — same calories, but better for fullness and energy during training</li>\n</ul>\n<p><strong>Fat — fill the rest:</strong></p>\n<ul>\n<li>Olive oil, nuts, avocado, fatty fish, whole eggs</li>\n<li>Don't need to track this obsessively once protein and carbs are dialed in — it naturally lands where it lands</li>\n</ul>\n\n<h2>Weekly Adjustment Protocol</h2>\n<p>Body weight fluctuates day to day (water, sodium, digestion) — don't react to single-day numbers.</p>\n<ol>\n<li>Weigh yourself each morning, same conditions (post-bathroom, pre-food)</li>\n<li>Track the <strong>weekly average</strong>, not daily numbers</li>\n<li>Compare week to week:<ul>\n<li><strong>Losing 0.3-0.6kg/week</strong> → on track, keep going</li>\n<li><strong>Losing faster than that</strong> → consider adding ~150-200 kcal back, especially if training quality is suffering</li>\n<li><strong>Not losing after 2-3 full weeks</strong> → cut ~150-200 kcal, usually from carbs/fat, not protein</li>\n</ul>\n</li>\n</ol>\n\n<h2>Around Training Specifically</h2>\n<ul>\n<li><strong>Lift/basketball days:</strong> eat a carb + protein meal 1-2 hours before if possible (e.g. rice + chicken, oats + protein shake)</li>\n<li><strong>Post-training:</strong> protein within a few hours matters more than immediately — don't stress the \"anabolic window\" myth, just get a solid protein meal in within a reasonable time</li>\n<li><strong>Don't train fasted on basketball days</strong> — explosive/skill work suffers more from low fuel than steady lifting does</li>\n</ul>\n\n<h2>Practical Notes</h2>\n<ul>\n<li><strong>Alcohol:</strong> counts against your deficit and hurts recovery/sleep — not banned, but budget it in rather than ignoring it</li>\n<li><strong>Fiber/vegetables:</strong> not in the macro table above but eat plenty — helps fullness on fewer calories, doesn't cost you much room</li>\n<li><strong>Hydration:</strong> thirst gets mistaken for hunger often — aim for pale yellow urine as a rough gauge</li>\n<li><strong>Sleep:</strong> poor sleep makes fat loss noticeably harder (worse hunger signals, worse training recovery) — worth protecting as much as the diet itself</li>\n</ul>\n\n<h2>Reassessment Point</h2>\n<p>Re-run this whole calculation once you've lost ~5kg, since your maintenance calories will have dropped along with your weight. What works now won't be quite right at 95kg.</p>"
+}

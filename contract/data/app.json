@@ -1,0 +1,235 @@
+{
+  "name": "Off-Season Plan",
+  "source": "docs/index.html",
+  "purpose": "Off-season basketball training plan, workout log and nutrition baseline. Offline-first PWA.",
+  "schemaVersion": 1,
+  "counts": {
+    "programs": 4,
+    "sessions": 10,
+    "exerciseSlots": 62,
+    "exercises": 48,
+    "panels": 9,
+    "navGroups": 5
+  },
+  "nav": [
+    {
+      "label": "Overview",
+      "links": [
+        {
+          "tab": "week",
+          "hash": "week",
+          "label": "Week"
+        }
+      ]
+    },
+    {
+      "label": "Track",
+      "links": [
+        {
+          "tab": "log",
+          "hash": "log",
+          "label": "Workout log"
+        }
+      ]
+    },
+    {
+      "label": "Train",
+      "links": [
+        {
+          "tab": "program",
+          "hash": "program",
+          "label": "Weekly program"
+        },
+        {
+          "tab": "fullbody",
+          "hash": "fullbody",
+          "label": "Full body"
+        },
+        {
+          "tab": "recovery",
+          "hash": "recovery",
+          "label": "Recovery day"
+        },
+        {
+          "tab": "times",
+          "hash": "times",
+          "label": "Session times"
+        }
+      ]
+    },
+    {
+      "label": "Eat",
+      "links": [
+        {
+          "tab": "nutrition",
+          "hash": "nutrition",
+          "label": "Nutrition plan"
+        },
+        {
+          "tab": "meals",
+          "hash": "meals",
+          "label": "Meals"
+        }
+      ]
+    },
+    {
+      "label": "Shop",
+      "links": [
+        {
+          "tab": "groceries",
+          "hash": "groceries",
+          "label": "Grocery list"
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "week",
+      "label": "Week",
+      "group": "Overview",
+      "file": "content/week.json"
+    },
+    {
+      "id": "program",
+      "label": "Weekly program",
+      "group": "Train",
+      "file": "content/program.json"
+    },
+    {
+      "id": "fullbody",
+      "label": "Full body",
+      "group": "Train",
+      "file": "content/fullbody.json"
+    },
+    {
+      "id": "recovery",
+      "label": "Recovery day",
+      "group": "Train",
+      "file": "content/recovery.json"
+    },
+    {
+      "id": "times",
+      "label": "Session times",
+      "group": "Train",
+      "file": "content/times.json"
+    },
+    {
+      "id": "nutrition",
+      "label": "Nutrition plan",
+      "group": "Eat",
+      "file": "content/nutrition.json"
+    },
+    {
+      "id": "meals",
+      "label": "Meals",
+      "group": "Eat",
+      "file": "content/meals.json"
+    },
+    {
+      "id": "groceries",
+      "label": "Grocery list",
+      "group": "Shop",
+      "file": "content/groceries.json"
+    },
+    {
+      "id": "log",
+      "label": "Workout log",
+      "group": "Track",
+      "file": "content/log.json"
+    }
+  ],
+  "storage": {
+    "prefix": "ol-",
+    "keys": {
+      "ol-sessions": {
+        "type": "array<LogSession>",
+        "description": "Saved workout sessions. The only key that holds user work; synced to GitHub.",
+        "schema": "schema/log-session.schema.json"
+      },
+      "ol-drafts": {
+        "type": "object",
+        "description": "Unfinished entry per program/session, keyed \"program/session\". Values are strings, not numbers.",
+        "schema": "schema/drafts.schema.json"
+      },
+      "ol-plan": {
+        "type": "object",
+        "description": "Per program/session exercise overrides, keyed \"program/session\". Absent key = use catalog.",
+        "schema": "schema/plan.schema.json"
+      },
+      "ol-prefs": {
+        "type": "object",
+        "description": "Selected program, session and progress chart selection.",
+        "schema": "schema/prefs.schema.json"
+      },
+      "ol-collapse": {
+        "type": "object",
+        "description": "UI only: exercise ids mapped to true when their log card is collapsed."
+      },
+      "ol-tombstones": {
+        "type": "object",
+        "description": "Deletion markers {sessionId: epochMs} for sync. Pruned after 365 days."
+      },
+      "ol-sync": {
+        "type": "object",
+        "description": "GitHub sync state and token. Device-local; never synced.",
+        "schema": "schema/sync.schema.json"
+      }
+    },
+    "uiKeys": {
+      "op-tab": "Last visible panel id. Not part of the log."
+    }
+  },
+  "sync": {
+    "transport": "GitHub Contents API",
+    "api": "https://api.github.com",
+    "owner": "IraAga",
+    "repo": "workout-companion-data",
+    "path": "log.json",
+    "branch": "default",
+    "auth": "Bearer <fine-grained PAT with Contents read/write>",
+    "envelope": {
+      "schema": 1,
+      "app": "off-season-plan",
+      "updatedAt": "ISO-8601",
+      "sessions": "LogSession[]",
+      "deleted": "{id: epochMs}"
+    },
+    "strategy": "offline-first, last-write-wins per session id on rev, union of tombstones, retry once on 409/422",
+    "tombstoneRetentionDays": 365
+  },
+  "backup": {
+    "format": "off-season-plan/backup",
+    "schema": 1,
+    "filename": "workout-log-YYYY-MM-DD.json",
+    "keys": [
+      "ol-prefs",
+      "ol-plan",
+      "ol-drafts",
+      "ol-sessions"
+    ],
+    "valueEncoding": "raw JSON strings, restored verbatim",
+    "restoreMode": "replace keys listed above; leave ol-sync and ol-tombstones alone"
+  },
+  "rules": {
+    "defaultProgram": "gym",
+    "defaultSessionByWeekday": {
+      "1": "lift-a",
+      "3": "lift-b",
+      "5": "lift-c"
+    },
+    "defaultSessionFallback": "lift-a",
+    "weekLiftSessions": [
+      "lift-a",
+      "lift-b",
+      "lift-c"
+    ],
+    "progressSeriesPrefix": "n|",
+    "restTimerStepSeconds": 30,
+    "draftSaveDebounceMs": 300,
+    "sessionIdPattern": "s<epochMs>",
+    "customExerciseIdPattern": "x<base36 epochMs><3 random base36 chars>",
+    "dateFormat": "YYYY-MM-DD (local time, never UTC)",
+    "sort": "date desc, then ts desc"
+  }
+}

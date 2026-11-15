@@ -646,6 +646,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 .xedit .err { color: var(--danger); font-size: 0.85rem; margin: 0; }
 .plan-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
 .plan-actions .btn[hidden] { display: none; }
+.start-row { margin: 0 0 1rem; }
 #log-fill-last { margin: 0 0 0.9rem; }
 #log-add-ex:disabled { opacity: 0.45; cursor: default; }
 #log-add-ex:disabled:hover { background: transparent; }
@@ -2930,9 +2931,9 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     </section>
     <section class="doc" data-panel="log" hidden>
       <p class="kicker">Track</p>
-<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="true" aria-controls="sub-entry" data-sub="entry">Log workout</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-history" data-sub="history">History</button></div>
-<div class="sub" id="sub-entry" role="tabpanel" data-sub="entry">
-<h1>Workout log</h1>
+<div class="subtabs" role="tablist" aria-label="Workout log views"><button type="button" role="tab" aria-selected="false" aria-controls="sub-progress" data-sub="progress">Progress</button><button type="button" role="tab" aria-selected="true" aria-controls="sub-history" data-sub="history">History</button><button type="button" role="tab" aria-selected="false" aria-controls="sub-entry" data-sub="entry">New workout</button></div>
+<div class="sub" id="sub-entry" role="tabpanel" data-sub="entry" hidden>
+<h1>New workout</h1>
 <p class="log-status" id="log-status" aria-live="polite">Connecting to your saved log…</p>
 <div class="edit-banner" id="log-edit-banner" hidden>
   <span id="log-edit-text">Editing saved session.</span>
@@ -2943,6 +2944,10 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   <label for="log-session">Session<select id="log-session"></select></label>
   <label for="log-date">Date<input type="date" id="log-date"></label>
 </div>
+<div class="plan-actions start-row" id="log-start-wrap">
+  <button type="button" class="btn primary" id="log-start">Start workout</button>
+</div>
+<div id="log-form" hidden>
 <button type="button" class="btn" id="log-fill-last" hidden title="Fill empty fields with your latest numbers">Fill from last time</button>
 <div class="xctl" id="log-xctl">
   <button type="button" class="linkbtn" id="log-collapse-all">Collapse all</button>
@@ -2968,6 +2973,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   </div>
 </div>
 <p class="log-msg" id="log-msg" role="status" aria-live="polite"></p>
+</div>
 </div>
 <div class="sub" id="sub-progress" role="tabpanel" data-sub="progress" hidden>
 <h1>Progress</h1>
@@ -2995,8 +3001,11 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   </div>
 </details>
 </div>
-<div class="sub" id="sub-history" role="tabpanel" data-sub="history" hidden>
+<div class="sub" id="sub-history" role="tabpanel" data-sub="history">
 <h1>History</h1>
+<div class="plan-actions start-row" id="history-new-wrap">
+  <button type="button" class="btn primary" id="log-new">Log new workout</button>
+</div>
 <div id="log-history"></div>
 <details class="prog-add" id="backup">
   <summary>Backup &amp; restore</summary>
@@ -3408,6 +3417,20 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
       + '<button type="button" class="btn" data-act="cancel-edit">Cancel</button>'
       + (isNew ? '' : '<button type="button" class="btn danger" data-act="del-ex" data-ex="' + esc(ex.id) + '">Delete exercise</button>')
       + '</div></div></article>';
+  }
+
+  function showForm(flag) {
+    var box = $('log-form');
+    var wrap = $('log-start-wrap');
+    if (box) { box.hidden = !flag; }
+    if (wrap) { wrap.hidden = !!flag; }
+  }
+
+  // The log tab is History-first: the form is something you open on purpose.
+  function goHistory() {
+    var b = panel.querySelector('.subtabs button[data-sub="history"]');
+    if (b) { b.click(); }
+    showForm(false);
   }
 
   function renderCards() {
@@ -3908,7 +3931,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   $('log-edit-cancel').addEventListener('click', function () {
     if (saving) { return; }
     exitHistoryEdit();
-    setMsg('Edit cancelled.');
+    goHistory();
+    showToast('Edit cancelled', null, null, 2500);
   });
   $('log-rest').addEventListener('click', function (e) {
     var b = e.target.closest('button[data-rest]');
@@ -3993,7 +4017,8 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
         stopRest();
         exitHistoryEdit();
         refreshViews();
-        setMsg('Session updated.');
+        goHistory();
+        showToast('Session updated', null, null, 2500);
         return;
       }
       if (mode === 'db') {
@@ -4018,6 +4043,19 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     }
   }
   $('log-save').addEventListener('click', save);
+  $('log-start').addEventListener('click', function () {
+    showForm(true);
+    var first = document.querySelector('#log-cards input[data-f="kg"]');
+    if (first) {
+      window.scrollTo(0, Math.max(0, first.getBoundingClientRect().top + window.scrollY - 130));
+    }
+  });
+  $('log-new').addEventListener('click', function () {
+    var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
+    if (entryBtn) { entryBtn.click(); }
+    showForm(false);
+    window.scrollTo(0, 0);
+  });
   $('sync-connect').addEventListener('click', connectSync);
   $('sync-now').addEventListener('click', syncNow);
   $('sync-disconnect').addEventListener('click', disconnectSync);
@@ -4104,6 +4142,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
     newEx = null;
     var entryBtn = panel.querySelector('.subtabs button[data-sub="entry"]');
     if (entryBtn) { entryBtn.click(); }
+    showForm(true);
     renderPickers();
     renderCards();
     window.scrollTo(0, 0);

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "backup.schema.json",
+  "title": "Backup file",
+  "description": "The JSON downloaded by 'Download backup' and accepted by 'Restore from file'. Keys hold raw localStorage JSON strings so a restore is byte-for-byte.",
+  "type": "object",
+  "required": ["format", "schema", "keys"],
+  "properties": {
+    "format": { "const": "off-season-plan/backup" },
+    "schema": { "const": 1 },
+    "exportedAt": { "type": "string", "format": "date-time" },
+    "sessions": { "type": "integer", "minimum": 0, "description": "Count for display only. The app trusts keys, not this number." },
+    "keys": {
+      "type": "object",
+      "description": "Only these four are read and written on restore. ol-sync and ol-tombstones are deliberately excluded.",
+      "properties": {
+        "ol-prefs": { "type": "string", "description": "JSON text of the prefs object." },
+        "ol-plan": { "type": "string", "description": "JSON text of the plan override object." },
+        "ol-drafts": { "type": "string", "description": "JSON text of the drafts object." },
+        "ol-sessions": { "type": "string", "description": "JSON text of the LogSession array." }
+      },
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

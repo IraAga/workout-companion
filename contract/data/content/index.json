@@ -1,0 +1,288 @@
+{
+  "source": "docs/index.html",
+  "panels": [
+    {
+      "id": "week",
+      "order": 0,
+      "group": "Overview",
+      "navLabel": "Week",
+      "kicker": "Overview",
+      "title": "This week",
+      "dynamic": true,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "widget",
+        "paragraph",
+        "week",
+        "heading",
+        "index"
+      ],
+      "textCoverage": 1,
+      "file": "content/week.json"
+    },
+    {
+      "id": "program",
+      "order": 1,
+      "group": "Train",
+      "navLabel": "Weekly program",
+      "kicker": "Train",
+      "title": "",
+      "dynamic": false,
+      "subtabs": [
+        {
+          "id": "gym",
+          "label": "Gym program"
+        },
+        {
+          "id": "home",
+          "label": "Home program"
+        },
+        {
+          "id": "minimal",
+          "label": "Minimal kit"
+        }
+      ],
+      "blockTypes": [
+        "kicker",
+        "subtabs",
+        "section",
+        "section",
+        "section"
+      ],
+      "textCoverage": 1,
+      "file": "content/program.json"
+    },
+    {
+      "id": "fullbody",
+      "order": 2,
+      "group": "Train",
+      "navLabel": "Full body",
+      "kicker": "Train",
+      "title": "Full Body Workout",
+      "dynamic": false,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "meta",
+        "paragraph",
+        "heading",
+        "paragraph",
+        "list",
+        "paragraph",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "list",
+        "heading",
+        "list"
+      ],
+      "textCoverage": 1,
+      "file": "content/fullbody.json"
+    },
+    {
+      "id": "recovery",
+      "order": 3,
+      "group": "Train",
+      "navLabel": "Recovery day",
+      "kicker": "Train",
+      "title": "",
+      "dynamic": false,
+      "subtabs": [
+        {
+          "id": "light",
+          "label": "Light session"
+        },
+        {
+          "id": "iso",
+          "label": "Isometrics"
+        },
+        {
+          "id": "legs",
+          "label": "Legs and ankles"
+        }
+      ],
+      "blockTypes": [
+        "kicker",
+        "subtabs",
+        "section",
+        "section",
+        "section"
+      ],
+      "textCoverage": 1,
+      "file": "content/recovery.json"
+    },
+    {
+      "id": "times",
+      "order": 4,
+      "group": "Train",
+      "navLabel": "Session times",
+      "kicker": "Train",
+      "title": "Session times",
+      "dynamic": false,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "meta",
+        "paragraph",
+        "group",
+        "group",
+        "table",
+        "heading",
+        "list",
+        "paragraph"
+      ],
+      "textCoverage": 1,
+      "file": "content/times.json"
+    },
+    {
+      "id": "nutrition",
+      "order": 5,
+      "group": "Eat",
+      "navLabel": "Nutrition plan",
+      "kicker": "Eat",
+      "title": "Nutrition Plan — Fat Loss (Training-Supportive)",
+      "dynamic": false,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "meta",
+        "heading",
+        "table",
+        "paragraph",
+        "paragraph",
+        "heading",
+        "table",
+        "heading",
+        "paragraph",
+        "list",
+        "paragraph",
+        "list",
+        "paragraph",
+        "list",
+        "heading",
+        "paragraph",
+        "list",
+        "heading",
+        "list",
+        "heading",
+        "list",
+        "heading",
+        "paragraph"
+      ],
+      "textCoverage": 1,
+      "file": "content/nutrition.json"
+    },
+    {
+      "id": "meals",
+      "order": 6,
+      "group": "Eat",
+      "navLabel": "Meals",
+      "kicker": "Eat",
+      "title": "Protein-Heavy Meal Suggestions",
+      "dynamic": false,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "paragraph",
+        "heading",
+        "meal-grid",
+        "heading",
+        "meal-grid",
+        "heading",
+        "meal-grid",
+        "heading",
+        "meal-grid",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "list"
+      ],
+      "textCoverage": 1,
+      "file": "content/meals.json"
+    },
+    {
+      "id": "groceries",
+      "order": 7,
+      "group": "Shop",
+      "navLabel": "Grocery list",
+      "kicker": "Shop",
+      "title": "Monthly Grocery Baseline — Budget-Friendly High-Protein Core",
+      "dynamic": false,
+      "subtabs": [],
+      "blockTypes": [
+        "kicker",
+        "heading",
+        "paragraph",
+        "paragraph",
+        "list",
+        "paragraph",
+        "heading",
+        "table",
+        "paragraph",
+        "paragraph",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "paragraph",
+        "table",
+        "heading",
+        "table",
+        "heading",
+        "table",
+        "paragraph",
+        "heading",
+        "list"
+      ],
+      "textCoverage": 1,
+      "file": "content/groceries.json"
+    },
+    {
+      "id": "log",
+      "order": 8,
+      "group": "Track",
+      "navLabel": "Workout log",
+      "kicker": "Track",
+      "title": "",
+      "dynamic": true,
+      "subtabs": [
+        {
+          "id": "entry",
+          "label": "Log workout"
+        },
+        {
+          "id": "progress",
+          "label": "Progress"
+        },
+        {
+          "id": "history",
+          "label": "History"
+        }
+      ],
+      "blockTypes": [
+        "kicker",
+        "subtabs",
+        "section",
+        "section",
+        "section",
+        "group"
+      ],
+      "textCoverage": 1,
+      "file": "content/log.json"
+    }
+  ]
+}

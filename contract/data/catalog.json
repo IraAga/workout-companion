@@ -1,0 +1,1414 @@
+{
+  "source": "docs/index.html",
+  "description": "Exercise catalog. A suggestion, not a constraint: the app stores per-session overrides in ol-plan.",
+  "exerciseIdPattern": "catalog slugs, or \"x\" + base36 timestamp + 3 random chars for custom exercises",
+  "units": [
+    "reps",
+    "sec"
+  ],
+  "restFallbackSeconds": 90,
+  "programs": [
+    {
+      "id": "gym",
+      "label": "Gym program",
+      "sessions": [
+        {
+          "id": "lift-a",
+          "label": "Lift A",
+          "note": "Lower Body Power",
+          "exercises": [
+            {
+              "id": "trap-bar-or-barbell-deadlift",
+              "title": "Trap Bar or Barbell Deadlift",
+              "hint": "",
+              "sets": 4,
+              "target": "4x4",
+              "unit": "reps",
+              "suggested": "50-60 kg total",
+              "bw": false
+            },
+            {
+              "id": "box-jump",
+              "title": "Box Jump",
+              "hint": "moderate height",
+              "sets": 4,
+              "target": "4x4",
+              "unit": "reps",
+              "suggested": "Bodyweight, 30-45 cm box",
+              "bw": true
+            },
+            {
+              "id": "bulgarian-split-squat",
+              "title": "Bulgarian Split Squat",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "Bodyweight, or 8-10 kg each hand",
+              "bw": true
+            },
+            {
+              "id": "lateral-bound",
+              "title": "Lateral Bound",
+              "hint": "skater jump",
+              "sets": 3,
+              "target": "3x6/side",
+              "unit": "reps",
+              "suggested": "Bodyweight",
+              "bw": true
+            },
+            {
+              "id": "single-leg-rdl",
+              "title": "Single-leg RDL",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "Bodyweight, or 8-12 kg in one hand",
+              "bw": true
+            },
+            {
+              "id": "copenhagen-plank",
+              "title": "Copenhagen Plank",
+              "hint": "",
+              "sets": 3,
+              "target": "3x20-30 sec/side",
+              "unit": "sec",
+              "suggested": "Bodyweight, knee on the bench",
+              "bw": true
+            }
+          ]
+        },
+        {
+          "id": "lift-b",
+          "label": "Lift B",
+          "note": "Upper Body + Core",
+          "exercises": [
+            {
+              "id": "barbell-bench-press",
+              "title": "Barbell Bench Press",
+              "hint": "",
+              "sets": 4,
+              "target": "4x6",
+              "unit": "reps",
+              "suggested": "30-40 kg total",
+              "bw": false
+            },
+            {
+              "id": "weighted-pull-up-or-lat-pulldown",
+              "title": "Weighted Pull-up or Lat Pulldown",
+              "hint": "",
+              "sets": 4,
+              "target": "4x6-8",
+              "unit": "reps",
+              "suggested": "40-50 kg on the stack, or 30-40 kg of assistance",
+              "bw": false
+            },
+            {
+              "id": "standing-overhead-press",
+              "title": "Standing Overhead Press",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8",
+              "unit": "reps",
+              "suggested": "20-30 kg total",
+              "bw": false
+            },
+            {
+              "id": "single-arm-db-row",
+              "title": "Single-arm DB Row",
+              "hint": "",
+              "sets": 3,
+              "target": "3x10/side",
+              "unit": "reps",
+              "suggested": "14-18 kg",
+              "bw": false
+            },
+            {
+              "id": "med-ball-rotational-throw",
+              "title": "Med Ball Rotational Throw",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8/side",
+              "unit": "reps",
+              "suggested": "4-6 kg ball",
+              "bw": false
+            },
+            {
+              "id": "hanging-leg-raise-or-ab-wheel",
+              "title": "Hanging Leg Raise or Ab Wheel",
+              "hint": "",
+              "sets": 3,
+              "target": "3x12",
+              "unit": "reps",
+              "suggested": "Bodyweight",
+              "bw": true
+            }
+          ]
+        },
+        {
+          "id": "lift-c",
+          "label": "Lift C",
+          "note": "Lower Body Strength + Plyo",
+          "exercises": [
+            {
+              "id": "back-squat",
+              "title": "Back Squat",
+              "hint": "",
+              "sets": 4,
+              "target": "4x5",
+              "unit": "reps",
+              "suggested": "40-50 kg total",
+              "bw": false
+            },
+            {
+              "id": "depth-jump",
+              "title": "Depth Jump",
+              "hint": "low box, 12-16\"",
+              "sets": 4,
+              "target": "4x4",
+              "unit": "reps",
+              "suggested": "Bodyweight, 30-40 cm box",
+              "bw": true
+            },
+            {
+              "id": "walking-lunge",
+              "title": "Walking Lunge",
+              "hint": "DB or BB",
+              "sets": 3,
+              "target": "3x10/leg",
+              "unit": "reps",
+              "suggested": "Bodyweight, or 8-12 kg each hand",
+              "bw": true
+            },
+            {
+              "id": "nordic-curl",
+              "title": "Nordic Curl",
+              "hint": "or eccentric hamstring curl",
+              "sets": 3,
+              "target": "3x6",
+              "unit": "reps",
+              "suggested": "Bodyweight, hold a band or a partner for help",
+              "bw": true
+            },
+            {
+              "id": "pogo-hops",
+              "title": "Pogo Hops",
+              "hint": "ankle stiffness",
+              "sets": 3,
+              "target": "3x15",
+              "unit": "reps",
+              "suggested": "Bodyweight",
+              "bw": true
+            },
+            {
+              "id": "standing-calf-raise",
+              "title": "Standing Calf Raise",
+              "hint": "",
+              "sets": 3,
+              "target": "3x12",
+              "unit": "reps",
+              "suggested": "Bodyweight, or 20-30 kg on the machine",
+              "bw": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fullbody",
+      "label": "Full body",
+      "sessions": [
+        {
+          "id": "full",
+          "label": "Full body",
+          "note": "Main session",
+          "exercises": [
+            {
+              "id": "barbell-back-squat",
+              "title": "Barbell Back Squat",
+              "hint": "",
+              "sets": 3,
+              "target": "3x6",
+              "unit": "reps",
+              "suggested": "40-50 kg total",
+              "bw": false
+            },
+            {
+              "id": "barbell-romanian-deadlift",
+              "title": "Barbell Romanian Deadlift",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8",
+              "unit": "reps",
+              "suggested": "40-50 kg total",
+              "bw": false
+            },
+            {
+              "id": "barbell-bench-press",
+              "title": "Barbell Bench Press",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8",
+              "unit": "reps",
+              "suggested": "30-40 kg total",
+              "bw": false
+            },
+            {
+              "id": "lat-pulldown-or-assisted-pull-up",
+              "title": "Lat Pulldown or Assisted Pull-up",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8-10",
+              "unit": "reps",
+              "suggested": "40-50 kg on the stack, or 30-40 kg of assistance",
+              "bw": false
+            },
+            {
+              "id": "seated-dumbbell-shoulder-press",
+              "title": "Seated Dumbbell Shoulder Press",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8",
+              "unit": "reps",
+              "suggested": "10-14 kg each hand",
+              "bw": false
+            },
+            {
+              "id": "dumbbell-box-step-up",
+              "title": "Dumbbell Box Step-up",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "Bodyweight, or 8-12 kg each hand",
+              "bw": true
+            },
+            {
+              "id": "cable-pallof-press",
+              "title": "Cable Pallof Press",
+              "hint": "",
+              "sets": 3,
+              "target": "3x10/side",
+              "unit": "reps",
+              "suggested": "5-10 kg",
+              "bw": false
+            },
+            {
+              "id": "copenhagen-plank",
+              "title": "Copenhagen Plank",
+              "hint": "top leg on a box",
+              "sets": 2,
+              "target": "2x15-20 sec/side",
+              "unit": "sec",
+              "suggested": "Bodyweight, knee on the box",
+              "bw": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "label": "Home program",
+      "sessions": [
+        {
+          "id": "lift-a",
+          "label": "Lift A",
+          "note": "Lower Body + Mobility",
+          "exercises": [
+            {
+              "id": "goblet-squat",
+              "title": "Goblet Squat",
+              "hint": "14kg KB",
+              "sets": 4,
+              "target": "4x8",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "kettlebell-deadlift",
+              "title": "Kettlebell Deadlift",
+              "hint": "2x14kg, one in each hand",
+              "sets": 4,
+              "target": "4x6",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "bodyweight-bulgarian-split-squat",
+              "title": "Bodyweight Bulgarian Split Squat",
+              "hint": "rear foot on chair/couch",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-lateral-walk",
+              "title": "Band Lateral Walk",
+              "hint": "heavy black band",
+              "sets": 3,
+              "target": "3x12 steps/side",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "single-leg-glute-bridge",
+              "title": "Single-leg Glute Bridge",
+              "hint": "",
+              "sets": 3,
+              "target": "3x10/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "standing-calf-raise",
+              "title": "Standing Calf Raise",
+              "hint": "holding 14kg KB",
+              "sets": 3,
+              "target": "3x15",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        },
+        {
+          "id": "lift-b",
+          "label": "Lift B",
+          "note": "Upper Body + Core",
+          "exercises": [
+            {
+              "id": "kettlebell-floor-press",
+              "title": "Kettlebell Floor Press",
+              "hint": "14kg, one arm at a time",
+              "sets": 4,
+              "target": "4x8/arm",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "long-band-row",
+              "title": "Long Band Row",
+              "hint": "anchor band to a door/sturdy point",
+              "sets": 4,
+              "target": "4x10",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "kettlebell-standing-press",
+              "title": "Kettlebell Standing Press",
+              "hint": "10kg or 8kg DB",
+              "sets": 3,
+              "target": "3x8/arm",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "renegade-row",
+              "title": "Renegade Row",
+              "hint": "2x8kg DB, plank position",
+              "sets": 3,
+              "target": "3x8/side",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "ab-roller",
+              "title": "Ab Roller",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8-10",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-face-pull",
+              "title": "Band Face Pull",
+              "hint": "black band",
+              "sets": 3,
+              "target": "3x12",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        },
+        {
+          "id": "lift-c",
+          "label": "Lift C",
+          "note": "Lower Body + Plyo",
+          "exercises": [
+            {
+              "id": "kettlebell-front-squat",
+              "title": "Kettlebell Front Squat",
+              "hint": "2x14kg",
+              "sets": 4,
+              "target": "4x6",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "bodyweight-step-up",
+              "title": "Bodyweight Step-up",
+              "hint": "onto sturdy chair/stair, ~knee height",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "broad-jump",
+              "title": "Broad Jump",
+              "hint": "",
+              "sets": 4,
+              "target": "4x4",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "pogo-hops",
+              "title": "Pogo Hops",
+              "hint": "",
+              "sets": 3,
+              "target": "3x15",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "nordic-curl-regression-slow-eccentric-hamstring-lower",
+              "title": "Nordic Curl Regression: Slow Eccentric Hamstring Lower",
+              "hint": "partner or couch-anchored feet",
+              "sets": 3,
+              "target": "3x6",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "copenhagen-plank",
+              "title": "Copenhagen Plank",
+              "hint": "foot on chair for support",
+              "sets": 3,
+              "target": "3x15-20 sec/side",
+              "unit": "sec",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "minimal",
+      "label": "Minimal kit",
+      "sessions": [
+        {
+          "id": "lift-a",
+          "label": "Lift A",
+          "note": "Lower Body + Mobility",
+          "exercises": [
+            {
+              "id": "kb-goblet-squat",
+              "title": "KB Goblet Squat",
+              "hint": "",
+              "sets": 4,
+              "target": "4x10",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "single-kb-romanian-deadlift",
+              "title": "Single-KB Romanian Deadlift",
+              "hint": "both hands on KB",
+              "sets": 4,
+              "target": "4x8",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "bulgarian-split-squat",
+              "title": "Bulgarian Split Squat",
+              "hint": "rear foot elevated, bodyweight",
+              "sets": 3,
+              "target": "3x10/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-lateral-walk",
+              "title": "Band Lateral Walk",
+              "hint": "black band",
+              "sets": 3,
+              "target": "3x12 steps/side",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "single-leg-glute-bridge",
+              "title": "Single-leg Glute Bridge",
+              "hint": "",
+              "sets": 3,
+              "target": "3x10/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "single-kb-standing-calf-raise",
+              "title": "Single-KB Standing Calf Raise",
+              "hint": "",
+              "sets": 3,
+              "target": "3x15",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        },
+        {
+          "id": "lift-b",
+          "label": "Lift B",
+          "note": "Upper Body + Core",
+          "exercises": [
+            {
+              "id": "single-arm-kb-floor-press",
+              "title": "Single-Arm KB Floor Press",
+              "hint": "",
+              "sets": 4,
+              "target": "4x8/arm",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "long-band-row",
+              "title": "Long Band Row",
+              "hint": "anchor to door top/sturdy point",
+              "sets": 4,
+              "target": "4x10",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "single-arm-kb-standing-press",
+              "title": "Single-Arm KB Standing Press",
+              "hint": "",
+              "sets": 3,
+              "target": "3x8/arm",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-pallof-press",
+              "title": "Band Pallof Press",
+              "hint": "anchor band to your side at chest height",
+              "sets": 3,
+              "target": "3x10/side",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "push-up",
+              "title": "Push-up",
+              "hint": "",
+              "sets": 3,
+              "target": "3x max-2 (leave 2 reps in reserve)",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-face-pull",
+              "title": "Band Face Pull",
+              "hint": "black band",
+              "sets": 3,
+              "target": "3x12",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        },
+        {
+          "id": "lift-c",
+          "label": "Lift C",
+          "note": "Lower Body + Plyo",
+          "exercises": [
+            {
+              "id": "single-kb-front-rack-squat",
+              "title": "Single-KB Front Rack Squat",
+              "hint": "",
+              "sets": 4,
+              "target": "4x8",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "bodyweight-step-up",
+              "title": "Bodyweight Step-up",
+              "hint": "chair/stair, ~knee height",
+              "sets": 3,
+              "target": "3x8/leg",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "broad-jump",
+              "title": "Broad Jump",
+              "hint": "",
+              "sets": 4,
+              "target": "4x4",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "pogo-hops",
+              "title": "Pogo Hops",
+              "hint": "",
+              "sets": 3,
+              "target": "3x15",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "band-resisted-hamstring-curl",
+              "title": "Band-Resisted Hamstring Curl",
+              "hint": "anchor long band, lying face down",
+              "sets": 3,
+              "target": "3x12",
+              "unit": "reps",
+              "suggested": "",
+              "bw": false
+            },
+            {
+              "id": "copenhagen-plank",
+              "title": "Copenhagen Plank",
+              "hint": "foot on chair",
+              "sets": 3,
+              "target": "3x15-20 sec/side",
+              "unit": "sec",
+              "suggested": "",
+              "bw": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exerciseIndex": {
+    "trap-bar-or-barbell-deadlift": {
+      "id": "trap-bar-or-barbell-deadlift",
+      "title": "Trap Bar or Barbell Deadlift",
+      "hint": "",
+      "sets": 4,
+      "target": "4x4",
+      "unit": "reps",
+      "suggested": "50-60 kg total",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 120
+    },
+    "box-jump": {
+      "id": "box-jump",
+      "title": "Box Jump",
+      "hint": "moderate height",
+      "sets": 4,
+      "target": "4x4",
+      "unit": "reps",
+      "suggested": "Bodyweight, 30-45 cm box",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "bulgarian-split-squat": {
+      "id": "bulgarian-split-squat",
+      "title": "Bulgarian Split Squat",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8/leg",
+      "unit": "reps",
+      "suggested": "Bodyweight, or 8-10 kg each hand",
+      "bw": true,
+      "programs": [
+        "gym",
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "lateral-bound": {
+      "id": "lateral-bound",
+      "title": "Lateral Bound",
+      "hint": "skater jump",
+      "sets": 3,
+      "target": "3x6/side",
+      "unit": "reps",
+      "suggested": "Bodyweight",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "single-leg-rdl": {
+      "id": "single-leg-rdl",
+      "title": "Single-leg RDL",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8/leg",
+      "unit": "reps",
+      "suggested": "Bodyweight, or 8-12 kg in one hand",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "copenhagen-plank": {
+      "id": "copenhagen-plank",
+      "title": "Copenhagen Plank",
+      "hint": "",
+      "sets": 3,
+      "target": "3x20-30 sec/side",
+      "unit": "sec",
+      "suggested": "Bodyweight, knee on the bench",
+      "bw": true,
+      "programs": [
+        "gym",
+        "fullbody",
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "barbell-bench-press": {
+      "id": "barbell-bench-press",
+      "title": "Barbell Bench Press",
+      "hint": "",
+      "sets": 4,
+      "target": "4x6",
+      "unit": "reps",
+      "suggested": "30-40 kg total",
+      "bw": false,
+      "programs": [
+        "gym",
+        "fullbody"
+      ],
+      "restSeconds": 120
+    },
+    "weighted-pull-up-or-lat-pulldown": {
+      "id": "weighted-pull-up-or-lat-pulldown",
+      "title": "Weighted Pull-up or Lat Pulldown",
+      "hint": "",
+      "sets": 4,
+      "target": "4x6-8",
+      "unit": "reps",
+      "suggested": "40-50 kg on the stack, or 30-40 kg of assistance",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "standing-overhead-press": {
+      "id": "standing-overhead-press",
+      "title": "Standing Overhead Press",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8",
+      "unit": "reps",
+      "suggested": "20-30 kg total",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "single-arm-db-row": {
+      "id": "single-arm-db-row",
+      "title": "Single-arm DB Row",
+      "hint": "",
+      "sets": 3,
+      "target": "3x10/side",
+      "unit": "reps",
+      "suggested": "14-18 kg",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "med-ball-rotational-throw": {
+      "id": "med-ball-rotational-throw",
+      "title": "Med Ball Rotational Throw",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8/side",
+      "unit": "reps",
+      "suggested": "4-6 kg ball",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 60
+    },
+    "hanging-leg-raise-or-ab-wheel": {
+      "id": "hanging-leg-raise-or-ab-wheel",
+      "title": "Hanging Leg Raise or Ab Wheel",
+      "hint": "",
+      "sets": 3,
+      "target": "3x12",
+      "unit": "reps",
+      "suggested": "Bodyweight",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 60
+    },
+    "back-squat": {
+      "id": "back-squat",
+      "title": "Back Squat",
+      "hint": "",
+      "sets": 4,
+      "target": "4x5",
+      "unit": "reps",
+      "suggested": "40-50 kg total",
+      "bw": false,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 120
+    },
+    "depth-jump": {
+      "id": "depth-jump",
+      "title": "Depth Jump",
+      "hint": "low box, 12-16\"",
+      "sets": 4,
+      "target": "4x4",
+      "unit": "reps",
+      "suggested": "Bodyweight, 30-40 cm box",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 120
+    },
+    "walking-lunge": {
+      "id": "walking-lunge",
+      "title": "Walking Lunge",
+      "hint": "DB or BB",
+      "sets": 3,
+      "target": "3x10/leg",
+      "unit": "reps",
+      "suggested": "Bodyweight, or 8-12 kg each hand",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "nordic-curl": {
+      "id": "nordic-curl",
+      "title": "Nordic Curl",
+      "hint": "or eccentric hamstring curl",
+      "sets": 3,
+      "target": "3x6",
+      "unit": "reps",
+      "suggested": "Bodyweight, hold a band or a partner for help",
+      "bw": true,
+      "programs": [
+        "gym"
+      ],
+      "restSeconds": 90
+    },
+    "pogo-hops": {
+      "id": "pogo-hops",
+      "title": "Pogo Hops",
+      "hint": "ankle stiffness",
+      "sets": 3,
+      "target": "3x15",
+      "unit": "reps",
+      "suggested": "Bodyweight",
+      "bw": true,
+      "programs": [
+        "gym",
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "standing-calf-raise": {
+      "id": "standing-calf-raise",
+      "title": "Standing Calf Raise",
+      "hint": "",
+      "sets": 3,
+      "target": "3x12",
+      "unit": "reps",
+      "suggested": "Bodyweight, or 20-30 kg on the machine",
+      "bw": true,
+      "programs": [
+        "gym",
+        "home"
+      ],
+      "restSeconds": 60
+    },
+    "barbell-back-squat": {
+      "id": "barbell-back-squat",
+      "title": "Barbell Back Squat",
+      "hint": "",
+      "sets": 3,
+      "target": "3x6",
+      "unit": "reps",
+      "suggested": "40-50 kg total",
+      "bw": false,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 120
+    },
+    "barbell-romanian-deadlift": {
+      "id": "barbell-romanian-deadlift",
+      "title": "Barbell Romanian Deadlift",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8",
+      "unit": "reps",
+      "suggested": "40-50 kg total",
+      "bw": false,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 120
+    },
+    "lat-pulldown-or-assisted-pull-up": {
+      "id": "lat-pulldown-or-assisted-pull-up",
+      "title": "Lat Pulldown or Assisted Pull-up",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8-10",
+      "unit": "reps",
+      "suggested": "40-50 kg on the stack, or 30-40 kg of assistance",
+      "bw": false,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 90
+    },
+    "seated-dumbbell-shoulder-press": {
+      "id": "seated-dumbbell-shoulder-press",
+      "title": "Seated Dumbbell Shoulder Press",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8",
+      "unit": "reps",
+      "suggested": "10-14 kg each hand",
+      "bw": false,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 90
+    },
+    "dumbbell-box-step-up": {
+      "id": "dumbbell-box-step-up",
+      "title": "Dumbbell Box Step-up",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8/leg",
+      "unit": "reps",
+      "suggested": "Bodyweight, or 8-12 kg each hand",
+      "bw": true,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 90
+    },
+    "cable-pallof-press": {
+      "id": "cable-pallof-press",
+      "title": "Cable Pallof Press",
+      "hint": "",
+      "sets": 3,
+      "target": "3x10/side",
+      "unit": "reps",
+      "suggested": "5-10 kg",
+      "bw": false,
+      "programs": [
+        "fullbody"
+      ],
+      "restSeconds": 60
+    },
+    "goblet-squat": {
+      "id": "goblet-squat",
+      "title": "Goblet Squat",
+      "hint": "14kg KB",
+      "sets": 4,
+      "target": "4x8",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 120
+    },
+    "kettlebell-deadlift": {
+      "id": "kettlebell-deadlift",
+      "title": "Kettlebell Deadlift",
+      "hint": "2x14kg, one in each hand",
+      "sets": 4,
+      "target": "4x6",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 120
+    },
+    "bodyweight-bulgarian-split-squat": {
+      "id": "bodyweight-bulgarian-split-squat",
+      "title": "Bodyweight Bulgarian Split Squat",
+      "hint": "rear foot on chair/couch",
+      "sets": 3,
+      "target": "3x8/leg",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 90
+    },
+    "band-lateral-walk": {
+      "id": "band-lateral-walk",
+      "title": "Band Lateral Walk",
+      "hint": "heavy black band",
+      "sets": 3,
+      "target": "3x12 steps/side",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "single-leg-glute-bridge": {
+      "id": "single-leg-glute-bridge",
+      "title": "Single-leg Glute Bridge",
+      "hint": "",
+      "sets": 3,
+      "target": "3x10/leg",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "kettlebell-floor-press": {
+      "id": "kettlebell-floor-press",
+      "title": "Kettlebell Floor Press",
+      "hint": "14kg, one arm at a time",
+      "sets": 4,
+      "target": "4x8/arm",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 90
+    },
+    "long-band-row": {
+      "id": "long-band-row",
+      "title": "Long Band Row",
+      "hint": "anchor band to a door/sturdy point",
+      "sets": 4,
+      "target": "4x10",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "kettlebell-standing-press": {
+      "id": "kettlebell-standing-press",
+      "title": "Kettlebell Standing Press",
+      "hint": "10kg or 8kg DB",
+      "sets": 3,
+      "target": "3x8/arm",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 90
+    },
+    "renegade-row": {
+      "id": "renegade-row",
+      "title": "Renegade Row",
+      "hint": "2x8kg DB, plank position",
+      "sets": 3,
+      "target": "3x8/side",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 90
+    },
+    "ab-roller": {
+      "id": "ab-roller",
+      "title": "Ab Roller",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8-10",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 60
+    },
+    "band-face-pull": {
+      "id": "band-face-pull",
+      "title": "Band Face Pull",
+      "hint": "black band",
+      "sets": 3,
+      "target": "3x12",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "kettlebell-front-squat": {
+      "id": "kettlebell-front-squat",
+      "title": "Kettlebell Front Squat",
+      "hint": "2x14kg",
+      "sets": 4,
+      "target": "4x6",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 120
+    },
+    "bodyweight-step-up": {
+      "id": "bodyweight-step-up",
+      "title": "Bodyweight Step-up",
+      "hint": "onto sturdy chair/stair, ~knee height",
+      "sets": 3,
+      "target": "3x8/leg",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "broad-jump": {
+      "id": "broad-jump",
+      "title": "Broad Jump",
+      "hint": "",
+      "sets": 4,
+      "target": "4x4",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home",
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "nordic-curl-regression-slow-eccentric-hamstring-lower": {
+      "id": "nordic-curl-regression-slow-eccentric-hamstring-lower",
+      "title": "Nordic Curl Regression: Slow Eccentric Hamstring Lower",
+      "hint": "partner or couch-anchored feet",
+      "sets": 3,
+      "target": "3x6",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "home"
+      ],
+      "restSeconds": 90
+    },
+    "kb-goblet-squat": {
+      "id": "kb-goblet-squat",
+      "title": "KB Goblet Squat",
+      "hint": "",
+      "sets": 4,
+      "target": "4x10",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 120
+    },
+    "single-kb-romanian-deadlift": {
+      "id": "single-kb-romanian-deadlift",
+      "title": "Single-KB Romanian Deadlift",
+      "hint": "both hands on KB",
+      "sets": 4,
+      "target": "4x8",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 120
+    },
+    "single-kb-standing-calf-raise": {
+      "id": "single-kb-standing-calf-raise",
+      "title": "Single-KB Standing Calf Raise",
+      "hint": "",
+      "sets": 3,
+      "target": "3x15",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "single-arm-kb-floor-press": {
+      "id": "single-arm-kb-floor-press",
+      "title": "Single-Arm KB Floor Press",
+      "hint": "",
+      "sets": 4,
+      "target": "4x8/arm",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "single-arm-kb-standing-press": {
+      "id": "single-arm-kb-standing-press",
+      "title": "Single-Arm KB Standing Press",
+      "hint": "",
+      "sets": 3,
+      "target": "3x8/arm",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 90
+    },
+    "band-pallof-press": {
+      "id": "band-pallof-press",
+      "title": "Band Pallof Press",
+      "hint": "anchor band to your side at chest height",
+      "sets": 3,
+      "target": "3x10/side",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "push-up": {
+      "id": "push-up",
+      "title": "Push-up",
+      "hint": "",
+      "sets": 3,
+      "target": "3x max-2 (leave 2 reps in reserve)",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 60
+    },
+    "single-kb-front-rack-squat": {
+      "id": "single-kb-front-rack-squat",
+      "title": "Single-KB Front Rack Squat",
+      "hint": "",
+      "sets": 4,
+      "target": "4x8",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 120
+    },
+    "band-resisted-hamstring-curl": {
+      "id": "band-resisted-hamstring-curl",
+      "title": "Band-Resisted Hamstring Curl",
+      "hint": "anchor long band, lying face down",
+      "sets": 3,
+      "target": "3x12",
+      "unit": "reps",
+      "suggested": "",
+      "bw": false,
+      "programs": [
+        "minimal"
+      ],
+      "restSeconds": 90
+    }
+  }
+}

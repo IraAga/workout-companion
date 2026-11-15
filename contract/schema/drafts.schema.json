@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "drafts.schema.json",
+  "title": "Drafts",
+  "description": "Contents of ol-drafts: unsaved entry per program/session, keyed '<program>/<session>'. Values are strings because they mirror form inputs; '' means empty.",
+  "type": "object",
+  "additionalProperties": { "$ref": "#/$defs/Draft" },
+  "$defs": {
+    "Draft": {
+      "type": "object",
+      "required": ["sets", "note", "date"],
+      "properties": {
+        "sets": {
+          "type": "object",
+          "description": "Exercise id -> one row per set, in display order.",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/DraftSet" }
+          }
+        },
+        "note": { "type": "string" },
+        "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+      },
+      "additionalProperties": true
+    },
+    "DraftSet": {
+      "type": "object",
+      "required": ["kg", "reps"],
+      "properties": {
+        "kg": { "type": "string", "description": "Raw input text. Decimal comma is accepted on save." },
+        "reps": { "type": "string", "description": "Raw input text. Reps or seconds." },
+        "done": { "type": "boolean", "description": "Per-set tick in the UI. Never saved into LogSession." }
+      },
+      "additionalProperties": true
+    }
+  }
+}

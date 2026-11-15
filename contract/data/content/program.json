@@ -1,0 +1,1153 @@
+{
+  "id": "program",
+  "order": 1,
+  "navLabel": "Weekly program",
+  "group": "Train",
+  "kicker": "Train",
+  "title": "",
+  "subtabs": [
+    {
+      "id": "gym",
+      "label": "Gym program"
+    },
+    {
+      "id": "home",
+      "label": "Home program"
+    },
+    {
+      "id": "minimal",
+      "label": "Minimal kit"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Train"
+    },
+    {
+      "type": "subtabs",
+      "tabs": [
+        {
+          "id": "gym",
+          "label": "Gym program"
+        },
+        {
+          "id": "home",
+          "label": "Home program"
+        },
+        {
+          "id": "minimal",
+          "label": "Minimal kit"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-gym",
+      "key": "gym",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Off-Season Basketball Program — Strength, Power & Leg Athleticism"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner lifter, 190cm / 100kg, full gym access, off-season, 3 lifts + 2 basketball sessions/week Focus: Balanced athletic performance, injury durability, and fixing leg mobility/explosiveness weaknesses",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, full gym access, off-season, 3 lifts + 2 basketball sessions/week<br>\n<strong>Focus:</strong> Balanced athletic performance, injury durability, and fixing leg mobility/explosiveness weaknesses</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Weekly Layout"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "Session"
+          ],
+          "rows": [
+            [
+              "Mon",
+              "Lift A — Lower Body Power + Mobility"
+            ],
+            [
+              "Tue",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Wed",
+              "Lift B — Upper Body + Core"
+            ],
+            [
+              "Thu",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Fri",
+              "Lift C — Lower Body Strength + Plyo"
+            ],
+            [
+              "Sat",
+              "Active recovery / optional light mobility"
+            ],
+            [
+              "Sun",
+              "Full rest"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body Power + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body Strength + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / optional light mobility</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Swap days freely — the key rule is never stack Lift A/C back-to-back without a rest or upper day between, since both hit the legs hard.",
+          "html": "<p>Swap days freely — the key rule is <strong>never stack Lift A/C back-to-back without a rest or upper day between</strong>, since both hit the legs hard.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Daily Mobility Primer (do before EVERY session — lift or ball, ~8-10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Since leg mobility/athleticism is a weak point, this block is non-negotiable, not optional warm-up filler:",
+          "html": "<p>Since leg mobility/athleticism is a weak point, this block is non-negotiable, not optional warm-up filler:</p>"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "text": "Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side",
+              "html": "<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>"
+            },
+            {
+              "text": "90/90 hip switches — 2x8 each side",
+              "html": "<li>90/90 hip switches — 2x8 each side</li>"
+            },
+            {
+              "text": "Couch stretch (hip flexor) — 45 sec each side",
+              "html": "<li>Couch stretch (hip flexor) — 45 sec each side</li>"
+            },
+            {
+              "text": "World's greatest stretch — 5 each side",
+              "html": "<li>World's greatest stretch — 5 each side</li>"
+            },
+            {
+              "text": "Lateral lunge to hamstring sweep — 8 each side",
+              "html": "<li>Lateral lunge to hamstring sweep — 8 each side</li>"
+            },
+            {
+              "text": "Band monster walks (lateral + forward) — 2x10 steps",
+              "html": "<li>Band monster walks (lateral + forward) — 2x10 steps</li>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This alone will move the needle on \"bottom tier\" leg movement quality within a few weeks — it's addressing hip/ankle range of motion, which is usually the real bottleneck, not just strength.",
+          "html": "<p>This alone will move the needle on \"bottom tier\" leg movement quality within a few weeks — it's addressing hip/ankle range of motion, which is usually the real bottleneck, not just strength.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT A — Lower Body Power (Mon)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Time: about 47-51 min including the mobility primer",
+          "html": "<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Suggested start",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Trap Bar or Barbell Deadlift",
+              "4x4",
+              "50-60 kg total",
+              "2-3 min",
+              "Heavy-ish, controlled, explosive off the floor"
+            ],
+            [
+              "Box Jump (moderate height)",
+              "4x4",
+              "Bodyweight, 30-45 cm box",
+              "90 sec",
+              "Full reset between reps, land soft"
+            ],
+            [
+              "Bulgarian Split Squat",
+              "3x8/leg",
+              "Bodyweight, or 8-10 kg each hand",
+              "90 sec",
+              "Focus on control on the way down"
+            ],
+            [
+              "Lateral Bound (skater jump)",
+              "3x6/side",
+              "Bodyweight",
+              "60-90 sec",
+              "Stick the landing, stability focus"
+            ],
+            [
+              "Single-leg RDL",
+              "3x8/leg",
+              "Bodyweight, or 8-12 kg in one hand",
+              "60-90 sec",
+              "Balance + posterior chain + ankle stability"
+            ],
+            [
+              "Copenhagen Plank",
+              "3x20-30 sec/side",
+              "Bodyweight, knee on the bench",
+              "60 sec",
+              "Adductor strength — huge for lateral basketball movement"
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Trap Bar or Barbell Deadlift</td>\n<td>4x4</td>\n<td>50-60 kg total</td>\n<td>2-3 min</td>\n<td>Heavy-ish, controlled, explosive off the floor</td>\n</tr>\n<tr>\n<td>Box Jump (moderate height)</td>\n<td>4x4</td>\n<td>Bodyweight, 30-45 cm box</td>\n<td>90 sec</td>\n<td>Full reset between reps, land soft</td>\n</tr>\n<tr>\n<td>Bulgarian Split Squat</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-10 kg each hand</td>\n<td>90 sec</td>\n<td>Focus on control on the way down</td>\n</tr>\n<tr>\n<td>Lateral Bound (skater jump)</td>\n<td>3x6/side</td>\n<td>Bodyweight</td>\n<td>60-90 sec</td>\n<td>Stick the landing, stability focus</td>\n</tr>\n<tr>\n<td>Single-leg RDL</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-12 kg in one hand</td>\n<td>60-90 sec</td>\n<td>Balance + posterior chain + ankle stability</td>\n</tr>\n<tr>\n<td>Copenhagen Plank</td>\n<td>3x20-30 sec/side</td>\n<td>Bodyweight, knee on the bench</td>\n<td>60 sec</td>\n<td>Adductor strength — huge for lateral basketball movement</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT B — Upper Body + Core (Wed)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Time: about 39-44 min including the mobility primer",
+          "html": "<p><strong>Time:</strong> about 39-44 min including the mobility primer</p>"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Suggested start",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Barbell Bench Press",
+              "4x6",
+              "30-40 kg total",
+              "2 min",
+              "Stop each set with 2 reps left"
+            ],
+            [
+              "Weighted Pull-up or Lat Pulldown",
+              "4x6-8",
+              "40-50 kg on the stack, or 30-40 kg of assistance",
+              "90 sec",
+              "No added weight on pull-ups yet"
+            ],
+            [
+              "Standing Overhead Press",
+              "3x8",
+              "20-30 kg total",
+              "90 sec",
+              "Shoulder stability for contact/box-outs"
+            ],
+            [
+              "Single-arm DB Row",
+              "3x10/side",
+              "14-18 kg",
+              "60-90 sec",
+              ""
+            ],
+            [
+              "Med Ball Rotational Throw",
+              "3x8/side",
+              "4-6 kg ball",
+              "60 sec",
+              "Transfers rotational power for shots/passes"
+            ],
+            [
+              "Hanging Leg Raise or Ab Wheel",
+              "3x12",
+              "Bodyweight",
+              "60 sec",
+              ""
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Barbell Bench Press</td>\n<td>4x6</td>\n<td>30-40 kg total</td>\n<td>2 min</td>\n<td>Stop each set with 2 reps left</td>\n</tr>\n<tr>\n<td>Weighted Pull-up or Lat Pulldown</td>\n<td>4x6-8</td>\n<td>40-50 kg on the stack, or 30-40 kg of assistance</td>\n<td>90 sec</td>\n<td>No added weight on pull-ups yet</td>\n</tr>\n<tr>\n<td>Standing Overhead Press</td>\n<td>3x8</td>\n<td>20-30 kg total</td>\n<td>90 sec</td>\n<td>Shoulder stability for contact/box-outs</td>\n</tr>\n<tr>\n<td>Single-arm DB Row</td>\n<td>3x10/side</td>\n<td>14-18 kg</td>\n<td>60-90 sec</td>\n<td></td>\n</tr>\n<tr>\n<td>Med Ball Rotational Throw</td>\n<td>3x8/side</td>\n<td>4-6 kg ball</td>\n<td>60 sec</td>\n<td>Transfers rotational power for shots/passes</td>\n</tr>\n<tr>\n<td>Hanging Leg Raise or Ab Wheel</td>\n<td>3x12</td>\n<td>Bodyweight</td>\n<td>60 sec</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT C — Lower Body Strength + Plyo (Fri)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Time: about 47-51 min including the mobility primer",
+          "html": "<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Suggested start",
+            "Rest",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Back Squat",
+              "4x5",
+              "40-50 kg total",
+              "2-2.5 min",
+              "Primary strength driver"
+            ],
+            [
+              "Depth Jump (low box, 12-16\")",
+              "4x4",
+              "Bodyweight, 30-40 cm box",
+              "2 min",
+              "Only after Box Jumps feel solid — teaches reactive strength/elastic legs"
+            ],
+            [
+              "Walking Lunge (DB or BB)",
+              "3x10/leg",
+              "Bodyweight, or 8-12 kg each hand",
+              "90 sec",
+              ""
+            ],
+            [
+              "Nordic Curl (or eccentric hamstring curl)",
+              "3x6",
+              "Bodyweight, hold a band or a partner for help",
+              "90 sec",
+              "Hamstring injury-proofing — critical for basketball"
+            ],
+            [
+              "Pogo Hops (ankle stiffness)",
+              "3x15",
+              "Bodyweight",
+              "60-90 sec",
+              "Fast, minimal knee bend, builds reactive ankles"
+            ],
+            [
+              "Standing Calf Raise",
+              "3x12",
+              "Bodyweight, or 20-30 kg on the machine",
+              "60 sec",
+              ""
+            ]
+          ],
+          "class": "wide",
+          "html": "<table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Back Squat</td>\n<td>4x5</td>\n<td>40-50 kg total</td>\n<td>2-2.5 min</td>\n<td>Primary strength driver</td>\n</tr>\n<tr>\n<td>Depth Jump (low box, 12-16\")</td>\n<td>4x4</td>\n<td>Bodyweight, 30-40 cm box</td>\n<td>2 min</td>\n<td>Only after Box Jumps feel solid — teaches reactive strength/elastic legs</td>\n</tr>\n<tr>\n<td>Walking Lunge (DB or BB)</td>\n<td>3x10/leg</td>\n<td>Bodyweight, or 8-12 kg each hand</td>\n<td>90 sec</td>\n<td></td>\n</tr>\n<tr>\n<td>Nordic Curl (or eccentric hamstring curl)</td>\n<td>3x6</td>\n<td>Bodyweight, hold a band or a partner for help</td>\n<td>90 sec</td>\n<td>Hamstring injury-proofing — critical for basketball</td>\n</tr>\n<tr>\n<td>Pogo Hops (ankle stiffness)</td>\n<td>3x15</td>\n<td>Bodyweight</td>\n<td>60-90 sec</td>\n<td>Fast, minimal knee bend, builds reactive ankles</td>\n</tr>\n<tr>\n<td>Standing Calf Raise</td>\n<td>3x12</td>\n<td>Bodyweight, or 20-30 kg on the machine</td>\n<td>60 sec</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Starting Weights"
+        },
+        {
+          "type": "paragraph",
+          "text": "Barbell weights are the total including the 20 kg bar. These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point.",
+          "html": "<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point.</p>"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Week 1: do 2 sets per exercise at the low end of each range, so the soreness stays manageable and the technique comes back first",
+              "lead": "Week 1:",
+              "html": "<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range, so the soreness stays manageable and the technique comes back first</li>"
+            },
+            {
+              "text": "Week 2: go back to the full sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range",
+              "lead": "Week 2:",
+              "html": "<li><strong>Week 2:</strong> go back to the full sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range</li>"
+            },
+            {
+              "text": "Week 3 onward: pick the weight that leaves 2 reps in reserve on the last set, then follow the progression notes below",
+              "lead": "Week 3 onward:",
+              "html": "<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression notes below</li>"
+            },
+            {
+              "text": "If a set is a grind with form breaking down, drop the weight 10%",
+              "html": "<li>If a set is a grind with form breaking down, drop the weight 10%</li>"
+            },
+            {
+              "text": "Rest times on the jumps are about recovery, not conditioning. Wait until you feel fresh before the next set",
+              "html": "<li>Rest times on the jumps are about recovery, not conditioning. Wait until you feel fresh before the next set</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Basketball Skills Days (Tue/Thu)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Structure however fits your skill work, but bookend with:",
+          "html": "<p>Structure however fits your skill work, but bookend with:</p>"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Before: the mobility primer above + 5 min of low-intensity lateral shuffles/carioca to prime hips",
+              "lead": "Before:",
+              "html": "<li><strong>Before:</strong> the mobility primer above + 5 min of low-intensity lateral shuffles/carioca to prime hips</li>"
+            },
+            {
+              "text": "After: 10 min light plyo circuit if legs aren't fried from the session (optional, rotate weekly): Single-leg hops in place — 2x10/leg Broad jump — 3x3 Lateral skater bounds — 3x6/side",
+              "lead": "After:",
+              "html": "<li><strong>After:</strong> 10 min light plyo circuit if legs aren't fried from the session (optional, rotate weekly):<ul>\n<li>Single-leg hops in place — 2x10/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral skater bounds — 3x6/side</li>\n</ul>\n</li>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "If it's a heavy scrimmage/conditioning day, skip the after-block and just stretch.",
+          "html": "<p>If it's a heavy scrimmage/conditioning day, skip the after-block and just stretch.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Progression Notes"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Weeks 1-3: Establish technique on all lifts, moderate loads, submaximal jumps",
+              "lead": "Weeks 1-3:",
+              "html": "<li><strong>Weeks 1-3:</strong> Establish technique on all lifts, moderate loads, submaximal jumps</li>"
+            },
+            {
+              "text": "Weeks 4-6: Increase load on main lifts (+2.5-5kg where form allows), increase box jump height slightly",
+              "lead": "Weeks 4-6:",
+              "html": "<li><strong>Weeks 4-6:</strong> Increase load on main lifts (+2.5-5kg where form allows), increase box jump height slightly</li>"
+            },
+            {
+              "text": "Weeks 7-9: Introduce depth jumps if not already comfortable; this is where reactive/elastic leg power really develops",
+              "lead": "Weeks 7-9:",
+              "html": "<li><strong>Weeks 7-9:</strong> Introduce depth jumps if not already comfortable; this is where reactive/elastic leg power really develops</li>"
+            },
+            {
+              "text": "Deload every 4th week (cut volume ~40%) to keep joints fresh",
+              "html": "<li>Deload every 4th week (cut volume ~40%) to keep joints fresh</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Simple leg mobility check-ins"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every 3-4 weeks, test:",
+          "html": "<p>Every 3-4 weeks, test:</p>"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Ankle dorsiflexion (knee-to-wall distance)",
+              "html": "<li>Ankle dorsiflexion (knee-to-wall distance)</li>"
+            },
+            {
+              "text": "Overhead squat depth/quality",
+              "html": "<li>Overhead squat depth/quality</li>"
+            },
+            {
+              "text": "Single-leg balance time (eyes closed)",
+              "html": "<li>Single-leg balance time (eyes closed)</li>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tracking these will show you the mobility work is actually working, since it's often not visible on a scale or in the mirror.",
+          "html": "<p>Tracking these will show you the mobility work is actually working, since it's often not visible on a scale or in the mirror.</p>"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-home",
+      "key": "home",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Off-Season Basketball Program — Home Setup (Beginner)"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner lifter, 191cm / 95kg, home equipment only, off-season, 3 lifts + 2 basketball sessions/week Equipment: 2x14kg KB, 1x10kg KB, 2x8kg DB, ab roller, heavy black band, 35kg-rated long band (no pull-up bar), bodyweight Focus: Balanced athletic performance, injury durability, fixing leg mobility/explosiveness",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 191cm / 95kg, home equipment only, off-season, 3 lifts + 2 basketball sessions/week<br>\n<strong>Equipment:</strong> 2x14kg KB, 1x10kg KB, 2x8kg DB, ab roller, heavy black band, 35kg-rated long band (no pull-up bar), bodyweight<br>\n<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A Note on Your Frame"
+        },
+        {
+          "type": "paragraph",
+          "text": "At 191cm/95kg you're carrying real leverage and mass — that's an advantage for basketball but it also means bodyweight-only lower body work (lunges, split squats) will already feel loaded without any added weight. Don't rush to add the kettlebells to leg work until bodyweight versions feel genuinely easy with good depth and control. As a beginner, technique and range of motion come first — the strength will follow fast once the pattern is right.",
+          "html": "<p>At 191cm/95kg you're carrying real leverage and mass — that's an advantage for basketball but it also means bodyweight-only lower body work (lunges, split squats) will already feel loaded without any added weight. Don't rush to add the kettlebells to leg work until bodyweight versions feel genuinely easy with good depth and control. As a beginner, technique and range of motion come first — the strength will follow fast once the pattern is right.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Weekly Layout"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "Session"
+          ],
+          "rows": [
+            [
+              "Mon",
+              "Lift A — Lower Body + Mobility"
+            ],
+            [
+              "Tue",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Wed",
+              "Lift B — Upper Body + Core"
+            ],
+            [
+              "Thu",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Fri",
+              "Lift C — Lower Body + Plyo"
+            ],
+            [
+              "Sat",
+              "Active recovery / mobility only"
+            ],
+            [
+              "Sun",
+              "Full rest"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / mobility only</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Daily Mobility Primer (before EVERY session, ~8-10 min)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Same priority as before — this is what actually fixes stiff/heavy-feeling legs, not the lifting itself.",
+          "html": "<p>Same priority as before — this is what actually fixes stiff/heavy-feeling legs, not the lifting itself.</p>"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "text": "Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side",
+              "html": "<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>"
+            },
+            {
+              "text": "90/90 hip switches — 2x8 each side",
+              "html": "<li>90/90 hip switches — 2x8 each side</li>"
+            },
+            {
+              "text": "Couch stretch (hip flexor) — 45 sec each side",
+              "html": "<li>Couch stretch (hip flexor) — 45 sec each side</li>"
+            },
+            {
+              "text": "World's greatest stretch — 5 each side",
+              "html": "<li>World's greatest stretch — 5 each side</li>"
+            },
+            {
+              "text": "Lateral lunge to hamstring sweep — 8 each side",
+              "html": "<li>Lateral lunge to hamstring sweep — 8 each side</li>"
+            },
+            {
+              "text": "Band lateral walks (use the black band around ankles/knees) — 2x10 steps each direction",
+              "html": "<li>Band lateral walks (use the black band around ankles/knees) — 2x10 steps each direction</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT A — Lower Body + Mobility (Mon)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Goblet Squat (14kg KB)",
+              "4x8",
+              "Focus on full depth, knees tracking over toes"
+            ],
+            [
+              "Kettlebell Deadlift (2x14kg, one in each hand)",
+              "4x6",
+              "Hip hinge pattern, flat back"
+            ],
+            [
+              "Bodyweight Bulgarian Split Squat (rear foot on chair/couch)",
+              "3x8/leg",
+              "Add 8kg DBs once solid with bodyweight"
+            ],
+            [
+              "Band Lateral Walk (heavy black band)",
+              "3x12 steps/side",
+              "Glute med — key for lateral cuts"
+            ],
+            [
+              "Single-leg Glute Bridge",
+              "3x10/leg",
+              ""
+            ],
+            [
+              "Standing Calf Raise (holding 14kg KB)",
+              "3x15",
+              ""
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Goblet Squat (14kg KB)</td>\n<td>4x8</td>\n<td>Focus on full depth, knees tracking over toes</td>\n</tr>\n<tr>\n<td>Kettlebell Deadlift (2x14kg, one in each hand)</td>\n<td>4x6</td>\n<td>Hip hinge pattern, flat back</td>\n</tr>\n<tr>\n<td>Bodyweight Bulgarian Split Squat (rear foot on chair/couch)</td>\n<td>3x8/leg</td>\n<td>Add 8kg DBs once solid with bodyweight</td>\n</tr>\n<tr>\n<td>Band Lateral Walk (heavy black band)</td>\n<td>3x12 steps/side</td>\n<td>Glute med — key for lateral cuts</td>\n</tr>\n<tr>\n<td>Single-leg Glute Bridge</td>\n<td>3x10/leg</td>\n<td></td>\n</tr>\n<tr>\n<td>Standing Calf Raise (holding 14kg KB)</td>\n<td>3x15</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT B — Upper Body + Core (Wed)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Kettlebell Floor Press (14kg, one arm at a time)",
+              "4x8/arm",
+              "Substitute for bench — lie on floor, press up"
+            ],
+            [
+              "Long Band Row (anchor band to a door/sturdy point)",
+              "4x10",
+              "Substitute for pull-ups/rows — squeeze shoulder blades"
+            ],
+            [
+              "Kettlebell Standing Press (10kg or 8kg DB)",
+              "3x8/arm",
+              ""
+            ],
+            [
+              "Renegade Row (2x8kg DB, plank position)",
+              "3x8/side",
+              "Core + upper back together"
+            ],
+            [
+              "Ab Roller",
+              "3x8-10",
+              "Full control, don't let hips sag"
+            ],
+            [
+              "Band Face Pull (black band)",
+              "3x12",
+              "Shoulder health, important with no pull-up option"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Kettlebell Floor Press (14kg, one arm at a time)</td>\n<td>4x8/arm</td>\n<td>Substitute for bench — lie on floor, press up</td>\n</tr>\n<tr>\n<td>Long Band Row (anchor band to a door/sturdy point)</td>\n<td>4x10</td>\n<td>Substitute for pull-ups/rows — squeeze shoulder blades</td>\n</tr>\n<tr>\n<td>Kettlebell Standing Press (10kg or 8kg DB)</td>\n<td>3x8/arm</td>\n<td></td>\n</tr>\n<tr>\n<td>Renegade Row (2x8kg DB, plank position)</td>\n<td>3x8/side</td>\n<td>Core + upper back together</td>\n</tr>\n<tr>\n<td>Ab Roller</td>\n<td>3x8-10</td>\n<td>Full control, don't let hips sag</td>\n</tr>\n<tr>\n<td>Band Face Pull (black band)</td>\n<td>3x12</td>\n<td>Shoulder health, important with no pull-up option</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pull-up substitute note: Since you have no bar, the long band row (anchored to a door top or banister) is your main pulling movement. If you can find any sturdy overhead beam or railing, banded pull-up assistance would be a great add later — but it's not required to progress.",
+          "html": "<p><strong>Pull-up substitute note:</strong> Since you have no bar, the long band row (anchored to a door top or banister) is your main pulling movement. If you can find any sturdy overhead beam or railing, banded pull-up assistance would be a great add later — but it's not required to progress.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT C — Lower Body + Plyo (Fri)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Kettlebell Front Squat (2x14kg)",
+              "4x6",
+              ""
+            ],
+            [
+              "Bodyweight Step-up (onto sturdy chair/stair, ~knee height)",
+              "3x8/leg",
+              "Drive through the heel, don't push off trail leg"
+            ],
+            [
+              "Broad Jump",
+              "4x4",
+              "Full reset, stick the landing soft"
+            ],
+            [
+              "Pogo Hops",
+              "3x15",
+              "Fast, minimal knee bend, ankle stiffness/reactivity"
+            ],
+            [
+              "Nordic Curl Regression: Slow Eccentric Hamstring Lower (partner or couch-anchored feet)",
+              "3x6",
+              "Or substitute: KB Romanian Deadlift 3x10 if no anchor available"
+            ],
+            [
+              "Copenhagen Plank (foot on chair for support)",
+              "3x15-20 sec/side",
+              "Adductor strength"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Kettlebell Front Squat (2x14kg)</td>\n<td>4x6</td>\n<td></td>\n</tr>\n<tr>\n<td>Bodyweight Step-up (onto sturdy chair/stair, ~knee height)</td>\n<td>3x8/leg</td>\n<td>Drive through the heel, don't push off trail leg</td>\n</tr>\n<tr>\n<td>Broad Jump</td>\n<td>4x4</td>\n<td>Full reset, stick the landing soft</td>\n</tr>\n<tr>\n<td>Pogo Hops</td>\n<td>3x15</td>\n<td>Fast, minimal knee bend, ankle stiffness/reactivity</td>\n</tr>\n<tr>\n<td>Nordic Curl Regression: Slow Eccentric Hamstring Lower (partner or couch-anchored feet)</td>\n<td>3x6</td>\n<td>Or substitute: KB Romanian Deadlift 3x10 if no anchor available</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (foot on chair for support)</td>\n<td>3x15-20 sec/side</td>\n<td>Adductor strength</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "paragraph",
+          "text": "No box jumps at home? Broad jumps and pogo hops are actually a smarter starting point for a beginner anyway — they build the same reactive leg quality without the landing-height risk factor.",
+          "html": "<p><strong>No box jumps at home?</strong> Broad jumps and pogo hops are actually a smarter starting point for a beginner anyway — they build the same reactive leg quality without the landing-height risk factor.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Basketball Skills Days (Tue/Thu)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Before: mobility primer + 5 min light lateral shuffles/carioca",
+              "lead": "Before:",
+              "html": "<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>"
+            },
+            {
+              "text": "After (optional, only if legs aren't fried): Single-leg hop in place — 2x8/leg Broad jump — 3x3 Lateral bound — 3x6/side",
+              "lead": "After (optional, only if legs aren't fried):",
+              "html": "<li><strong>After (optional, only if legs aren't fried):</strong><ul>\n<li>Single-leg hop in place — 2x8/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral bound — 3x6/side</li>\n</ul>\n</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Progression Notes (Beginner Pace)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Weeks 1-4: Master bodyweight and light-KB technique on every movement before adding load. Depth and control over speed.",
+              "lead": "Weeks 1-4:",
+              "html": "<li><strong>Weeks 1-4:</strong> Master bodyweight and light-KB technique on every movement before adding load. Depth and control over speed.</li>"
+            },
+            {
+              "text": "Weeks 5-8: Start adding the 8kg DBs to split squats/step-ups, tighten up plyo landings, increase band tension where possible",
+              "lead": "Weeks 5-8:",
+              "html": "<li><strong>Weeks 5-8:</strong> Start adding the 8kg DBs to split squats/step-ups, tighten up plyo landings, increase band tension where possible</li>"
+            },
+            {
+              "text": "Weeks 9-12: Reassess — if kettlebells feel light across the board, this is the point to look at getting heavier KBs (you'll likely outgrow the 14kg for squats/deadlifts by then)",
+              "lead": "Weeks 9-12:",
+              "html": "<li><strong>Weeks 9-12:</strong> Reassess — if kettlebells feel light across the board, this is the point to look at getting heavier KBs (you'll likely outgrow the 14kg for squats/deadlifts by then)</li>"
+            },
+            {
+              "text": "Deload every 4th week (lighter loads, fewer sets) — especially important early on while joints and tendons adapt",
+              "html": "<li>Deload every 4th week (lighter loads, fewer sets) — especially important early on while joints and tendons adapt</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Leg Mobility Check-ins (every 3-4 weeks)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Ankle dorsiflexion (knee-to-wall distance)",
+              "html": "<li>Ankle dorsiflexion (knee-to-wall distance)</li>"
+            },
+            {
+              "text": "Bodyweight squat depth/quality (can you get thighs parallel with heels flat?)",
+              "html": "<li>Bodyweight squat depth/quality (can you get thighs parallel with heels flat?)</li>"
+            },
+            {
+              "text": "Single-leg balance time, eyes closed",
+              "html": "<li>Single-leg balance time, eyes closed</li>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "These will show real progress even before the weights feel meaningfully heavier — which for a beginner is often the more important signal.",
+          "html": "<p>These will show real progress even before the weights feel meaningfully heavier — which for a beginner is often the more important signal.</p>"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "sub-minimal",
+      "key": "minimal",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Off-Season Basketball Program — Minimal Equipment (Beginner)"
+        },
+        {
+          "type": "meta",
+          "text": "Profile: Beginner lifter, 190cm / 100kg, off-season, 3 lifts + 2 basketball sessions/week Equipment: 1 kettlebell (14kg), heavy black resistance band, long 35kg-rated resistance band, bodyweight only Focus: Balanced athletic performance, injury durability, fixing leg mobility/explosiveness",
+          "html": "<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, off-season, 3 lifts + 2 basketball sessions/week<br>\n<strong>Equipment:</strong> 1 kettlebell (14kg), heavy black resistance band, long 35kg-rated resistance band, bodyweight only<br>\n<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A Note on This Setup"
+        },
+        {
+          "type": "paragraph",
+          "text": "With one kettlebell and two bands, most of your loading now comes from bodyweight + band tension rather than external weight. That's actually fine at beginner level — bodyweight and band-resisted work builds real strength and control, and your frame means bodyweight movements alone carry plenty of load to start. The kettlebell becomes your one \"heavy\" tool, so it gets used where it matters most: squats, hinges, and presses.",
+          "html": "<p>With one kettlebell and two bands, most of your loading now comes from bodyweight + band tension rather than external weight. That's actually fine at beginner level — bodyweight and band-resisted work builds real strength and control, and your frame means bodyweight movements alone carry plenty of load to start. The kettlebell becomes your one \"heavy\" tool, so it gets used where it matters most: squats, hinges, and presses.</p>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Weekly Layout"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "Session"
+          ],
+          "rows": [
+            [
+              "Mon",
+              "Lift A — Lower Body + Mobility"
+            ],
+            [
+              "Tue",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Wed",
+              "Lift B — Upper Body + Core"
+            ],
+            [
+              "Thu",
+              "Basketball Skills/Conditioning"
+            ],
+            [
+              "Fri",
+              "Lift C — Lower Body + Plyo"
+            ],
+            [
+              "Sat",
+              "Active recovery / mobility only"
+            ],
+            [
+              "Sun",
+              "Full rest"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / mobility only</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Daily Mobility Primer (before EVERY session, ~8-10 min)"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "text": "Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side",
+              "html": "<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>"
+            },
+            {
+              "text": "90/90 hip switches — 2x8 each side",
+              "html": "<li>90/90 hip switches — 2x8 each side</li>"
+            },
+            {
+              "text": "Couch stretch (hip flexor) — 45 sec each side",
+              "html": "<li>Couch stretch (hip flexor) — 45 sec each side</li>"
+            },
+            {
+              "text": "World's greatest stretch — 5 each side",
+              "html": "<li>World's greatest stretch — 5 each side</li>"
+            },
+            {
+              "text": "Lateral lunge to hamstring sweep — 8 each side",
+              "html": "<li>Lateral lunge to hamstring sweep — 8 each side</li>"
+            },
+            {
+              "text": "Band lateral walks (black band around ankles/knees) — 2x10 steps each direction",
+              "html": "<li>Band lateral walks (black band around ankles/knees) — 2x10 steps each direction</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT A — Lower Body + Mobility (Mon)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "KB Goblet Squat",
+              "4x10",
+              "Full depth, elbows inside knees at bottom"
+            ],
+            [
+              "Single-KB Romanian Deadlift (both hands on KB)",
+              "4x8",
+              "Hip hinge, slow lower, feel the hamstring stretch"
+            ],
+            [
+              "Bulgarian Split Squat (rear foot elevated, bodyweight)",
+              "3x10/leg",
+              "Once easy, hold KB goblet-style to add load"
+            ],
+            [
+              "Band Lateral Walk (black band)",
+              "3x12 steps/side",
+              ""
+            ],
+            [
+              "Single-leg Glute Bridge",
+              "3x10/leg",
+              ""
+            ],
+            [
+              "Single-KB Standing Calf Raise",
+              "3x15",
+              ""
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>KB Goblet Squat</td>\n<td>4x10</td>\n<td>Full depth, elbows inside knees at bottom</td>\n</tr>\n<tr>\n<td>Single-KB Romanian Deadlift (both hands on KB)</td>\n<td>4x8</td>\n<td>Hip hinge, slow lower, feel the hamstring stretch</td>\n</tr>\n<tr>\n<td>Bulgarian Split Squat (rear foot elevated, bodyweight)</td>\n<td>3x10/leg</td>\n<td>Once easy, hold KB goblet-style to add load</td>\n</tr>\n<tr>\n<td>Band Lateral Walk (black band)</td>\n<td>3x12 steps/side</td>\n<td></td>\n</tr>\n<tr>\n<td>Single-leg Glute Bridge</td>\n<td>3x10/leg</td>\n<td></td>\n</tr>\n<tr>\n<td>Single-KB Standing Calf Raise</td>\n<td>3x15</td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT B — Upper Body + Core (Wed)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Single-Arm KB Floor Press",
+              "4x8/arm",
+              "Lie on floor, press straight up, control the descent"
+            ],
+            [
+              "Long Band Row (anchor to door top/sturdy point)",
+              "4x10",
+              "Main pulling movement — squeeze shoulder blades hard"
+            ],
+            [
+              "Single-Arm KB Standing Press",
+              "3x8/arm",
+              "Brace core, avoid leaning back"
+            ],
+            [
+              "Band Pallof Press (anchor band to your side at chest height)",
+              "3x10/side",
+              "Anti-rotation core, presses out and holds"
+            ],
+            [
+              "Push-up",
+              "3x max-2 (leave 2 reps in reserve)",
+              "Bodyweight — go to failure-minus-2 for quality"
+            ],
+            [
+              "Band Face Pull (black band)",
+              "3x12",
+              "Shoulder health, especially without pull-up access"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Single-Arm KB Floor Press</td>\n<td>4x8/arm</td>\n<td>Lie on floor, press straight up, control the descent</td>\n</tr>\n<tr>\n<td>Long Band Row (anchor to door top/sturdy point)</td>\n<td>4x10</td>\n<td>Main pulling movement — squeeze shoulder blades hard</td>\n</tr>\n<tr>\n<td>Single-Arm KB Standing Press</td>\n<td>3x8/arm</td>\n<td>Brace core, avoid leaning back</td>\n</tr>\n<tr>\n<td>Band Pallof Press (anchor band to your side at chest height)</td>\n<td>3x10/side</td>\n<td>Anti-rotation core, presses out and holds</td>\n</tr>\n<tr>\n<td>Push-up</td>\n<td>3x max-2 (leave 2 reps in reserve)</td>\n<td>Bodyweight — go to failure-minus-2 for quality</td>\n</tr>\n<tr>\n<td>Band Face Pull (black band)</td>\n<td>3x12</td>\n<td>Shoulder health, especially without pull-up access</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "LIFT C — Lower Body + Plyo (Fri)"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Exercise",
+            "Sets x Reps",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Single-KB Front Rack Squat",
+              "4x8",
+              "Hold KB in front rack position at chest"
+            ],
+            [
+              "Bodyweight Step-up (chair/stair, ~knee height)",
+              "3x8/leg",
+              "Drive through the heel"
+            ],
+            [
+              "Broad Jump",
+              "4x4",
+              "Full reset between reps, land soft"
+            ],
+            [
+              "Pogo Hops",
+              "3x15",
+              "Fast, minimal knee bend, ankle reactivity"
+            ],
+            [
+              "Band-Resisted Hamstring Curl (anchor long band, lying face down)",
+              "3x12",
+              "Or slow eccentric bodyweight version if band angle is awkward"
+            ],
+            [
+              "Copenhagen Plank (foot on chair)",
+              "3x15-20 sec/side",
+              "Adductor strength"
+            ]
+          ],
+          "html": "<table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Single-KB Front Rack Squat</td>\n<td>4x8</td>\n<td>Hold KB in front rack position at chest</td>\n</tr>\n<tr>\n<td>Bodyweight Step-up (chair/stair, ~knee height)</td>\n<td>3x8/leg</td>\n<td>Drive through the heel</td>\n</tr>\n<tr>\n<td>Broad Jump</td>\n<td>4x4</td>\n<td>Full reset between reps, land soft</td>\n</tr>\n<tr>\n<td>Pogo Hops</td>\n<td>3x15</td>\n<td>Fast, minimal knee bend, ankle reactivity</td>\n</tr>\n<tr>\n<td>Band-Resisted Hamstring Curl (anchor long band, lying face down)</td>\n<td>3x12</td>\n<td>Or slow eccentric bodyweight version if band angle is awkward</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (foot on chair)</td>\n<td>3x15-20 sec/side</td>\n<td>Adductor strength</td>\n</tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Basketball Skills Days (Tue/Thu)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Before: mobility primer + 5 min light lateral shuffles/carioca",
+              "lead": "Before:",
+              "html": "<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>"
+            },
+            {
+              "text": "After (optional, only if legs aren't fried): Single-leg hop in place — 2x8/leg Broad jump — 3x3 Lateral bound — 3x6/side",
+              "lead": "After (optional, only if legs aren't fried):",
+              "html": "<li><strong>After (optional, only if legs aren't fried):</strong><ul>\n<li>Single-leg hop in place — 2x8/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral bound — 3x6/side</li>\n</ul>\n</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Progression Notes (Beginner Pace)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Weeks 1-4: Nail bodyweight technique everywhere — depth on squats, control on split squats/step-ups, full range on band rows. The kettlebell work should feel challenging by the last 2-3 reps but not grindy.",
+              "lead": "Weeks 1-4:",
+              "html": "<li><strong>Weeks 1-4:</strong> Nail bodyweight technique everywhere — depth on squats, control on split squats/step-ups, full range on band rows. The kettlebell work should feel challenging by the last 2-3 reps but not grindy.</li>"
+            },
+            {
+              "text": "Weeks 5-8: Increase reps (e.g. goblet squat to 4x15) before anything else — with one kettlebell, rep progression is your main lever once bodyweight/band work plateaus.",
+              "lead": "Weeks 5-8:",
+              "html": "<li><strong>Weeks 5-8:</strong> Increase reps (e.g. goblet squat to 4x15) before anything else — with one kettlebell, rep progression is your main lever once bodyweight/band work plateaus.</li>"
+            },
+            {
+              "text": "Weeks 9-12: Consider tempo work (3-4 sec lowering phase) on squats and RDLs to keep adding difficulty without more load. This is also the point to reassess whether a second/heavier kettlebell would unlock more progress.",
+              "lead": "Weeks 9-12:",
+              "html": "<li><strong>Weeks 9-12:</strong> Consider tempo work (3-4 sec lowering phase) on squats and RDLs to keep adding difficulty without more load. This is also the point to reassess whether a second/heavier kettlebell would unlock more progress.</li>"
+            },
+            {
+              "text": "Deload every 4th week (lighter effort, fewer sets)",
+              "html": "<li>Deload every 4th week (lighter effort, fewer sets)</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Leg Mobility Check-ins (every 3-4 weeks)"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Ankle dorsiflexion (knee-to-wall distance)",
+              "html": "<li>Ankle dorsiflexion (knee-to-wall distance)</li>"
+            },
+            {
+              "text": "Bodyweight squat depth/quality (thighs parallel, heels flat)",
+              "html": "<li>Bodyweight squat depth/quality (thighs parallel, heels flat)</li>"
+            },
+            {
+              "text": "Single-leg balance time, eyes closed",
+              "html": "<li>Single-leg balance time, eyes closed</li>"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What's Different From the Full Home Setup"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text": "Dumbbell work (renegade rows, split squat loading) is now bodyweight or single-KB based",
+              "html": "<li>Dumbbell work (renegade rows, split squat loading) is now bodyweight or single-KB based</li>"
+            },
+            {
+              "text": "Ab roller swapped for push-ups and band Pallof press — still trains anti-extension/anti-rotation core, just without the tool",
+              "html": "<li>Ab roller swapped for push-ups and band Pallof press — still trains anti-extension/anti-rotation core, just without the tool</li>"
+            },
+            {
+              "text": "Reps are pushed higher across most lifts (8-15 vs 6-8) to compensate for only having one load option — this keeps the stimulus meaningful without needing heavier weight",
+              "html": "<li>Reps are pushed higher across most lifts (8-15 vs 6-8) to compensate for only having one load option — this keeps the stimulus meaningful without needing heavier weight</li>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Train</p>\n<div class=\"subtabs\" role=\"tablist\" aria-label=\"Program versions\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"sub-gym\" data-sub=\"gym\">Gym program</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-home\" data-sub=\"home\">Home program</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-minimal\" data-sub=\"minimal\">Minimal kit</button></div>\n<div class=\"sub\" id=\"sub-gym\" role=\"tabpanel\" data-sub=\"gym\">\n<h1>Off-Season Basketball Program — Strength, Power &amp; Leg Athleticism</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, full gym access, off-season, 3 lifts + 2 basketball sessions/week<br />\n<strong>Focus:</strong> Balanced athletic performance, injury durability, and fixing leg mobility/explosiveness weaknesses</p>\n\n<h2>Weekly Layout</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body Power + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body Strength + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / optional light mobility</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table></div>\n<p>Swap days freely — the key rule is <strong>never stack Lift A/C back-to-back without a rest or upper day between</strong>, since both hit the legs hard.</p>\n\n<h2>Daily Mobility Primer (do before EVERY session — lift or ball, ~8-10 min)</h2>\n<p>Since leg mobility/athleticism is a weak point, this block is non-negotiable, not optional warm-up filler:</p>\n<ol>\n<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>\n<li>90/90 hip switches — 2x8 each side</li>\n<li>Couch stretch (hip flexor) — 45 sec each side</li>\n<li>World's greatest stretch — 5 each side</li>\n<li>Lateral lunge to hamstring sweep — 8 each side</li>\n<li>Band monster walks (lateral + forward) — 2x10 steps</li>\n</ol>\n<p>This alone will move the needle on \"bottom tier\" leg movement quality within a few weeks — it's addressing hip/ankle range of motion, which is usually the real bottleneck, not just strength.</p>\n\n<h2>LIFT A — Lower Body Power (Mon)</h2>\n<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Trap Bar or Barbell Deadlift</td>\n<td>4x4</td>\n<td>50-60 kg total</td>\n<td>2-3 min</td>\n<td>Heavy-ish, controlled, explosive off the floor</td>\n</tr>\n<tr>\n<td>Box Jump (moderate height)</td>\n<td>4x4</td>\n<td>Bodyweight, 30-45 cm box</td>\n<td>90 sec</td>\n<td>Full reset between reps, land soft</td>\n</tr>\n<tr>\n<td>Bulgarian Split Squat</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-10 kg each hand</td>\n<td>90 sec</td>\n<td>Focus on control on the way down</td>\n</tr>\n<tr>\n<td>Lateral Bound (skater jump)</td>\n<td>3x6/side</td>\n<td>Bodyweight</td>\n<td>60-90 sec</td>\n<td>Stick the landing, stability focus</td>\n</tr>\n<tr>\n<td>Single-leg RDL</td>\n<td>3x8/leg</td>\n<td>Bodyweight, or 8-12 kg in one hand</td>\n<td>60-90 sec</td>\n<td>Balance + posterior chain + ankle stability</td>\n</tr>\n<tr>\n<td>Copenhagen Plank</td>\n<td>3x20-30 sec/side</td>\n<td>Bodyweight, knee on the bench</td>\n<td>60 sec</td>\n<td>Adductor strength — huge for lateral basketball movement</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>LIFT B — Upper Body + Core (Wed)</h2>\n<p><strong>Time:</strong> about 39-44 min including the mobility primer</p>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Barbell Bench Press</td>\n<td>4x6</td>\n<td>30-40 kg total</td>\n<td>2 min</td>\n<td>Stop each set with 2 reps left</td>\n</tr>\n<tr>\n<td>Weighted Pull-up or Lat Pulldown</td>\n<td>4x6-8</td>\n<td>40-50 kg on the stack, or 30-40 kg of assistance</td>\n<td>90 sec</td>\n<td>No added weight on pull-ups yet</td>\n</tr>\n<tr>\n<td>Standing Overhead Press</td>\n<td>3x8</td>\n<td>20-30 kg total</td>\n<td>90 sec</td>\n<td>Shoulder stability for contact/box-outs</td>\n</tr>\n<tr>\n<td>Single-arm DB Row</td>\n<td>3x10/side</td>\n<td>14-18 kg</td>\n<td>60-90 sec</td>\n<td></td>\n</tr>\n<tr>\n<td>Med Ball Rotational Throw</td>\n<td>3x8/side</td>\n<td>4-6 kg ball</td>\n<td>60 sec</td>\n<td>Transfers rotational power for shots/passes</td>\n</tr>\n<tr>\n<td>Hanging Leg Raise or Ab Wheel</td>\n<td>3x12</td>\n<td>Bodyweight</td>\n<td>60 sec</td>\n<td></td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>LIFT C — Lower Body Strength + Plyo (Fri)</h2>\n<p><strong>Time:</strong> about 47-51 min including the mobility primer</p>\n<div class=\"tw\"><table class=\"wide\">\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Suggested start</th>\n<th>Rest</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Back Squat</td>\n<td>4x5</td>\n<td>40-50 kg total</td>\n<td>2-2.5 min</td>\n<td>Primary strength driver</td>\n</tr>\n<tr>\n<td>Depth Jump (low box, 12-16\")</td>\n<td>4x4</td>\n<td>Bodyweight, 30-40 cm box</td>\n<td>2 min</td>\n<td>Only after Box Jumps feel solid — teaches reactive strength/elastic legs</td>\n</tr>\n<tr>\n<td>Walking Lunge (DB or BB)</td>\n<td>3x10/leg</td>\n<td>Bodyweight, or 8-12 kg each hand</td>\n<td>90 sec</td>\n<td></td>\n</tr>\n<tr>\n<td>Nordic Curl (or eccentric hamstring curl)</td>\n<td>3x6</td>\n<td>Bodyweight, hold a band or a partner for help</td>\n<td>90 sec</td>\n<td>Hamstring injury-proofing — critical for basketball</td>\n</tr>\n<tr>\n<td>Pogo Hops (ankle stiffness)</td>\n<td>3x15</td>\n<td>Bodyweight</td>\n<td>60-90 sec</td>\n<td>Fast, minimal knee bend, builds reactive ankles</td>\n</tr>\n<tr>\n<td>Standing Calf Raise</td>\n<td>3x12</td>\n<td>Bodyweight, or 20-30 kg on the machine</td>\n<td>60 sec</td>\n<td></td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Starting Weights</h2>\n<p><strong>Barbell weights are the total including the 20 kg bar.</strong> These are conservative estimates for a beginner of your size coming back after 2 months off. I don't know your actual strength, so treat them as a starting point.</p>\n<ul>\n<li><strong>Week 1:</strong> do 2 sets per exercise at the low end of each range, so the soreness stays manageable and the technique comes back first</li>\n<li><strong>Week 2:</strong> go back to the full sets. If the last rep of each set feels like you had 3 or more reps left, move up to the middle of the range</li>\n<li><strong>Week 3 onward:</strong> pick the weight that leaves 2 reps in reserve on the last set, then follow the progression notes below</li>\n<li>If a set is a grind with form breaking down, drop the weight 10%</li>\n<li>Rest times on the jumps are about recovery, not conditioning. Wait until you feel fresh before the next set</li>\n</ul>\n\n<h2>Basketball Skills Days (Tue/Thu)</h2>\n<p>Structure however fits your skill work, but bookend with:</p>\n<ul>\n<li><strong>Before:</strong> the mobility primer above + 5 min of low-intensity lateral shuffles/carioca to prime hips</li>\n<li><strong>After:</strong> 10 min light plyo circuit if legs aren't fried from the session (optional, rotate weekly):<ul>\n<li>Single-leg hops in place — 2x10/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral skater bounds — 3x6/side</li>\n</ul>\n</li>\n</ul>\n<p>If it's a heavy scrimmage/conditioning day, skip the after-block and just stretch.</p>\n\n<h2>Progression Notes</h2>\n<ul>\n<li><strong>Weeks 1-3:</strong> Establish technique on all lifts, moderate loads, submaximal jumps</li>\n<li><strong>Weeks 4-6:</strong> Increase load on main lifts (+2.5-5kg where form allows), increase box jump height slightly</li>\n<li><strong>Weeks 7-9:</strong> Introduce depth jumps if not already comfortable; this is where reactive/elastic leg power really develops</li>\n<li>Deload every 4th week (cut volume ~40%) to keep joints fresh</li>\n</ul>\n<h2>Simple leg mobility check-ins</h2>\n<p>Every 3-4 weeks, test:</p>\n<ul>\n<li>Ankle dorsiflexion (knee-to-wall distance)</li>\n<li>Overhead squat depth/quality</li>\n<li>Single-leg balance time (eyes closed)</li>\n</ul>\n<p>Tracking these will show you the mobility work is actually working, since it's often not visible on a scale or in the mirror.</p>\n</div>\n<div class=\"sub\" id=\"sub-home\" role=\"tabpanel\" data-sub=\"home\" hidden>\n<h1>Off-Season Basketball Program — Home Setup (Beginner)</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 191cm / 95kg, home equipment only, off-season, 3 lifts + 2 basketball sessions/week<br />\n<strong>Equipment:</strong> 2x14kg KB, 1x10kg KB, 2x8kg DB, ab roller, heavy black band, 35kg-rated long band (no pull-up bar), bodyweight<br />\n<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>\n\n<h2>A Note on Your Frame</h2>\n<p>At 191cm/95kg you're carrying real leverage and mass — that's an advantage for basketball but it also means bodyweight-only lower body work (lunges, split squats) will already feel loaded without any added weight. Don't rush to add the kettlebells to leg work until bodyweight versions feel genuinely easy with good depth and control. As a beginner, technique and range of motion come first — the strength will follow fast once the pattern is right.</p>\n\n<h2>Weekly Layout</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / mobility only</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Daily Mobility Primer (before EVERY session, ~8-10 min)</h2>\n<p>Same priority as before — this is what actually fixes stiff/heavy-feeling legs, not the lifting itself.</p>\n<ol>\n<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>\n<li>90/90 hip switches — 2x8 each side</li>\n<li>Couch stretch (hip flexor) — 45 sec each side</li>\n<li>World's greatest stretch — 5 each side</li>\n<li>Lateral lunge to hamstring sweep — 8 each side</li>\n<li>Band lateral walks (use the black band around ankles/knees) — 2x10 steps each direction</li>\n</ol>\n\n<h2>LIFT A — Lower Body + Mobility (Mon)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Goblet Squat (14kg KB)</td>\n<td>4x8</td>\n<td>Focus on full depth, knees tracking over toes</td>\n</tr>\n<tr>\n<td>Kettlebell Deadlift (2x14kg, one in each hand)</td>\n<td>4x6</td>\n<td>Hip hinge pattern, flat back</td>\n</tr>\n<tr>\n<td>Bodyweight Bulgarian Split Squat (rear foot on chair/couch)</td>\n<td>3x8/leg</td>\n<td>Add 8kg DBs once solid with bodyweight</td>\n</tr>\n<tr>\n<td>Band Lateral Walk (heavy black band)</td>\n<td>3x12 steps/side</td>\n<td>Glute med — key for lateral cuts</td>\n</tr>\n<tr>\n<td>Single-leg Glute Bridge</td>\n<td>3x10/leg</td>\n<td></td>\n</tr>\n<tr>\n<td>Standing Calf Raise (holding 14kg KB)</td>\n<td>3x15</td>\n<td></td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>LIFT B — Upper Body + Core (Wed)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Kettlebell Floor Press (14kg, one arm at a time)</td>\n<td>4x8/arm</td>\n<td>Substitute for bench — lie on floor, press up</td>\n</tr>\n<tr>\n<td>Long Band Row (anchor band to a door/sturdy point)</td>\n<td>4x10</td>\n<td>Substitute for pull-ups/rows — squeeze shoulder blades</td>\n</tr>\n<tr>\n<td>Kettlebell Standing Press (10kg or 8kg DB)</td>\n<td>3x8/arm</td>\n<td></td>\n</tr>\n<tr>\n<td>Renegade Row (2x8kg DB, plank position)</td>\n<td>3x8/side</td>\n<td>Core + upper back together</td>\n</tr>\n<tr>\n<td>Ab Roller</td>\n<td>3x8-10</td>\n<td>Full control, don't let hips sag</td>\n</tr>\n<tr>\n<td>Band Face Pull (black band)</td>\n<td>3x12</td>\n<td>Shoulder health, important with no pull-up option</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>Pull-up substitute note:</strong> Since you have no bar, the long band row (anchored to a door top or banister) is your main pulling movement. If you can find any sturdy overhead beam or railing, banded pull-up assistance would be a great add later — but it's not required to progress.</p>\n\n<h2>LIFT C — Lower Body + Plyo (Fri)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Kettlebell Front Squat (2x14kg)</td>\n<td>4x6</td>\n<td></td>\n</tr>\n<tr>\n<td>Bodyweight Step-up (onto sturdy chair/stair, ~knee height)</td>\n<td>3x8/leg</td>\n<td>Drive through the heel, don't push off trail leg</td>\n</tr>\n<tr>\n<td>Broad Jump</td>\n<td>4x4</td>\n<td>Full reset, stick the landing soft</td>\n</tr>\n<tr>\n<td>Pogo Hops</td>\n<td>3x15</td>\n<td>Fast, minimal knee bend, ankle stiffness/reactivity</td>\n</tr>\n<tr>\n<td>Nordic Curl Regression: Slow Eccentric Hamstring Lower (partner or couch-anchored feet)</td>\n<td>3x6</td>\n<td>Or substitute: KB Romanian Deadlift 3x10 if no anchor available</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (foot on chair for support)</td>\n<td>3x15-20 sec/side</td>\n<td>Adductor strength</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>No box jumps at home?</strong> Broad jumps and pogo hops are actually a smarter starting point for a beginner anyway — they build the same reactive leg quality without the landing-height risk factor.</p>\n\n<h2>Basketball Skills Days (Tue/Thu)</h2>\n<ul>\n<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>\n<li><strong>After (optional, only if legs aren't fried):</strong><ul>\n<li>Single-leg hop in place — 2x8/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral bound — 3x6/side</li>\n</ul>\n</li>\n</ul>\n\n<h2>Progression Notes (Beginner Pace)</h2>\n<ul>\n<li><strong>Weeks 1-4:</strong> Master bodyweight and light-KB technique on every movement before adding load. Depth and control over speed.</li>\n<li><strong>Weeks 5-8:</strong> Start adding the 8kg DBs to split squats/step-ups, tighten up plyo landings, increase band tension where possible</li>\n<li><strong>Weeks 9-12:</strong> Reassess — if kettlebells feel light across the board, this is the point to look at getting heavier KBs (you'll likely outgrow the 14kg for squats/deadlifts by then)</li>\n<li>Deload every 4th week (lighter loads, fewer sets) — especially important early on while joints and tendons adapt</li>\n</ul>\n<h2>Leg Mobility Check-ins (every 3-4 weeks)</h2>\n<ul>\n<li>Ankle dorsiflexion (knee-to-wall distance)</li>\n<li>Bodyweight squat depth/quality (can you get thighs parallel with heels flat?)</li>\n<li>Single-leg balance time, eyes closed</li>\n</ul>\n<p>These will show real progress even before the weights feel meaningfully heavier — which for a beginner is often the more important signal.</p>\n</div>\n<div class=\"sub\" id=\"sub-minimal\" role=\"tabpanel\" data-sub=\"minimal\" hidden>\n<h1>Off-Season Basketball Program — Minimal Equipment (Beginner)</h1>\n<p class=\"meta\"><strong>Profile:</strong> Beginner lifter, 190cm / 100kg, off-season, 3 lifts + 2 basketball sessions/week<br />\n<strong>Equipment:</strong> 1 kettlebell (14kg), heavy black resistance band, long 35kg-rated resistance band, bodyweight only<br />\n<strong>Focus:</strong> Balanced athletic performance, injury durability, fixing leg mobility/explosiveness</p>\n\n<h2>A Note on This Setup</h2>\n<p>With one kettlebell and two bands, most of your loading now comes from bodyweight + band tension rather than external weight. That's actually fine at beginner level — bodyweight and band-resisted work builds real strength and control, and your frame means bodyweight movements alone carry plenty of load to start. The kettlebell becomes your one \"heavy\" tool, so it gets used where it matters most: squats, hinges, and presses.</p>\n\n<h2>Weekly Layout</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Session</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mon</td>\n<td>Lift A — Lower Body + Mobility</td>\n</tr>\n<tr>\n<td>Tue</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Wed</td>\n<td>Lift B — Upper Body + Core</td>\n</tr>\n<tr>\n<td>Thu</td>\n<td>Basketball Skills/Conditioning</td>\n</tr>\n<tr>\n<td>Fri</td>\n<td>Lift C — Lower Body + Plyo</td>\n</tr>\n<tr>\n<td>Sat</td>\n<td>Active recovery / mobility only</td>\n</tr>\n<tr>\n<td>Sun</td>\n<td>Full rest</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Daily Mobility Primer (before EVERY session, ~8-10 min)</h2>\n<ol>\n<li>Ankle dorsiflexion rocks (knee-to-wall) — 2x10 each side</li>\n<li>90/90 hip switches — 2x8 each side</li>\n<li>Couch stretch (hip flexor) — 45 sec each side</li>\n<li>World's greatest stretch — 5 each side</li>\n<li>Lateral lunge to hamstring sweep — 8 each side</li>\n<li>Band lateral walks (black band around ankles/knees) — 2x10 steps each direction</li>\n</ol>\n\n<h2>LIFT A — Lower Body + Mobility (Mon)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>KB Goblet Squat</td>\n<td>4x10</td>\n<td>Full depth, elbows inside knees at bottom</td>\n</tr>\n<tr>\n<td>Single-KB Romanian Deadlift (both hands on KB)</td>\n<td>4x8</td>\n<td>Hip hinge, slow lower, feel the hamstring stretch</td>\n</tr>\n<tr>\n<td>Bulgarian Split Squat (rear foot elevated, bodyweight)</td>\n<td>3x10/leg</td>\n<td>Once easy, hold KB goblet-style to add load</td>\n</tr>\n<tr>\n<td>Band Lateral Walk (black band)</td>\n<td>3x12 steps/side</td>\n<td></td>\n</tr>\n<tr>\n<td>Single-leg Glute Bridge</td>\n<td>3x10/leg</td>\n<td></td>\n</tr>\n<tr>\n<td>Single-KB Standing Calf Raise</td>\n<td>3x15</td>\n<td></td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>LIFT B — Upper Body + Core (Wed)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Single-Arm KB Floor Press</td>\n<td>4x8/arm</td>\n<td>Lie on floor, press straight up, control the descent</td>\n</tr>\n<tr>\n<td>Long Band Row (anchor to door top/sturdy point)</td>\n<td>4x10</td>\n<td>Main pulling movement — squeeze shoulder blades hard</td>\n</tr>\n<tr>\n<td>Single-Arm KB Standing Press</td>\n<td>3x8/arm</td>\n<td>Brace core, avoid leaning back</td>\n</tr>\n<tr>\n<td>Band Pallof Press (anchor band to your side at chest height)</td>\n<td>3x10/side</td>\n<td>Anti-rotation core, presses out and holds</td>\n</tr>\n<tr>\n<td>Push-up</td>\n<td>3x max-2 (leave 2 reps in reserve)</td>\n<td>Bodyweight — go to failure-minus-2 for quality</td>\n</tr>\n<tr>\n<td>Band Face Pull (black band)</td>\n<td>3x12</td>\n<td>Shoulder health, especially without pull-up access</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>LIFT C — Lower Body + Plyo (Fri)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Exercise</th>\n<th>Sets x Reps</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Single-KB Front Rack Squat</td>\n<td>4x8</td>\n<td>Hold KB in front rack position at chest</td>\n</tr>\n<tr>\n<td>Bodyweight Step-up (chair/stair, ~knee height)</td>\n<td>3x8/leg</td>\n<td>Drive through the heel</td>\n</tr>\n<tr>\n<td>Broad Jump</td>\n<td>4x4</td>\n<td>Full reset between reps, land soft</td>\n</tr>\n<tr>\n<td>Pogo Hops</td>\n<td>3x15</td>\n<td>Fast, minimal knee bend, ankle reactivity</td>\n</tr>\n<tr>\n<td>Band-Resisted Hamstring Curl (anchor long band, lying face down)</td>\n<td>3x12</td>\n<td>Or slow eccentric bodyweight version if band angle is awkward</td>\n</tr>\n<tr>\n<td>Copenhagen Plank (foot on chair)</td>\n<td>3x15-20 sec/side</td>\n<td>Adductor strength</td>\n</tr>\n</tbody>\n</table></div>\n\n<h2>Basketball Skills Days (Tue/Thu)</h2>\n<ul>\n<li><strong>Before:</strong> mobility primer + 5 min light lateral shuffles/carioca</li>\n<li><strong>After (optional, only if legs aren't fried):</strong><ul>\n<li>Single-leg hop in place — 2x8/leg</li>\n<li>Broad jump — 3x3</li>\n<li>Lateral bound — 3x6/side</li>\n</ul>\n</li>\n</ul>\n\n<h2>Progression Notes (Beginner Pace)</h2>\n<ul>\n<li><strong>Weeks 1-4:</strong> Nail bodyweight technique everywhere — depth on squats, control on split squats/step-ups, full range on band rows. The kettlebell work should feel challenging by the last 2-3 reps but not grindy.</li>\n<li><strong>Weeks 5-8:</strong> Increase reps (e.g. goblet squat to 4x15) before anything else — with one kettlebell, rep progression is your main lever once bodyweight/band work plateaus.</li>\n<li><strong>Weeks 9-12:</strong> Consider tempo work (3-4 sec lowering phase) on squats and RDLs to keep adding difficulty without more load. This is also the point to reassess whether a second/heavier kettlebell would unlock more progress.</li>\n<li>Deload every 4th week (lighter effort, fewer sets)</li>\n</ul>\n<h2>Leg Mobility Check-ins (every 3-4 weeks)</h2>\n<ul>\n<li>Ankle dorsiflexion (knee-to-wall distance)</li>\n<li>Bodyweight squat depth/quality (thighs parallel, heels flat)</li>\n<li>Single-leg balance time, eyes closed</li>\n</ul>\n<h2>What's Different From the Full Home Setup</h2>\n<ul>\n<li>Dumbbell work (renegade rows, split squat loading) is now bodyweight or single-KB based</li>\n<li>Ab roller swapped for push-ups and band Pallof press — still trains anti-extension/anti-rotation core, just without the tool</li>\n<li>Reps are pushed higher across most lifts (8-15 vs 6-8) to compensate for only having one load option — this keeps the stimulus meaningful without needing heavier weight</li>\n</ul>\n</div>"
+}

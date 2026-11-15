@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plan.schema.json",
+  "title": "Plan overrides",
+  "description": "Contents of ol-plan: the editable exercise list per program/session, keyed '<program>/<session>'. A missing key means 'use the catalog as-is'. The catalog is a suggestion, never a constraint.",
+  "type": "object",
+  "additionalProperties": {
+    "type": "array",
+    "items": { "$ref": "#/$defs/ExerciseDef" }
+  },
+  "$defs": {
+    "ExerciseDef": {
+      "type": "object",
+      "required": ["id", "title", "sets", "unit"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id. Reusing an existing catalog id inherits its history and rest time; a new id starts clean."
+        },
+        "title": {
+          "type": "string",
+          "description": "Display name. Renaming while keeping the id keeps the history series but changes the progress label."
+        },
+        "hint": { "type": "string", "description": "Short cue under the title." },
+        "sets": { "type": "integer", "minimum": 1, "description": "Suggested number of sets (creates this many draft rows)." },
+        "target": { "type": "string", "description": "Free-text prescription, e.g. '4x4' or '3x8/leg'." },
+        "unit": { "type": "string", "enum": ["reps", "sec"] },
+        "suggested": { "type": "string", "description": "Starting load hint, e.g. '50-60 kg total'." },
+        "bw": { "type": "boolean", "description": "Bodyweight: log added weight only." },
+        "custom": {
+          "type": "boolean",
+          "description": "Set when the exercise was added by hand and is not in the catalog. Progress entries also accept hand-added names."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

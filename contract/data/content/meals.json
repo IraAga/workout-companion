@@ -1,0 +1,520 @@
+{
+  "id": "meals",
+  "order": 6,
+  "navLabel": "Meals",
+  "group": "Eat",
+  "kicker": "Eat",
+  "title": "Protein-Heavy Meal Suggestions",
+  "blocks": [
+    {
+      "type": "kicker",
+      "text": "Eat"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Protein-Heavy Meal Suggestions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Built to fit the ~2,550 kcal / ~200g protein daily targets from your nutrition plan. Mix and match — pick one from each category to build a full day, or swap freely. Gram amounts are for raw/dry weight unless noted.",
+      "html": "<p>Built to fit the ~2,550 kcal / ~200g protein daily targets from your nutrition plan. Mix and match — pick one from each category to build a full day, or swap freely. Gram amounts are for raw/dry weight unless noted.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Breakfast Options"
+    },
+    {
+      "type": "meal-grid",
+      "meals": [
+        {
+          "type": "meal",
+          "title": "1. Greek Yogurt Power Bowl",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Greek yogurt (0-2% fat)",
+                "300g"
+              ],
+              [
+                "Whey protein powder",
+                "30g"
+              ],
+              [
+                "Oats",
+                "50g"
+              ],
+              [
+                "Banana",
+                "100g"
+              ],
+              [
+                "Almond butter",
+                "15g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2% fat)</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Oats</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Almond butter</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~630 kcal / ~52g protein",
+          "html": "<article class=\"meal\"><h3>1. Greek Yogurt Power Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2% fat)</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Oats</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Almond butter</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~630 kcal / ~52g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "2. Egg & Oat Scramble",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Whole eggs",
+                "3 (150g)"
+              ],
+              [
+                "Egg whites",
+                "100g"
+              ],
+              [
+                "Oats (cooked separately)",
+                "60g"
+              ],
+              [
+                "Spinach",
+                "50g"
+              ],
+              [
+                "Feta cheese",
+                "20g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs</td>\n<td>3 (150g)</td>\n</tr>\n<tr>\n<td>Egg whites</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Oats (cooked separately)</td>\n<td>60g</td>\n</tr>\n<tr>\n<td>Spinach</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Feta cheese</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~590 kcal / ~45g protein",
+          "html": "<article class=\"meal\"><h3>2. Egg &amp;amp; Oat Scramble</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs</td>\n<td>3 (150g)</td>\n</tr>\n<tr>\n<td>Egg whites</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Oats (cooked separately)</td>\n<td>60g</td>\n</tr>\n<tr>\n<td>Spinach</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Feta cheese</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~590 kcal / ~45g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "3. Cottage Cheese Toast",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Cottage cheese",
+                "250g"
+              ],
+              [
+                "Whole grain bread",
+                "80g (2 slices)"
+              ],
+              [
+                "Whole egg",
+                "1 (50g)"
+              ],
+              [
+                "Cherry tomatoes",
+                "80g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>80g (2 slices)</td>\n</tr>\n<tr>\n<td>Whole egg</td>\n<td>1 (50g)</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~520 kcal / ~48g protein",
+          "html": "<article class=\"meal\"><h3>3. Cottage Cheese Toast</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>80g (2 slices)</td>\n</tr>\n<tr>\n<td>Whole egg</td>\n<td>1 (50g)</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~520 kcal / ~48g protein</p></article>"
+        }
+      ],
+      "html": "<div class=\"meal-grid\"><article class=\"meal\"><h3>1. Greek Yogurt Power Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2% fat)</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Oats</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Almond butter</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~630 kcal / ~52g protein</p></article>\n<article class=\"meal\"><h3>2. Egg &amp;amp; Oat Scramble</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs</td>\n<td>3 (150g)</td>\n</tr>\n<tr>\n<td>Egg whites</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Oats (cooked separately)</td>\n<td>60g</td>\n</tr>\n<tr>\n<td>Spinach</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Feta cheese</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~590 kcal / ~45g protein</p></article>\n<article class=\"meal\"><h3>3. Cottage Cheese Toast</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>80g (2 slices)</td>\n</tr>\n<tr>\n<td>Whole egg</td>\n<td>1 (50g)</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~520 kcal / ~48g protein</p></article>\n\n</div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Lunch Options"
+    },
+    {
+      "type": "meal-grid",
+      "meals": [
+        {
+          "type": "meal",
+          "title": "4. Chicken Rice Bowl",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Chicken breast, raw",
+                "200g"
+              ],
+              [
+                "White rice, dry",
+                "90g"
+              ],
+              [
+                "Broccoli",
+                "150g"
+              ],
+              [
+                "Olive oil",
+                "10g"
+              ],
+              [
+                "Soy sauce",
+                "15ml"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken breast, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>90g</td>\n</tr>\n<tr>\n<td>Broccoli</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~680 kcal / ~55g protein",
+          "html": "<article class=\"meal\"><h3>4. Chicken Rice Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken breast, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>90g</td>\n</tr>\n<tr>\n<td>Broccoli</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~680 kcal / ~55g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "5. Turkey & Sweet Potato",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Ground turkey (93% lean), raw",
+                "200g"
+              ],
+              [
+                "Sweet potato",
+                "250g"
+              ],
+              [
+                "Mixed peppers",
+                "100g"
+              ],
+              [
+                "Olive oil",
+                "10g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ground turkey (93% lean), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Sweet potato</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Mixed peppers</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~610 kcal / ~48g protein",
+          "html": "<article class=\"meal\"><h3>5. Turkey &amp;amp; Sweet Potato</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ground turkey (93% lean), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Sweet potato</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Mixed peppers</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~610 kcal / ~48g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "6. Tuna Pasta Salad",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Canned tuna in water, drained",
+                "160g"
+              ],
+              [
+                "Whole wheat pasta, dry",
+                "80g"
+              ],
+              [
+                "Cherry tomatoes",
+                "80g"
+              ],
+              [
+                "Olive oil",
+                "10g"
+              ],
+              [
+                "Parmesan",
+                "15g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Canned tuna in water, drained</td>\n<td>160g</td>\n</tr>\n<tr>\n<td>Whole wheat pasta, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Parmesan</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~600 kcal / ~50g protein",
+          "html": "<article class=\"meal\"><h3>6. Tuna Pasta Salad</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Canned tuna in water, drained</td>\n<td>160g</td>\n</tr>\n<tr>\n<td>Whole wheat pasta, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Parmesan</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~600 kcal / ~50g protein</p></article>"
+        }
+      ],
+      "html": "<div class=\"meal-grid\"><article class=\"meal\"><h3>4. Chicken Rice Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken breast, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>90g</td>\n</tr>\n<tr>\n<td>Broccoli</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~680 kcal / ~55g protein</p></article>\n<article class=\"meal\"><h3>5. Turkey &amp;amp; Sweet Potato</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ground turkey (93% lean), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Sweet potato</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Mixed peppers</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~610 kcal / ~48g protein</p></article>\n<article class=\"meal\"><h3>6. Tuna Pasta Salad</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Canned tuna in water, drained</td>\n<td>160g</td>\n</tr>\n<tr>\n<td>Whole wheat pasta, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Parmesan</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~600 kcal / ~50g protein</p></article>\n\n</div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Dinner Options"
+    },
+    {
+      "type": "meal-grid",
+      "meals": [
+        {
+          "type": "meal",
+          "title": "7. Steak & Potatoes",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Lean beef (sirloin), raw",
+                "200g"
+              ],
+              [
+                "White potato",
+                "300g"
+              ],
+              [
+                "Green beans",
+                "150g"
+              ],
+              [
+                "Butter",
+                "10g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Lean beef (sirloin), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White potato</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Green beans</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Butter</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~670 kcal / ~50g protein",
+          "html": "<article class=\"meal\"><h3>7. Steak &amp;amp; Potatoes</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Lean beef (sirloin), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White potato</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Green beans</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Butter</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~670 kcal / ~50g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "8. Salmon & Rice",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Salmon fillet, raw",
+                "180g"
+              ],
+              [
+                "White rice, dry",
+                "80g"
+              ],
+              [
+                "Asparagus",
+                "150g"
+              ],
+              [
+                "Olive oil",
+                "5g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Salmon fillet, raw</td>\n<td>180g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Asparagus</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>5g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~640 kcal / ~44g protein",
+          "html": "<article class=\"meal\"><h3>8. Salmon &amp;amp; Rice</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Salmon fillet, raw</td>\n<td>180g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Asparagus</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>5g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~640 kcal / ~44g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "9. Chicken Thigh Stir-Fry",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Chicken thigh, skinless, raw",
+                "200g"
+              ],
+              [
+                "Mixed stir-fry vegetables",
+                "200g"
+              ],
+              [
+                "White rice, dry",
+                "80g"
+              ],
+              [
+                "Soy sauce",
+                "15ml"
+              ],
+              [
+                "Sesame oil",
+                "8g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken thigh, skinless, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Mixed stir-fry vegetables</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n<tr>\n<td>Sesame oil</td>\n<td>8g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~660 kcal / ~48g protein",
+          "html": "<article class=\"meal\"><h3>9. Chicken Thigh Stir-Fry</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken thigh, skinless, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Mixed stir-fry vegetables</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n<tr>\n<td>Sesame oil</td>\n<td>8g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~660 kcal / ~48g protein</p></article>"
+        }
+      ],
+      "html": "<div class=\"meal-grid\"><article class=\"meal\"><h3>7. Steak &amp;amp; Potatoes</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Lean beef (sirloin), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White potato</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Green beans</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Butter</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~670 kcal / ~50g protein</p></article>\n<article class=\"meal\"><h3>8. Salmon &amp;amp; Rice</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Salmon fillet, raw</td>\n<td>180g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Asparagus</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>5g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~640 kcal / ~44g protein</p></article>\n<article class=\"meal\"><h3>9. Chicken Thigh Stir-Fry</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken thigh, skinless, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Mixed stir-fry vegetables</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n<tr>\n<td>Sesame oil</td>\n<td>8g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~660 kcal / ~48g protein</p></article>\n\n</div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Snacks / Fillers"
+    },
+    {
+      "type": "meal-grid",
+      "meals": [
+        {
+          "type": "meal",
+          "title": "10. Protein Shake",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Whey protein powder",
+                "30g"
+              ],
+              [
+                "Milk (or water)",
+                "250ml"
+              ],
+              [
+                "Banana",
+                "100g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Milk (or water)</td>\n<td>250ml</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~280 kcal / ~28g protein",
+          "html": "<article class=\"meal\"><h3>10. Protein Shake</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Milk (or water)</td>\n<td>250ml</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~280 kcal / ~28g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "11. Cottage Cheese & Fruit",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Cottage cheese",
+                "200g"
+              ],
+              [
+                "Pineapple or berries",
+                "100g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Pineapple or berries</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~200 kcal / ~24g protein",
+          "html": "<article class=\"meal\"><h3>11. Cottage Cheese &amp;amp; Fruit</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Pineapple or berries</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~200 kcal / ~24g protein</p></article>"
+        },
+        {
+          "type": "meal",
+          "title": "12. Boiled Eggs & Almonds",
+          "ingredients": {
+            "type": "table",
+            "headers": [
+              "Ingredient",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "Whole eggs, boiled",
+                "2 (100g)"
+              ],
+              [
+                "Almonds",
+                "20g"
+              ]
+            ],
+            "html": "<table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs, boiled</td>\n<td>2 (100g)</td>\n</tr>\n<tr>\n<td>Almonds</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table>"
+          },
+          "macro": "~270 kcal / ~14g protein",
+          "html": "<article class=\"meal\"><h3>12. Boiled Eggs &amp;amp; Almonds</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs, boiled</td>\n<td>2 (100g)</td>\n</tr>\n<tr>\n<td>Almonds</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~270 kcal / ~14g protein</p></article>"
+        }
+      ],
+      "html": "<div class=\"meal-grid\"><article class=\"meal\"><h3>10. Protein Shake</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Milk (or water)</td>\n<td>250ml</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~280 kcal / ~28g protein</p></article>\n<article class=\"meal\"><h3>11. Cottage Cheese &amp;amp; Fruit</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Pineapple or berries</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~200 kcal / ~24g protein</p></article>\n<article class=\"meal\"><h3>12. Boiled Eggs &amp;amp; Almonds</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs, boiled</td>\n<td>2 (100g)</td>\n</tr>\n<tr>\n<td>Almonds</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~270 kcal / ~14g protein</p></article>\n\n</div>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sample Full Day (~2,540 kcal / ~200g protein)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Meal",
+        "Pick"
+      ],
+      "rows": [
+        [
+          "Breakfast",
+          "#1 Greek Yogurt Power Bowl — 630 kcal / 52g protein"
+        ],
+        [
+          "Lunch",
+          "#4 Chicken Rice Bowl — 680 kcal / 55g protein"
+        ],
+        [
+          "Snack",
+          "#10 Protein Shake — 280 kcal / 28g protein"
+        ],
+        [
+          "Dinner",
+          "#7 Steak & Potatoes — 670 kcal / 50g protein"
+        ],
+        [
+          "Snack",
+          "#11 Cottage Cheese & Fruit — 200 kcal / 24g protein"
+        ],
+        [
+          "Total",
+          "~2,460 kcal / ~209g protein"
+        ]
+      ],
+      "html": "<table>\n<thead>\n<tr>\n<th>Meal</th>\n<th>Pick</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Breakfast</td>\n<td>#1 Greek Yogurt Power Bowl — 630 kcal / 52g protein</td>\n</tr>\n<tr>\n<td>Lunch</td>\n<td>#4 Chicken Rice Bowl — 680 kcal / 55g protein</td>\n</tr>\n<tr>\n<td>Snack</td>\n<td>#10 Protein Shake — 280 kcal / 28g protein</td>\n</tr>\n<tr>\n<td>Dinner</td>\n<td>#7 Steak &amp;amp; Potatoes — 670 kcal / 50g protein</td>\n</tr>\n<tr>\n<td>Snack</td>\n<td>#11 Cottage Cheese &amp;amp; Fruit — 200 kcal / 24g protein</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td><strong>~2,460 kcal / ~209g protein</strong></td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Add a small extra carb source (fruit, rice) if you're short on your calorie target for the day — easier to nudge up than to build a whole extra meal.",
+      "html": "<p>Add a small extra carb source (fruit, rice) if you're short on your calorie target for the day — easier to nudge up than to build a whole extra meal.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Notes"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Gram amounts for meat/fish are raw weight — cooked weight will look smaller, that's normal (water loss)",
+          "lead": "raw weight",
+          "html": "<li>Gram amounts for meat/fish are <strong>raw weight</strong> — cooked weight will look smaller, that's normal (water loss)</li>"
+        },
+        {
+          "text": "These are starting points, not rules — swap proteins/carbs/veg freely as long as the protein and calorie ballpark holds",
+          "html": "<li>These are starting points, not rules — swap proteins/carbs/veg freely as long as the protein and calorie ballpark holds</li>"
+        },
+        {
+          "text": "On basketball/lift days, lean toward the higher-carb options (rice, potato, pasta bowls); on rest days, lean toward the lighter snack-style meals",
+          "html": "<li>On basketball/lift days, lean toward the higher-carb options (rice, potato, pasta bowls); on rest days, lean toward the lighter snack-style meals</li>"
+        }
+      ]
+    }
+  ],
+  "sourceHtml": "<p class=\"kicker\">Eat</p>\n<h1>Protein-Heavy Meal Suggestions</h1>\n<p>Built to fit the ~2,550 kcal / ~200g protein daily targets from your nutrition plan. Mix and match — pick one from each category to build a full day, or swap freely. Gram amounts are for raw/dry weight unless noted.</p>\n\n<h2>Breakfast Options</h2>\n<div class=\"meal-grid\"><article class=\"meal\"><h3>1. Greek Yogurt Power Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Greek yogurt (0-2% fat)</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Oats</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Almond butter</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~630 kcal / ~52g protein</p></article>\n<article class=\"meal\"><h3>2. Egg &amp; Oat Scramble</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs</td>\n<td>3 (150g)</td>\n</tr>\n<tr>\n<td>Egg whites</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Oats (cooked separately)</td>\n<td>60g</td>\n</tr>\n<tr>\n<td>Spinach</td>\n<td>50g</td>\n</tr>\n<tr>\n<td>Feta cheese</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~590 kcal / ~45g protein</p></article>\n<article class=\"meal\"><h3>3. Cottage Cheese Toast</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Whole grain bread</td>\n<td>80g (2 slices)</td>\n</tr>\n<tr>\n<td>Whole egg</td>\n<td>1 (50g)</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~520 kcal / ~48g protein</p></article>\n\n</div><h2>Lunch Options</h2>\n<div class=\"meal-grid\"><article class=\"meal\"><h3>4. Chicken Rice Bowl</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken breast, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>90g</td>\n</tr>\n<tr>\n<td>Broccoli</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~680 kcal / ~55g protein</p></article>\n<article class=\"meal\"><h3>5. Turkey &amp; Sweet Potato</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Ground turkey (93% lean), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Sweet potato</td>\n<td>250g</td>\n</tr>\n<tr>\n<td>Mixed peppers</td>\n<td>100g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~610 kcal / ~48g protein</p></article>\n<article class=\"meal\"><h3>6. Tuna Pasta Salad</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Canned tuna in water, drained</td>\n<td>160g</td>\n</tr>\n<tr>\n<td>Whole wheat pasta, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Cherry tomatoes</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>10g</td>\n</tr>\n<tr>\n<td>Parmesan</td>\n<td>15g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~600 kcal / ~50g protein</p></article>\n\n</div><h2>Dinner Options</h2>\n<div class=\"meal-grid\"><article class=\"meal\"><h3>7. Steak &amp; Potatoes</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Lean beef (sirloin), raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White potato</td>\n<td>300g</td>\n</tr>\n<tr>\n<td>Green beans</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Butter</td>\n<td>10g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~670 kcal / ~50g protein</p></article>\n<article class=\"meal\"><h3>8. Salmon &amp; Rice</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Salmon fillet, raw</td>\n<td>180g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Asparagus</td>\n<td>150g</td>\n</tr>\n<tr>\n<td>Olive oil</td>\n<td>5g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~640 kcal / ~44g protein</p></article>\n<article class=\"meal\"><h3>9. Chicken Thigh Stir-Fry</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Chicken thigh, skinless, raw</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Mixed stir-fry vegetables</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>White rice, dry</td>\n<td>80g</td>\n</tr>\n<tr>\n<td>Soy sauce</td>\n<td>15ml</td>\n</tr>\n<tr>\n<td>Sesame oil</td>\n<td>8g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~660 kcal / ~48g protein</p></article>\n\n</div><h2>Snacks / Fillers</h2>\n<div class=\"meal-grid\"><article class=\"meal\"><h3>10. Protein Shake</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whey protein powder</td>\n<td>30g</td>\n</tr>\n<tr>\n<td>Milk (or water)</td>\n<td>250ml</td>\n</tr>\n<tr>\n<td>Banana</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~280 kcal / ~28g protein</p></article>\n<article class=\"meal\"><h3>11. Cottage Cheese &amp; Fruit</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Cottage cheese</td>\n<td>200g</td>\n</tr>\n<tr>\n<td>Pineapple or berries</td>\n<td>100g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~200 kcal / ~24g protein</p></article>\n<article class=\"meal\"><h3>12. Boiled Eggs &amp; Almonds</h3>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Ingredient</th>\n<th>Amount</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Whole eggs, boiled</td>\n<td>2 (100g)</td>\n</tr>\n<tr>\n<td>Almonds</td>\n<td>20g</td>\n</tr>\n</tbody>\n</table></div>\n<p class=\"macro\">~270 kcal / ~14g protein</p></article>\n\n</div><h2>Sample Full Day (~2,540 kcal / ~200g protein)</h2>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>Meal</th>\n<th>Pick</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Breakfast</td>\n<td>#1 Greek Yogurt Power Bowl — 630 kcal / 52g protein</td>\n</tr>\n<tr>\n<td>Lunch</td>\n<td>#4 Chicken Rice Bowl — 680 kcal / 55g protein</td>\n</tr>\n<tr>\n<td>Snack</td>\n<td>#10 Protein Shake — 280 kcal / 28g protein</td>\n</tr>\n<tr>\n<td>Dinner</td>\n<td>#7 Steak &amp; Potatoes — 670 kcal / 50g protein</td>\n</tr>\n<tr>\n<td>Snack</td>\n<td>#11 Cottage Cheese &amp; Fruit — 200 kcal / 24g protein</td>\n</tr>\n<tr>\n<td><strong>Total</strong></td>\n<td><strong>~2,460 kcal / ~209g protein</strong></td>\n</tr>\n</tbody>\n</table></div>\n<p>Add a small extra carb source (fruit, rice) if you're short on your calorie target for the day — easier to nudge up than to build a whole extra meal.</p>\n\n<h2>Notes</h2>\n<ul>\n<li>Gram amounts for meat/fish are <strong>raw weight</strong> — cooked weight will look smaller, that's normal (water loss)</li>\n<li>These are starting points, not rules — swap proteins/carbs/veg freely as long as the protein and calorie ballpark holds</li>\n<li>On basketball/lift days, lean toward the higher-carb options (rice, potato, pasta bowls); on rest days, lean toward the lighter snack-style meals</li>\n</ul>"
+}
