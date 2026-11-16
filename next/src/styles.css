@@ -638,3 +638,79 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
 .tools-actions { display: flex; flex-wrap: wrap; gap: .4rem; }
 .tools-msg { min-height: 1rem; margin: .5rem 0 0; color: var(--accent); font-size: .8rem; }
 .tools-msg.warn { color: var(--danger); }
+
+/* ------------------------------------------------------------ train/eat */
+
+.lead { margin: 0 0 1rem; color: var(--muted); max-width: 60ch; font-size: .92rem; }
+
+.train-session {
+  margin: 0 0 .6rem;
+  padding: .8rem .9rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.train-session h2 {
+  margin: 0;
+  font: 600 1.15rem/1.2 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.train-list { list-style: none; margin: .5rem 0 0; padding: 0; }
+.train-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; border-top: 1px solid var(--rule); font-size: .84rem; }
+.train-list li:first-child { border-top: 0; }
+.train-list b { font-weight: 600; }
+.train-list span { color: var(--muted); font: 400 .72rem/1.5 var(--font-mono); text-align: right; }
+
+.mini-cards { display: grid; gap: .5rem; }
+.mini-card {
+  display: block;
+  padding: .8rem .9rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+}
+.mini-card:hover { border-color: var(--accent); }
+.mini-card b { display: block; font-size: .92rem; color: var(--accent); }
+.mini-card span { display: block; margin-top: .15rem; color: var(--muted); font-size: .8rem; }
+
+.classic { margin: 1.2rem 0 0; font-size: .82rem; }
+.classic a { color: var(--accent); }
+
+/* ---------------------------------------------------------------- tabbar */
+
+.tabbar {
+  position: fixed;
+  z-index: 6;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(100%, 46rem);
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.tabbar button {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15rem;
+  padding: .45rem 0 .55rem;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabbar button:hover { color: var(--ink); }
+.tabbar button[aria-current="page"] { color: var(--accent); }
+.tabbar svg { width: 1.3rem; height: 1.3rem; }

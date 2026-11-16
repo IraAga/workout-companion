@@ -84,6 +84,19 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   letter-spacing: 0.02em;
 }
 .tagline { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; max-width: 34ch; }
+.beta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font: 600 0.78rem/1 var(--font-body);
+  text-decoration: none;
+}
+.beta-link:hover { background: var(--accent-soft); }
 
 nav {
   display: flex;
@@ -942,6 +955,7 @@ input.num.bad { border-color: var(--danger); background: var(--danger-soft); }
   <header class="head">
     <div class="brand">Off-Season Plan</div>
     <p class="tagline">Three lifts and two basketball sessions a week, with a fat-loss nutrition plan.</p>
+    <a class="beta-link" href="./next/">Try the new log (beta) →</a>
   </header>
   <nav aria-label="Documents">
     <div class="grp"><span class="glabel">Overview</span>

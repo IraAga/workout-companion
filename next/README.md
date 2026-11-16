@@ -1,8 +1,8 @@
 # next/ — logging slice
 
 The first implementation on the portable contract: **History → Start → workout →
-save**, plus Progress, edit, delete/undo, drafts, last-time numbers, rest timer,
-the weekly count and backup import/export.
+save**, plus Progress, Train, Eat, edit, delete/undo, drafts, last-time numbers,
+rest timer, the weekly count and backup import/export.
 
 Vite + TypeScript, no UI framework. The core is pure functions; the UI is a thin
 DOM layer. The catalog is imported straight from `../contract/data/catalog.json`,
@@ -38,15 +38,16 @@ Requires Node 22.12+ (Vite 8).
 | R11 rest timer (+30 s, skip) | ✅ |
 | R13 ordering, dates, number format | ✅ |
 | R16 start / discard / close | ✅ |
+| Bottom nav: Log / Train / Eat | ✅ Week omitted for now |
 
-**Not in this slice:** the content panels, manual progress entries, GitHub sync,
-PWA/offline shell, adding or editing exercise definitions, and the proposed
-four-item bottom navigation (its other three destinations do not exist yet).
+**Not in this slice:** the Week panel, the prose content panels (Train links to
+those in the classic app), manual progress entries, GitHub sync, PWA/offline
+shell, and adding or editing exercise definitions. The bottom nav has three
+destinations; Week is deliberately left out of this version.
 
 History, Progress and the workout state follow `pocket-log.svg` and
-`pocket-log-workout.svg` closely; the bottom nav is the one structural element
-left out on purpose. The shipped references remain in
-`../contract/templates/pocket-log-shipped.svg` and
+`pocket-log-workout.svg` closely; the nav is Log / Train / Eat. The shipped
+references remain in `../contract/templates/pocket-log-shipped.svg` and
 `pocket-log-workout-shipped.svg`.
 
 ## Data compatibility
@@ -84,7 +85,9 @@ npm run build:pages     # writes ../docs/next
 
 Commit `docs/next/` and open `https://iraaga.github.io/workout-companion/next/`.
 Same host means the new app sees the existing `ol-sessions` immediately — no
-import step.
+import step. The classic app carries a **“Try the new log (beta)”** link to this
+path, and the new app links back via **Open the classic app** in Backup & restore
+and in Train/Eat.
 
 Caveats: both apps then share the same keys, so do not write in both at once
 while testing. The existing service worker also controls `/next/`; its offline
@@ -134,13 +137,15 @@ production build, with no horizontal overflow:
 - Progress tab: series picker, latest/best/since-first, sparkline, table
 - segmented control: History/Progress active states, none while logging
 - backup export then import into a cleared origin restores every session
+- same-origin check: classic at `/` and new at `/next/` both see the same sessions
+- nav: Log/Train/Eat active states, Train renders the catalog, Eat links to classic
 
 No console errors.
 
 ## Next steps
 
-1. Bottom navigation + the Week/Train/Eat destinations it needs.
+1. Week screen (the one nav item left out).
 2. Add/rename exercise definitions (R12) and "reset to suggested".
-3. Sync UI (R15) after the import path has been exercised.
-4. Content panels from `contract/data/content/` — static and low risk.
-5. PWA shell and same-origin deployment.
+3. Sync UI (R15) after the two apps have coexisted for a while.
+4. Full content panels in Train/Eat from `contract/data/content/`.
+5. PWA shell for `/next/`.

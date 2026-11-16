@@ -12,6 +12,29 @@ docs/
   icons/                  192, 512, 512 maskable
 ```
 
+## New app (beta) under `/next/`
+
+The rebuilt log lives in `next/` and is published beside this app, on the same
+origin so both share the same `localStorage` log.
+
+```bash
+cd next
+npm install
+npm run build:pages      # writes docs/next
+git add docs/next
+git commit -m "Publish the new log beta"
+git push
+```
+
+- Classic app: `https://<user>.github.io/workout-companion/`
+- New app: `https://<user>.github.io/workout-companion/next/`
+
+The classic app's header has a **Try the new log (beta)** link. Both read/write
+the same `ol-*` keys; do not write in both at the same time while testing. The
+classic app remains the GitHub sync writer.
+
+---
+
 ## 1. Publish it once (GitHub Pages)
 
 Requires a free GitHub account. The site ends up at

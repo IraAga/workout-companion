@@ -6,7 +6,7 @@ import type { Store } from '../core/store';
 import type { BuildResult, DraftSet, ExerciseDef } from '../core/types';
 import { dateLabel, esc, plural } from './format';
 
-type View = 'history' | 'progress' | 'workout';
+type View = 'history' | 'progress' | 'train' | 'eat' | 'workout';
 
 const ICON_EDIT =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
@@ -25,6 +25,7 @@ interface RestState {
 
 export function mountApp(root: HTMLElement, store: Store): void {
   let view: View = 'history';
+  let trainProgramId = store.program().id;
   let toast: Toast | null = null;
   let toastTimer: number | undefined;
   const rest: RestState = { end: 0 };
@@ -83,8 +84,10 @@ export function mountApp(root: HTMLElement, store: Store): void {
     const dots = Array.from({ length: 3 }, (_, i) =>
       '<i class="' + (i < week.count ? 'on' : '') + '"></i>',
     ).join('');
-    const selected = view === 'workout' ? '' : view;
-    const body = view === 'history' ? historyView() : view === 'progress' ? progressView() : workoutView();
+    const isLog = view === 'history' || view === 'progress';
+    const showSegmented = isLog || view === 'workout';
+    const selected = isLog ? view : '';
+
     const chrome = view === 'workout'
       ? '<p class="kicker">Track</p>'
       : '<header class="top">' +
@@ -92,16 +95,35 @@ export function mountApp(root: HTMLElement, store: Store): void {
           '<p class="tagline">' + esc(longDate()) + '</p>' +
         '</header>' +
         '<div class="week-pill wide"><span>' + week.count + ' of 3 lifts done</span><span class="dots">' + dots + '</span></div>';
+
+    const body = view === 'history' ? historyView()
+      : view === 'progress' ? progressView()
+        : view === 'train' ? trainView()
+          : view === 'eat' ? eatView()
+            : workoutView();
+
+    const segmented = showSegmented
+      ? '<div class="segmented" role="tablist" aria-label="Log views">' +
+          tabButton('history', 'History', selected === 'history') +
+          tabButton('progress', 'Progress', selected === 'progress') +
+        '</div>'
+      : '';
+
     return (
       '<div class="wrap">' +
         chrome +
-        '<div class="segmented" role="tablist" aria-label="Log views">' +
-          tabButton('history', 'History', selected === 'history') +
-          tabButton('progress', 'Progress', selected === 'progress') +
-        '</div>' +
+        segmented +
         '<main>' + body + '</main>' +
-      '</div>'
+      '</div>' +
+      (view === 'workout' ? '' : tabbar())
     );
+  }
+
+  function classicUrl(hash = ''): string {
+    const suffix = hash ? '#' + hash : '';
+    return location.pathname.includes('/next/')
+      ? '../' + suffix
+      : 'https://iraaga.github.io/workout-companion/' + suffix;
   }
 
   function tabButton(id: View, label: string, active: boolean): string {
@@ -158,6 +180,7 @@ export function mountApp(root: HTMLElement, store: Store): void {
             '</div>' +
             '<input type="file" accept="application/json,.json" data-input="backup-file" hidden>' +
             '<p class="tools-msg" id="backup-msg" role="status" aria-live="polite"></p>' +
+            '<p class="classic"><a href="' + classicUrl() + '">Open the classic app ↗</a></p>' +
           '</div>' +
         '</details>' +
       '</section>'
@@ -270,6 +293,78 @@ export function mountApp(root: HTMLElement, store: Store): void {
         : '') +
       dots +
     '</svg>';
+  }
+
+  function trainView(): string {
+    const active = catalog.programs.find((p) => p.id === trainProgramId) ?? store.program();
+    const options = catalog.programs.map((p) =>
+      '<option value="' + esc(p.id) + '"' + (p.id === active.id ? ' selected' : '') + '>' + esc(p.label) + '</option>',
+    ).join('');
+
+    const sessions = active.sessions.map((s) =>
+      '<section class="train-session">' +
+        '<h2>' + esc(s.label) + '</h2>' +
+        '<p class="meta">' + esc(s.note) + '</p>' +
+        '<ul class="train-list">' +
+          s.exercises.map((e) =>
+            '<li><b>' + esc(e.title) + '</b><span>' +
+              esc((e.target || e.sets + ' sets') + (e.suggested ? ' · ' + e.suggested : '')) +
+            '</span></li>',
+          ).join('') +
+        '</ul>' +
+      '</section>',
+    ).join('');
+
+    return (
+      '<section class="train">' +
+        '<h1>Train</h1>' +
+        '<p class="lead">Program reference from the shared catalog. Logging lives in Log.</p>' +
+        '<div class="pick one"><label>Program<select data-select="train-program" aria-label="Program">' + options + '</select></label></div>' +
+        sessions +
+        '<p class="classic"><a href="' + classicUrl() + '">Open the classic app for notes and timing ↗</a></p>' +
+      '</section>'
+    );
+  }
+
+  function eatView(): string {
+    const cards = [
+      { title: 'Nutrition plan', desc: 'About 2,550 kcal and 200 g protein a day for a 5 kg fat loss over 10–12 weeks.', hash: 'nutrition' },
+      { title: 'Meals', desc: 'Twelve protein-heavy meals with gram amounts for every ingredient.', hash: 'meals' },
+      { title: 'Grocery list', desc: 'Monthly staples with a cost estimate.', hash: 'groceries' },
+    ].map((c) =>
+      '<a class="mini-card" href="' + classicUrl(c.hash) + '">' +
+        '<b>' + esc(c.title) + ' ↗</b><span>' + esc(c.desc) + '</span>' +
+      '</a>',
+    ).join('');
+
+    return (
+      '<section class="eat">' +
+        '<h1>Eat</h1>' +
+        '<p class="lead">Nutrition stays in the classic app while this build focuses on logging. The targets below are the same plan.</p>' +
+        '<div class="mini-cards">' + cards + '</div>' +
+      '</section>'
+    );
+  }
+
+  function tabbar(): string {
+    const logActive = view === 'history' || view === 'progress';
+    const icon = {
+      log: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>',
+      train: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>',
+      eat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-3-3-7-1-7 3 0 4 4 9 7 9s7-5 7-9c0-4-4-6-7-3Z"/><path d="M12 8c0-2 1-3 3-4"/></svg>',
+    };
+    const item = (nav: string, label: string, active: boolean): string =>
+      '<button type="button" data-action="nav" data-nav="' + nav + '"' +
+        (active ? ' aria-current="page"' : '') + '>' + icon[nav as 'log' | 'train' | 'eat'] +
+        '<span>' + label + '</span></button>';
+
+    return (
+      '<nav class="tabbar" aria-label="Sections">' +
+        item('log', 'Log', logActive) +
+        item('train', 'Train', view === 'train') +
+        item('eat', 'Eat', view === 'eat') +
+      '</nav>'
+    );
   }
 
   function workoutView(): string {
@@ -525,6 +620,17 @@ export function mountApp(root: HTMLElement, store: Store): void {
     const index = Number(el.dataset.i);
 
     switch (action) {
+      case 'nav': {
+        const nav = el.dataset.nav;
+        if (!nav) break;
+        if (store.editingId) {
+          showToast('Finish or cancel the edit first.');
+          break;
+        }
+        view = nav === 'log' ? 'history' : nav === 'train' ? 'train' : 'eat';
+        render();
+        break;
+      }
       case 'tab': {
         const next = el.dataset.view as View | undefined;
         if (!next) break;
@@ -636,6 +742,10 @@ export function mountApp(root: HTMLElement, store: Store): void {
     else if (t.matches('[data-select="progress"]')) {
       const series = buildSeries(store.sessions).find((s) => s.key === t.value);
       if (series) store.setProgress(series.key, series.id);
+    }
+    else if (t.matches('[data-select="train-program"]')) {
+      trainProgramId = t.value;
+      render();
     }
     else if (t.matches('[data-input="backup-file"]')) {
       const file = (t as HTMLInputElement).files?.[0];
