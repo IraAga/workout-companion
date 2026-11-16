@@ -49,6 +49,9 @@ export interface Store {
   copyLast(exId: string): void;
   toggleCollapse(exId: string): void;
   setProgress(key: string, id: string): void;
+  addExercise(def: ExerciseDef): void;
+  reorderExercises(ids: string[]): void;
+  moveExercise(from: number, to: number): void;
 
   save(): BuildResult;
   startEdit(id: string): boolean;
@@ -240,6 +243,48 @@ export function createStore(options: StoreOptions = {}): Store {
       prefs = { ...prefs, progressEx: key, progressId: id };
       persistPrefs();
       emit();
+    },
+
+    addExercise(def) {
+      const current = exercises();
+      if (current.some((e) => e.id === def.id)) return;
+      if (editing && editPlan) {
+        editPlan = [...editPlan, def];
+      } else {
+        plan[key()] = [...current, def];
+        writeJSON(kv, KEYS.plan, plan);
+      }
+      emit();
+    },
+
+    reorderExercises(ids) {
+      const current = exercises();
+      const byId = new Map(current.map((e) => [e.id, e]));
+      const next: ExerciseDef[] = [];
+      for (const id of ids) {
+        const ex = byId.get(id);
+        if (ex) {
+          next.push(ex);
+          byId.delete(id);
+        }
+      }
+      for (const ex of byId.values()) next.push(ex);
+      if (editing && editPlan) {
+        editPlan = next;
+      } else {
+        plan[key()] = next;
+        writeJSON(kv, KEYS.plan, plan);
+      }
+      emit();
+    },
+
+    moveExercise(from, to) {
+      const list = exercises().map((e) => e.id);
+      if (from < 0 || from >= list.length || to < 0 || to >= list.length || from === to) return;
+      const [id] = list.splice(from, 1);
+      if (!id) return;
+      list.splice(to, 0, id);
+      store.reorderExercises(list);
     },
 
     save() {

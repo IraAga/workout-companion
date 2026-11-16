@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog';
 import { createStore } from './store';
+import type { ExerciseDef } from './types';
 import { KEYS, type KeyValueStore } from './storage';
 
 const gym = catalog.programs.find((p) => p.id === 'gym')!;
@@ -161,5 +162,63 @@ describe('store drafts', () => {
 
     store.setSession('lift-b');
     expect(store.rows('barbell-bench-press')[0]!.kg).toBe('30');
+  });
+});
+
+
+describe('store exercises', () => {
+  const facePull: ExerciseDef = {
+    id: 'x-face-pull', title: 'Face Pull', hint: 'band', sets: 3,
+    target: '3x12', unit: 'reps', suggested: '', bw: false, custom: true,
+  };
+
+  it('adds an exercise to the plan and saves its sets', () => {
+    const { store, kv } = setup();
+    store.addExercise(facePull);
+    expect(store.exercises().map((e) => e.id)).toContain('x-face-pull');
+    expect(store.exercises()).toHaveLength(7);
+
+    const plan = JSON.parse(kv.get(KEYS.plan) ?? '{}') as Record<string, ExerciseDef[]>;
+    expect(plan['gym/lift-a']).toHaveLength(7);
+
+    store.setRow('x-face-pull', 0, 'kg', '15');
+    store.setRow('x-face-pull', 0, 'reps', '12');
+    store.save();
+
+    const last = store.sessions[0]!.exercises.at(-1)!;
+    expect(last.id).toBe('x-face-pull');
+    expect(last.sets[0]).toEqual({ kg: 15, reps: 12 });
+  });
+
+  it('reorders the plan and persists the order', () => {
+    const { store, kv } = setup();
+    const ids = store.exercises().map((e) => e.id).reverse();
+    store.reorderExercises(ids);
+    expect(store.exercises()[0]!.id).toBe(ids[0]);
+
+    const plan = JSON.parse(kv.get(KEYS.plan) ?? '{}') as Record<string, ExerciseDef[]>;
+    expect(plan['gym/lift-a']![0]!.id).toBe(ids[0]);
+
+    store.moveExercise(0, 1);
+    expect(store.exercises()[1]!.id).toBe(ids[0]);
+  });
+
+  it('adds and reorders while editing, then saves the new session order', () => {
+    const { store } = setup();
+    store.setRow(deadlift.id, 0, 'kg', '60');
+    store.setRow(deadlift.id, 0, 'reps', '4');
+    store.save();
+    const id = store.sessions[0]!.id;
+
+    store.startEdit(id);
+    store.addExercise(facePull);
+    const order = store.exercises().map((e) => e.id).reverse();
+    store.reorderExercises(order);
+    store.setRow('x-face-pull', 0, 'reps', '12');
+    store.save();
+
+    const saved = store.sessions[0]!;
+    expect(saved.exercises.map((e) => e.id)).toEqual(order);
+    expect(saved.exercises.at(-1)!.id).toBe(order.at(-1));
   });
 });

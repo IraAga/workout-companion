@@ -2,7 +2,8 @@
 
 The first implementation on the portable contract: **History → Start → workout →
 save**, plus Progress, Train, Eat, edit, delete/undo, drafts, last-time numbers,
-rest timer, the weekly count and backup import/export.
+rest timer, the weekly count, backup import/export, adding exercises (catalog or
+custom) and drag-to-reorder cards.
 
 Vite + TypeScript, no UI framework. The core is pure functions; the UI is a thin
 DOM layer. The catalog is imported straight from `../contract/data/catalog.json`,
@@ -16,7 +17,7 @@ Not deployed. `docs/` is still the live app.
 cd next
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 27 core tests
+npm test           # 30 core tests
 npm run build      # type-check + production build into next/dist
 ```
 
@@ -37,12 +38,13 @@ Requires Node 22.12+ (Vite 8).
 | R9 progress series, stats, chart | ✅ read-only view |
 | R11 rest timer (+30 s, skip) | ✅ |
 | R13 ordering, dates, number format | ✅ |
+| R12 add exercises + reorder | ✅ add/reorder; rename/remove later |
 | R16 start / discard / close | ✅ |
 | Bottom nav: Log / Train / Eat | ✅ Week omitted for now |
 
 **Not in this slice:** the Week panel, the prose content panels (Train links to
 those in the classic app), manual progress entries, GitHub sync, PWA/offline
-shell, and adding or editing exercise definitions. The bottom nav has three
+shell, and renaming/removing exercise definitions. The bottom nav has three
 destinations; Week is deliberately left out of this version.
 
 History, Progress and the workout state follow `pocket-log.svg` and
@@ -110,7 +112,7 @@ next/
     store.ts                 state, drafts, edit/delete/undo, backup
     backup.ts                parse/restore/collect the shipped backup format
     rules.test.ts            16 tests
-    store.test.ts            7 tests
+    store.test.ts            10 tests
     backup.test.ts           4 tests
   src/ui/
     app.ts                   DOM render + event delegation
@@ -139,13 +141,16 @@ production build, with no horizontal overflow:
 - backup export then import into a cleared origin restores every session
 - same-origin check: classic at `/` and new at `/next/` both see the same sessions
 - nav: Log/Train/Eat active states, Train renders the catalog, Eat links to classic
+- circular add button → searchable sheet → catalog and custom exercises persist
+- touch drag on a grip reorders cards; order persists in `ol-plan`
+- add and reorder while editing a saved session, then save the new order
 
 No console errors.
 
 ## Next steps
 
 1. Week screen (the one nav item left out).
-2. Add/rename exercise definitions (R12) and "reset to suggested".
+2. Rename/remove exercises, delete a card, and "reset to suggested" (rest of R12).
 3. Sync UI (R15) after the two apps have coexisted for a while.
 4. Full content panels in Train/Eat from `contract/data/content/`.
 5. PWA shell for `/next/`.

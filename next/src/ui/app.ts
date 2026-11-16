@@ -10,6 +10,8 @@ type View = 'history' | 'progress' | 'train' | 'eat' | 'workout';
 
 const ICON_EDIT =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+const GRIP_ICON =
+  '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>';
 const ICON_DELETE =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>';
 
@@ -26,6 +28,7 @@ interface RestState {
 export function mountApp(root: HTMLElement, store: Store): void {
   let view: View = 'history';
   let trainProgramId = store.program().id;
+  let addOpen = false;
   let toast: Toast | null = null;
   let toastTimer: number | undefined;
   const rest: RestState = { end: 0 };
@@ -115,7 +118,9 @@ export function mountApp(root: HTMLElement, store: Store): void {
         segmented +
         '<main>' + body + '</main>' +
       '</div>' +
-      (view === 'workout' ? '' : tabbar())
+      (view === 'workout'
+        ? (addOpen ? addSheet() : '')
+        : tabbar())
     );
   }
 
@@ -367,6 +372,73 @@ export function mountApp(root: HTMLElement, store: Store): void {
     );
   }
 
+  function customId(): string {
+    return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+  }
+
+  function addSheet(): string {
+    const existing = new Set(store.exercises().map((e) => e.id));
+    const choices = Object.values(catalog.exerciseIndex)
+      .filter((e) => !existing.has(e.id))
+      .sort((a, b) => a.title.localeCompare(b.title));
+    const list = choices.map((e) =>
+      '<li data-title="' + esc(e.title.toLowerCase()) + '">' +
+        '<button type="button" data-action="add-pick" data-id="' + esc(e.id) + '">' +
+          '<b>' + esc(e.title) + '</b>' +
+          '<span>' + esc((e.target || e.sets + ' sets') + ' · ' + (e.unit === 'sec' ? 'sec' : 'reps')) + '</span>' +
+        '</button>' +
+      '</li>',
+    ).join('');
+
+    return (
+      '<div class="sheet-backdrop" data-backdrop="add">' +
+        '<section class="sheet" role="dialog" aria-modal="true" aria-labelledby="add-title">' +
+          '<div class="sheet-head">' +
+            '<h2 id="add-title">Add exercise</h2>' +
+            '<button type="button" class="iconbtn" data-action="add-close" aria-label="Close">×</button>' +
+          '</div>' +
+          '<label class="add-search"><span class="sr-only">Search exercises</span>' +
+            '<input type="search" data-input="add-search" placeholder="Search exercises" autocomplete="off" autofocus>' +
+          '</label>' +
+          '<ul class="add-list" id="add-list">' + list + '</ul>' +
+          '<div class="add-custom">' +
+            '<p class="add-custom-title">New exercise</p>' +
+            '<div class="add-custom-row">' +
+              '<input data-input="custom-name" placeholder="Exercise name" aria-label="New exercise name">' +
+              '<select data-input="custom-unit" aria-label="Log as">' +
+                '<option value="reps">Reps</option><option value="sec">Seconds</option>' +
+              '</select>' +
+              '<button type="button" class="btn primary" data-action="add-custom">Add</button>' +
+            '</div>' +
+            '<p class="tools-msg" id="add-msg" role="status" aria-live="polite"></p>' +
+          '</div>' +
+        '</section>' +
+      '</div>'
+    );
+  }
+
+  function focusExercise(id: string): void {
+    requestAnimationFrame(() => {
+      const card = document.querySelector<HTMLElement>('.card[data-ex="' + CSS.escape(id) + '"]');
+      card?.scrollIntoView({ block: 'center' });
+      card?.querySelector<HTMLInputElement>('input.num')?.focus({ preventScroll: true });
+    });
+  }
+
+  function addExercise(def: ExerciseDef): void {
+    store.addExercise(def);
+    addOpen = false;
+    render();
+    focusExercise(def.id);
+  }
+
+  function setAddMessage(text: string, warn = false): void {
+    const el = document.getElementById('add-msg');
+    if (!el) return;
+    el.textContent = text;
+    el.className = 'tools-msg' + (warn ? ' warn' : '');
+  }
+
   function workoutView(): string {
     const program = store.program();
     const session = store.session();
@@ -387,6 +459,7 @@ export function mountApp(root: HTMLElement, store: Store): void {
           ? '<div class="banner"><span>Editing saved session.</span><button class="btn ghost" data-action="cancel-edit">Cancel edit</button></div>'
           : '') +
         '<div class="cards">' + exercises.map(card).join('') + '</div>' +
+        '<div class="add-row"><button type="button" class="add-circle" data-action="add-open" aria-label="Add exercise" title="Add exercise">+</button></div>' +
         '<label class="note-box">Session notes' +
           '<textarea data-input="note" rows="2" placeholder="How it felt, any pain, what to change next time">' + esc(draft.note) + '</textarea>' +
         '</label>' +
@@ -416,10 +489,14 @@ export function mountApp(root: HTMLElement, store: Store): void {
     const fill = rows.filter(filled).length;
     const sum = fill + '/' + rows.length + ' sets' + (last?.sets[0] ? ' · ' + setText(last.sets[last.sets.length - 1]!, ex.unit) : '');
 
+    const grip = '<button type="button" class="grip" data-grip data-ex="' + esc(ex.id) +
+      '" aria-label="Reorder ' + esc(ex.title) + '" title="Drag to reorder">' + GRIP_ICON + '</button>';
+
     if (collapsed) {
       return (
-        '<article class="card collapsed">' +
+        '<article class="card collapsed" data-ex="' + esc(ex.id) + '">' +
           '<header class="card-head">' +
+            grip +
             '<button class="card-toggle" data-action="collapse" data-ex="' + esc(ex.id) + '" aria-expanded="false">' +
               '<span class="chev"></span>' + esc(ex.title) +
             '</button>' +
@@ -434,8 +511,9 @@ export function mountApp(root: HTMLElement, store: Store): void {
     const body = rows.map((r, i) => setRow(ex, r, i, last)).join('');
 
     return (
-      '<article class="card">' +
+      '<article class="card" data-ex="' + esc(ex.id) + '">' +
         '<header class="card-head">' +
+          grip +
           '<button class="card-toggle" data-action="collapse" data-ex="' + esc(ex.id) + '" aria-expanded="true">' +
             '<span class="chev"></span>' + esc(ex.title) +
           '</button>' +
@@ -613,13 +691,53 @@ export function mountApp(root: HTMLElement, store: Store): void {
   /* ---------------------------------------------------------- events */
 
   root.addEventListener('click', (e) => {
-    const el = (e.target as HTMLElement).closest<HTMLElement>('[data-action]');
+    const target = e.target as HTMLElement;
+    if (target.dataset.backdrop === 'add') {
+      addOpen = false;
+      render();
+      return;
+    }
+    const el = target.closest<HTMLElement>('[data-action]');
     if (!el) return;
     const action = el.dataset.action;
     const exId = el.dataset.ex;
     const index = Number(el.dataset.i);
 
     switch (action) {
+      case 'add-open':
+        addOpen = true;
+        render();
+        requestAnimationFrame(() => {
+          document.querySelector<HTMLInputElement>('[data-input="add-search"]')?.focus();
+        });
+        break;
+      case 'add-close':
+        addOpen = false;
+        render();
+        break;
+      case 'add-pick': {
+        const id = el.dataset.id;
+        const meta = id ? catalog.exerciseIndex[id] : undefined;
+        if (!meta) break;
+        addExercise({
+          id: meta.id, title: meta.title, hint: meta.hint, sets: meta.sets,
+          target: meta.target, unit: meta.unit, suggested: meta.suggested, bw: meta.bw,
+        });
+        break;
+      }
+      case 'add-custom': {
+        const name = (document.querySelector<HTMLInputElement>('[data-input="custom-name"]')?.value ?? '').trim();
+        const unit = (document.querySelector<HTMLSelectElement>('[data-input="custom-unit"]')?.value === 'sec') ? 'sec' : 'reps';
+        if (!name) {
+          setAddMessage('Give the exercise a name.', true);
+          break;
+        }
+        addExercise({
+          id: customId(), title: name, hint: '', sets: 3, target: '',
+          unit, suggested: '', bw: false, custom: true,
+        });
+        break;
+      }
       case 'nav': {
         const nav = el.dataset.nav;
         if (!nav) break;
@@ -718,8 +836,77 @@ export function mountApp(root: HTMLElement, store: Store): void {
     }
   });
 
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && addOpen) {
+      addOpen = false;
+      render();
+      return;
+    }
+    const grip = (e.target as HTMLElement).closest<HTMLElement>('[data-grip]');
+    if (!grip) return;
+    if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+    const id = grip.dataset.ex;
+    if (!id) return;
+    e.preventDefault();
+    const list = store.exercises();
+    const from = list.findIndex((x) => x.id === id);
+    const to = from + (e.key === 'ArrowUp' ? -1 : 1);
+    if (from < 0 || to < 0 || to >= list.length) return;
+    store.moveExercise(from, to);
+    requestAnimationFrame(() => {
+      document.querySelector<HTMLElement>('[data-grip][data-ex="' + CSS.escape(id) + '"]')?.focus();
+    });
+  });
+
+  root.addEventListener('pointerdown', (e) => {
+    const grip = (e.target as HTMLElement).closest<HTMLElement>('[data-grip]');
+    if (!grip) return;
+    const card = grip.closest<HTMLElement>('.card');
+    if (!card || !card.dataset.ex) return;
+    e.preventDefault();
+
+    const cards = (): HTMLElement[] => Array.from(document.querySelectorAll<HTMLElement>('.cards .card'));
+    const start = cards().map((c) => c.dataset.ex ?? '').join('|');
+    card.classList.add('dragging');
+    document.body.classList.add('is-dragging');
+
+    const move = (ev: PointerEvent): void => {
+      ev.preventDefault();
+      const under = document.elementFromPoint(ev.clientX, ev.clientY);
+      const over = under instanceof Element ? under.closest<HTMLElement>('.card') : null;
+      if (over && over !== card && over.parentElement) {
+        const rect = over.getBoundingClientRect();
+        const after = ev.clientY > rect.top + rect.height / 2;
+        over.parentElement.insertBefore(card, after ? over.nextSibling : over);
+      }
+      if (ev.clientY < 90) window.scrollBy(0, -10);
+      else if (ev.clientY > window.innerHeight - 90) window.scrollBy(0, 10);
+    };
+
+    const done = (): void => {
+      document.removeEventListener('pointermove', move);
+      document.removeEventListener('pointerup', done);
+      document.removeEventListener('pointercancel', done);
+      card.classList.remove('dragging');
+      document.body.classList.remove('is-dragging');
+      const ids = cards().map((c) => c.dataset.ex ?? '').filter(Boolean);
+      if (ids.join('|') !== start) store.reorderExercises(ids);
+    };
+
+    document.addEventListener('pointermove', move, { passive: false });
+    document.addEventListener('pointerup', done, { once: true });
+    document.addEventListener('pointercancel', done, { once: true });
+  });
+
   root.addEventListener('input', (e) => {
     const t = e.target as HTMLInputElement | HTMLTextAreaElement;
+    if (t.matches('[data-input="add-search"]')) {
+      const q = t.value.trim().toLowerCase();
+      document.querySelectorAll<HTMLElement>('#add-list [data-title]').forEach((li) => {
+        li.hidden = !!q && !(li.dataset.title ?? '').includes(q);
+      });
+      return;
+    }
     if (t.matches('[data-row]')) {
       const exId = t.dataset.ex;
       if (!exId) return;
