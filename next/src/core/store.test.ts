@@ -222,3 +222,34 @@ describe('store exercises', () => {
     expect(saved.exercises.at(-1)!.id).toBe(order.at(-1));
   });
 });
+
+describe('store exercise editing', () => {
+  it('changes title, unit and set count, then restores rows', () => {
+    const { store } = setup();
+    const original = store.exercises()[0]!;
+
+    store.updateExercise({ ...original, title: 'Bike', unit: 'min', target: '20 min', sets: 4 });
+    const bike = store.exercises()[0]!;
+    expect(bike.title).toBe('Bike');
+    expect(bike.unit).toBe('min');
+    expect(bike.sets).toBe(1);
+    expect(store.rows(original.id)).toHaveLength(1);
+
+    store.updateExercise({ ...bike, title: original.title, unit: 'reps', sets: 2 });
+    expect(store.exercises()[0]!.sets).toBe(2);
+    expect(store.rows(original.id)).toHaveLength(2);
+  });
+
+  it('removes an exercise and its draft rows', () => {
+    const { store } = setup();
+    const id = store.exercises()[0]!.id;
+    store.setRow(id, 0, 'kg', '60');
+    store.removeExercise(id);
+    expect(store.exercises().some((e) => e.id === id)).toBe(false);
+    expect(store.rows(id)).toHaveLength(0);
+
+    store.setRow(store.exercises()[0]!.id, 0, 'kg', '50');
+    store.save();
+    expect(store.sessions[0]!.exercises.some((e) => e.id === id)).toBe(false);
+  });
+});

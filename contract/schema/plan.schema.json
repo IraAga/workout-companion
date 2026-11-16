@@ -22,9 +22,9 @@
           "description": "Display name. Renaming while keeping the id keeps the history series but changes the progress label."
         },
         "hint": { "type": "string", "description": "Short cue under the title." },
-        "sets": { "type": "integer", "minimum": 1, "description": "Suggested number of sets (creates this many draft rows)." },
+        "sets": { "type": "integer", "minimum": 1, "description": "Suggested number of sets (creates this many draft rows). Always 1 for unit 'min'." },
         "target": { "type": "string", "description": "Free-text prescription, e.g. '4x4' or '3x8/leg'." },
-        "unit": { "type": "string", "enum": ["reps", "sec"] },
+        "unit": { "type": "string", "enum": ["reps", "sec", "min"], "description": "'min' logs a single duration instead of sets." },
         "suggested": { "type": "string", "description": "Starting load hint, e.g. '50-60 kg total'." },
         "bw": { "type": "boolean", "description": "Bodyweight: log added weight only." },
         "custom": {

@@ -60,10 +60,10 @@ JSON Schemas for state live in `schema/`.
 `lift-a`, `lift-b`, `lift-c`, `full`. Ids are only unique *within* a program.
 
 **Exercise definition** `{ id, title, hint, sets, target, unit, suggested, bw }`
-- `sets` is a number used to seed draft rows, not a hard cap (max 12 rows).
+- `sets` is a number used to seed draft rows, not a hard cap (max 12 rows); it is always 1 for `min`.
 - `target` is free text (`4x4`, `3x8/leg`). Editing an exercise re-derives
   `sets` from a leading `Nx` in `target`.
-- `unit` is `reps` or `sec`; `sec` means the "reps" column holds seconds.
+- `unit` is `reps`, `sec` or `min`; `sec` means the "reps" column holds seconds, `min` means the exercise logs one duration in minutes instead of sets. `min` is a new-app extension (cardio); the classic UI would read it as reps, so treat it as forward-only data.
 - `bw: true` means bodyweight — only added weight is logged.
 
 **LogSession** — see `schema/log-session.schema.json`. Key facts:
@@ -173,7 +173,8 @@ Monday-to-Sunday in local time, inclusive. Count distinct `session` ids among
   lets a renamed-and-reidentified exercise keep one label.
 - Value per session: if **every** session row for that series has at least one
   `kg > 0`, plot the max `kg` (metric "Top weight"); otherwise plot the max
-  reps where `reps || 0` ("Best reps", or "Best hold" for `sec`).
+  reps where `reps || 0` ("Best reps", "Best hold" for `sec`, "Longest" for
+  `min`).
 - Panel shows latest, best ('max' of all values, not latest), change since
   first, a line chart, and a reverse-chronological table.
 - Series list order: row count desc, then name ascending.

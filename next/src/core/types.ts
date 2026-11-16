@@ -1,4 +1,4 @@
-export type Unit = 'reps' | 'sec';
+export type Unit = 'reps' | 'sec' | 'min';
 
 export interface ExerciseDef {
   id: string;

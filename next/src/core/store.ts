@@ -3,7 +3,7 @@ import { collectBackup, restoreBackup, type Backup } from './backup';
 import { isoDate } from './dates';
 import {
   buildSession, counts, draftFor, draftFromSession, exercisesFor, lastFor,
-  normalizePrefs, rowsFor, sessionKey, weekStatus,
+  normalizePrefs, resizeRows, rowsFor, sessionKey, weekStatus,
 } from './rules';
 import { browserStore, KEYS, readJSON, writeJSON, type KeyValueStore } from './storage';
 import type {
@@ -50,6 +50,8 @@ export interface Store {
   toggleCollapse(exId: string): void;
   setProgress(key: string, id: string): void;
   addExercise(def: ExerciseDef): void;
+  updateExercise(def: ExerciseDef): void;
+  removeExercise(id: string): void;
   reorderExercises(ids: string[]): void;
   moveExercise(from: number, to: number): void;
 
@@ -246,14 +248,53 @@ export function createStore(options: StoreOptions = {}): Store {
     },
 
     addExercise(def) {
+      const clean = def.unit === 'min' ? { ...def, sets: 1, suggested: '', bw: false } : def;
       const current = exercises();
-      if (current.some((e) => e.id === def.id)) return;
+      if (current.some((e) => e.id === clean.id)) return;
       if (editing && editPlan) {
-        editPlan = [...editPlan, def];
+        editPlan = [...editPlan, clean];
       } else {
-        plan[key()] = [...current, def];
+        plan[key()] = [...current, clean];
         writeJSON(kv, KEYS.plan, plan);
       }
+      emit();
+    },
+
+    updateExercise(def) {
+      const list = exercises().slice();
+      const index = list.findIndex((e) => e.id === def.id);
+      if (index < 0) return;
+      const clean = def.unit === 'min' ? { ...def, sets: 1, suggested: '', bw: false } : def;
+      list[index] = clean;
+
+      if (editing && editPlan) {
+        editPlan = list;
+      } else {
+        plan[key()] = list;
+        writeJSON(kv, KEYS.plan, plan);
+      }
+
+      const d = draft();
+      if (clean.unit === 'min') {
+        const first = d.sets[clean.id]?.[0];
+        d.sets[clean.id] = [{ kg: '', reps: first?.reps ?? '', done: false }];
+      } else {
+        resizeRows(d, clean.id, Math.max(1, clean.sets || 1));
+      }
+      persistDrafts();
+      emit();
+    },
+
+    removeExercise(id) {
+      const list = exercises().filter((e) => e.id !== id);
+      if (editing && editPlan) {
+        editPlan = list;
+      } else {
+        plan[key()] = list;
+        writeJSON(kv, KEYS.plan, plan);
+      }
+      delete draft().sets[id];
+      persistDrafts();
       emit();
     },
 

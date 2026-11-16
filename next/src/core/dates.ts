@@ -53,6 +53,7 @@ export function weekBounds(now: Date = new Date()): { start: string; end: string
 export function fmtSet(s: { kg: number | null; reps: number | null }, unit = 'reps'): string {
   const kg = s.kg != null ? fmtNum(s.kg) : null;
   const reps = s.reps != null ? fmtNum(s.reps) : null;
+  if (unit === 'min') return reps !== null ? reps + ' min' : kg !== null ? kg + ' kg' : '';
   if (kg !== null && reps !== null) return kg + ' kg × ' + reps + (unit === 'sec' ? ' s' : '');
   if (kg !== null) return kg + ' kg';
   if (reps !== null) return reps + (unit === 'sec' ? ' s' : ' reps');

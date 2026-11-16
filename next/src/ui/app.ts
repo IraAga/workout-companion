@@ -3,7 +3,7 @@ import { backupName, parseBackup } from '../core/backup';
 import { byDateDesc, fmtDate, fmtNum, isoDate } from '../core/dates';
 import { buildSeries, filled, setText, type Series } from '../core/rules';
 import type { Store } from '../core/store';
-import type { BuildResult, DraftSet, ExerciseDef } from '../core/types';
+import type { BuildResult, DraftSet, ExerciseDef, Unit } from '../core/types';
 import { dateLabel, esc, plural } from './format';
 
 type View = 'history' | 'progress' | 'train' | 'eat' | 'workout';
@@ -12,6 +12,11 @@ const ICON_EDIT =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
 const GRIP_ICON =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>';
+const CARDIO_PRESETS: ExerciseDef[] = [
+  { id: 'cardio-bike', title: 'Bike', hint: 'duration · minutes', sets: 1, target: '', unit: 'min', suggested: '', bw: false, custom: true },
+  { id: 'cardio-rower', title: 'Rowing machine', hint: 'duration · minutes', sets: 1, target: '', unit: 'min', suggested: '', bw: false, custom: true },
+  { id: 'cardio-treadmill', title: 'Treadmill', hint: 'duration · minutes', sets: 1, target: '', unit: 'min', suggested: '', bw: false, custom: true },
+];
 const ICON_DELETE =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>';
 
@@ -29,6 +34,7 @@ export function mountApp(root: HTMLElement, store: Store): void {
   let view: View = 'history';
   let trainProgramId = store.program().id;
   let addOpen = false;
+  let editEx: string | null = null;
   let toast: Toast | null = null;
   let toastTimer: number | undefined;
   const rest: RestState = { end: 0 };
@@ -119,7 +125,7 @@ export function mountApp(root: HTMLElement, store: Store): void {
         '<main>' + body + '</main>' +
       '</div>' +
       (view === 'workout'
-        ? (addOpen ? addSheet() : '')
+        ? (editEx ? editSheet() : addOpen ? addSheet() : '')
         : tabbar())
     );
   }
@@ -401,16 +407,75 @@ export function mountApp(root: HTMLElement, store: Store): void {
             '<input type="search" data-input="add-search" placeholder="Search exercises" autocomplete="off" autofocus>' +
           '</label>' +
           '<ul class="add-list" id="add-list">' + list + '</ul>' +
+          '<div class="preset-block">' +
+            '<p class="add-custom-title">Cardio · minutes</p>' +
+            '<div class="preset-row">' +
+              CARDIO_PRESETS.filter((p) => !existing.has(p.id)).map((p) =>
+                '<button type="button" class="preset" data-action="add-preset" data-id="' + esc(p.id) + '">' + esc(p.title) + '</button>',
+              ).join('') +
+            '</div>' +
+          '</div>' +
           '<div class="add-custom">' +
             '<p class="add-custom-title">New exercise</p>' +
             '<div class="add-custom-row">' +
               '<input data-input="custom-name" placeholder="Exercise name" aria-label="New exercise name">' +
               '<select data-input="custom-unit" aria-label="Log as">' +
-                '<option value="reps">Reps</option><option value="sec">Seconds</option>' +
+                '<option value="reps">Reps</option><option value="sec">Seconds</option><option value="min">Minutes</option>' +
               '</select>' +
               '<button type="button" class="btn primary" data-action="add-custom">Add</button>' +
             '</div>' +
             '<p class="tools-msg" id="add-msg" role="status" aria-live="polite"></p>' +
+          '</div>' +
+        '</section>' +
+      '</div>'
+    );
+  }
+
+  function editSheet(): string {
+    const ex = store.exercises().find((e) => e.id === editEx);
+    if (!ex) return '';
+
+    const unit = ex.unit;
+    const options = [
+      ['reps', 'Reps'],
+      ['sec', 'Seconds'],
+      ['min', 'Minutes'],
+    ].map(([value, label]) =>
+      '<option value="' + value + '"' + (unit === value ? ' selected' : '') + '>' + label + '</option>',
+    ).join('');
+
+    return (
+      '<div class="sheet-backdrop" data-backdrop="edit">' +
+        '<section class="sheet" role="dialog" aria-modal="true" aria-labelledby="edit-title">' +
+          '<div class="sheet-head">' +
+            '<h2 id="edit-title">Edit exercise</h2>' +
+            '<button type="button" class="iconbtn" data-action="edit-close" aria-label="Close">×</button>' +
+          '</div>' +
+          '<div class="edit-form">' +
+            '<label class="edit-field">Exercise' +
+              '<input data-input="ex-title" value="' + esc(ex.title) + '" aria-label="Exercise name">' +
+            '</label>' +
+            '<div class="edit-two">' +
+              '<label class="edit-field">Target' +
+                '<input data-input="ex-target" value="' + esc(ex.target) + '" placeholder="4x4 or 20 min" aria-label="Target">' +
+              '</label>' +
+              '<label class="edit-field">Log as' +
+                '<select data-input="ex-unit" aria-label="Log as">' + options + '</select>' +
+              '</label>' +
+            '</div>' +
+            '<div class="edit-two">' +
+              '<label class="edit-field">Sets' +
+                '<input type="number" min="1" max="12" data-input="ex-sets" value="' + (unit === 'min' ? 1 : ex.sets) + '"' +
+                  (unit === 'min' ? ' disabled' : '') + ' aria-label="Sets">' +
+              '</label>' +
+              '<label class="check-field"><input type="checkbox" data-input="ex-bw"' + (ex.bw ? ' checked' : '') + '> Bodyweight (log added kg only)</label>' +
+            '</div>' +
+            '<p class="edit-hint">Minutes logs one duration instead of sets.</p>' +
+            '<div class="edit-actions">' +
+              '<button type="button" class="btn primary" data-action="edit-save">Save changes</button>' +
+              '<button type="button" class="btn danger" data-action="edit-remove">Remove exercise</button>' +
+            '</div>' +
+            '<p class="tools-msg" id="edit-msg" role="status" aria-live="polite"></p>' +
           '</div>' +
         '</section>' +
       '</div>'
@@ -485,23 +550,49 @@ export function mountApp(root: HTMLElement, store: Store): void {
     const collapsed = store.isCollapsed(ex.id);
     const rows = store.rows(ex.id);
     const last = store.lastTime(ex.id);
+    const isMin = ex.unit === 'min';
     const lastText = last ? last.sets.map((s) => setText(s, ex.unit)).filter(Boolean).join(' · ') : '';
     const fill = rows.filter(filled).length;
-    const sum = fill + '/' + rows.length + ' sets' + (last?.sets[0] ? ' · ' + setText(last.sets[last.sets.length - 1]!, ex.unit) : '');
+    const lastMin = last?.sets[0]?.reps ?? null;
+    const sum = isMin
+      ? (rows[0]?.reps ? rows[0].reps + ' min' : '—') + (lastMin != null ? ' · last ' + fmtNum(lastMin) + ' min' : '')
+      : fill + '/' + rows.length + ' sets' + (last?.sets[0] ? ' · ' + setText(last.sets[last.sets.length - 1]!, ex.unit) : '');
 
     const grip = '<button type="button" class="grip" data-grip data-ex="' + esc(ex.id) +
       '" aria-label="Reorder ' + esc(ex.title) + '" title="Drag to reorder">' + GRIP_ICON + '</button>';
+    const toggle = '<button class="card-toggle" data-action="collapse" data-ex="' + esc(ex.id) +
+      '" aria-expanded="' + (collapsed ? 'false' : 'true') + '">' +
+        '<span class="chev"></span>' + esc(ex.title) +
+      '</button>';
+    const edit = '<button type="button" class="iconbtn small" data-action="edit-ex" data-ex="' + esc(ex.id) +
+      '" aria-label="Edit ' + esc(ex.title) + '" title="Edit exercise">' + ICON_EDIT + '</button>';
+    const header = '<header class="card-head">' + grip + toggle + edit + '</header>';
+    const hint = ex.hint ? '<p class="hint">' + esc(ex.hint) + '</p>' : '';
+    const meta = '<p class="meta">Target ' + esc(ex.target || '—') + (ex.suggested ? ' · Start ' + esc(ex.suggested) : '') + '</p>';
+    const lastLine = last ? '<p class="meta last">Last time (' + esc(fmtDate(last.date)) + '): ' + esc(lastText) + '</p>' : '';
 
     if (collapsed) {
       return (
         '<article class="card collapsed" data-ex="' + esc(ex.id) + '">' +
-          '<header class="card-head">' +
-            grip +
-            '<button class="card-toggle" data-action="collapse" data-ex="' + esc(ex.id) + '" aria-expanded="false">' +
-              '<span class="chev"></span>' + esc(ex.title) +
-            '</button>' +
-          '</header>' +
+          header +
           '<p class="card-sum">' + esc(sum) + '</p>' +
+        '</article>'
+      );
+    }
+
+    if (isMin) {
+      const minutes = rows[0]?.reps ?? '';
+      const placeholder = lastMin != null ? fmtNum(lastMin) : '';
+      return (
+        '<article class="card" data-ex="' + esc(ex.id) + '">' +
+          header + hint + meta + lastLine +
+          '<div class="duration">' +
+            '<label class="duration-field">Minutes' +
+              '<input class="num" inputmode="decimal" autocomplete="off" data-row data-ex="' + esc(ex.id) + '" data-i="0" data-f="reps"' +
+                ' value="' + esc(minutes) + '" placeholder="' + esc(placeholder) + '" aria-label="' + esc(ex.title) + ' minutes">' +
+            '</label>' +
+            (last ? '<button type="button" class="btn ghost" data-action="copy-last" data-ex="' + esc(ex.id) + '">Copy last time</button>' : '') +
+          '</div>' +
         '</article>'
       );
     }
@@ -512,15 +603,7 @@ export function mountApp(root: HTMLElement, store: Store): void {
 
     return (
       '<article class="card" data-ex="' + esc(ex.id) + '">' +
-        '<header class="card-head">' +
-          grip +
-          '<button class="card-toggle" data-action="collapse" data-ex="' + esc(ex.id) + '" aria-expanded="true">' +
-            '<span class="chev"></span>' + esc(ex.title) +
-          '</button>' +
-        '</header>' +
-        (ex.hint ? '<p class="hint">' + esc(ex.hint) + '</p>' : '') +
-        '<p class="meta">Target ' + esc(ex.target || '—') + (ex.suggested ? ' · Start ' + esc(ex.suggested) : '') + '</p>' +
-        (last ? '<p class="meta last">Last time (' + esc(fmtDate(last.date)) + '): ' + esc(lastText) + '</p>' : '') +
+        header + hint + meta + lastLine +
         '<div class="sets">' +
           '<div class="setrow head"><span></span><span>' + wl + '</span><span>' + rl + '</span><span></span></div>' +
           body +
@@ -634,6 +717,47 @@ export function mountApp(root: HTMLElement, store: Store): void {
     window.setTimeout(() => location.reload(), 250);
   }
 
+  function setEditMessage(text: string, warn = false): void {
+    const el = document.getElementById('edit-msg');
+    if (!el) return;
+    el.textContent = text;
+    el.className = 'tools-msg' + (warn ? ' warn' : '');
+  }
+
+  function saveEdit(): void {
+    const id = editEx;
+    if (!id) return;
+    const ex = store.exercises().find((e) => e.id === id);
+    if (!ex) return;
+
+    const title = (document.querySelector<HTMLInputElement>('[data-input="ex-title"]')?.value ?? '').trim();
+    if (!title) {
+      setEditMessage('Give the exercise a name.', true);
+      return;
+    }
+    const unitValue = document.querySelector<HTMLSelectElement>('[data-input="ex-unit"]')?.value;
+    const unit: Unit = unitValue === 'sec' ? 'sec' : unitValue === 'min' ? 'min' : 'reps';
+    const rawSets = Number.parseInt(document.querySelector<HTMLInputElement>('[data-input="ex-sets"]')?.value ?? '', 10);
+    const sets = unit === 'min' ? 1 : Math.max(1, Math.min(12, Number.isFinite(rawSets) ? rawSets : ex.sets || 1));
+    const target = (document.querySelector<HTMLInputElement>('[data-input="ex-target"]')?.value ?? '').trim();
+    const bw = !!document.querySelector<HTMLInputElement>('[data-input="ex-bw"]')?.checked;
+
+    store.updateExercise({ ...ex, title, target, unit, sets, bw });
+    editEx = null;
+    render();
+  }
+
+  function removeEdit(): void {
+    const id = editEx;
+    if (!id) return;
+    const ex = store.exercises().find((e) => e.id === id);
+    if (!ex) return;
+    if (!window.confirm('Remove "' + ex.title + '" from this session?')) return;
+    store.removeExercise(id);
+    editEx = null;
+    render();
+  }
+
   function setMessage(text: string, warn = false): void {
     const el = document.getElementById('msg');
     if (!el) return;
@@ -692,8 +816,9 @@ export function mountApp(root: HTMLElement, store: Store): void {
 
   root.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    if (target.dataset.backdrop === 'add') {
+    if (target.dataset.backdrop === 'add' || target.dataset.backdrop === 'edit') {
       addOpen = false;
+      editEx = null;
       render();
       return;
     }
@@ -714,6 +839,34 @@ export function mountApp(root: HTMLElement, store: Store): void {
       case 'add-close':
         addOpen = false;
         render();
+        break;
+      case 'add-preset': {
+        const preset = CARDIO_PRESETS.find((p) => p.id === el.dataset.id);
+        if (preset) addExercise({ ...preset });
+        break;
+      }
+      case 'edit-ex': {
+        const id = el.dataset.ex;
+        if (!id) break;
+        editEx = id;
+        addOpen = false;
+        render();
+        requestAnimationFrame(() => {
+          const input = document.querySelector<HTMLInputElement>('[data-input="ex-title"]');
+          input?.focus();
+          input?.select();
+        });
+        break;
+      }
+      case 'edit-close':
+        editEx = null;
+        render();
+        break;
+      case 'edit-save':
+        saveEdit();
+        break;
+      case 'edit-remove':
+        removeEdit();
         break;
       case 'add-pick': {
         const id = el.dataset.id;
@@ -837,8 +990,9 @@ export function mountApp(root: HTMLElement, store: Store): void {
   });
 
   root.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && addOpen) {
+    if (e.key === 'Escape' && (addOpen || editEx)) {
       addOpen = false;
+      editEx = null;
       render();
       return;
     }
@@ -933,6 +1087,13 @@ export function mountApp(root: HTMLElement, store: Store): void {
     else if (t.matches('[data-select="train-program"]')) {
       trainProgramId = t.value;
       render();
+    }
+    else if (t.matches('[data-input="ex-unit"]')) {
+      const sets = document.querySelector<HTMLInputElement>('[data-input="ex-sets"]');
+      if (sets) {
+        sets.disabled = t.value === 'min';
+        if (t.value === 'min') sets.value = '1';
+      }
     }
     else if (t.matches('[data-input="backup-file"]')) {
       const file = (t as HTMLInputElement).files?.[0];

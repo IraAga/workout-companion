@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { catalog } from './catalog';
 import { toNum, weekBounds } from './dates';
-import { buildSeries, buildSession, counts, lastFor, normalizePrefs, resizeRows, weekStatus } from './rules';
+import { buildSeries, buildSession, counts, lastFor, normalizePrefs, resizeRows, setText, weekStatus } from './rules';
 import type { Draft, LogSession } from './types';
 
 const gym = catalog.programs.find((p) => p.id === 'gym')!;
@@ -199,5 +199,34 @@ describe('buildSeries', () => {
     const series = buildSeries([mk('plank', '2026-11-01', 'Plank', [{ kg: null, reps: 45 }], 'sec')]);
     expect(series[0]!.metric).toBe('Best hold');
     expect(series[0]!.mu).toBe('sec');
+  });
+});
+
+describe('minutes unit', () => {
+  const bike: import('./types').ExerciseDef = {
+    id: 'cardio-bike', title: 'Bike', hint: '', sets: 1, target: '',
+    unit: 'min', suggested: '', bw: false, custom: true,
+  };
+
+  it('saves a single duration set', () => {
+    const draft = emptyDraft();
+    draft.sets['cardio-bike'] = [{ kg: '', reps: '20' }];
+    const res = buildSession({ program: gym, session: liftA, exercises: [bike], draft, now: 5 });
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.session.exercises[0]!.unit).toBe('min');
+    expect(res.session.exercises[0]!.sets).toEqual([{ kg: null, reps: 20 }]);
+    expect(setText(res.session.exercises[0]!.sets[0]!, 'min')).toBe('20 min');
+  });
+
+  it('reports the longest duration in progress', () => {
+    const mk = (id: string, date: string, mins: number): LogSession => ({
+      id, rev: 1, ts: 1, date, program: 'gym', session: 'lift-a',
+      exercises: [{ id: 'cardio-bike', name: 'Bike', unit: 'min', sets: [{ kg: null, reps: mins }] }],
+    });
+    const series = buildSeries([mk('a', '2026-11-01', 20), mk('b', '2026-11-08', 25)]);
+    expect(series[0]!.metric).toBe('Longest');
+    expect(series[0]!.mu).toBe('min');
+    expect(series[0]!.pts.map((p) => p.v)).toEqual([20, 25]);
   });
 });

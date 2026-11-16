@@ -131,7 +131,7 @@ export function buildSession(input: BuildInput): BuildResult {
       });
     });
     if (sets.length) {
-      out.push({ id: ex.id, name: ex.title, unit: ex.unit === 'sec' ? 'sec' : 'reps', sets });
+      out.push({ id: ex.id, name: ex.title, unit: ex.unit === 'sec' ? 'sec' : ex.unit === 'min' ? 'min' : 'reps', sets });
     }
   }
 
@@ -159,6 +159,7 @@ export function buildSession(input: BuildInput): BuildResult {
 export function setText(s: SetEntry, unit: Unit = 'reps'): string {
   const kg = s.kg != null ? fmtNum(s.kg) : '';
   const reps = s.reps != null ? fmtNum(s.reps) : '';
+  if (unit === 'min') return reps ? reps + ' min' : kg ? kg + ' kg' : '';
   if (kg && reps) return kg + ' kg × ' + reps + (unit === 'sec' ? ' s' : '');
   if (kg) return kg + ' kg';
   if (reps) return reps + (unit === 'sec' ? ' s' : ' reps');
@@ -175,7 +176,7 @@ export function draftFromSession(src: LogSession): { exercises: ExerciseDef[]; d
       hint: meta?.hint ?? '',
       sets: n,
       target: meta?.target ?? `${n} ${n === 1 ? 'set' : 'sets'}`,
-      unit: e.unit === 'sec' ? 'sec' : 'reps',
+      unit: e.unit === 'sec' || e.unit === 'min' ? e.unit : 'reps',
       suggested: meta?.suggested ?? '',
       bw: meta?.bw ?? false,
     };
@@ -231,12 +232,12 @@ export function buildSeries(sessions: LogSession[]): Series[] {
       const key = seriesKey(name);
       let o = index.get(key);
       if (!o) {
-        o = { id: e.id, name, unit: e.unit === 'sec' ? 'sec' : 'reps', rows: [] };
+        o = { id: e.id, name, unit: e.unit, rows: [] };
         index.set(key, o);
       }
       o.id = e.id;
       o.name = name;
-      o.unit = e.unit === 'sec' ? 'sec' : e.unit || o.unit;
+      o.unit = e.unit || o.unit;
       o.rows.push({ date: s.date, sets: e.sets });
     }
   }
@@ -258,8 +259,8 @@ export function buildSeries(sessions: LogSession[]): Series[] {
       rows: o.rows.length,
       useKg,
       pts,
-      metric: useKg ? 'Top weight' : o.unit === 'sec' ? 'Best hold' : 'Best reps',
-      mu: useKg ? 'kg' : o.unit === 'sec' ? 'sec' : 'reps',
+      metric: useKg ? 'Top weight' : o.unit === 'sec' ? 'Best hold' : o.unit === 'min' ? 'Longest' : 'Best reps',
+      mu: useKg ? 'kg' : o.unit === 'sec' ? 'sec' : o.unit === 'min' ? 'min' : 'reps',
     });
   }
 
