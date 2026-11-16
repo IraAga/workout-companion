@@ -261,16 +261,12 @@
       "dynamic": true,
       "subtabs": [
         {
-          "id": "entry",
-          "label": "Log workout"
+          "id": "history",
+          "label": "History"
         },
         {
           "id": "progress",
           "label": "Progress"
-        },
-        {
-          "id": "history",
-          "label": "History"
         }
       ],
       "blockTypes": [

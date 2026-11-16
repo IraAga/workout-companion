@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "description": "Four UI templates over the same contract. Scores are 1-5; buildEffort is low/medium/high. The mockups are annotated SVG wireframes, not screenshots.",
+  "templates": [
+    {
+      "id": "pocket-log",
+      "name": "Pocket Log",
+      "letter": "A",
+      "preview": "pocket-log.svg",
+      "viewports": [
+        "phone"
+      ],
+      "summary": "History-first phone app. Keeps the shipped flow — History as home, Start workout, the workout below the strip — but restyles the controls and proposes four bottom destinations.",
+      "home": "Week",
+      "entry": "Start workout from History",
+      "nav": [
+        "Week",
+        "Log",
+        "Train",
+        "Eat"
+      ],
+      "screens": [
+        "week",
+        "history",
+        "active workout",
+        "progress",
+        "program",
+        "recovery",
+        "full body",
+        "session times",
+        "nutrition",
+        "meals",
+        "groceries"
+      ],
+      "requires": {
+        "keys": [
+          "ol-sessions",
+          "ol-drafts",
+          "ol-plan",
+          "ol-prefs",
+          "ol-collapse",
+          "ol-sync",
+          "ol-tombstones"
+        ],
+        "rules": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16"
+        ]
+      },
+      "fidelity": "Every shipped surface has a home; chrome is a proposal. Literal current screens are kept as shipped references.",
+      "scores": {
+        "entrySpeed": 4,
+        "glanceability": 4,
+        "contentFidelity": 5
+      },
+      "buildEffort": "low",
+      "bestFor": [
+        "existing users and their muscle memory",
+        "one-handed logging in a gym",
+        "shipping in days, not weeks"
+      ],
+      "strengths": [
+        "No new interaction model to learn",
+        "Content panels stay first-class",
+        "Matches the current data flow exactly"
+      ],
+      "risks": [
+        "Still five content areas competing for attention",
+        "Week status is a small strip, easy to miss",
+        "The workout still lives inside the Log tab rather than being a mode"
+      ],
+      "previewStates": [
+        {
+          "state": "History (restyle)",
+          "file": "pocket-log.svg"
+        },
+        {
+          "state": "Workout view (restyle)",
+          "file": "pocket-log-workout.svg"
+        }
+      ],
+      "reference": [
+        {
+          "state": "History, as shipped",
+          "file": "pocket-log-shipped.svg"
+        },
+        {
+          "state": "Workout, as shipped",
+          "file": "pocket-log-workout-shipped.svg"
+        }
+      ],
+      "proposed": [
+        "bottom navigation",
+        "segmented History/Progress control",
+        "week status on the log screen",
+        "card-style history rows",
+        "nav hidden during a workout"
+      ]
+    },
+    {
+      "id": "workbench",
+      "name": "Workbench",
+      "letter": "B",
+      "preview": "workbench.svg",
+      "viewports": [
+        "desktop",
+        "tablet"
+      ],
+      "summary": "Catalog rail, dense editable session in the middle, and a persistent dock for rest, week status and last time. Keyboard-first.",
+      "home": "Active session",
+      "entry": "Open a session from the rail",
+      "nav": [
+        "Templates rail",
+        "Session table",
+        "Context dock"
+      ],
+      "screens": [
+        "session table",
+        "week panel",
+        "program reference",
+        "progress chart",
+        "history",
+        "nutrition and groceries as reading panels"
+      ],
+      "requires": {
+        "keys": [
+          "ol-sessions",
+          "ol-drafts",
+          "ol-plan",
+          "ol-prefs"
+        ],
+        "rules": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "R11",
+          "R12",
+          "R13",
+          "R16"
+        ]
+      },
+      "fidelity": "Full training workflow; content becomes secondary reading.",
+      "scores": {
+        "entrySpeed": 5,
+        "glanceability": 5,
+        "contentFidelity": 3
+      },
+      "buildEffort": "medium",
+      "bestFor": [
+        "logging at a desk or on a tablet",
+        "reviewing a whole session at once",
+        "power users who correct numbers often"
+      ],
+      "strengths": [
+        "Whole session visible without scrolling on a laptop",
+        "Rest timer and last-time numbers never leave the screen",
+        "Fastest correction of a mistyped set"
+      ],
+      "risks": [
+        "Poor fit for a phone at the rack",
+        "Dense table needs care for screen readers",
+        "Nutrition and program content feel like an appendix"
+      ]
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "letter": "C",
+      "preview": "focus.svg",
+      "viewports": [
+        "phone"
+      ],
+      "summary": "A workout mode, not a destination. One exercise fills the screen, sets are large steppers, and rest owns the bottom edge.",
+      "home": "Exercise n of 6",
+      "entry": "Auto-opens when a workout starts",
+      "nav": [
+        "Exercise dots",
+        "Sets",
+        "Rest"
+      ],
+      "screens": [
+        "single exercise",
+        "rest timer",
+        "finish workout"
+      ],
+      "requires": {
+        "keys": [
+          "ol-sessions",
+          "ol-drafts",
+          "ol-plan",
+          "ol-prefs"
+        ],
+        "rules": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R7",
+          "R11",
+          "R13"
+        ]
+      },
+      "fidelity": "Logging only. History, progress, content and backup live outside the mode.",
+      "scores": {
+        "entrySpeed": 5,
+        "glanceability": 1,
+        "contentFidelity": 1
+      },
+      "buildEffort": "low",
+      "bestFor": [
+        "mid-set, one hand, chalk or gloves",
+        "reducing decisions while tired",
+        "pairing with any of the other templates"
+      ],
+      "strengths": [
+        "Largest targets of the four",
+        "Rest timer is impossible to miss",
+        "No navigation decisions during a workout"
+      ],
+      "risks": [
+        "No overview of the whole session",
+        "Steppers need a type fallback for odd numbers",
+        "Cannot browse or edit a template mid-workout"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "letter": "D",
+      "preview": "dashboard.svg",
+      "viewports": [
+        "phone",
+        "desktop"
+      ],
+      "summary": "Review-first. The week is the home screen: completion ring, four-week consistency grid, one-line strength trend, next session and nutrition targets.",
+      "home": "This week",
+      "entry": "Start from the next-session card",
+      "nav": [
+        "Week",
+        "Log",
+        "Train",
+        "Eat"
+      ],
+      "screens": [
+        "week dashboard",
+        "consistency grid",
+        "trend cards",
+        "next session",
+        "nutrition targets",
+        "log and history on demand"
+      ],
+      "requires": {
+        "keys": [
+          "ol-sessions",
+          "ol-plan",
+          "ol-prefs"
+        ],
+        "rules": [
+          "R1",
+          "R4",
+          "R8",
+          "R9"
+        ]
+      },
+      "fidelity": "Adherence and trends first; detailed entry is reduced to one tap into another template.",
+      "scores": {
+        "entrySpeed": 2,
+        "glanceability": 5,
+        "contentFidelity": 4
+      },
+      "buildEffort": "medium",
+      "bestFor": [
+        "staying consistent over months",
+        "seeing the week before deciding",
+        "sharing progress without opening a log"
+      ],
+      "strengths": [
+        "Answers 'how am I doing?' in one screen",
+        "Consistency grid makes missed weeks obvious",
+        "Nutrition targets sit beside training"
+      ],
+      "risks": [
+        "Weakest direct logging experience",
+        "Needs enough history before it looks useful",
+        "Trend cards can mislead if only one session exists"
+      ]
+    }
+  ],
+  "comparison": {
+    "criteria": [
+      "entrySpeed",
+      "glanceability",
+      "contentFidelity",
+      "buildEffort"
+    ],
+    "note": "Scores are design judgements, not measurements."
+  },
+  "recommendation": {
+    "base": "pocket-log",
+    "add": [
+      "focus",
+      "workbench"
+    ],
+    "why": "Pocket Log keeps every current surface and reuses the existing rules, so it can ship first. Focus is a low-effort workout mode that any template can enter. Workbench is the same components laid out for a wide screen, not a separate rewrite.",
+    "defer": [
+      "dashboard"
+    ],
+    "deferWhy": "Dashboard is a different product bet: it optimises for adherence rather than entry. Build it once the log is stable and there are a few weeks of data.",
+    "ifYouMustPickOne": "workbench for a tablet-at-home lifter; pocket-log for a phone-at-the-gym lifter."
+  },
+  "sharedComponents": [
+    {
+      "component": "Session runner",
+      "data": "catalog.json + ol-plan",
+      "rules": [
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "component": "Set row / grid",
+      "data": "ol-drafts + last-time lookup",
+      "rules": [
+        "R3",
+        "R7",
+        "R13"
+      ]
+    },
+    {
+      "component": "Save / discard bar",
+      "data": "ol-sessions",
+      "rules": [
+        "R4",
+        "R5",
+        "R6"
+      ]
+    },
+    {
+      "component": "Rest timer",
+      "data": "catalog.restSeconds",
+      "rules": [
+        "R11"
+      ]
+    },
+    {
+      "component": "Week status",
+      "data": "ol-sessions",
+      "rules": [
+        "R8"
+      ]
+    },
+    {
+      "component": "Trend / chart",
+      "data": "ol-sessions",
+      "rules": [
+        "R9"
+      ]
+    },
+    {
+      "component": "Backup and sync",
+      "data": "ol-sync + export",
+      "rules": [
+        "R14",
+        "R15"
+      ]
+    }
+  ]
+}

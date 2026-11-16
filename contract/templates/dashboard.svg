@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" height="900" role="img" aria-labelledby="t d">
+<title id="t">D · Dashboard</title>
+<desc id="d">Review-first phone layout. The week is the home screen: completion ring, a four-week consistency grid, a one-line strength trend, the next session and nutrition targets. Logging is one tap away.</desc>
+<rect width="760" height="900" fill="#E9EEE9"/>
+
+<text x="470" y="78" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" fill="#16201C">D · Dashboard</text>
+<text x="470" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Review-first: adherence and momentum.</text>
+
+<!-- device -->
+<rect x="40" y="30" width="390" height="844" rx="30" fill="#FAFBFA" stroke="#D3DBD5" stroke-width="2"/>
+<rect x="52" y="42" width="366" height="820" rx="22" fill="#F1F4F1"/>
+
+<!-- status bar -->
+<text x="72" y="66" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#16201C">9:41</text>
+<g fill="#586660">
+  <rect x="352" y="57" width="14" height="8" rx="1.5"/>
+  <rect x="370" y="55" width="10" height="10" rx="2"/>
+  <rect x="384" y="56" width="18" height="9" rx="3" fill="none" stroke="#586660" stroke-width="1.4"/>
+  <rect x="387" y="59" width="11" height="3" rx="1"/>
+</g>
+
+<!-- header -->
+<text x="72" y="108" font-family="'Helvetica Neue',Arial,sans-serif" font-size="23" font-weight="700" fill="#16201C" letter-spacing="-.3">This week</text>
+<text x="72" y="128" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#586660">9–15 November · off-season block 1</text>
+
+<!-- hero -->
+<rect x="72" y="144" width="338" height="142" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/>
+<circle cx="136" cy="215" r="46" fill="none" stroke="#E0E7E1" stroke-width="11"/>
+<path d="M136 169 a46 46 0 0 1 0 92" fill="none" stroke="#0C7557" stroke-width="11" stroke-linecap="round"/>
+<path d="M136 261 a46 46 0 0 1 -33 -80" fill="none" stroke="#0C7557" stroke-width="11" stroke-linecap="round"/>
+<text x="136" y="219" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="21" font-weight="700" fill="#16201C">2/3</text>
+<text x="136" y="236" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" font-weight="700" fill="#586660" letter-spacing=".8">LIFTS</text>
+<text x="204" y="192" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="700" fill="#16201C">One lift left</text>
+<text x="204" y="209" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#586660">Fri Lift C is still open.</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">
+  <circle cx="208" cy="232" r="4" fill="#0C7557"/><text x="220" y="236">2 lifts · 2 basketball</text>
+  <circle cx="208" cy="254" r="4" fill="#9FB3A8"/><text x="220" y="258">1 rest day · 18 sets</text>
+</g>
+<rect x="312" y="252" width="84" height="26" rx="13" fill="#DDEBE3"/>
+<text x="354" y="269" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="600" fill="#0C7557">Keep going</text>
+
+<!-- consistency grid -->
+<rect x="72" y="298" width="338" height="150" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="86" y="322" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="700" fill="#16201C">Consistency</text>
+<text x="396" y="322" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#586660">last 4 weeks</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="8.5" fill="#586660" text-anchor="middle">
+  <text x="112" y="342">M</text><text x="154" y="342">T</text><text x="196" y="342">W</text>
+  <text x="238" y="342">T</text><text x="280" y="342">F</text><text x="322" y="342">S</text><text x="364" y="342">S</text>
+</g>
+<g>
+  <!-- row 1 -->
+  <rect x="98" y="346" width="28" height="20" rx="4" fill="#0C7557"/><rect x="140" y="346" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="182" y="346" width="28" height="20" rx="4" fill="#0C7557"/><rect x="224" y="346" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="266" y="346" width="28" height="20" rx="4" fill="#0C7557"/><rect x="308" y="346" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <rect x="350" y="346" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <!-- row 2 -->
+  <rect x="98" y="372" width="28" height="20" rx="4" fill="#0C7557"/><rect x="140" y="372" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="182" y="372" width="28" height="20" rx="4" fill="#0C7557"/><rect x="224" y="372" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="266" y="372" width="28" height="20" rx="4" fill="#0C7557"/><rect x="308" y="372" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <rect x="350" y="372" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <!-- row 3 -->
+  <rect x="98" y="398" width="28" height="20" rx="4" fill="#0C7557"/><rect x="140" y="398" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="182" y="398" width="28" height="20" rx="4" fill="#0C7557"/><rect x="224" y="398" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="266" y="398" width="28" height="20" rx="4" fill="#E4EAE5"/><rect x="308" y="398" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <rect x="350" y="398" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <!-- row 4 -->
+  <rect x="98" y="424" width="28" height="20" rx="4" fill="#0C7557"/><rect x="140" y="424" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="182" y="424" width="28" height="20" rx="4" fill="#0C7557"/><rect x="224" y="424" width="28" height="20" rx="4" fill="#9FB3A8"/>
+  <rect x="266" y="424" width="28" height="20" rx="4" fill="#0C7557"/><rect x="308" y="424" width="28" height="20" rx="4" fill="#E4EAE5"/>
+  <rect x="350" y="424" width="28" height="20" rx="4" fill="#F1F4F1" stroke="#D3DBD5"/>
+</g>
+
+<!-- trend -->
+<rect x="72" y="462" width="338" height="142" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="86" y="486" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="700" fill="#16201C">Trap Bar Deadlift</text>
+<text x="396" y="486" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#586660">top weight</text>
+<text x="86" y="512" font-family="'Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" fill="#16201C">60<tspan font-size="12" font-weight="600" fill="#586660"> kg</tspan></text>
+<rect x="146" y="494" width="58" height="22" rx="11" fill="#DDEBE3"/>
+<text x="175" y="509" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#0C7557">+10 kg</text>
+<text x="396" y="512" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#586660">best 60 kg</text>
+<path d="M86 578 L146 566 L206 552 L266 540 L326 524 L386 524" fill="none" stroke="#0C7557" stroke-width="2.4" stroke-linecap="round"/>
+<g fill="#0C7557">
+  <circle cx="86" cy="578" r="3.5"/><circle cx="146" cy="566" r="3.5"/><circle cx="206" cy="552" r="3.5"/>
+  <circle cx="266" cy="540" r="3.5"/><circle cx="326" cy="524" r="3.5"/>
+</g>
+<circle cx="386" cy="524" r="5" fill="#0C7557" stroke="#FAFBFA" stroke-width="2"/>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="8.5" fill="#9FB3A8">
+  <text x="86" y="594">18 Oct</text><text x="236" y="594">1 Nov</text><text x="386" y="594" text-anchor="end">15 Nov</text>
+</g>
+
+<!-- next -->
+<rect x="72" y="616" width="338" height="92" rx="12" fill="#16201C"/>
+<text x="88" y="640" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" font-weight="700" fill="#46C29B" letter-spacing="1.2">NEXT · MON 16 NOV</text>
+<text x="88" y="664" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Lift A · Lower body + mobility</text>
+<text x="88" y="683" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#9FB3A8">6 exercises · about 49 min · gym</text>
+<rect x="330" y="654" width="64" height="34" rx="8" fill="#46C29B"/>
+<text x="362" y="676" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="700" fill="#08150F">Start</text>
+
+<!-- nutrition -->
+<rect x="72" y="720" width="338" height="56" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="86" y="740" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="700" fill="#586660" letter-spacing=".8">TODAY · NUTRITION</text>
+<text x="396" y="740" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#0C7557">Meals →</text>
+<rect x="86" y="750" width="190" height="6" rx="3" fill="#E4EAE5"/>
+<rect x="86" y="750" width="142" height="6" rx="3" fill="#0C7557"/>
+<text x="86" y="770" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#586660">1,910 / 2,550 kcal</text>
+<rect x="288" y="750" width="64" height="6" rx="3" fill="#E4EAE5"/>
+<rect x="288" y="750" width="52" height="6" rx="3" fill="#9FB3A8"/>
+<text x="360" y="770" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#586660">162 / 200 g</text>
+
+<!-- bottom nav -->
+<line x1="52" y1="790" x2="418" y2="790" stroke="#D3DBD5"/>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" text-anchor="middle">
+  <g>
+    <rect x="82" y="806" width="16" height="16" rx="4" fill="#DDEBE3" stroke="#0C7557" stroke-width="1.6"/>
+    <text x="90" y="838" fill="#0C7557" font-weight="700">Week</text>
+  </g>
+  <g>
+    <rect x="178" y="806" width="16" height="16" rx="4" fill="none" stroke="#586660" stroke-width="1.6"/>
+    <text x="186" y="838" fill="#586660">Log</text>
+  </g>
+  <g>
+    <rect x="274" y="806" width="16" height="16" rx="4" fill="none" stroke="#586660" stroke-width="1.6"/>
+    <text x="282" y="838" fill="#586660">Train</text>
+  </g>
+  <g>
+    <circle cx="378" cy="814" r="8" fill="none" stroke="#586660" stroke-width="1.6"/>
+    <text x="378" y="838" fill="#586660">Eat</text>
+  </g>
+</g>
+<rect x="186" y="856" width="98" height="4" rx="2" fill="#C9D3CC"/>
+
+<!-- callouts -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <g stroke="#9FB3A8" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="430" y1="210" x2="466" y2="210"/>
+    <line x1="430" y1="390" x2="466" y2="390"/>
+    <line x1="430" y1="520" x2="466" y2="520"/>
+    <line x1="430" y1="662" x2="466" y2="662"/>
+    <line x1="430" y1="748" x2="466" y2="748"/>
+  </g>
+  <g fill="#0C7557">
+    <circle cx="466" cy="210" r="2.6"/><circle cx="466" cy="390" r="2.6"/>
+    <circle cx="466" cy="520" r="2.6"/><circle cx="466" cy="662" r="2.6"/>
+    <circle cx="466" cy="748" r="2.6"/>
+  </g>
+  <text x="476" y="206" font-size="12.5" font-weight="700" fill="#16201C">The week is the home screen</text>
+  <text x="476" y="222" font-size="11" fill="#586660">Same R8 count as today, but framed</text>
+  <text x="476" y="236" font-size="11" fill="#586660">as the answer to "how am I doing?"</text>
+
+  <text x="476" y="386" font-size="12.5" font-weight="700" fill="#16201C">Consistency beats detail</text>
+  <text x="476" y="402" font-size="11" fill="#586660">Four weeks at a glance: lift, ball,</text>
+  <text x="476" y="416" font-size="11" fill="#586660">rest. No numbers to interpret.</text>
+
+  <text x="476" y="516" font-size="12.5" font-weight="700" fill="#16201C">Trend in one line</text>
+  <text x="476" y="532" font-size="11" fill="#586660">Uses the R9 series (name-keyed top</text>
+  <text x="476" y="546" font-size="11" fill="#586660">weight) without the full chart.</text>
+
+  <text x="476" y="658" font-size="12.5" font-weight="700" fill="#16201C">One tap to the next session</text>
+  <text x="476" y="674" font-size="11" fill="#586660">Start jumps straight into the</text>
+  <text x="476" y="688" font-size="11" fill="#586660">template, skipping History.</text>
+
+  <text x="476" y="744" font-size="12.5" font-weight="700" fill="#16201C">Nutrition beside training</text>
+  <text x="476" y="760" font-size="11" fill="#586660">2,550 kcal / 200 g protein targets</text>
+  <text x="476" y="774" font-size="11" fill="#586660">are already in the plan content.</text>
+</g>
+</svg>

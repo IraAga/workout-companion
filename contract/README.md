@@ -3,6 +3,9 @@
 Everything needed to rebuild the Off-Season Plan UI without touching the
 working app. Generated from `docs/index.html`; no runtime dependency.
 
+The first implementation slice lives in `../next/` (Vite + TypeScript, logging
+only). It imports `data/catalog.json` directly, so the contract stays canonical.
+
 ```
 contract/
   SPEC.md                      ← read this first: data model + behaviour rules
@@ -21,15 +24,42 @@ contract/
     log-doc.schema.json        the JSON committed to GitHub
     backup.schema.json         downloaded backup file
   example/index.html           small vanilla-JS renderer proving the data is enough
+  templates/                   four annotated UI layouts + gallery + catalogue
+    index.html                 open this: side-by-side gallery and comparison
+    pocket-log.svg             A · history-first phone app (restyle proposal)
+    pocket-log-workout.svg     A · second state, workout open below the strip
+    pocket-log-shipped.svg     A · History exactly as shipped (reference)
+    pocket-log-workout-shipped.svg  A · workout exactly as shipped (reference)
+    workbench.svg              B · desktop/tablet three-pane logging
+    focus.svg                  C · dark single-exercise workout mode
+    dashboard.svg              D · week-first review dashboard
+    templates.json             surfaces, keys, rules and scores per template
+    README.md                  when to pick which, and what each defers
 ```
 
-## Read it in three passes
+## Read it in four passes
 
 1. **`SPEC.md` §1–2** — how the single file is layered, and the entities.
-2. **`SPEC.md` §3** — 15 numbered behaviour rules. These are the product.
-   R4 (save), R7 (last time), R8 (week), R9 (progress) are the core.
-3. **`data/content/week.json`** — a small, readable example of the content
+2. **`SPEC.md` §3** — 16 numbered behaviour rules. These are the product.
+   R4 (save), R7 (last time), R8 (week), R9 (progress), R16 (start/discard) are
+   the core.
+3. **`templates/index.html`** — four ways to arrange the same data. Pick one
+   before writing components.
+4. **`data/content/week.json`** — a small, readable example of the content
    block format.
+
+## Choose a template
+
+| | Template | Best for | Effort |
+|---|---|---|---|
+| A | Pocket Log (restyle) | Phone at the gym; keeps every current surface | Low |
+| B | Workbench | Laptop/tablet; dense session table + docks | Medium |
+| C | Focus | A mode for one-handed logging mid-set | Low |
+| D | Dashboard | Adherence and week-level review | Medium |
+
+Recommendation: **A as the base, C as an added mode, B as the wide-screen
+breakpoint, D deferred.** Full reasoning in `templates/README.md`; scores and
+rule requirements in `templates/templates.json`.
 
 ## Quick start for a new UI
 
@@ -63,18 +93,21 @@ lost and nothing is fetched from the network.
 cd /Users/iagathis/workout-companion
 python3 -m http.server 8080
 # open http://localhost:8080/contract/example/
+# or  http://localhost:8080/contract/templates/
 ```
 
-It reads the JSON and renders the weekly schedule plus the selected program —
-no app code reused.
+The example reads the JSON and renders the weekly schedule plus the selected
+program — no app code reused. The templates gallery shows all four layouts at
+once.
 
-## Regenerate after editing the app
+## Regenerate and verify
 
 `docs/index.html` stays canonical.
 
 ```bash
 node tools/extract-contract.mjs           # rewrite data/
 node tools/extract-contract.mjs --check   # non-zero exit if out of date
+node tools/check-templates.mjs            # template rules/keys/previews exist
 ```
 
 The extractor also fails if any panel's words are missing from the normalised

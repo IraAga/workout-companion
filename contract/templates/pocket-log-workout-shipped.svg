@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" height="900" role="img" aria-labelledby="t d">
+<title id="t">A · Pocket Log — shipped Workout</title>
+<desc id="d">Shipped reference. Second state of the Pocket Log template, matching the shipped workout screen: no tab selected, a template line, exercise cards with edit/delete, large set rows with done buttons, and a sticky save bar whose bottom row is the rest timer.</desc>
+<rect width="760" height="900" fill="#E9EEE9"/>
+
+<text x="470" y="78" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" fill="#16201C">A · Pocket Log</text>
+<text x="470" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Workout panel, as shipped · global nav cropped.</text>
+
+<!-- device -->
+<rect x="40" y="30" width="390" height="844" rx="30" fill="#FAFBFA" stroke="#D3DBD5" stroke-width="2"/>
+<rect x="52" y="42" width="366" height="820" rx="22" fill="#F1F4F1"/>
+
+<!-- status bar -->
+<text x="72" y="66" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#16201C">9:41</text>
+<g fill="#586660">
+  <rect x="352" y="57" width="14" height="8" rx="1.5"/>
+  <rect x="370" y="55" width="10" height="10" rx="2"/>
+  <rect x="384" y="56" width="18" height="9" rx="3" fill="none" stroke="#586660" stroke-width="1.4"/>
+  <rect x="387" y="59" width="11" height="3" rx="1"/>
+</g>
+
+<!-- kicker + subtabs, nothing selected -->
+<text x="72" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#0C7557" letter-spacing="1.4">TRACK</text>
+<rect x="72" y="100" width="180" height="38" rx="4" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="112" y="124" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">History</text>
+<text x="196" y="124" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Progress</text>
+
+<!-- header row -->
+<text x="72" y="178" font-family="'Helvetica Neue',Arial,sans-serif" font-size="21" font-weight="700" fill="#16201C" letter-spacing="-.2">Log workout</text>
+<circle cx="396" cy="170" r="15" fill="#FAFBFA" stroke="#D3DBD5"/>
+<path d="M390 164 l12 12 M402 164 l-12 12" stroke="#586660" stroke-width="1.7"/>
+<text x="72" y="200" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">Gym program · Lift A · Nov 16</text>
+<text x="72" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#9FB3A8">Saved on this device only · no account sync</text>
+
+<!-- exercise card 1 -->
+<rect x="72" y="228" width="326" height="330" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<path d="M86 246 l5 5 5-5" fill="none" stroke="#16201C" stroke-width="1.5"/>
+<text x="102" y="252" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" fill="#16201C">Trap Bar or Barbell Deadlift</text>
+<text x="322" y="251" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#586660" letter-spacing=".8">EDIT</text>
+<text x="366" y="251" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#B3261E" letter-spacing=".8">DELETE</text>
+
+<text x="86" y="272" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#586660">Target 4x4 · Start 50–60 kg total</text>
+<text x="86" y="288" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" fill="#9FB3A8">Last time (Nov 15): 60 kg × 4 · 60 kg × 4 ·</text>
+<text x="86" y="302" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" fill="#9FB3A8">57.5 kg × 4 · 55 kg × 4</text>
+
+<text x="179" y="326" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="8" font-weight="700" fill="#9FB3A8" letter-spacing=".8">KG</text>
+<text x="301" y="326" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="8" font-weight="700" fill="#9FB3A8" letter-spacing=".8">REPS</text>
+
+<!-- set 1 (done) -->
+<rect x="86" y="337" width="36" height="36" rx="4" fill="#0C7557"/>
+<path d="M94 355 l5 6 10-11" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="124" y="335" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="179" y="360" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">60</text>
+<rect x="246" y="335" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="301" y="360" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">4</text>
+<text x="384" y="362" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9FB3A8">×</text>
+
+<!-- set 2 (done) -->
+<rect x="86" y="383" width="36" height="36" rx="4" fill="#0C7557"/>
+<path d="M94 401 l5 6 10-11" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="124" y="381" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="179" y="406" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">60</text>
+<rect x="246" y="381" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="301" y="406" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">4</text>
+<text x="384" y="408" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9FB3A8">×</text>
+
+<!-- set 3 (placeholder) -->
+<rect x="86" y="429" width="36" height="36" rx="4" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="104" y="452" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#586660">3</text>
+<rect x="124" y="427" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="179" y="452" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#9FB3A8">57.5</text>
+<rect x="246" y="427" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="301" y="452" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#9FB3A8">4</text>
+<text x="384" y="454" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9FB3A8">×</text>
+
+<!-- set 4 (placeholder) -->
+<rect x="86" y="475" width="36" height="36" rx="4" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="104" y="498" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" font-weight="600" fill="#586660">4</text>
+<rect x="124" y="473" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="179" y="498" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#9FB3A8">55</text>
+<rect x="246" y="473" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="301" y="498" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#9FB3A8">4</text>
+<text x="384" y="500" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#9FB3A8">×</text>
+
+<!-- actions -->
+<rect x="86" y="520" width="34" height="30" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="103" y="540" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#16201C">+</text>
+<rect x="128" y="520" width="120" height="30" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="188" y="540" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="600" fill="#16201C">Copy last time</text>
+
+<!-- collapsed card -->
+<rect x="72" y="572" width="326" height="58" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<path d="M88 590 l5 5 -5 5" fill="none" stroke="#16201C" stroke-width="1.5"/>
+<text x="104" y="599" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" fill="#16201C">Box Jump</text>
+<text x="322" y="598" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#586660" letter-spacing=".8">EDIT</text>
+<text x="366" y="598" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#B3261E" letter-spacing=".8">DELETE</text>
+<text x="86" y="619" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#586660">0/4 sets</text>
+
+<!-- sticky save bar -->
+<rect x="72" y="650" width="326" height="110" rx="6" fill="#F1F4F1" stroke="#16201C" stroke-width="1.5"/>
+<text x="86" y="678" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#16201C">1 exercise · 2 sets</text>
+<rect x="252" y="660" width="146" height="40" rx="4" fill="#0C7557"/>
+<text x="325" y="685" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Save session</text>
+<line x1="72" y1="712" x2="398" y2="712" stroke="#D3DBD5"/>
+<text x="86" y="738" font-family="'Helvetica Neue',Arial,sans-serif" font-size="8" font-weight="700" fill="#586660" letter-spacing="1">REST</text>
+<text x="122" y="741" font-family="'Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" fill="#16201C">2:00</text>
+<rect x="252" y="722" width="54" height="26" rx="4" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="279" y="739" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="600" fill="#16201C">+30s</text>
+<rect x="314" y="722" width="54" height="26" rx="4" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="341" y="739" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="600" fill="#16201C">Skip</text>
+
+<rect x="186" y="856" width="98" height="4" rx="2" fill="#C9D3CC"/>
+
+<!-- callouts -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <g stroke="#9FB3A8" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="430" y1="124" x2="466" y2="124"/>
+    <line x1="430" y1="170" x2="466" y2="170"/>
+    <line x1="430" y1="200" x2="466" y2="200"/>
+    <line x1="430" y1="690" x2="466" y2="690"/>
+  </g>
+  <g fill="#0C7557">
+    <circle cx="466" cy="124" r="2.6"/><circle cx="466" cy="170" r="2.6"/>
+    <circle cx="466" cy="200" r="2.6"/><circle cx="466" cy="690" r="2.6"/>
+  </g>
+  <text x="476" y="120" font-size="12.5" font-weight="700" fill="#16201C">No tab is selected</text>
+  <text x="476" y="136" font-size="11" fill="#586660">The strip stays visible, but the workout</text>
+  <text x="476" y="150" font-size="11" fill="#586660">is a state below it, not a tab.</text>
+
+  <text x="476" y="180" font-size="12.5" font-weight="700" fill="#16201C">× cancels or discards</text>
+  <text x="476" y="196" font-size="11" fill="#586660">Confirms only if a set or the note was</text>
+  <text x="476" y="210" font-size="11" fill="#586660">typed; during an edit it cancels.</text>
+
+  <text x="476" y="250" font-size="12.5" font-weight="700" fill="#16201C">Template line is the context</text>
+  <text x="476" y="266" font-size="11" fill="#586660">Shipped format: program label · session</text>
+  <text x="476" y="280" font-size="11" fill="#586660">label · date. No weekday, no “Gym”.</text>
+
+  <text x="476" y="686" font-size="12.5" font-weight="700" fill="#16201C">The save bar owns rest</text>
+  <text x="476" y="702" font-size="11" fill="#586660">Sticky at the bottom: filled counts,</text>
+  <text x="476" y="716" font-size="11" fill="#586660">Save, then the rest row inside one frame.</text>
+
+  <text x="476" y="802" font-size="12.5" font-weight="700" fill="#16201C">Navigation is cropped</text>
+  <text x="476" y="818" font-size="11" fill="#586660">Start scrolls to the first set, so the</text>
+  <text x="476" y="832" font-size="11" fill="#586660">top strip is usually above the fold.</text>
+</g>
+</svg>

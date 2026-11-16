@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" height="900" role="img" aria-labelledby="t c">
+<title id="t">C · Focus</title>
+<desc id="c">Dark, single-exercise workout mode. One exercise fills the screen, sets are large rows with steppers, and the rest timer owns the bottom. No tabs and no reading while lifting.</desc>
+<rect width="760" height="900" fill="#E9EEE9"/>
+
+<text x="470" y="78" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" fill="#16201C">C · Focus</text>
+<text x="470" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">A mode, not a destination: opens from any template.</text>
+
+<!-- device -->
+<rect x="40" y="30" width="390" height="844" rx="30" fill="#0F1613" stroke="#28352F" stroke-width="2"/>
+<rect x="52" y="42" width="366" height="820" rx="22" fill="#0F1613"/>
+
+<!-- status bar -->
+<text x="72" y="66" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#E4EBE7">9:41</text>
+<g fill="#90A199">
+  <rect x="352" y="57" width="14" height="8" rx="1.5"/>
+  <rect x="370" y="55" width="10" height="10" rx="2"/>
+  <rect x="384" y="56" width="18" height="9" rx="3" fill="none" stroke="#90A199" stroke-width="1.4"/>
+  <rect x="387" y="59" width="11" height="3" rx="1"/>
+</g>
+
+<!-- header -->
+<text x="72" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#46C29B" letter-spacing="1.4">LIFT A · 2 OF 6</text>
+<circle cx="396" cy="100" r="14" fill="#161F1B" stroke="#28352F"/>
+<path d="M391 95 l10 10 M401 95 l-10 10" stroke="#90A199" stroke-width="1.6"/>
+<g>
+  <circle cx="76" cy="120" r="4" fill="#46C29B"/><circle cx="92" cy="120" r="4" fill="#46C29B"/>
+  <circle cx="108" cy="120" r="4" fill="#46C29B"/><circle cx="124" cy="120" r="4" fill="#3A4A42"/>
+  <circle cx="140" cy="120" r="4" fill="#3A4A42"/><circle cx="156" cy="120" r="4" fill="#3A4A42"/>
+</g>
+<text x="390" y="124" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#90A199">Trap Bar · set 3</text>
+
+<text x="72" y="170" font-family="'Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" fill="#E4EBE7" letter-spacing="-.5">Trap Bar Deadlift</text>
+<text x="72" y="194" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#90A199">4 × 4 · 50–60 kg total · rest 120 s</text>
+
+<rect x="72" y="208" width="326" height="32" rx="7" fill="#183027"/>
+<text x="86" y="228" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9FD8C4">Last time: 60 kg × 4 · 13 Nov</text>
+
+<!-- set rows -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <rect x="72" y="256" width="326" height="66" rx="9" fill="#161F1B" stroke="#28352F"/>
+  <circle cx="99" cy="289" r="14" fill="#46C29B"/>
+  <text x="99" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#08150F">1</text>
+  <text x="124" y="296" font-size="18" font-weight="600" fill="#E4EBE7">60 kg <tspan fill="#90A199">×</tspan> 4</text>
+  <path d="M362 282 l6 7 11-13" fill="none" stroke="#46C29B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="72" y="332" width="326" height="66" rx="9" fill="#161F1B" stroke="#28352F"/>
+  <circle cx="99" cy="365" r="14" fill="#46C29B"/>
+  <text x="99" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#08150F">2</text>
+  <text x="124" y="372" font-size="18" font-weight="600" fill="#E4EBE7">60 kg <tspan fill="#90A199">×</tspan> 4</text>
+  <path d="M362 358 l6 7 11-13" fill="none" stroke="#46C29B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- current set -->
+  <rect x="72" y="408" width="326" height="82" rx="9" fill="#14211C" stroke="#46C29B" stroke-width="2"/>
+  <circle cx="99" cy="449" r="14" fill="none" stroke="#46C29B" stroke-width="1.6"/>
+  <text x="99" y="454" text-anchor="middle" font-size="12" font-weight="700" fill="#46C29B">3</text>
+  <rect x="124" y="432" width="150" height="36" rx="7" fill="#0F1613" stroke="#28352F"/>
+  <text x="141" y="455" text-anchor="middle" font-size="17" fill="#90A199">−</text>
+  <text x="199" y="455" text-anchor="middle" font-size="14" font-weight="600" fill="#E4EBE7">60 kg</text>
+  <text x="257" y="455" text-anchor="middle" font-size="17" fill="#90A199">+</text>
+  <rect x="286" y="432" width="86" height="36" rx="7" fill="#0F1613" stroke="#28352F"/>
+  <text x="301" y="455" text-anchor="middle" font-size="17" fill="#90A199">−</text>
+  <text x="329" y="455" text-anchor="middle" font-size="14" font-weight="600" fill="#E4EBE7">4</text>
+  <text x="357" y="455" text-anchor="middle" font-size="17" fill="#90A199">+</text>
+  <text x="124" y="484" font-size="9" font-weight="700" fill="#90A199" letter-spacing="1">HOLD TO TYPE</text>
+
+  <rect x="72" y="500" width="326" height="66" rx="9" fill="none" stroke="#28352F" stroke-dasharray="4 4"/>
+  <circle cx="99" cy="533" r="14" fill="none" stroke="#3A4A42" stroke-width="1.6"/>
+  <text x="99" y="538" text-anchor="middle" font-size="12" font-weight="700" fill="#90A199">4</text>
+  <text x="124" y="540" font-size="18" fill="#586660">— kg <tspan fill="#3A4A42">×</tspan> —</text>
+</g>
+
+<!-- rest -->
+<rect x="72" y="586" width="326" height="120" rx="10" fill="#161F1B" stroke="#28352F"/>
+<circle cx="122" cy="646" r="30" fill="none" stroke="#28352F" stroke-width="6"/>
+<path d="M122 616 a30 30 0 0 1 18 53" fill="none" stroke="#46C29B" stroke-width="6" stroke-linecap="round"/>
+<text x="122" y="651" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="700" fill="#E4EBE7">1:12</text>
+<text x="168" y="640" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#46C29B" letter-spacing="1.1">REST</text>
+<text x="168" y="660" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#E4EBE7">Next set ready in</text>
+<text x="168" y="680" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#90A199">Auto-starts when a set is ticked</text>
+<rect x="290" y="602" width="92" height="30" rx="6" fill="#0F1613" stroke="#28352F"/>
+<text x="336" y="621" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#E4EBE7">+30 s</text>
+<rect x="290" y="640" width="92" height="30" rx="6" fill="#0F1613" stroke="#28352F"/>
+<text x="336" y="659" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#E4EBE7">Skip</text>
+
+<rect x="72" y="726" width="326" height="54" rx="10" fill="#46C29B"/>
+<text x="235" y="759" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="700" fill="#08150F">Set 3 done</text>
+<text x="235" y="806" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#586660">Finish workout</text>
+<rect x="186" y="856" width="98" height="4" rx="2" fill="#28352F"/>
+
+<!-- callouts -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <g stroke="#9FB3A8" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="430" y1="120" x2="466" y2="120"/>
+    <line x1="430" y1="290" x2="466" y2="290"/>
+    <line x1="430" y1="449" x2="466" y2="449"/>
+    <line x1="430" y1="646" x2="466" y2="646"/>
+    <line x1="430" y1="753" x2="466" y2="753"/>
+  </g>
+  <g fill="#0C7557">
+    <circle cx="466" cy="120" r="2.6"/><circle cx="466" cy="290" r="2.6"/>
+    <circle cx="466" cy="449" r="2.6"/><circle cx="466" cy="646" r="2.6"/>
+    <circle cx="466" cy="753" r="2.6"/>
+  </g>
+  <text x="476" y="116" font-size="12.5" font-weight="700" fill="#16201C">Position, not navigation</text>
+  <text x="476" y="132" font-size="11" fill="#586660">Six dots replace the exercise list.</text>
+  <text x="476" y="146" font-size="11" fill="#586660">One exercise occupies the screen.</text>
+
+  <text x="476" y="286" font-size="12.5" font-weight="700" fill="#16201C">Glove-friendly rows</text>
+  <text x="476" y="302" font-size="11" fill="#586660">66–82px targets, no keyboard.</text>
+  <text x="476" y="316" font-size="11" fill="#586660">Done sets stay visible for reference.</text>
+
+  <text x="476" y="445" font-size="12.5" font-weight="700" fill="#16201C">Steppers for the common case</text>
+  <text x="476" y="461" font-size="11" fill="#586660">± on weight and reps; hold to type</text>
+  <text x="476" y="475" font-size="11" fill="#586660">an exact number.</text>
+
+  <text x="476" y="642" font-size="12.5" font-weight="700" fill="#16201C">Rest owns the bottom</text>
+  <text x="476" y="658" font-size="11" fill="#586660">Timer, +30 s, skip. Auto-start on</text>
+  <text x="476" y="672" font-size="11" fill="#586660">tick, beep and wake lock optional.</text>
+
+  <text x="476" y="749" font-size="12.5" font-weight="700" fill="#16201C">One outcome per screen</text>
+  <text x="476" y="765" font-size="11" fill="#586660">Set done → rest. Content, programs</text>
+  <text x="476" y="779" font-size="11" fill="#586660">and nutrition stay out of this path.</text>
+</g>
+</svg>

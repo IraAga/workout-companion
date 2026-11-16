@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" height="900" role="img" aria-labelledby="t a">
+<title id="t">A · Pocket Log</title>
+<desc id="a">Polished phone-first proposal. Keeps the shipped flow — History as home, Start workout, the workout opening below the strip — but restyles the controls and proposes four bottom destinations. Annotated callouts separate shipped behaviour from the restyle.</desc>
+<rect width="760" height="900" fill="#E9EEE9"/>
+
+<!-- annotation header -->
+<text x="470" y="78" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" fill="#16201C">A · Pocket Log</text>
+<text x="470" y="100" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Restyle proposal · same flow, new chrome.</text>
+
+<!-- device -->
+<rect x="40" y="30" width="390" height="844" rx="30" fill="#FAFBFA" stroke="#D3DBD5" stroke-width="2"/>
+<rect x="52" y="42" width="366" height="820" rx="22" fill="#F1F4F1"/>
+
+<!-- status bar -->
+<text x="72" y="66" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600" fill="#16201C">9:41</text>
+<g fill="#586660">
+  <rect x="352" y="57" width="14" height="8" rx="1.5"/>
+  <rect x="370" y="55" width="10" height="10" rx="2"/>
+  <rect x="384" y="56" width="18" height="9" rx="3" fill="none" stroke="#586660" stroke-width="1.4"/>
+  <rect x="387" y="59" width="11" height="3" rx="1"/>
+</g>
+
+<!-- header -->
+<text x="72" y="106" font-family="'Helvetica Neue',Arial,sans-serif" font-size="21" font-weight="700" fill="#16201C" letter-spacing="-.2">Off-Season</text>
+<text x="72" y="126" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#586660">Sunday, 15 November</text>
+
+<!-- week status -->
+<rect x="72" y="140" width="338" height="36" rx="8" fill="#DDEBE3"/>
+<text x="86" y="163" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#0C7557">2 of 3 lifts done</text>
+<circle cx="360" cy="158" r="5" fill="#0C7557"/>
+<circle cx="375" cy="158" r="5" fill="#0C7557"/>
+<circle cx="390" cy="158" r="5" fill="#BCCBC2"/>
+
+<!-- segmented -->
+<rect x="72" y="190" width="338" height="34" rx="8" fill="#E4EAE5"/>
+<rect x="75" y="193" width="166" height="28" rx="6" fill="#FAFBFA"/>
+<text x="158" y="212" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#16201C">History</text>
+<text x="324" y="212" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Progress</text>
+
+<!-- start card -->
+<rect x="72" y="240" width="338" height="122" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="86" y="262" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13.5" font-weight="700" fill="#16201C">Gym · Lift A</text>
+<text x="396" y="262" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#586660">Sun 15 Nov</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#16201C">
+  <rect x="86" y="274" width="82" height="24" rx="5" fill="#F1F4F1" stroke="#D3DBD5"/>
+  <text x="94" y="290">Gym</text>
+  <path d="M152 284 l4 4 4-4" fill="none" stroke="#586660" stroke-width="1.4"/>
+  <rect x="176" y="274" width="86" height="24" rx="5" fill="#F1F4F1" stroke="#D3DBD5"/>
+  <text x="184" y="290">Lift A</text>
+  <path d="M246 284 l4 4 4-4" fill="none" stroke="#586660" stroke-width="1.4"/>
+  <rect x="270" y="274" width="84" height="24" rx="5" fill="#F1F4F1" stroke="#D3DBD5"/>
+  <text x="278" y="290">15 Nov</text>
+  <path d="M338 284 l4 4 4-4" fill="none" stroke="#586660" stroke-width="1.4"/>
+</g>
+<rect x="86" y="308" width="310" height="38" rx="7" fill="#0C7557"/>
+<text x="241" y="332" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Start workout</text>
+
+<!-- recent -->
+<text x="72" y="392" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.1">RECENT</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <rect x="72" y="404" width="338" height="62" rx="8" fill="#FAFBFA" stroke="#D3DBD5"/>
+  <text x="86" y="425" font-size="9" font-weight="700" fill="#0C7557" letter-spacing=".6">15 NOV</text>
+  <text x="86" y="446" font-size="13" font-weight="600" fill="#16201C">Lift A</text>
+  <text x="86" y="459" font-size="10.5" fill="#586660">6 exercises · 18 sets</text>
+  <path d="M392 431 l5 5-5 5" fill="none" stroke="#586660" stroke-width="1.6"/>
+
+  <rect x="72" y="474" width="338" height="62" rx="8" fill="#FAFBFA" stroke="#D3DBD5"/>
+  <text x="86" y="495" font-size="9" font-weight="700" fill="#0C7557" letter-spacing=".6">13 NOV</text>
+  <text x="86" y="516" font-size="13" font-weight="600" fill="#16201C">Lift B</text>
+  <text x="86" y="529" font-size="10.5" fill="#586660">6 exercises · 20 sets</text>
+  <path d="M392 501 l5 5-5 5" fill="none" stroke="#586660" stroke-width="1.6"/>
+
+  <rect x="72" y="544" width="338" height="62" rx="8" fill="#FAFBFA" stroke="#D3DBD5"/>
+  <text x="86" y="565" font-size="9" font-weight="700" fill="#0C7557" letter-spacing=".6">11 NOV</text>
+  <text x="86" y="586" font-size="13" font-weight="600" fill="#16201C">Lift C</text>
+  <text x="86" y="599" font-size="10.5" fill="#586660">6 exercises · 18 sets</text>
+  <path d="M392 571 l5 5-5 5" fill="none" stroke="#586660" stroke-width="1.6"/>
+
+  <rect x="72" y="614" width="338" height="62" rx="8" fill="#FAFBFA" stroke="#D3DBD5"/>
+  <text x="86" y="635" font-size="9" font-weight="700" fill="#586660" letter-spacing=".6">09 NOV</text>
+  <text x="86" y="656" font-size="13" font-weight="600" fill="#16201C">Progress entry</text>
+  <text x="86" y="669" font-size="10.5" fill="#586660">Trap Bar Deadlift · 1 set</text>
+  <path d="M392 641 l5 5-5 5" fill="none" stroke="#586660" stroke-width="1.6"/>
+</g>
+
+<!-- proposed bottom nav -->
+<rect x="60" y="756" width="350" height="76" rx="10" fill="#FAFBFA" stroke="#0C7557" stroke-width="1.4" stroke-dasharray="5 4"/>
+<rect x="328" y="744" width="82" height="18" rx="4" fill="#DDEBE3"/>
+<text x="369" y="757" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="700" fill="#0C7557" letter-spacing="1">PROPOSED</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" text-anchor="middle">
+  <rect x="92" y="774" width="16" height="16" rx="4" fill="none" stroke="#586660" stroke-width="1.5"/>
+  <text x="100" y="806" fill="#586660">Week</text>
+  <rect x="186" y="774" width="16" height="16" rx="4" fill="#DDEBE3" stroke="#0C7557" stroke-width="1.5"/>
+  <text x="194" y="806" fill="#0C7557" font-weight="700">Log</text>
+  <rect x="278" y="774" width="16" height="16" rx="4" fill="none" stroke="#586660" stroke-width="1.5"/>
+  <text x="286" y="806" fill="#586660">Train</text>
+  <circle cx="376" cy="782" r="8" fill="none" stroke="#586660" stroke-width="1.5"/>
+  <text x="376" y="806" fill="#586660">Eat</text>
+</g>
+<rect x="186" y="856" width="98" height="4" rx="2" fill="#C9D3CC"/>
+
+<!-- callouts -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <g stroke="#9FB3A8" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="430" y1="158" x2="466" y2="158"/>
+    <line x1="430" y1="210" x2="466" y2="210"/>
+    <line x1="430" y1="330" x2="466" y2="330"/>
+    <line x1="430" y1="500" x2="466" y2="500"/>
+    <line x1="430" y1="792" x2="466" y2="792"/>
+  </g>
+  <g fill="#0C7557">
+    <circle cx="466" cy="158" r="2.6"/><circle cx="466" cy="210" r="2.6"/>
+    <circle cx="466" cy="330" r="2.6"/><circle cx="466" cy="500" r="2.6"/>
+    <circle cx="466" cy="792" r="2.6"/>
+  </g>
+  <text x="476" y="154" font-size="12.5" font-weight="700" fill="#16201C">Week at a glance <tspan font-size="8.5" fill="#0C7557" letter-spacing=".8"> · NEW</tspan></text>
+  <text x="476" y="170" font-size="11" fill="#586660">The shipped week count, surfaced on the</text>
+  <text x="476" y="184" font-size="11" fill="#586660">log screen instead of only the Week tab.</text>
+
+  <text x="476" y="206" font-size="12.5" font-weight="700" fill="#16201C">History is home</text>
+  <text x="476" y="222" font-size="11" fill="#586660">No empty form on load. Pickers and</text>
+  <text x="476" y="236" font-size="11" fill="#586660">Start live here.</text>
+
+  <text x="476" y="326" font-size="12.5" font-weight="700" fill="#16201C">One primary action</text>
+  <text x="476" y="342" font-size="11" fill="#586660">Start opens the workout below the</text>
+  <text x="476" y="356" font-size="11" fill="#586660">strip. × discards, with a confirm.</text>
+
+  <text x="476" y="496" font-size="12.5" font-weight="700" fill="#16201C">Dense, scannable history</text>
+  <text x="476" y="512" font-size="11" fill="#586660">Date · template · exercises · sets.</text>
+  <text x="476" y="526" font-size="11" fill="#586660">Tap to expand, edit or delete.</text>
+
+  <text x="476" y="788" font-size="12.5" font-weight="700" fill="#16201C">Proposed: four destinations</text>
+  <text x="476" y="804" font-size="11" fill="#586660">Dashed because the shipped app uses a</text>
+  <text x="476" y="818" font-size="11" fill="#586660">9-link top strip. Shop folds into Eat.</text>
+</g>
+</svg>

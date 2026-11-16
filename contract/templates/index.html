@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UI templates — Off-Season Plan</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#F1F4F1; --surface:#FAFBFA; --ink:#16201C; --muted:#586660;
+    --rule:#D3DBD5; --accent:#0C7557; --accent-soft:#DDEBE3; --warn:#8A5A12; --warn-soft:#F4E9D6;
+    --font:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0F1613; --surface:#161F1B; --ink:#E4EBE7; --muted:#90A199; --rule:#28352F;
+            --accent:#46C29B; --accent-soft:#183027; --warn:#E0B46A; --warn-soft:#2C2415; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:1.25rem 1rem 4rem; background:var(--bg); color:var(--ink); font:400 16px/1.55 var(--font); }
+  .wrap { max-width:76rem; margin-inline:auto; }
+  h1 { font-size:clamp(1.7rem,4vw,2.4rem); line-height:1.05; margin:0 0 .4rem; letter-spacing:-.02em; }
+  .lede { margin:0; color:var(--muted); max-width:52ch; }
+  .kicker { font:600 .72rem/1 var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .5rem; }
+  a { color:var(--accent); }
+  .topnav { display:flex; flex-wrap:wrap; gap:.35rem; margin:1.25rem 0 0; }
+  .topnav a { text-decoration:none; border:1px solid var(--rule); border-radius:999px; padding:.3rem .7rem; font-size:.82rem; color:var(--ink); }
+  .topnav a:hover { border-color:var(--accent); color:var(--accent); }
+
+  .rec { margin:1.5rem 0 0; padding:1rem 1.1rem; background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:6px; }
+  .rec strong { display:block; margin-bottom:.15rem; }
+  .rec p { margin:0; font-size:.92rem; color:var(--ink); max-width:70ch; }
+
+  .grid { display:grid; gap:1.25rem; margin-top:2rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr)); align-items:start; }
+  .card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .card img { width:100%; height:auto; display:block; background:#E9EEE9; border-bottom:1px solid var(--rule); }
+  .shot { display:block; }
+  .shot:hover img { opacity:.95; }
+  .more { margin:.15rem 0 0; font-size:.85rem; }
+  .card .body { padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:.6rem; flex:1; }
+  .card h2 { margin:0; font-size:1.15rem; display:flex; align-items:center; gap:.5rem; }
+  .card h2 .letter { display:inline-grid; place-items:center; width:1.6rem; height:1.6rem; border-radius:5px; background:var(--ink); color:var(--bg); font:700 .8rem/1 var(--mono); }
+  .card p { margin:0; font-size:.92rem; color:var(--muted); }
+  .badges { display:flex; flex-wrap:wrap; gap:.35rem; }
+  .badge { font:500 .72rem/1 var(--mono); letter-spacing:.04em; text-transform:uppercase; padding:.28rem .5rem; border-radius:4px; background:var(--accent-soft); color:var(--accent); }
+  .badge.alt { background:var(--warn-soft); color:var(--warn); }
+  .facts { margin:0; padding:0; list-style:none; display:grid; gap:.3rem; font-size:.88rem; }
+  .facts li { display:grid; grid-template-columns:4.6rem 1fr; gap:.5rem; }
+  .facts b { color:var(--muted); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; padding-top:.1rem; }
+  .rules { font:400 .74rem/1.5 var(--mono); color:var(--muted); }
+
+  section { margin-top:3rem; }
+  h2.section { font-size:1.15rem; margin:0 0 .8rem; }
+  .tablewrap { overflow-x:auto; border:1px solid var(--rule); border-radius:10px; background:var(--surface); }
+  table { border-collapse:collapse; width:100%; font-size:.9rem; min-width:44rem; }
+  th,td { text-align:left; padding:.65rem .8rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { font:600 .7rem/1.2 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  tr:last-child td { border-bottom:0; }
+  td.num { white-space:nowrap; }
+  .bar { display:inline-block; width:3.5rem; height:.42rem; border-radius:2px; background:var(--rule); vertical-align:middle; margin-right:.4rem; overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  .muted { color:var(--muted); }
+  .note { margin:.5rem 0 0; font-size:.85rem; color:var(--muted); }
+  footer { margin-top:3rem; color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">contract/templates</p>
+    <h1>Four UIs, one contract</h1>
+    <p class="lede">Annotated wireframes built from the real catalog. Same data, the same 16 rules — different answers to “what should be on screen?”</p>
+    <p class="note">Pocket Log keeps the shipped flow but restyles it. Dashed outlines and “proposal” badges mark changes; literal current screens are linked as shipped references.</p>
+    <nav class="topnav" aria-label="Templates">
+      <a href="#a">A · Pocket Log</a>
+      <a href="#b">B · Workbench</a>
+      <a href="#c">C · Focus</a>
+      <a href="#d">D · Dashboard</a>
+      <a href="#compare">Compare</a>
+    </nav>
+    <div class="rec">
+      <strong>Recommendation: ship A, add C, lay out B at the wide breakpoint.</strong>
+      <p>Pocket Log keeps every current surface and all existing rules, with a restyle and a proposed four-destination nav, so it ships first. Focus is a small workout mode that fixes one-handed entry. Workbench is the same components in three panes, not a second app. Dashboard is a different product bet — build it once there is data to fill it.</p>
+    </div>
+  </header>
+
+  <div class="grid">
+    <article class="card" id="a">
+      <a class="shot" href="pocket-log.svg"><img src="pocket-log.svg" alt="Wireframe of the Pocket Log template: phone with week status, History and Progress tabs, template pickers, Start workout, and recent sessions."></a>
+      <div class="body">
+        <h2><span class="letter">A</span> Pocket Log</h2>
+        <div class="badges"><span class="badge">Recommended base</span><span class="badge alt">Restyle proposal</span><span class="badge">Phone</span><span class="badge">Low effort</span></div>
+        <p>History-first phone app. Keeps the shipped flow — pickers and Start in History, workout below the strip — but restyles the chrome and proposes four bottom destinations. The literal current screens are kept as shipped references.</p>
+        <ul class="facts">
+          <li><b>Home</b><span>Week</span></li>
+          <li><b>Entry</b><span>Start workout from History</span></li>
+          <li><b>Best for</b><span>Gym, one hand, existing users</span></li>
+          <li><b>Needs</b><span class="rules">R1–R16 · all log state</span></li>
+        </ul>
+        <p class="more"><a href="pocket-log-workout.svg">Workout state →</a><br><a href="pocket-log-shipped.svg">Shipped History</a> · <a href="pocket-log-workout-shipped.svg">Shipped workout</a></p>
+      </div>
+    </article>
+
+    <article class="card" id="b">
+      <a class="shot" href="workbench.svg"><img src="workbench.svg" alt="Wireframe of the Workbench template: desktop with a catalog rail, dense set table and a rest/week dock."></a>
+      <div class="body">
+        <h2><span class="letter">B</span> Workbench</h2>
+        <div class="badges"><span class="badge">Desktop / tablet</span><span class="badge">Medium effort</span></div>
+        <p>Catalog on the left, the session as a dense editable table in the middle, rest and context docked right. Tab order runs kg → reps → next set.</p>
+        <ul class="facts">
+          <li><b>Home</b><span>Active session</span></li>
+          <li><b>Entry</b><span>Open a session from the rail</span></li>
+          <li><b>Best for</b><span>Laptop or tablet, fast correction</span></li>
+          <li><b>Needs</b><span class="rules">R1–R9, R11–R13</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="c">
+      <a class="shot" href="focus.svg"><img src="focus.svg" alt="Wireframe of the Focus template: dark phone showing one exercise, large set rows with steppers and a rest timer at the bottom."></a>
+      <div class="body">
+        <h2><span class="letter">C</span> Focus</h2>
+        <div class="badges"><span class="badge">Add-on mode</span><span class="badge">Phone</span><span class="badge">Low effort</span></div>
+        <p>A workout mode, not a destination. One exercise fills the screen, done sets stay visible, steppers replace typing, rest owns the bottom edge.</p>
+        <ul class="facts">
+          <li><b>Home</b><span>Exercise n of 6</span></li>
+          <li><b>Entry</b><span>Auto-opens when a workout starts</span></li>
+          <li><b>Best for</b><span>Mid-set, gloves, no decisions</span></li>
+          <li><b>Needs</b><span class="rules">R1–R4, R7, R11, R13</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="d">
+      <a class="shot" href="dashboard.svg"><img src="dashboard.svg" alt="Wireframe of the Dashboard template: phone with a weekly completion ring, four-week consistency grid, strength trend, next session and nutrition targets."></a>
+      <div class="body">
+        <h2><span class="letter">D</span> Dashboard</h2>
+        <div class="badges"><span class="badge alt">Defer</span><span class="badge">Phone / desktop</span><span class="badge">Medium effort</span></div>
+        <p>The week is the home screen: completion ring, consistency grid, one-line trend, next session, nutrition targets. Logging is one tap away.</p>
+        <ul class="facts">
+          <li><b>Home</b><span>This week</span></li>
+          <li><b>Entry</b><span>Start from the next-session card</span></li>
+          <li><b>Best for</b><span>Adherence over months</span></li>
+          <li><b>Needs</b><span class="rules">R1, R4, R8, R9</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <section id="compare">
+    <h2 class="section">Compare</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Template</th><th>Entry speed</th><th>Glanceability</th><th>Content fidelity</th><th>Effort</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>A · Pocket Log</b></td>
+            <td class="num"><span class="bar"><i style="width:80%"></i></span>4/5</td>
+            <td class="num"><span class="bar"><i style="width:80%"></i></span>4/5</td>
+            <td class="num"><span class="bar"><i style="width:100%"></i></span>5/5</td>
+            <td>Low</td>
+            <td>Ship first. Nothing is lost.</td>
+          </tr>
+          <tr>
+            <td><b>B · Workbench</b></td>
+            <td class="num"><span class="bar"><i style="width:100%"></i></span>5/5</td>
+            <td class="num"><span class="bar"><i style="width:100%"></i></span>5/5</td>
+            <td class="num"><span class="bar"><i style="width:60%"></i></span>3/5</td>
+            <td>Medium</td>
+            <td>Wide-screen layout of the same parts.</td>
+          </tr>
+          <tr>
+            <td><b>C · Focus</b></td>
+            <td class="num"><span class="bar"><i style="width:100%"></i></span>5/5</td>
+            <td class="num"><span class="bar"><i style="width:20%"></i></span>1/5</td>
+            <td class="num"><span class="bar"><i style="width:20%"></i></span>1/5</td>
+            <td>Low</td>
+            <td>Add as a mode, not a home.</td>
+          </tr>
+          <tr>
+            <td><b>D · Dashboard</b></td>
+            <td class="num"><span class="bar"><i style="width:40%"></i></span>2/5</td>
+            <td class="num"><span class="bar"><i style="width:100%"></i></span>5/5</td>
+            <td class="num"><span class="bar"><i style="width:80%"></i></span>4/5</td>
+            <td>Medium</td>
+            <td>Different bet: adherence, not entry.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:.85rem">Scores are design judgements, not measurements. The full machine-readable version is in <code>templates.json</code>.</p>
+  </section>
+
+  <section>
+    <h2 class="section">Shared components</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Component</th><th>Reads</th><th>Rules</th></tr></thead>
+        <tbody>
+          <tr><td>Session runner</td><td><code>catalog.json</code>, <code>ol-plan</code></td><td>R1, R2</td></tr>
+          <tr><td>Set row / grid</td><td><code>ol-drafts</code>, last-time lookup</td><td>R3, R7, R13</td></tr>
+          <tr><td>Save / discard bar</td><td><code>ol-sessions</code></td><td>R4, R5, R6</td></tr>
+          <tr><td>Rest timer</td><td><code>catalog.restSeconds</code></td><td>R11</td></tr>
+          <tr><td>Week status</td><td><code>ol-sessions</code></td><td>R8</td></tr>
+          <tr><td>Trend / chart</td><td><code>ol-sessions</code></td><td>R9</td></tr>
+          <tr><td>Backup and sync</td><td><code>ol-sync</code>, backup file</td><td>R14, R15</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Rule numbers refer to <a href="../SPEC.md">contract/SPEC.md</a>. Data comes from <code>../data/catalog.json</code>. Mockups are hand-written SVG — see <a href="README.md">templates/README.md</a> for export and editing notes.</p>
+  </footer>
+</div>
+</body>
+</html>

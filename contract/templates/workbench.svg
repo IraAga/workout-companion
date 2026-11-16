@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" width="1440" height="1000" role="img" aria-labelledby="t b">
+<title id="t">B · Workbench</title>
+<desc id="b">Desktop and tablet layout. Catalog rail on the left, the active session as a dense editable table in the middle, rest timer, week status and last-time reference docked on the right. Four annotations along the bottom.</desc>
+<rect width="1440" height="1000" fill="#E9EEE9"/>
+
+<!-- app frame -->
+<rect x="16" y="16" width="1408" height="828" rx="14" fill="#F1F4F1" stroke="#D3DBD5" stroke-width="2"/>
+
+<!-- top bar -->
+<text x="48" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="700" fill="#16201C" letter-spacing="-.2">Off-Season</text>
+<text x="178" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#586660">Workbench</text>
+<text x="330" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Sunday, 15 November · Week 47</text>
+<rect x="1150" y="34" width="182" height="30" rx="15" fill="#DDEBE3"/>
+<circle cx="1168" cy="49" r="4" fill="#0C7557"/>
+<text x="1180" y="53" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#0C7557">Synced 2 min ago</text>
+<circle cx="1374" cy="49" r="16" fill="#16201C"/>
+<text x="1374" y="54" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" fill="#F1F4F1">IA</text>
+<line x1="16" y1="76" x2="1424" y2="76" stroke="#D3DBD5"/>
+<line x1="296" y1="76" x2="296" y2="760" stroke="#D3DBD5"/>
+<line x1="1080" y1="76" x2="1080" y2="760" stroke="#D3DBD5"/>
+
+<!-- left rail -->
+<text x="40" y="108" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.2">TEMPLATES</text>
+<rect x="32" y="118" width="240" height="34" rx="6" fill="#DDEBE3"/>
+<rect x="32" y="118" width="3" height="34" rx="1.5" fill="#0C7557"/>
+<text x="50" y="140" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="600" fill="#0C7557">Gym</text>
+<text x="244" y="140" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#0C7557">10 ex</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">
+  <text x="50" y="180">Home</text><text x="244" y="180" text-anchor="end" font-size="10" fill="#586660">kettlebell + bands</text>
+  <text x="50" y="216">Minimal kit</text><text x="244" y="216" text-anchor="end" font-size="10" fill="#586660">one KB + bands</text>
+  <text x="50" y="252">Full body</text><text x="244" y="252" text-anchor="end" font-size="10" fill="#586660">standalone</text>
+</g>
+
+<text x="40" y="300" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.2">GYM SESSIONS</text>
+<rect x="32" y="310" width="240" height="34" rx="6" fill="#FAFBFA" stroke="#0C7557"/>
+<text x="50" y="332" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" fill="#16201C">Lift A · Lower body power</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" fill="#16201C">
+  <text x="50" y="368">Lift B · Upper body + core</text>
+  <text x="50" y="400">Lift C · Lower strength + plyo</text>
+</g>
+<line x1="32" y1="420" x2="272" y2="420" stroke="#D3DBD5"/>
+
+<rect x="32" y="436" width="240" height="196" rx="8" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="46" y="460" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" fill="#16201C">This week</text>
+<text x="258" y="460" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#0C7557">2 of 3</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#586660">
+  <circle cx="52" cy="480" r="4" fill="#0C7557"/><text x="66" y="484">Mon · Lift A</text>
+  <circle cx="52" cy="502" r="4" fill="#9FB3A8"/><text x="66" y="506">Tue · Basketball</text>
+  <circle cx="52" cy="524" r="4" fill="#0C7557"/><text x="66" y="528">Wed · Lift B</text>
+  <circle cx="52" cy="546" r="4" fill="#9FB3A8"/><text x="66" y="550">Thu · Basketball</text>
+  <circle cx="52" cy="568" r="4" fill="#BCCBC2"/><text x="66" y="572">Fri · Lift C — next</text>
+  <circle cx="52" cy="590" r="4" fill="#BCCBC2" opacity=".6"/><text x="66" y="594">Sat · Recovery</text>
+  <circle cx="52" cy="612" r="4" fill="#BCCBC2" opacity=".6"/><text x="66" y="616">Sun · Rest</text>
+</g>
+
+<!-- center header -->
+<text x="320" y="112" font-family="'Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="700" fill="#16201C" letter-spacing="-.4">Lift A</text>
+<text x="320" y="132" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Lower Body Power · Gym program · Sunday 15 Nov</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">
+  <rect x="320" y="144" width="92" height="24" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/><text x="366" y="160" text-anchor="middle">6 exercises</text>
+  <rect x="420" y="144" width="84" height="24" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/><text x="462" y="160" text-anchor="middle">18 sets</text>
+  <rect x="512" y="144" width="112" height="24" rx="12" fill="#FAFBFA" stroke="#D3DBD5"/><text x="568" y="160" text-anchor="middle">≈ 49 min</text>
+</g>
+<circle cx="1056" cy="112" r="14" fill="#FAFBFA" stroke="#D3DBD5"/>
+<path d="M1051 107 l10 10 M1061 107 l-10 10" stroke="#586660" stroke-width="1.6"/>
+
+<!-- progress -->
+<rect x="320" y="184" width="736" height="6" rx="3" fill="#DDE3DE"/>
+<rect x="320" y="184" width="286" height="6" rx="3" fill="#0C7557"/>
+<text x="320" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">7 of 18 sets done · 4 exercises open</text>
+
+<!-- table header -->
+<line x1="320" y1="224" x2="1056" y2="224" stroke="#16201C" stroke-width="2"/>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" font-weight="700" fill="#586660" letter-spacing=".8">
+  <text x="320" y="242">EXERCISE</text>
+  <text x="572" y="242">TARGET</text>
+  <text x="690" y="242" text-anchor="middle">SET 1</text>
+  <text x="782" y="242" text-anchor="middle">SET 2</text>
+  <text x="874" y="242" text-anchor="middle">SET 3</text>
+  <text x="966" y="242" text-anchor="middle">SET 4</text>
+</g>
+
+<!-- rows -->
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <!-- row 1 -->
+  <line x1="320" y1="252" x2="1056" y2="252" stroke="#E2E8E3"/>
+  <circle cx="330" cy="282" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="279" font-size="13" font-weight="700" fill="#16201C">Trap Bar or Barbell Deadlift</text>
+  <text x="348" y="295" font-size="10" fill="#586660">50–60 kg total · rest 120 s</text>
+  <text x="572" y="288" font-size="11" fill="#586660">4×4</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="671" y="286" text-anchor="middle">60</text>
+    <rect x="692" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="709" y="286" text-anchor="middle">4</text>
+    <rect x="746" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="763" y="286" text-anchor="middle">60</text>
+    <rect x="784" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="801" y="286" text-anchor="middle">4</text>
+    <rect x="838" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="855" y="286" text-anchor="middle">57.5</text>
+    <rect x="876" y="268" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="893" y="286" text-anchor="middle">4</text>
+    <rect x="930" y="268" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="968" y="268" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- row 2 -->
+  <line x1="320" y1="316" x2="1056" y2="316" stroke="#E2E8E3"/>
+  <circle cx="330" cy="346" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="343" font-size="13" font-weight="700" fill="#16201C">Box Jump</text>
+  <text x="348" y="359" font-size="10" fill="#586660">moderate height · rest 90 s</text>
+  <text x="572" y="352" font-size="11" fill="#586660">4×4</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5"/><text x="671" y="350" text-anchor="middle" fill="#9FB3A8">—</text>
+    <rect x="692" y="332" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="709" y="350" text-anchor="middle">4</text>
+    <rect x="746" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5"/><text x="763" y="350" text-anchor="middle" fill="#9FB3A8">—</text>
+    <rect x="784" y="332" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="801" y="350" text-anchor="middle">4</text>
+    <rect x="838" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="876" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="930" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="968" y="332" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- row 3 -->
+  <line x1="320" y1="380" x2="1056" y2="380" stroke="#E2E8E3"/>
+  <circle cx="330" cy="410" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="407" font-size="13" font-weight="700" fill="#16201C">Bulgarian Split Squat</text>
+  <text x="348" y="423" font-size="10" fill="#586660">8–10 kg each hand · rest 90 s</text>
+  <text x="572" y="416" font-size="11" fill="#586660">3×8/leg</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="396" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="671" y="414" text-anchor="middle">8</text>
+    <rect x="692" y="396" width="34" height="28" rx="4" fill="#FFFFFF" stroke="#D3DBD5"/><text x="709" y="414" text-anchor="middle">8</text>
+    <rect x="746" y="396" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="784" y="396" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="838" y="396" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="876" y="396" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- row 4 -->
+  <line x1="320" y1="444" x2="1056" y2="444" stroke="#E2E8E3"/>
+  <circle cx="330" cy="474" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="471" font-size="13" font-weight="700" fill="#16201C">Lateral Bound</text>
+  <text x="348" y="487" font-size="10" fill="#586660">skater jump · rest 90 s</text>
+  <text x="572" y="480" font-size="11" fill="#586660">3×6/side</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="692" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="746" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="784" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="838" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="876" y="460" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- row 5 -->
+  <line x1="320" y1="508" x2="1056" y2="508" stroke="#E2E8E3"/>
+  <circle cx="330" cy="538" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="535" font-size="13" font-weight="700" fill="#16201C">Single-leg RDL</text>
+  <text x="348" y="551" font-size="10" fill="#586660">8–12 kg in one hand · rest 90 s</text>
+  <text x="572" y="544" font-size="11" fill="#586660">3×8/leg</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="692" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="746" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="784" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="838" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="876" y="524" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- row 6 -->
+  <line x1="320" y1="572" x2="1056" y2="572" stroke="#E2E8E3"/>
+  <circle cx="330" cy="602" r="8" fill="none" stroke="#D3DBD5" stroke-width="1.6"/>
+  <text x="348" y="599" font-size="13" font-weight="700" fill="#16201C">Copenhagen Plank</text>
+  <text x="348" y="615" font-size="10" fill="#586660">knee on the bench · rest 60 s</text>
+  <text x="572" y="608" font-size="11" fill="#586660">3×25 s/side</text>
+  <g font-size="11" fill="#16201C">
+    <rect x="654" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="692" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="746" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="784" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="838" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+    <rect x="876" y="588" width="34" height="28" rx="4" fill="#F1F4F1" stroke="#D3DBD5" stroke-dasharray="3 3"/>
+  </g>
+</g>
+
+<!-- right dock -->
+<rect x="1096" y="96" width="312" height="152" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="1112" y="120" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.1">REST</text>
+<text x="1112" y="164" font-family="'Helvetica Neue',Arial,sans-serif" font-size="40" font-weight="700" fill="#16201C" letter-spacing="-1">1:12</text>
+<text x="1112" y="184" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">Deadlift · next set in</text>
+<circle cx="1360" cy="150" r="34" fill="none" stroke="#DDE3DE" stroke-width="7"/>
+<path d="M1360 116 a34 34 0 0 1 24 58" fill="none" stroke="#0C7557" stroke-width="7" stroke-linecap="round"/>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="600">
+  <rect x="1112" y="202" width="88" height="30" rx="6" fill="#FFFFFF" stroke="#D3DBD5"/>
+  <text x="1156" y="221" text-anchor="middle" fill="#16201C">+30 s</text>
+  <rect x="1208" y="202" width="76" height="30" rx="6" fill="#FFFFFF" stroke="#D3DBD5"/>
+  <text x="1246" y="221" text-anchor="middle" fill="#16201C">Skip</text>
+</g>
+
+<rect x="1096" y="264" width="312" height="140" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="1112" y="288" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.1">THIS WEEK</text>
+<text x="1112" y="316" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="700" fill="#16201C">2 of 3 lifts done</text>
+<circle cx="1120" cy="340" r="6" fill="#0C7557"/><circle cx="1140" cy="340" r="6" fill="#0C7557"/><circle cx="1160" cy="340" r="6" fill="#BCCBC2"/>
+<text x="1112" y="372" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#586660">Next: Lift C · Lower strength + plyo</text>
+<rect x="1300" y="300" width="94" height="28" rx="6" fill="#DDEBE3"/>
+<text x="1347" y="318" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="600" fill="#0C7557">Open plan</text>
+
+<rect x="1096" y="420" width="312" height="180" rx="10" fill="#FAFBFA" stroke="#D3DBD5"/>
+<text x="1112" y="444" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#586660" letter-spacing="1.1">LAST TIME · 13 NOV</text>
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#16201C">
+  <text x="1112" y="470">Trap Bar Deadlift</text><text x="1392" y="470" text-anchor="end" font-weight="600">60 kg × 4</text>
+  <text x="1112" y="494">Box Jump</text><text x="1392" y="494" text-anchor="end" font-weight="600">BW × 4</text>
+  <text x="1112" y="518">Bulgarian Split Squat</text><text x="1392" y="518" text-anchor="end" font-weight="600">10 kg × 8</text>
+  <text x="1112" y="542">Copenhagen Plank</text><text x="1392" y="542" text-anchor="end" font-weight="600">25 s</text>
+</g>
+<text x="1112" y="576" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" fill="#586660">Placeholders in the table come from here.</text>
+
+<rect x="1096" y="616" width="312" height="118" rx="10" fill="#DDEBE3"/>
+<text x="1112" y="640" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#0C7557" letter-spacing="1.1">SESSION NOTE</text>
+<text x="1112" y="662" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#586660">How it felt, any pain, what to</text>
+<text x="1112" y="678" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11.5" fill="#586660">change next time</text>
+<text x="1112" y="712" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#0C7557">Saved as you type →</text>
+
+<!-- save bar -->
+<line x1="16" y1="760" x2="1424" y2="760" stroke="#D3DBD5"/>
+<text x="320" y="806" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#586660">Draft saved on this device</text>
+<rect x="1096" y="780" width="132" height="40" rx="8" fill="#FFFFFF" stroke="#D3DBD5"/>
+<text x="1162" y="805" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="600" fill="#16201C">Discard</text>
+<rect x="1240" y="780" width="168" height="40" rx="8" fill="#0C7557"/>
+<text x="1324" y="805" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">Save session</text>
+
+<!-- annotation badges -->
+<g font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle">
+  <circle cx="1080" cy="228" r="11" fill="#0C7557"/><text x="1080" y="232" fill="#FFFFFF">1</text>
+  <circle cx="1392" cy="112" r="11" fill="#0C7557"/><text x="1392" y="116" fill="#FFFFFF">2</text>
+  <circle cx="1392" cy="286" r="11" fill="#0C7557"/><text x="1392" y="290" fill="#FFFFFF">3</text>
+  <circle cx="288" cy="112" r="11" fill="#0C7557"/><text x="288" y="116" fill="#FFFFFF">4</text>
+</g>
+
+<!-- legend -->
+<line x1="40" y1="866" x2="1400" y2="866" stroke="#C9D3CC"/>
+<g font-family="'Helvetica Neue',Arial,sans-serif">
+  <circle cx="52" cy="898" r="12" fill="#0C7557"/><text x="52" y="902" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">1</text>
+  <text x="74" y="894" font-size="13" font-weight="700" fill="#16201C">Dense, keyboard-first rows</text>
+  <text x="74" y="912" font-size="11" fill="#586660">Exercise · target · four set pairs.</text>
+  <text x="74" y="928" font-size="11" fill="#586660">Tab order is kg → reps → next set.</text>
+
+  <circle cx="392" cy="898" r="12" fill="#0C7557"/><text x="392" y="902" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">2</text>
+  <text x="414" y="894" font-size="13" font-weight="700" fill="#16201C">Rest is always visible</text>
+  <text x="414" y="912" font-size="11" fill="#586660">Ring, +30 s and skip live in the</text>
+  <text x="414" y="928" font-size="11" fill="#586660">dock, never behind a scroll.</text>
+
+  <circle cx="732" cy="898" r="12" fill="#0C7557"/><text x="732" y="902" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">3</text>
+  <text x="754" y="894" font-size="13" font-weight="700" fill="#16201C">Context beside the work</text>
+  <text x="754" y="912" font-size="11" fill="#586660">Week status and last-time numbers</text>
+  <text x="754" y="928" font-size="11" fill="#586660">answer "what next" without leaving.</text>
+
+  <circle cx="1072" cy="898" r="12" fill="#0C7557"/><text x="1072" y="902" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">4</text>
+  <text x="1094" y="894" font-size="13" font-weight="700" fill="#16201C">Catalog as permanent rail</text>
+  <text x="1094" y="912" font-size="11" fill="#586660">Programs and sessions are navigation,</text>
+  <text x="1094" y="928" font-size="11" fill="#586660">not a dialog you enter and leave.</text>
+</g>
+</svg>

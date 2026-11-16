@@ -8,16 +8,12 @@
   "dynamic": true,
   "subtabs": [
     {
-      "id": "entry",
-      "label": "Log workout"
+      "id": "history",
+      "label": "History"
     },
     {
       "id": "progress",
       "label": "Progress"
-    },
-    {
-      "id": "history",
-      "label": "History"
     }
   ],
   "blocks": [
@@ -29,16 +25,12 @@
       "type": "subtabs",
       "tabs": [
         {
-          "id": "entry",
-          "label": "Log workout"
+          "id": "history",
+          "label": "History"
         },
         {
           "id": "progress",
           "label": "Progress"
-        },
-        {
-          "id": "history",
-          "label": "History"
         }
       ]
     },
@@ -48,9 +40,27 @@
       "key": "entry",
       "blocks": [
         {
-          "type": "heading",
-          "level": 1,
-          "text": "Workout log"
+          "type": "group",
+          "class": "loghead",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 1,
+              "text": "Log workout"
+            },
+            {
+              "type": "html",
+              "tag": "button",
+              "text": "×",
+              "html": "<button type=\"button\" class=\"iconbtn\" id=\"log-close\" aria-label=\"Discard this workout\" title=\"Discard this workout\">×</button>"
+            }
+          ],
+          "html": "<div class=\"loghead\">\n  <h1>Log workout</h1>\n  <button type=\"button\" class=\"iconbtn\" id=\"log-close\" aria-label=\"Discard this workout\" title=\"Discard this workout\">×</button>\n</div>"
+        },
+        {
+          "type": "paragraph",
+          "text": "",
+          "html": "<p class=\"log-status\" id=\"log-template-line\"></p>"
         },
         {
           "type": "paragraph",
@@ -75,31 +85,6 @@
             }
           ],
           "html": "<div class=\"edit-banner\" id=\"log-edit-banner\" hidden>\n  <span id=\"log-edit-text\">Editing saved session.</span>\n  <button type=\"button\" class=\"btn\" id=\"log-edit-cancel\">Cancel edit</button>\n</div>"
-        },
-        {
-          "type": "group",
-          "class": "pick",
-          "blocks": [
-            {
-              "type": "html",
-              "tag": "label",
-              "text": "Program",
-              "html": "<label for=\"log-program\">Program<select id=\"log-program\"></select></label>"
-            },
-            {
-              "type": "html",
-              "tag": "label",
-              "text": "Session",
-              "html": "<label for=\"log-session\">Session<select id=\"log-session\"></select></label>"
-            },
-            {
-              "type": "html",
-              "tag": "label",
-              "text": "Date",
-              "html": "<label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>"
-            }
-          ],
-          "html": "<div class=\"pick\">\n  <label for=\"log-program\">Program<select id=\"log-program\"></select></label>\n  <label for=\"log-session\">Session<select id=\"log-session\"></select></label>\n  <label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>\n</div>"
         },
         {
           "type": "html",
@@ -257,6 +242,44 @@
           "text": "History"
         },
         {
+          "type": "group",
+          "class": "pick",
+          "blocks": [
+            {
+              "type": "html",
+              "tag": "label",
+              "text": "Program",
+              "html": "<label for=\"log-program\">Program<select id=\"log-program\"></select></label>"
+            },
+            {
+              "type": "html",
+              "tag": "label",
+              "text": "Session",
+              "html": "<label for=\"log-session\">Session<select id=\"log-session\"></select></label>"
+            },
+            {
+              "type": "html",
+              "tag": "label",
+              "text": "Date",
+              "html": "<label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>"
+            }
+          ],
+          "html": "<div class=\"pick\" id=\"log-template\">\n  <label for=\"log-program\">Program<select id=\"log-program\"></select></label>\n  <label for=\"log-session\">Session<select id=\"log-session\"></select></label>\n  <label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>\n</div>"
+        },
+        {
+          "type": "group",
+          "class": "plan-actions start-row",
+          "blocks": [
+            {
+              "type": "html",
+              "tag": "button",
+              "text": "Start workout",
+              "html": "<button type=\"button\" class=\"btn primary\" id=\"log-start\">Start workout</button>"
+            }
+          ],
+          "html": "<div class=\"plan-actions start-row\" id=\"log-start-wrap\">\n  <button type=\"button\" class=\"btn primary\" id=\"log-start\">Start workout</button>\n</div>"
+        },
+        {
           "type": "details",
           "summary": "Backup & restore",
           "id": "backup",
@@ -290,5 +313,5 @@
       "html": "<div class=\"toast\" id=\"log-toast\" role=\"status\" hidden>\n  <span id=\"log-toast-text\"></span>\n  <button type=\"button\" class=\"btn\" id=\"log-toast-action\" hidden>Undo</button>\n  <button type=\"button\" class=\"iconbtn\" id=\"log-toast-close\" aria-label=\"Dismiss\">×</button>\n</div>"
     }
   ],
-  "sourceHtml": "<p class=\"kicker\">Track</p>\n<div class=\"subtabs\" role=\"tablist\" aria-label=\"Workout log views\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"sub-entry\" data-sub=\"entry\">Log workout</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-progress\" data-sub=\"progress\">Progress</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-history\" data-sub=\"history\">History</button></div>\n<div class=\"sub\" id=\"sub-entry\" role=\"tabpanel\" data-sub=\"entry\">\n<h1>Workout log</h1>\n<p class=\"log-status\" id=\"log-status\" aria-live=\"polite\">Connecting to your saved log…</p>\n<div class=\"edit-banner\" id=\"log-edit-banner\" hidden>\n  <span id=\"log-edit-text\">Editing saved session.</span>\n  <button type=\"button\" class=\"btn\" id=\"log-edit-cancel\">Cancel edit</button>\n</div>\n<div class=\"pick\">\n  <label for=\"log-program\">Program<select id=\"log-program\"></select></label>\n  <label for=\"log-session\">Session<select id=\"log-session\"></select></label>\n  <label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>\n</div>\n<button type=\"button\" class=\"btn\" id=\"log-fill-last\" hidden title=\"Fill empty fields with your latest numbers\">Fill from last time</button>\n<div class=\"xctl\" id=\"log-xctl\">\n  <button type=\"button\" class=\"linkbtn\" id=\"log-collapse-all\">Collapse all</button>\n  <button type=\"button\" class=\"linkbtn\" id=\"log-expand-all\">Expand all</button>\n</div>\n<div id=\"log-cards\"></div>\n<div class=\"plan-actions\">\n  <button type=\"button\" class=\"btn\" id=\"log-add-ex\">+ Add exercise</button>\n  <button type=\"button\" class=\"btn\" id=\"log-reset-ex\" hidden>Reset to suggested exercises</button>\n</div>\n<div class=\"note-box\">\n  <label for=\"log-note\">Session notes</label>\n  <textarea id=\"log-note\" rows=\"2\" placeholder=\"How it felt, any pain, what to change next time\"></textarea>\n</div>\n<div class=\"savebar\">\n  <span class=\"sum\" id=\"log-summary\">Nothing entered yet</span>\n  <button type=\"button\" class=\"btn primary\" id=\"log-save\" disabled>Save session</button>\n  <div class=\"rest\" id=\"log-rest\" hidden>\n    <span class=\"rest-k\">Rest</span>\n    <span class=\"rest-t\" id=\"log-rest-time\">2:00</span>\n    <button type=\"button\" class=\"btn\" data-rest=\"add\">+30s</button>\n    <button type=\"button\" class=\"btn\" data-rest=\"skip\">Skip</button>\n  </div>\n</div>\n<p class=\"log-msg\" id=\"log-msg\" role=\"status\" aria-live=\"polite\"></p>\n</div>\n<div class=\"sub\" id=\"sub-progress\" role=\"tabpanel\" data-sub=\"progress\" hidden>\n<h1>Progress</h1>\n<div class=\"pick one\">\n  <label for=\"log-prog-ex\">Exercise<select id=\"log-prog-ex\"></select></label>\n</div>\n<div id=\"log-progress\"></div>\n<details class=\"prog-add\" id=\"prog-add\">\n  <summary>+ Log an exercise</summary>\n  <div class=\"body\">\n    <div class=\"pick\">\n      <label for=\"pe-ex\">Exercise<select id=\"pe-ex\"></select></label>\n      <label for=\"pe-date\">Date<input type=\"date\" id=\"pe-date\"></label>\n    </div>\n    <div class=\"pick\" id=\"pe-new\" hidden>\n      <label for=\"pe-name\">New exercise<input type=\"text\" id=\"pe-name\" autocomplete=\"off\" placeholder=\"Exercise name\"></label>\n      <label for=\"pe-unit\">Log as<select id=\"pe-unit\"><option value=\"reps\">Reps</option><option value=\"sec\">Seconds</option></select></label>\n    </div>\n    <div class=\"pick\">\n      <label for=\"pe-kg\">Weight (kg)<input class=\"num\" id=\"pe-kg\" inputmode=\"decimal\" autocomplete=\"off\" placeholder=\"optional\"></label>\n      <label for=\"pe-reps\"><span id=\"pe-reps-cap\">Reps</span><input class=\"num\" id=\"pe-reps\" inputmode=\"numeric\" autocomplete=\"off\"></label>\n    </div>\n    <div><button type=\"button\" class=\"btn primary\" id=\"pe-save\">Save entry</button></div>\n    <p class=\"log-msg\" id=\"pe-msg\" role=\"status\" aria-live=\"polite\"></p>\n  </div>\n</details>\n</div>\n<div class=\"sub\" id=\"sub-history\" role=\"tabpanel\" data-sub=\"history\" hidden>\n<h1>History</h1>\n<div id=\"log-history\"></div>\n<details class=\"prog-add\" id=\"backup\">\n  <summary>Backup &amp; restore</summary>\n  <div class=\"body\">\n    <p class=\"hint\">Your log lives on this phone only. Download a copy before you clear browser data, switch phones or reinstall the app — restoring writes over whatever is currently here.</p>\n    <div class=\"plan-actions\">\n      <button type=\"button\" class=\"btn\" id=\"backup-save\">Download backup</button>\n      <button type=\"button\" class=\"btn\" id=\"backup-load\">Restore from file</button>\n    </div>\n    <input type=\"file\" id=\"backup-file\" accept=\"application/json,.json\" hidden>\n    <p class=\"log-msg\" id=\"backup-msg\" role=\"status\" aria-live=\"polite\"></p>\n  </div>\n</details>\n<details class=\"prog-add\" id=\"sync\">\n  <summary>Sync</summary>\n  <div class=\"body\">\n    <p class=\"hint\">Keeps a copy of this log in the private GitHub repo <strong>IraAga/workout-companion-data</strong>, and pulls back anything logged on another device. Saving always works offline; uploads catch up when you reconnect.</p>\n    <div id=\"sync-off\">\n      <label for=\"sync-token\">Access token\n        <input type=\"password\" id=\"sync-token\" autocomplete=\"off\" spellcheck=\"false\" placeholder=\"github_pat_…\">\n      </label>\n      <div class=\"plan-actions\">\n        <button type=\"button\" class=\"btn primary\" id=\"sync-connect\">Connect</button>\n      </div>\n    </div>\n    <div id=\"sync-on\" hidden>\n      <p class=\"sync-status\" id=\"sync-status\" role=\"status\" aria-live=\"polite\">Not synced yet</p>\n      <div class=\"plan-actions\">\n        <button type=\"button\" class=\"btn\" id=\"sync-now\">Sync now</button>\n        <button type=\"button\" class=\"btn danger\" id=\"sync-disconnect\">Disconnect</button>\n      </div>\n    </div>\n  </div>\n</details>\n</div>\n<div class=\"toast\" id=\"log-toast\" role=\"status\" hidden>\n  <span id=\"log-toast-text\"></span>\n  <button type=\"button\" class=\"btn\" id=\"log-toast-action\" hidden>Undo</button>\n  <button type=\"button\" class=\"iconbtn\" id=\"log-toast-close\" aria-label=\"Dismiss\">×</button>\n</div>"
+  "sourceHtml": "<p class=\"kicker\">Track</p>\n<div class=\"subtabs\" role=\"tablist\" aria-label=\"Workout log views\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"sub-history\" data-sub=\"history\">History</button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"sub-progress\" data-sub=\"progress\">Progress</button></div>\n<div class=\"sub\" id=\"sub-entry\" role=\"tabpanel\" data-sub=\"entry\" hidden>\n<div class=\"loghead\">\n  <h1>Log workout</h1>\n  <button type=\"button\" class=\"iconbtn\" id=\"log-close\" aria-label=\"Discard this workout\" title=\"Discard this workout\">×</button>\n</div>\n<p class=\"log-status\" id=\"log-template-line\"></p>\n<p class=\"log-status\" id=\"log-status\" aria-live=\"polite\">Connecting to your saved log…</p>\n<div class=\"edit-banner\" id=\"log-edit-banner\" hidden>\n  <span id=\"log-edit-text\">Editing saved session.</span>\n  <button type=\"button\" class=\"btn\" id=\"log-edit-cancel\">Cancel edit</button>\n</div>\n<div id=\"log-form\" hidden>\n<button type=\"button\" class=\"btn\" id=\"log-fill-last\" hidden title=\"Fill empty fields with your latest numbers\">Fill from last time</button>\n<div class=\"xctl\" id=\"log-xctl\">\n  <button type=\"button\" class=\"linkbtn\" id=\"log-collapse-all\">Collapse all</button>\n  <button type=\"button\" class=\"linkbtn\" id=\"log-expand-all\">Expand all</button>\n</div>\n<div id=\"log-cards\"></div>\n<div class=\"plan-actions\">\n  <button type=\"button\" class=\"btn\" id=\"log-add-ex\">+ Add exercise</button>\n  <button type=\"button\" class=\"btn\" id=\"log-reset-ex\" hidden>Reset to suggested exercises</button>\n</div>\n<div class=\"note-box\">\n  <label for=\"log-note\">Session notes</label>\n  <textarea id=\"log-note\" rows=\"2\" placeholder=\"How it felt, any pain, what to change next time\"></textarea>\n</div>\n<div class=\"savebar\">\n  <span class=\"sum\" id=\"log-summary\">Nothing entered yet</span>\n  <button type=\"button\" class=\"btn primary\" id=\"log-save\" disabled>Save session</button>\n  <div class=\"rest\" id=\"log-rest\" hidden>\n    <span class=\"rest-k\">Rest</span>\n    <span class=\"rest-t\" id=\"log-rest-time\">2:00</span>\n    <button type=\"button\" class=\"btn\" data-rest=\"add\">+30s</button>\n    <button type=\"button\" class=\"btn\" data-rest=\"skip\">Skip</button>\n  </div>\n</div>\n<p class=\"log-msg\" id=\"log-msg\" role=\"status\" aria-live=\"polite\"></p>\n</div>\n</div>\n<div class=\"sub\" id=\"sub-progress\" role=\"tabpanel\" data-sub=\"progress\" hidden>\n<h1>Progress</h1>\n<div class=\"pick one\">\n  <label for=\"log-prog-ex\">Exercise<select id=\"log-prog-ex\"></select></label>\n</div>\n<div id=\"log-progress\"></div>\n<details class=\"prog-add\" id=\"prog-add\">\n  <summary>+ Log an exercise</summary>\n  <div class=\"body\">\n    <div class=\"pick\">\n      <label for=\"pe-ex\">Exercise<select id=\"pe-ex\"></select></label>\n      <label for=\"pe-date\">Date<input type=\"date\" id=\"pe-date\"></label>\n    </div>\n    <div class=\"pick\" id=\"pe-new\" hidden>\n      <label for=\"pe-name\">New exercise<input type=\"text\" id=\"pe-name\" autocomplete=\"off\" placeholder=\"Exercise name\"></label>\n      <label for=\"pe-unit\">Log as<select id=\"pe-unit\"><option value=\"reps\">Reps</option><option value=\"sec\">Seconds</option></select></label>\n    </div>\n    <div class=\"pick\">\n      <label for=\"pe-kg\">Weight (kg)<input class=\"num\" id=\"pe-kg\" inputmode=\"decimal\" autocomplete=\"off\" placeholder=\"optional\"></label>\n      <label for=\"pe-reps\"><span id=\"pe-reps-cap\">Reps</span><input class=\"num\" id=\"pe-reps\" inputmode=\"numeric\" autocomplete=\"off\"></label>\n    </div>\n    <div><button type=\"button\" class=\"btn primary\" id=\"pe-save\">Save entry</button></div>\n    <p class=\"log-msg\" id=\"pe-msg\" role=\"status\" aria-live=\"polite\"></p>\n  </div>\n</details>\n</div>\n<div class=\"sub\" id=\"sub-history\" role=\"tabpanel\" data-sub=\"history\">\n<h1>History</h1>\n<div class=\"pick\" id=\"log-template\">\n  <label for=\"log-program\">Program<select id=\"log-program\"></select></label>\n  <label for=\"log-session\">Session<select id=\"log-session\"></select></label>\n  <label for=\"log-date\">Date<input type=\"date\" id=\"log-date\"></label>\n</div>\n<div class=\"plan-actions start-row\" id=\"log-start-wrap\">\n  <button type=\"button\" class=\"btn primary\" id=\"log-start\">Start workout</button>\n</div>\n<div id=\"log-history\"></div>\n<details class=\"prog-add\" id=\"backup\">\n  <summary>Backup &amp; restore</summary>\n  <div class=\"body\">\n    <p class=\"hint\">Your log lives on this phone only. Download a copy before you clear browser data, switch phones or reinstall the app — restoring writes over whatever is currently here.</p>\n    <div class=\"plan-actions\">\n      <button type=\"button\" class=\"btn\" id=\"backup-save\">Download backup</button>\n      <button type=\"button\" class=\"btn\" id=\"backup-load\">Restore from file</button>\n    </div>\n    <input type=\"file\" id=\"backup-file\" accept=\"application/json,.json\" hidden>\n    <p class=\"log-msg\" id=\"backup-msg\" role=\"status\" aria-live=\"polite\"></p>\n  </div>\n</details>\n<details class=\"prog-add\" id=\"sync\">\n  <summary>Sync</summary>\n  <div class=\"body\">\n    <p class=\"hint\">Keeps a copy of this log in the private GitHub repo <strong>IraAga/workout-companion-data</strong>, and pulls back anything logged on another device. Saving always works offline; uploads catch up when you reconnect.</p>\n    <div id=\"sync-off\">\n      <label for=\"sync-token\">Access token\n        <input type=\"password\" id=\"sync-token\" autocomplete=\"off\" spellcheck=\"false\" placeholder=\"github_pat_…\">\n      </label>\n      <div class=\"plan-actions\">\n        <button type=\"button\" class=\"btn primary\" id=\"sync-connect\">Connect</button>\n      </div>\n    </div>\n    <div id=\"sync-on\" hidden>\n      <p class=\"sync-status\" id=\"sync-status\" role=\"status\" aria-live=\"polite\">Not synced yet</p>\n      <div class=\"plan-actions\">\n        <button type=\"button\" class=\"btn\" id=\"sync-now\">Sync now</button>\n        <button type=\"button\" class=\"btn danger\" id=\"sync-disconnect\">Disconnect</button>\n      </div>\n    </div>\n  </div>\n</details>\n</div>\n<div class=\"toast\" id=\"log-toast\" role=\"status\" hidden>\n  <span id=\"log-toast-text\"></span>\n  <button type=\"button\" class=\"btn\" id=\"log-toast-action\" hidden>Undo</button>\n  <button type=\"button\" class=\"iconbtn\" id=\"log-toast-close\" aria-label=\"Dismiss\">×</button>\n</div>"
 }

@@ -17,7 +17,7 @@ Everything ships as one file: `docs/index.html` (~5,000 lines). Inside it:
 |---|---|---|
 | Static documents | `<section class="doc" data-panel="…">` × 9 | Program, recovery, nutrition, meals, groceries, times, full body, week, log. Hand-written HTML. |
 | Content index | `<nav aria-label="Documents">` | 5 groups: Overview, Track, Train, Eat, Shop. Also drives the sub-index on the Week panel. |
-| Sub-tabs | `.subtabs` + `.sub[data-sub]` | Program has gym/home/minimal; recovery has 3 options; log has entry/progress/history. |
+| Sub-tabs | `.subtabs` + `.sub[data-sub]` | Program has gym/home/minimal; recovery has 3 options; log has History + Progress, with the workout view opening below the strip rather than as a tab. |
 | Catalog | `var CATALOG` (inline JSON) | 4 programs, 10 sessions, 62 exercise slots, 48 unique exercises. |
 | Rest times | `var REST` | Exercise id → seconds. Fallback 90. |
 | Log engine | rest of the inline script | Storage, validation, editing, history, progress chart, rest timer, sync. |
@@ -142,9 +142,11 @@ never written into a saved session. Drafts are not cleared after saving an
 ### R5 — Editing a saved session borrows the working slot
 History edit copies the saved session into a temporary `plan` entry and
 `draft`, switches selection to that program/session, and restores the previous
-plan/draft/selection/date on exit. This is why edits are field-for-field
-faithful and why saved sets are mapped back by index. If the new UI keeps a
-separate edit buffer, it must still preserve `id` and `ts` and bump `rev`.
+plan/draft/selection/date on exit. In the current UI it opens the workout view
+immediately (R16); the banner's Cancel edit and the × both cancel the edit.
+This is why edits are field-for-field faithful and why saved sets are mapped
+back by index. If the new UI keeps a separate edit buffer, it must still
+preserve `id` and `ts` and bump `rev`.
 
 ### R6 — Deletion and undo
 Delete removes the session and writes a tombstone `{id: now}`. An undo window
@@ -218,33 +220,85 @@ result locally. Merge algorithm: highest `rev` per session id, union of
 tombstone maps taking the max timestamp, drop sessions covered by a tombstone,
 sort by `ts` desc. Auth is `Bearer <PAT>`. Network failures never block logging.
 
+### R16 — Starting, discarding and finishing a workout
+History is the home of the log tab and the only permanent state: template
+pickers, **Start workout**, the saved sessions, backup and sync. There is no
+entry tab.
+
+- Start opens the workout view *below* the sub-tab strip. The strip stays
+  visible but **no tab is selected**, and the chosen template is echoed in a
+  line ("Gym · Lift A · Sun 15 Nov"). Starting scrolls to the first kg input.
+- Reloading returns to History. The draft survives (R3), so Start resumes it.
+- × ("Discard this workout") never deletes a saved session:
+  - during a history edit it cancels the edit, restores the borrowed
+    plan/draft/selection and shows "Edit cancelled" — the same effect as the
+    banner's Cancel edit;
+  - otherwise it confirms only when a set or the note was typed, then deletes
+    that program/session's draft and returns to History.
+- Saving a new session or updating an edited one closes the view, returns to
+  History and shows a toast. Only this writes `ol-sessions`; drafts autosave.
+- "Fill from last time", collapse/expand, the save bar, the rest timer and the
+  save-status line all live inside the workout view, not on History.
+
 ---
 
 ## 4. UI surface a replacement must cover
 
-Content (static): 9 panels, 5 nav groups, 3 sub-tab sets. Data in `data/content/`.
+Content (static): 9 panels, 5 nav groups, 3 sub-tab sets (the log's has two,
+History and Progress). Data in `data/content/`.
 
 Interactive:
 
-1. Week overview + live weekly lift count (R8).
-2. Program reference for 4 programs / 12 sessions, read from the catalog.
-3. Log entry: program/session/date pickers, one collapsible card per exercise,
-   per-set weight/reps, set done ticks, add/remove sets (max 12), add/remove/
-   edit exercises, "Fill from last time", session note, save, rest timer (R3–R6,
-   R11, R12).
-4. History: grouped by session, edit and delete with undo (R5, R6).
-5. Progress: series picker, latest/best/change, chart, table, manual entry
+1. Week overview with the live weekly lift count (R8).
+2. Program reference for 4 programs / 10 sessions, read from the catalog.
+3. History: saved sessions grouped by date, expand, edit and delete with undo
+   (R5, R6).
+4. Template pickers (program/session/date) and Start workout (R16).
+5. Workout view: one collapsible card per exercise, per-set weight/reps, set
+   done ticks, add/remove sets (max 12), add/remove/edit exercises, "Fill from
+   last time", session note, save or discard, rest timer (R2–R4, R7, R11–R13).
+6. Progress: series picker, latest/best/change, chart, table, manual entry
    (R9, R10).
-6. Backup download/restore (R14).
-7. GitHub sync: connect token, status line, sync now, disconnect (R15).
-8. Tab persistence and hash routing (`op-tab`), plus PWA install/offline shell.
+7. Backup download/restore (R14) and GitHub sync: connect, status, sync now,
+   disconnect (R15).
+8. Tab persistence and hash routing (`op-tab`), plus the PWA install and
+   offline shell.
 
-If a replacement drops 6–8 it still preserves all user work as long as it
-reads the same keys, but cross-device continuity is lost.
+If a replacement drops 7–8 it still preserves all user work as long as it reads
+the same keys, but cross-device continuity and installability are lost.
 
 ---
 
-## 5. Porting in six steps
+## 5. UI templates
+
+Four layouts over this contract, drawn as annotated wireframes in `templates/`
+(open `templates/index.html` for the gallery):
+
+| | Template | Viewport | Home | Effort | Rules exercised |
+|---|---|---|---|---|---|
+| A | Pocket Log (restyle, 2 states) | Phone | Week | Low | R1–R16 |
+| B | Workbench | Desktop / tablet | Active session | Medium | R1–R9, R11–R13, R16 |
+| C | Focus | Phone | Exercise *n* of 6 | Low | R1–R4, R7, R11, R13 |
+| D | Dashboard | Phone / desktop | This week | Medium | R1, R4, R8, R9 |
+
+Recommendation: **ship A, add C, lay out B at the wide breakpoint, defer D.**
+A is the lowest-risk base because it keeps every surface and rule; it is drawn
+in both of its states, History and the workout open below the strip
+(`pocket-log-workout.svg`). Those drawings are a restyle proposal; the literal
+current screens are kept as `pocket-log-shipped.svg` and
+`pocket-log-workout-shipped.svg`, captured from the running app. C is a workout
+*mode*, not a destination, and fixes one-handed entry. B is the same
+session/set/rest components in three panes, not a second app. D optimises for
+adherence rather than entry and needs weeks of data to be worth its space.
+
+`templates/templates.json` holds the machine-readable version (surfaces, keys,
+rules, scores). `tools/check-templates.mjs` verifies that every referenced rule,
+key and preview file exists. The SVGs are illustrations, not generated output:
+if the catalog changes, update their numbers by hand.
+
+---
+
+## 6. Porting in six steps
 
 1. **Copy `docs/index.html` somewhere read-only.** It is the reference and the
    only place the old UI can still run.
@@ -266,7 +320,7 @@ URL means an empty log unless the user restores from a backup.
 
 ---
 
-## 6. Gotchas worth knowing before rewriting
+## 7. Gotchas worth knowing before rewriting
 
 - **Never re-sort in place by `ts` only.** Date is the user's intent; `ts`
   breaks ties.
@@ -286,13 +340,14 @@ URL means an empty log unless the user restores from a backup.
 
 ---
 
-## 7. Keeping this in sync
+## 8. Keeping this in sync
 
 `docs/index.html` is canonical. Regenerate and verify:
 
 ```bash
-node tools/extract-contract.mjs          # rewrite contract/
-node tools/extract-contract.mjs --check   # CI / pre-commit
+node tools/extract-contract.mjs           # rewrite data/
+node tools/extract-contract.mjs --check   # non-zero exit if out of date
+node tools/check-templates.mjs            # rules, keys and previews still exist
 ```
 
 The extractor fails if a panel's text is not fully represented in its blocks,
